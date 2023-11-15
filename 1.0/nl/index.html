@@ -1,0 +1,2358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="../resources/primer.css" media="screen" />    <link rel="stylesheet" href="../resources/rec.css" media="screen" />    <link rel="stylesheet" href="../resources/extra.css" media="screen" />    <link rel="stylesheet" href="../resources/owl.css" media="screen" />    <title>Fiducial Marker Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/fidmark/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/fidmark/","name":"Fiducial Marker Ontology", "headline":"Document describing the ontology http://purl.org/fidmark/", "datePublished":"2023-12-07T00:00:00", "license":"http://purl.org/NET/rdflicense/MIT1.0", "author":[{"@type":"Person","name":"Isaac Valadez Mora"},{"@type":"Person","name":"Maxim Van de Wynckel"}], "contributor":[{"@type":"Person","name":"Beat Signer"}]}</script>
+
+<script src="../resources/jquery.js"></script> 
+<script src="../resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Inhoudsopgave</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="../en/"><b>en</b></a> <a href="../nl/"><b>nl</b></a> </div>
+<h1>Fiducial Marker Ontology</h1>
+<h2>Release  2023-12-07T00:00:00</h2>
+
+
+<dl>
+<dt>Deze versie:</dt>
+<dd><a href="http://purl.org/fidmark/1.0/">http://purl.org/fidmark/1.0/</a></dd>
+<dt>Auteurs:</dt>
+<dd>Isaac Valadez Mora</dd><dd>Maxim Van de Wynckel</dd>
+
+<dt>Bijdragers:</dt>
+<dd>Beat Signer</dd>
+
+<dt>GeÃ¯mporteerde ontologieÃ«n:</dt>
+<dd><a href="http://purl.org/poso/">&lt;http://purl.org/poso/&gt;</a></dd><dd><a href="http://www.w3.org/ns/sosa/">&lt;http://www.w3.org/ns/sosa/&gt;</a></dd><dd><a href="http://www.w3.org/ns/ssn/">&lt;http://www.w3.org/ns/ssn/&gt;</a></dd><dd><a href="http://www.w3.org/ns/ssn/systems/">&lt;http://www.w3.org/ns/ssn/systems/&gt;</a></dd>
+
+<dt>Download serialisatie:</dt><dd><span><a href="../ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="../ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="../ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="../ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>Licentie: </dt><dd><a href="http://purl.org/NET/rdflicense/MIT1.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/MIT1.0-blue.svg" alt="http://purl.org/NET/rdflicense/MIT1.0" /></a>
+</dd><dt>Visualisatie:</dt><dd><a href="../webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="../OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Citeren als:</dt>
+<dd>Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark</dd>
+</dl>
+
+<a href="../provenance/provenance-nl.html" target="_blank">Herkomst van deze pagina</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div><div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Fiducial Marker Ontology: Overzicht <span class="backlink"> terug naar <a href="#toc">Index</a></span></h2>
+<span class="markdown">
+Deze ontologie heeft de volgende klassen en eigenschappen.</span>
+<h4>Klassen</h4>
+<ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#AprilTag" title="http://purl.org/fidmark/AprilTag">AprilTag</a>
+   </li>
+   <li>
+      <a href="#ARTag" title="http://purl.org/fidmark/ARTag">ARTag</a>
+   </li>
+   <li>
+      <a href="#ARToolKit" title="http://purl.org/fidmark/ARToolKit">ARToolKit</a>
+   </li>
+   <li>
+      <a href="#ArUco" title="http://purl.org/fidmark/ArUco">ArUco</a>
+   </li>
+   <li>
+      <a href="#BinaryID" title="http://purl.org/fidmark/BinaryID">BinaryID</a>
+   </li>
+   <li>
+      <a href="#BullsEye" title="http://purl.org/fidmark/BullsEye">
+         <span>bulls eye</span>
+      </a>
+   </li>
+   <li>
+      <a href="#CCTag" title="http://purl.org/fidmark/CCTag">
+         <span>c c tag</span>
+      </a>
+   </li>
+   <li>
+      <a href="#CALTag" title="http://purl.org/fidmark/CALTag">CALTag</a>
+   </li>
+   <li>
+      <a href="#ChromaTag" title="http://purl.org/fidmark/ChromaTag">ChromaTag</a>
+   </li>
+   <li>
+      <a href="#CCC" title="http://purl.org/fidmark/CCC">Concentric contrasting circles</a>
+   </li>
+   <li>
+      <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+   </li>
+   <li>
+      <a href="#FourierTag" title="http://purl.org/fidmark/FourierTag">FourierTag</a>
+   </li>
+   <li>
+      <a href="#InterSense" title="http://purl.org/fidmark/InterSense">
+         <span>inter sense</span>
+      </a>
+   </li>
+   <li>
+      <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+   </li>
+   <li>
+      <a href="#MultiRing" title="http://purl.org/fidmark/MultiRing">Multi-ring</a>
+   </li>
+   <li>
+      <a href="#PiTag" title="http://purl.org/fidmark/PiTag">Pi-Tag</a>
+   </li>
+   <li>
+      <a href="#QRCode" title="http://purl.org/fidmark/QRCode">QR code</a>
+   </li>
+   <li>
+      <a href="#reacTIVision" title="http://purl.org/fidmark/reacTIVision">reacTIVision</a>
+   </li>
+   <li>
+      <a href="#RuneTag" title="http://purl.org/fidmark/RuneTag">RuneTag</a>
+   </li>
+   <li>
+      <a href="#SIFT" title="http://purl.org/fidmark/SIFT">
+         <span>s i f t</span>
+      </a>
+   </li>
+   <li>
+      <a href="#STag" title="http://purl.org/fidmark/STag">STag</a>
+   </li>
+   <li>
+      <a href="#TopoTag" title="http://purl.org/fidmark/TopoTag">TopoTag</a>
+   </li>
+   <li>
+      <a href="#TRIP" title="http://purl.org/fidmark/TRIP">TRIP</a>
+   </li>
+   <li>
+      <a href="#VisualCode" title="http://purl.org/fidmark/VisualCode">VisualCode</a>
+   </li>
+   <li>
+      <a href="#WhyCode" title="http://purl.org/fidmark/WhyCode">
+         <span>why code</span>
+      </a>
+   </li>
+</ul><h4>Objecteigenschappen</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#markerDictionary" title="http://purl.org/fidmark/markerDictionary">marker dictionary</a>
+   </li>
+   <li>
+      <a href="#markerHeight" title="http://purl.org/fidmark/markerHeight">marker height</a>
+   </li>
+   <li>
+      <a href="#markerWidth" title="http://purl.org/fidmark/markerWidth">marker width</a>
+   </li>
+</ul><h4>Data-eigenschappen</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#dictionarySize" title="http://purl.org/fidmark/dictionarySize">dictionary size</a>
+   </li>
+   <li>
+      <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+   </li>
+   <li>
+      <a href="#markerData" title="http://purl.org/fidmark/markerData">marker data</a>
+   </li>
+   <li>
+      <a href="#markerIdentifier" title="http://purl.org/fidmark/markerIdentifier">marker identifier</a>
+   </li>
+   <li>
+      <a href="#markerImage" title="http://purl.org/fidmark/markerImage">marker image</a>
+   </li>
+   <li>
+      <a href="#markerPattern" title="http://purl.org/fidmark/markerPattern">marker pattern</a>
+   </li>
+   <li>
+      <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+   </li>
+   <li>
+      <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+   </li>
+   <li>
+      <a href="#version" title="http://purl.org/fidmark/version">version</a>
+   </li>
+</ul><h4>Concrete exemplaren</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#DICT_ARUCO_ORIGINAL" title="http://purl.org/fidmark/DICT_ARUCO_ORIGINAL">ArUco original dictionary</a>
+   </li>
+   <li>
+      <a href="#DICT_APRILTAG_16h5" title="http://purl.org/fidmark/DICT_APRILTAG_16h5">
+         <span>d i c t a p r i l t a g 16h5</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_APRILTAG_25h9" title="http://purl.org/fidmark/DICT_APRILTAG_25h9">
+         <span>d i c t a p r i l t a g 25h9</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_APRILTAG_36h10" title="http://purl.org/fidmark/DICT_APRILTAG_36h10">
+         <span>d i c t a p r i l t a g 36h10</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_APRILTAG_36h11" title="http://purl.org/fidmark/DICT_APRILTAG_36h11">
+         <span>d i c t a p r i l t a g 36h11</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_4X4_100" title="http://purl.org/fidmark/DICT_ARUCO_4X4_100">
+         <span>d i c t a r u c o 4 x4 100</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_4X4_1000" title="http://purl.org/fidmark/DICT_ARUCO_4X4_1000">
+         <span>d i c t a r u c o 4 x4 1000</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_4X4_250" title="http://purl.org/fidmark/DICT_ARUCO_4X4_250">
+         <span>d i c t a r u c o 4 x4 250</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_4X4_50" title="http://purl.org/fidmark/DICT_ARUCO_4X4_50">
+         <span>d i c t a r u c o 4 x4 50</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_5X5_100" title="http://purl.org/fidmark/DICT_ARUCO_5X5_100">
+         <span>d i c t a r u c o 5 x5 100</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_5X5_1000" title="http://purl.org/fidmark/DICT_ARUCO_5X5_1000">
+         <span>d i c t a r u c o 5 x5 1000</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_5X5_250" title="http://purl.org/fidmark/DICT_ARUCO_5X5_250">
+         <span>d i c t a r u c o 5 x5 250</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_5X5_50" title="http://purl.org/fidmark/DICT_ARUCO_5X5_50">
+         <span>d i c t a r u c o 5 x5 50</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_6X6_100" title="http://purl.org/fidmark/DICT_ARUCO_6X6_100">
+         <span>d i c t a r u c o 6 x6 100</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_6X6_1000" title="http://purl.org/fidmark/DICT_ARUCO_6X6_1000">
+         <span>d i c t a r u c o 6 x6 1000</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_6X6_250" title="http://purl.org/fidmark/DICT_ARUCO_6X6_250">
+         <span>d i c t a r u c o 6 x6 250</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_6X6_50" title="http://purl.org/fidmark/DICT_ARUCO_6X6_50">
+         <span>d i c t a r u c o 6 x6 50</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_7X7_100" title="http://purl.org/fidmark/DICT_ARUCO_7X7_100">
+         <span>d i c t a r u c o 7 x7 100</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_7X7_1000" title="http://purl.org/fidmark/DICT_ARUCO_7X7_1000">
+         <span>d i c t a r u c o 7 x7 1000</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_7X7_250" title="http://purl.org/fidmark/DICT_ARUCO_7X7_250">
+         <span>d i c t a r u c o 7 x7 250</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_7X7_50" title="http://purl.org/fidmark/DICT_ARUCO_7X7_50">
+         <span>d i c t a r u c o 7 x7 50</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_ARUCO_MIP_36h12" title="http://purl.org/fidmark/DICT_ARUCO_MIP_36h12">
+         <span>d i c t a r u c o m i p 36h12</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_TOPOTAG_3X3" title="http://purl.org/fidmark/DICT_TOPOTAG_3X3">
+         <span>d i c t t o p o t a g 3 x3</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_TOPOTAG_4X4" title="http://purl.org/fidmark/DICT_TOPOTAG_4X4">
+         <span>d i c t t o p o t a g 4 x4</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_TOPOTAG_5X5" title="http://purl.org/fidmark/DICT_TOPOTAG_5X5">
+         <span>d i c t t o p o t a g 5 x5</span>
+      </a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="../webvowl/index.html"></iframe> 
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Kruisverwijzing voor Fiducial Marker Ontology klassen, objecteigenschappen en data-eigenschapen <span class="backlink"> terug naar <a href="#toc">Index</a></span></h2>
+Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door  Fiducial Marker Ontology.
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+   <h3 id="classes-headline" class="list">Klassen</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#AprilTag" title="http://purl.org/fidmark/AprilTag">AprilTag</a>
+      </li>
+      <li>
+         <a href="#ARTag" title="http://purl.org/fidmark/ARTag">ARTag</a>
+      </li>
+      <li>
+         <a href="#ARToolKit" title="http://purl.org/fidmark/ARToolKit">ARToolKit</a>
+      </li>
+      <li>
+         <a href="#ArUco" title="http://purl.org/fidmark/ArUco">ArUco</a>
+      </li>
+      <li>
+         <a href="#BinaryID" title="http://purl.org/fidmark/BinaryID">BinaryID</a>
+      </li>
+      <li>
+         <a href="#BullsEye" title="http://purl.org/fidmark/BullsEye">
+            <span>bulls eye</span>
+         </a>
+      </li>
+      <li>
+         <a href="#CCTag" title="http://purl.org/fidmark/CCTag">
+            <span>c c tag</span>
+         </a>
+      </li>
+      <li>
+         <a href="#CALTag" title="http://purl.org/fidmark/CALTag">CALTag</a>
+      </li>
+      <li>
+         <a href="#ChromaTag" title="http://purl.org/fidmark/ChromaTag">ChromaTag</a>
+      </li>
+      <li>
+         <a href="#CCC" title="http://purl.org/fidmark/CCC">Concentric contrasting circles</a>
+      </li>
+      <li>
+         <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+      </li>
+      <li>
+         <a href="#FourierTag" title="http://purl.org/fidmark/FourierTag">FourierTag</a>
+      </li>
+      <li>
+         <a href="#InterSense" title="http://purl.org/fidmark/InterSense">
+            <span>inter sense</span>
+         </a>
+      </li>
+      <li>
+         <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+      </li>
+      <li>
+         <a href="#MultiRing" title="http://purl.org/fidmark/MultiRing">Multi-ring</a>
+      </li>
+      <li>
+         <a href="#PiTag" title="http://purl.org/fidmark/PiTag">Pi-Tag</a>
+      </li>
+      <li>
+         <a href="#QRCode" title="http://purl.org/fidmark/QRCode">QR code</a>
+      </li>
+      <li>
+         <a href="#reacTIVision" title="http://purl.org/fidmark/reacTIVision">reacTIVision</a>
+      </li>
+      <li>
+         <a href="#RuneTag" title="http://purl.org/fidmark/RuneTag">RuneTag</a>
+      </li>
+      <li>
+         <a href="#SIFT" title="http://purl.org/fidmark/SIFT">
+            <span>s i f t</span>
+         </a>
+      </li>
+      <li>
+         <a href="#STag" title="http://purl.org/fidmark/STag">STag</a>
+      </li>
+      <li>
+         <a href="#TopoTag" title="http://purl.org/fidmark/TopoTag">TopoTag</a>
+      </li>
+      <li>
+         <a href="#TRIP" title="http://purl.org/fidmark/TRIP">TRIP</a>
+      </li>
+      <li>
+         <a href="#VisualCode" title="http://purl.org/fidmark/VisualCode">VisualCode</a>
+      </li>
+      <li>
+         <a href="#WhyCode" title="http://purl.org/fidmark/WhyCode">
+            <span>why code</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="AprilTag">
+      <h3>AprilTag<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/AprilTag</p>
+      <div class="comment">
+         <span class="markdown">AprilTag is a visual fiducial system, useful for a wide variety of tasks including augmented reality, robotics, and camera calibration. Targets can be created from an ordinary printer, and the AprilTag detection software computes the precise 3D position, orientation, and identity of the tags relative to the camera. The AprilTag library is implemented in C with no external dependencies. It is designed to be easily included in other applications, as well as be portable to embedded devices. Real-time performance can be achieved even on cell-phone grade processors.</span>
+      </div>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ARTag">
+      <h3>ARTag<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/ARTag</p>
+      <div class="comment">
+         <span class="markdown">An ARTag is a fiducial marker system to support 3D registration (alignment) and pose tracking in augmented reality. They can be used to facilitate the appearance of virtual objects, games, and animations within the real world. Like the earlier ARToolKit system, they allow for video tracking capabilities that calculate a camera's position and orientation relative to physical markers in real time. Once the camera's position is known, a virtual camera can be positioned at the same point, revealing the virtual object at the location of the ARTag. It thus addresses two of the key problems in Augmented Reality: viewpoint tracking and virtual object interaction. An ARTag appears on the Mars Science Laboratory.A similar technique is being used by NASA's Spacecraft 3D smartphone app as an educational outreach tool. ARTag is supported by the open source Goblin XNA software.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is gedefinieerd door</dt>
+         <dd>
+            <a href="https://dbpedia.org/resource/ARTag">https://dbpedia.org/resource/ARTag</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ARToolKit">
+      <h3>ARToolKit<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/ARToolKit</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ArUco">
+      <h3>ArUco<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/ArUco</p>
+      <div class="comment">
+         <span class="markdown">An ArUco marker is a synthetic square marker composed by a wide black border and an inner binary matrix which determines its identifier (id). The black border facilitates its fast detection in the image and the binary codification allows its identification and the application of error detection and correction techniques. The marker size determines the size of the internal matrix. For instance a marker size of 4x4 is composed by 16 bits.</span>
+      </div>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BinaryID">
+      <h3>BinaryID<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/BinaryID</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BullsEye">
+      <h3>bulls eye<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/BullsEye</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CCTag">
+      <h3>c c tag<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/CCTag</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CALTag">
+      <h3>CALTag<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/CALTag</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ChromaTag">
+      <h3>ChromaTag<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/ChromaTag</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CCC">
+      <h3>Concentric contrasting circles<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/CCC</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FiducialMarker">
+      <h3>Fiducial marker<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/FiducialMarker</p>
+      <div class="comment">
+         <span class="markdown">A fiducial marker or fiducial is an object placed in the field of view of an imaging system that appears in the image produced, for use as a point of reference or a measure. It may be either something placed into or on the imaging subject, or a mark or set of marks in the reticle of an optical instrument.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is gedefinieerd door</dt>
+         <dd>
+            <a href="https://dbpedia.org/resource/Fiducial_marker">https://dbpedia.org/resource/Fiducial_marker</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="http://purl.org/poso/VisualLandmark"
+               target="_blank"
+               title="http://purl.org/poso/VisualLandmark">visual landmark</a>
+         </dd>
+         <dt>heeft subklassen</dt>
+         <dd>
+            <a href="#ARTag" title="http://purl.org/fidmark/ARTag">ARTag</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#ARToolKit" title="http://purl.org/fidmark/ARToolKit">ARToolKit</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#AprilTag" title="http://purl.org/fidmark/AprilTag">AprilTag</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#ArUco" title="http://purl.org/fidmark/ArUco">ArUco</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#BinaryID" title="http://purl.org/fidmark/BinaryID">BinaryID</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#CALTag" title="http://purl.org/fidmark/CALTag">CALTag</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#ChromaTag" title="http://purl.org/fidmark/ChromaTag">ChromaTag</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#CCC" title="http://purl.org/fidmark/CCC">Concentric contrasting circles</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#FourierTag" title="http://purl.org/fidmark/FourierTag">FourierTag</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#MultiRing" title="http://purl.org/fidmark/MultiRing">Multi-ring</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#PiTag" title="http://purl.org/fidmark/PiTag">Pi-Tag</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#QRCode" title="http://purl.org/fidmark/QRCode">QR code</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#RuneTag" title="http://purl.org/fidmark/RuneTag">RuneTag</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#STag" title="http://purl.org/fidmark/STag">STag</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#TRIP" title="http://purl.org/fidmark/TRIP">TRIP</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#TopoTag" title="http://purl.org/fidmark/TopoTag">TopoTag</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#VisualCode" title="http://purl.org/fidmark/VisualCode">VisualCode</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#BullsEye" title="http://purl.org/fidmark/BullsEye">bulls eye</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#CCTag" title="http://purl.org/fidmark/CCTag">c c tag</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#InterSense" title="http://purl.org/fidmark/InterSense">inter sense</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#reacTIVision" title="http://purl.org/fidmark/reacTIVision">reacTIVision</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#SIFT" title="http://purl.org/fidmark/SIFT">s i f t</a>
+            <sup class="type-c" title="klasse">c</sup>, <a href="#WhyCode" title="http://purl.org/fidmark/WhyCode">why code</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>is in domein van</dt>
+         <dd>
+            <a href="http://purl.org/fidmark/color"
+               target="_blank"
+               title="http://purl.org/fidmark/color">marker color</a>, <a href="#markerData" title="http://purl.org/fidmark/markerData">marker data</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup>, <a href="#markerDictionary" title="http://purl.org/fidmark/markerDictionary">marker dictionary</a>
+            <sup class="type-op" title="objecteigenschap">op</sup>, <a href="http://purl.org/fidmark/encoding"
+               target="_blank"
+               title="http://purl.org/fidmark/encoding">marker encoding</a>, <a href="#markerHeight" title="http://purl.org/fidmark/markerHeight">marker height</a>
+            <sup class="type-op" title="objecteigenschap">op</sup>, <a href="#markerIdentifier" title="http://purl.org/fidmark/markerIdentifier">marker identifier</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup>, <a href="#markerImage" title="http://purl.org/fidmark/markerImage">marker image</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup>, <a href="#markerPattern" title="http://purl.org/fidmark/markerPattern">marker pattern</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup>, <a href="http://purl.org/fidmark/shape"
+               target="_blank"
+               title="http://purl.org/fidmark/shape">marker shape</a>, <a href="#markerWidth" title="http://purl.org/fidmark/markerWidth">marker width</a>
+            <sup class="type-op" title="objecteigenschap">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="FourierTag">
+      <h3>FourierTag<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/FourierTag</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="InterSense">
+      <h3>inter sense<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/InterSense</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MarkerDictionary">
+      <h3>Marker dictionary<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/MarkerDictionary</p>
+      <div class="comment">
+         <span class="markdown">A marker dictionary is a specified encoding that produces a set of identifiers that can be used for markers.</span>
+      </div>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/ssn/Property"
+               target="_blank"
+               title="http://www.w3.org/ns/ssn/Property">property</a>
+         </dd>
+         <dt>is in domein van</dt>
+         <dd>
+            <a href="#dictionarySize" title="http://purl.org/fidmark/dictionarySize">dictionary size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup>, <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup>, <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup>, <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup>, <a href="#version" title="http://purl.org/fidmark/version">version</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup>
+         </dd>
+         <dt>is in bereik van</dt>
+         <dd>
+            <a href="#markerDictionary" title="http://purl.org/fidmark/markerDictionary">marker dictionary</a>
+            <sup class="type-op" title="objecteigenschap">op</sup>
+         </dd>
+         <dt>heeft leden</dt>
+         <dd>
+            <a href="#DICT_ARUCO_ORIGINAL" title="http://purl.org/fidmark/DICT_ARUCO_ORIGINAL">ArUco original dictionary</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_APRILTAG_16h5" title="http://purl.org/fidmark/DICT_APRILTAG_16h5">d i c t a p r i l t a g 16h5</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_APRILTAG_25h9" title="http://purl.org/fidmark/DICT_APRILTAG_25h9">d i c t a p r i l t a g 25h9</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_APRILTAG_36h10" title="http://purl.org/fidmark/DICT_APRILTAG_36h10">d i c t a p r i l t a g 36h10</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_APRILTAG_36h11" title="http://purl.org/fidmark/DICT_APRILTAG_36h11">d i c t a p r i l t a g 36h11</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_4X4_100" title="http://purl.org/fidmark/DICT_ARUCO_4X4_100">d i c t a r u c o 4 x4 100</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_4X4_1000" title="http://purl.org/fidmark/DICT_ARUCO_4X4_1000">d i c t a r u c o 4 x4 1000</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_4X4_250" title="http://purl.org/fidmark/DICT_ARUCO_4X4_250">d i c t a r u c o 4 x4 250</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_4X4_50" title="http://purl.org/fidmark/DICT_ARUCO_4X4_50">d i c t a r u c o 4 x4 50</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_5X5_100" title="http://purl.org/fidmark/DICT_ARUCO_5X5_100">d i c t a r u c o 5 x5 100</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_5X5_1000" title="http://purl.org/fidmark/DICT_ARUCO_5X5_1000">d i c t a r u c o 5 x5 1000</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_5X5_250" title="http://purl.org/fidmark/DICT_ARUCO_5X5_250">d i c t a r u c o 5 x5 250</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_5X5_50" title="http://purl.org/fidmark/DICT_ARUCO_5X5_50">d i c t a r u c o 5 x5 50</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_6X6_100" title="http://purl.org/fidmark/DICT_ARUCO_6X6_100">d i c t a r u c o 6 x6 100</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_6X6_1000" title="http://purl.org/fidmark/DICT_ARUCO_6X6_1000">d i c t a r u c o 6 x6 1000</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_6X6_250" title="http://purl.org/fidmark/DICT_ARUCO_6X6_250">d i c t a r u c o 6 x6 250</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_6X6_50" title="http://purl.org/fidmark/DICT_ARUCO_6X6_50">d i c t a r u c o 6 x6 50</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_7X7_100" title="http://purl.org/fidmark/DICT_ARUCO_7X7_100">d i c t a r u c o 7 x7 100</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_7X7_1000" title="http://purl.org/fidmark/DICT_ARUCO_7X7_1000">d i c t a r u c o 7 x7 1000</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_7X7_250" title="http://purl.org/fidmark/DICT_ARUCO_7X7_250">d i c t a r u c o 7 x7 250</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_7X7_50" title="http://purl.org/fidmark/DICT_ARUCO_7X7_50">d i c t a r u c o 7 x7 50</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_MIP_36h12" title="http://purl.org/fidmark/DICT_ARUCO_MIP_36h12">d i c t a r u c o m i p 36h12</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_TOPOTAG_3X3" title="http://purl.org/fidmark/DICT_TOPOTAG_3X3">d i c t t o p o t a g 3 x3</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_TOPOTAG_4X4" title="http://purl.org/fidmark/DICT_TOPOTAG_4X4">d i c t t o p o t a g 4 x4</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_TOPOTAG_5X5" title="http://purl.org/fidmark/DICT_TOPOTAG_5X5">d i c t t o p o t a g 5 x5</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MultiRing">
+      <h3>Multi-ring<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/MultiRing</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PiTag">
+      <h3>Pi-Tag<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/PiTag</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="QRCode">
+      <h3>QR code<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/QRCode</p>
+      <div class="comment">
+         <span class="markdown">A QR code (an initialism for quick response code) is a type of matrix barcode (or two-dimensional barcode) invented in 1994 by the Japanese company Denso Wave. A barcode is a machine-readable optical label that can contain information about the item to which it is attached. In practice, QR codes often contain data for a locator, identifier, or tracker that points to a website or application. QR codes use four standardized encoding modes (numeric, alphanumeric, byte/binary, and kanji) to store data efficiently; extensions may also be used.</span>
+      </div>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="reacTIVision">
+      <h3>reacTIVision<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/reacTIVision</p>
+      <div class="comment">
+         <span class="markdown">reacTIVision is an open source, cross-platform computer vision framework for the fast and robust tracking of fiducial markers attached onto physical objects, as well as for multi-touch finger tracking. It was mainly designed as a toolkit for the rapid development of table-based tangible user interfaces (TUI) and multi-touch interactive surfaces. This framework has been developed by Martin Kaltenbrunner and Ross Bencina as the underlying sensor component of the Reactable, a tangible modular synthesizer that has set the standards for tangible multi-touch applications.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is gedefinieerd door</dt>
+         <dd>http://purl.org/fidmark/</dd>
+      </dl>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="RuneTag">
+      <h3>RuneTag<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/RuneTag</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="SIFT">
+      <h3>s i f t<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/SIFT</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="STag">
+      <h3>STag<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/STag</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="TopoTag">
+      <h3>TopoTag<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/TopoTag</p>
+      <div class="comment">
+         <span class="markdown">Fiducial markers have been playing an important role in augmented reality (AR), robot navigation, and general applications where the relative pose between a camera and an object is required. Here we introduce TopoTag, a robust and scalable topological fiducial marker system, which supports reliable and accurate pose estimation from a single image. TopoTag uses topological and geometrical information in marker detection to achieve higher robustness. Topological information is extensively used for 2D marker detection, and further corresponding geometrical information for ID decoding. Robust 3D pose estimation is achieved by taking advantage of all TopoTag vertices. Without sacrificing bits for higher recall and precision like previous systems, TopoTag can use full bits for ID encoding. TopoTag supports tens of thousands unique IDs and easily extends to millions of unique tags resulting in massive scalability.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is gedefinieerd door</dt>
+         <dd>http://purl.org/fidmark/</dd>
+      </dl>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="TRIP">
+      <h3>TRIP<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/TRIP</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="VisualCode">
+      <h3>VisualCode<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/VisualCode</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="WhyCode">
+      <h3>why code<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/WhyCode</p>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+   <h3 id="properties" class="list">Objecteigenschappen</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#markerDictionary" title="http://purl.org/fidmark/markerDictionary">marker dictionary</a>
+      </li>
+      <li>
+         <a href="#markerHeight" title="http://purl.org/fidmark/markerHeight">marker height</a>
+      </li>
+      <li>
+         <a href="#markerWidth" title="http://purl.org/fidmark/markerWidth">marker width</a>
+      </li>
+   </ul>
+   <div class="entity" id="markerDictionary">
+      <h3>marker dictionary<sup class="type-op" title="objecteigenschap">op</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#objectproperties">Index objecteigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/markerDictionary</p>
+      <div class="description">
+         <dl>
+            <dt>heeft supereigenschappen</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/ssn/hasProperty"
+                  target="_blank"
+                  title="http://www.w3.org/ns/ssn/hasProperty">has property</a>
+            </dd>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+            <dt>heeft bereik</dt>
+            <dd>
+               <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="markerHeight">
+      <h3>marker height<sup class="type-op" title="objecteigenschap">op</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#objectproperties">Index objecteigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/markerHeight</p>
+      <div class="description">
+         <dl>
+            <dt>heeft supereigenschappen</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/ssn/hasProperty"
+                  target="_blank"
+                  title="http://www.w3.org/ns/ssn/hasProperty">has property</a>
+            </dd>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="markerWidth">
+      <h3>marker width<sup class="type-op" title="objecteigenschap">op</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#objectproperties">Index objecteigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/markerWidth</p>
+      <div class="description">
+         <dl>
+            <dt>heeft supereigenschappen</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/ssn/hasProperty"
+                  target="_blank"
+                  title="http://www.w3.org/ns/ssn/hasProperty">has property</a>
+            </dd>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data-eigenschappen</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#dictionarySize" title="http://purl.org/fidmark/dictionarySize">dictionary size</a>
+      </li>
+      <li>
+         <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+      </li>
+      <li>
+         <a href="#markerData" title="http://purl.org/fidmark/markerData">marker data</a>
+      </li>
+      <li>
+         <a href="#markerIdentifier" title="http://purl.org/fidmark/markerIdentifier">marker identifier</a>
+      </li>
+      <li>
+         <a href="#markerImage" title="http://purl.org/fidmark/markerImage">marker image</a>
+      </li>
+      <li>
+         <a href="#markerPattern" title="http://purl.org/fidmark/markerPattern">marker pattern</a>
+      </li>
+      <li>
+         <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+      </li>
+      <li>
+         <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+      </li>
+      <li>
+         <a href="#version" title="http://purl.org/fidmark/version">version</a>
+      </li>
+   </ul>
+   <div class="entity" id="dictionarySize">
+      <h3>dictionary size<sup class="type-dp" title="data-eigenschap">dp</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#dataproperties">Index data-eigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/dictionarySize</p>
+      <div class="description">
+         <dl>
+            <dt>heeft equivalente eigenschappen</dt>
+            <dd>
+               <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+               <sup class="type-dp" title="data-eigenschap">dp</sup>
+            </dd>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hammingDistance">
+      <h3>hamming distance<sup class="type-dp" title="data-eigenschap">dp</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#dataproperties">Index data-eigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/hammingDistance</p>
+      <div class="comment">
+         <span class="markdown">The minimum hamming distance between two codes</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+            <dt>heeft bereik</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="markerData">
+      <h3>marker data<sup class="type-dp" title="data-eigenschap">dp</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#dataproperties">Index data-eigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/markerData</p>
+      <div class="description">
+         <dl>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+            <dt>heeft bereik</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#hexBinary"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#hexBinary">hex binary</a>
+            </dd>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#string"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#string">string</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="markerIdentifier">
+      <h3>marker identifier<sup class="type-dp" title="data-eigenschap">dp</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#dataproperties">Index data-eigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/markerIdentifier</p>
+      <div class="description">
+         <dl>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="markerImage">
+      <h3>marker image<sup class="type-dp" title="data-eigenschap">dp</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#dataproperties">Index data-eigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/markerImage</p>
+      <div class="comment">
+         <span class="markdown">A marker image links to an image URI or base64 representation of the marker.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+            <dt>heeft bereik</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#anyURI"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</a>
+            </dd>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#hexBinary"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#hexBinary">hex binary</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="markerPattern">
+      <h3>marker pattern<sup class="type-dp" title="data-eigenschap">dp</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#dataproperties">Index data-eigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/markerPattern</p>
+      <div class="description">
+         <dl>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="markerSize">
+      <h3>marker size<sup class="type-dp" title="data-eigenschap">dp</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#dataproperties">Index data-eigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/markerSize</p>
+      <div class="description">
+         <dl>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+            <dt>heeft bereik</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="maxIdentifiers">
+      <h3>maximum identifiers<sup class="type-dp" title="data-eigenschap">dp</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#dataproperties">Index data-eigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/maxIdentifiers</p>
+      <div class="description">
+         <dl>
+            <dt>heeft equivalente eigenschappen</dt>
+            <dd>
+               <a href="#dictionarySize" title="http://purl.org/fidmark/dictionarySize">dictionary size</a>
+               <sup class="type-dp" title="data-eigenschap">dp</sup>
+            </dd>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+            <dt>heeft bereik</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="version">
+      <h3>version<sup class="type-dp" title="data-eigenschap">dp</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#dataproperties">Index data-eigenschappen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/version</p>
+      <div class="description">
+         <dl>
+            <dt>heeft equivalente eigenschappen</dt>
+            <dd>
+               <a href="http://www.w3.org/2007/uwa/context/common.owl#version"
+                  target="_blank"
+                  title="http://www.w3.org/2007/uwa/context/common.owl#version">version</a>
+               <sup class="type-dp" title="data-eigenschap">dp</sup>
+            </dd>
+            <dt>heeft domein</dt>
+            <dd>
+               <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+               <sup class="type-c" title="klasse">c</sup>
+            </dd>
+            <dt>heeft bereik</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+   <h2>Concrete Exemplaren</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#DICT_ARUCO_ORIGINAL" title="http://purl.org/fidmark/DICT_ARUCO_ORIGINAL">ArUco original dictionary</a>
+      </li>
+      <li>
+         <a href="#DICT_APRILTAG_16h5" title="http://purl.org/fidmark/DICT_APRILTAG_16h5">
+            <span>d i c t a p r i l t a g 16h5</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_APRILTAG_25h9" title="http://purl.org/fidmark/DICT_APRILTAG_25h9">
+            <span>d i c t a p r i l t a g 25h9</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_APRILTAG_36h10" title="http://purl.org/fidmark/DICT_APRILTAG_36h10">
+            <span>d i c t a p r i l t a g 36h10</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_APRILTAG_36h11" title="http://purl.org/fidmark/DICT_APRILTAG_36h11">
+            <span>d i c t a p r i l t a g 36h11</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_4X4_100" title="http://purl.org/fidmark/DICT_ARUCO_4X4_100">
+            <span>d i c t a r u c o 4 x4 100</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_4X4_1000" title="http://purl.org/fidmark/DICT_ARUCO_4X4_1000">
+            <span>d i c t a r u c o 4 x4 1000</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_4X4_250" title="http://purl.org/fidmark/DICT_ARUCO_4X4_250">
+            <span>d i c t a r u c o 4 x4 250</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_4X4_50" title="http://purl.org/fidmark/DICT_ARUCO_4X4_50">
+            <span>d i c t a r u c o 4 x4 50</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_5X5_100" title="http://purl.org/fidmark/DICT_ARUCO_5X5_100">
+            <span>d i c t a r u c o 5 x5 100</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_5X5_1000" title="http://purl.org/fidmark/DICT_ARUCO_5X5_1000">
+            <span>d i c t a r u c o 5 x5 1000</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_5X5_250" title="http://purl.org/fidmark/DICT_ARUCO_5X5_250">
+            <span>d i c t a r u c o 5 x5 250</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_5X5_50" title="http://purl.org/fidmark/DICT_ARUCO_5X5_50">
+            <span>d i c t a r u c o 5 x5 50</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_6X6_100" title="http://purl.org/fidmark/DICT_ARUCO_6X6_100">
+            <span>d i c t a r u c o 6 x6 100</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_6X6_1000" title="http://purl.org/fidmark/DICT_ARUCO_6X6_1000">
+            <span>d i c t a r u c o 6 x6 1000</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_6X6_250" title="http://purl.org/fidmark/DICT_ARUCO_6X6_250">
+            <span>d i c t a r u c o 6 x6 250</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_6X6_50" title="http://purl.org/fidmark/DICT_ARUCO_6X6_50">
+            <span>d i c t a r u c o 6 x6 50</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_7X7_100" title="http://purl.org/fidmark/DICT_ARUCO_7X7_100">
+            <span>d i c t a r u c o 7 x7 100</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_7X7_1000" title="http://purl.org/fidmark/DICT_ARUCO_7X7_1000">
+            <span>d i c t a r u c o 7 x7 1000</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_7X7_250" title="http://purl.org/fidmark/DICT_ARUCO_7X7_250">
+            <span>d i c t a r u c o 7 x7 250</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_7X7_50" title="http://purl.org/fidmark/DICT_ARUCO_7X7_50">
+            <span>d i c t a r u c o 7 x7 50</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_ARUCO_MIP_36h12" title="http://purl.org/fidmark/DICT_ARUCO_MIP_36h12">
+            <span>d i c t a r u c o m i p 36h12</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_TOPOTAG_3X3" title="http://purl.org/fidmark/DICT_TOPOTAG_3X3">
+            <span>d i c t t o p o t a g 3 x3</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_TOPOTAG_4X4" title="http://purl.org/fidmark/DICT_TOPOTAG_4X4">
+            <span>d i c t t o p o t a g 4 x4</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_TOPOTAG_5X5" title="http://purl.org/fidmark/DICT_TOPOTAG_5X5">
+            <span>d i c t t o p o t a g 5 x5</span>
+         </a>
+      </li>
+   </ul>
+   <div class="entity" id="DICT_ARUCO_ORIGINAL">
+      <h3>ArUco original dictionary<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_ORIGINAL</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"0"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"1024"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_APRILTAG_16h5">
+      <h3>d i c t a p r i l t a g 16h5<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_APRILTAG_16h5</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"30"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_APRILTAG_25h9">
+      <h3>d i c t a p r i l t a g 25h9<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_APRILTAG_25h9</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"9"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"35"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_APRILTAG_36h10">
+      <h3>d i c t a p r i l t a g 36h10<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_APRILTAG_36h10</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"10"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"2320"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_APRILTAG_36h11">
+      <h3>d i c t a p r i l t a g 36h11<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_APRILTAG_36h11</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"11"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"587"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_4X4_100">
+      <h3>d i c t a r u c o 4 x4 100<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_4X4_100</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"3"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"100"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_4X4_1000">
+      <h3>d i c t a r u c o 4 x4 1000<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_4X4_1000</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"2"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"1000"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_4X4_250">
+      <h3>d i c t a r u c o 4 x4 250<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_4X4_250</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"3"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"250"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_4X4_50">
+      <h3>d i c t a r u c o 4 x4 50<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_4X4_50</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"50"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_5X5_100">
+      <h3>d i c t a r u c o 5 x5 100<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_5X5_100</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"7"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"100"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_5X5_1000">
+      <h3>d i c t a r u c o 5 x5 1000<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_5X5_1000</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"1000"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_5X5_250">
+      <h3>d i c t a r u c o 5 x5 250<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_5X5_250</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"6"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"250"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_5X5_50">
+      <h3>d i c t a r u c o 5 x5 50<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_5X5_50</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"8"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"50"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_6X6_100">
+      <h3>d i c t a r u c o 6 x6 100<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_6X6_100</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"12"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"6"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"100"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_6X6_1000">
+      <h3>d i c t a r u c o 6 x6 1000<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_6X6_1000</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"9"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"6"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"1000"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_6X6_250">
+      <h3>d i c t a r u c o 6 x6 250<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_6X6_250</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"11"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"6"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"250"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_6X6_50">
+      <h3>d i c t a r u c o 6 x6 50<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_6X6_50</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"13"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"6"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"50"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_7X7_100">
+      <h3>d i c t a r u c o 7 x7 100<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_7X7_100</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"18"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"7"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"100"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_7X7_1000">
+      <h3>d i c t a r u c o 7 x7 1000<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_7X7_1000</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"14"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"7"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"1000"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_7X7_250">
+      <h3>d i c t a r u c o 7 x7 250<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_7X7_250</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"17"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"7"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"250"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_7X7_50">
+      <h3>d i c t a r u c o 7 x7 50<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_7X7_50</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"19"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"7"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"50"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_ARUCO_MIP_36h12">
+      <h3>d i c t a r u c o m i p 36h12<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_MIP_36h12</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"12"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"250"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_TOPOTAG_3X3">
+      <h3>d i c t t o p o t a g 3 x3<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_TOPOTAG_3X3</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"3"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"128"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_TOPOTAG_4X4">
+      <h3>d i c t t o p o t a g 4 x4<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_TOPOTAG_4X4</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"16384"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_TOPOTAG_5X5">
+      <h3>d i c t t o p o t a g 5 x5<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_TOPOTAG_5X5</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"8388608"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legenda <span class="backlink"> terug naar <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Klassen">c</sup>: Klassen <br/>
+<sup class="type-op" title="Objecteigenschappen">op</sup>: Objecteigenschappen <br/>
+<sup class="type-dp" title="Data-eigenschappen">dp</sup>: Data-eigenschappen <br/>
+<sup class="type-ni" title="Concrete exemplaren">ni</sup>: Concrete exemplaren
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Dankbetuiging <span class="backlink"> terug naar <a href="#toc">Index</a></span></h2>
+<p>
+De auteurs willen graag <a href="http://www.essepuntato.it/">Silvio Peroni</a> bedanken voor het ontwikkelen van <a href="http://www.essepuntato.it/lode">LODE</a>, een Live OWL Documentation Environment, welke in dit document wordt gebruikt voor het weergeven van de sectie met kruisverwijzingen, en <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> voor het ontwikkelen van <a href="https://github.com/dgarijo/Widoco">Widoco</a>, het programma waarmee het sjabloon is gecreÃ«erd welke is toegepast op dit document.</p>
+</div>
+
+
+</div>
+</body>
+</html>

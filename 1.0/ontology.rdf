@@ -1,0 +1,1304 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/fidmark/"
+     xml:base="http://purl.org/fidmark/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:qudt="http://qudt.org/schema/qudt/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:common="http://www.w3.org/2007/uwa/context/common.owl#"
+     xmlns:schema="http://schema.org/"
+     xmlns:fidmark="http://purl.org/fidmark/">
+    <owl:Ontology rdf:about="http://purl.org/fidmark/">
+        <owl:versionIRI rdf:resource="http://purl.org/fidmark/1.0/"/>
+        <owl:imports rdf:resource="http://purl.org/poso/1.0/"/>
+        <terms:abstract xml:lang="en"></terms:abstract>
+        <terms:bibliographicCitation>Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark</terms:bibliographicCitation>
+        <terms:contributor xml:lang="en">Beat Signer</terms:contributor>
+        <terms:creator xml:lang="en">Isaac Valadez Mora</terms:creator>
+        <terms:creator xml:lang="en">Maxim Van de Wynckel</terms:creator>
+        <terms:description></terms:description>
+        <terms:license rdf:resource="http://purl.org/NET/rdflicense/MIT1.0"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-12-07T00:00:00</terms:modified>
+        <terms:title xml:lang="en">Fiducial Marker Ontology</terms:title>
+        <vann:preferredNamespacePrefix>fidmark</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/fidmark/</vann:preferredNamespaceUri>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://purl.org/fidmark/color -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/fidmark/color">
+        <rdfs:comment xml:lang="en">Describes the color of the marker.</rdfs:comment>
+        <rdfs:label xml:lang="en">marker color</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/encoding -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/fidmark/encoding">
+        <rdfs:comment xml:lang="en">Describes the encoding method of the marker.</rdfs:comment>
+        <rdfs:label xml:lang="en">marker encoding</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/shape -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/fidmark/shape">
+        <rdfs:comment xml:lang="en">Describes the shape of the marker.</rdfs:comment>
+        <rdfs:label xml:lang="en">marker shape</rdfs:label>
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#informativeReference -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#informativeReference"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#normativeReference -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#normativeReference"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#normativeStatus -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#normativeStatus"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#termGroups -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#termGroups"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/fidmark/markerDictionary -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/fidmark/markerDictionary">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:range rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <rdfs:label xml:lang="en">marker dictionary</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/markerHeight -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/fidmark/markerHeight">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">marker height</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/markerWidth -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/fidmark/markerWidth">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">marker width</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#active -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#active"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#available -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#available"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#default -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#default"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#disjointSet -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#disjointSet"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#normativeStatus -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#normativeStatus"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#restrictedElement -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#restrictedElement"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#restrictions -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#restrictions"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#soundMode -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#soundMode"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#supports -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#supports"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#termGroups -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#termGroups"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#timeZone -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#timeZone"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#vendor -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#vendor"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/fidmark/dictionarySize -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/dictionarySize">
+        <owl:equivalentProperty rdf:resource="http://purl.org/fidmark/maxIdentifiers"/>
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <rdfs:label xml:lang="en">dictionary size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/hammingDistance -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/hammingDistance">
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">The minimum hamming distance between two codes</rdfs:comment>
+        <rdfs:label xml:lang="en">hamming distance</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/markerData -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/markerData">
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">marker data</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/markerIdentifier -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/markerIdentifier">
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">marker identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/markerImage -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/markerImage">
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment xml:lang="en">A marker image links to an image URI or base64 representation of the marker.</rdfs:comment>
+        <rdfs:label xml:lang="en">marker image</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/markerPattern -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/markerPattern">
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">marker pattern</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/markerSize -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/markerSize">
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">marker size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/maxIdentifiers -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/maxIdentifiers">
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">maximum identifiers</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/version -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/version">
+        <owl:equivalentProperty rdf:resource="http://www.w3.org/2007/uwa/context/common.owl#version"/>
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">version</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#charsetName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#charsetName"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#contentTypeName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#contentTypeName"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#countryCode -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#countryCode"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#disjointClass -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#disjointClass"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#id -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#id"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#informativeReference -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#informativeReference"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#languageCode -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#languageCode"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#languageTag -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#languageTag"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#model -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#model"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#name -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#name"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#normativeReference -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#normativeReference"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#normativeURI -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#normativeURI"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#pixelAspectRatio -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#pixelAspectRatio"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#resolutionHeight -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#resolutionHeight"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#resolutionWidth -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#resolutionWidth"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#restrictionValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#restrictionValue"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#serialNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#serialNumber"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#standardNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#standardNumber"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#timeZoneString -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#timeZoneString"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#transferEncodingName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#transferEncodingName"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#tzName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#tzName"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#uriSchemeName -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#uriSchemeName"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#version -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#version"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/fidmark/ARTag -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/ARTag">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <color xml:lang="en">Monochrome</color>
+        <encoding xml:lang="en">Topological</encoding>
+        <shape xml:lang="en">Square</shape>
+        <rdfs:comment xml:lang="en">An ARTag is a fiducial marker system to support 3D registration (alignment) and pose tracking in augmented reality. They can be used to facilitate the appearance of virtual objects, games, and animations within the real world. Like the earlier ARToolKit system, they allow for video tracking capabilities that calculate a camera&apos;s position and orientation relative to physical markers in real time. Once the camera&apos;s position is known, a virtual camera can be positioned at the same point, revealing the virtual object at the location of the ARTag. It thus addresses two of the key problems in Augmented Reality: viewpoint tracking and virtual object interaction. An ARTag appears on the Mars Science Laboratory.A similar technique is being used by NASA&apos;s Spacecraft 3D smartphone app as an educational outreach tool. ARTag is supported by the open source Goblin XNA software.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://dbpedia.org/resource/ARTag"/>
+        <rdfs:label xml:lang="en">ARTag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/ARToolKit -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/ARToolKit">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">ARToolKit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/AprilTag -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/AprilTag">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <color xml:lang="en">Monochrome</color>
+        <encoding xml:lang="en">Topological</encoding>
+        <shape xml:lang="en">Square</shape>
+        <rdfs:comment xml:lang="en">AprilTag is a visual fiducial system, useful for a wide variety of tasks including augmented reality, robotics, and camera calibration. Targets can be created from an ordinary printer, and the AprilTag detection software computes the precise 3D position, orientation, and identity of the tags relative to the camera. The AprilTag library is implemented in C with no external dependencies. It is designed to be easily included in other applications, as well as be portable to embedded devices. Real-time performance can be achieved even on cell-phone grade processors.</rdfs:comment>
+        <rdfs:label xml:lang="en">AprilTag</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://april.eecs.umich.edu/software/apriltag</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/ArUco -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/ArUco">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/fidmark/markerDictionary"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/fidmark/markerIdentifier"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <color xml:lang="en">Monochrome</color>
+        <encoding xml:lang="en">Topological</encoding>
+        <shape xml:lang="en">Square</shape>
+        <rdfs:comment xml:lang="en">An ArUco marker is a synthetic square marker composed by a wide black border and an inner binary matrix which determines its identifier (id). The black border facilitates its fast detection in the image and the binary codification allows its identification and the application of error detection and correction techniques. The marker size determines the size of the internal matrix. For instance a marker size of 4x4 is composed by 16 bits.</rdfs:comment>
+        <rdfs:label xml:lang="en">ArUco</rdfs:label>
+        <rdfs:seeAlso>https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/BinaryID -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/BinaryID">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">BinaryID</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/BullsEye -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/BullsEye">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/CALTag -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/CALTag">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">CALTag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/CCC -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/CCC">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">Concentric contrasting circles</rdfs:label>
+        <skos:altLabel xml:lang="en">CCC</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/CCTag -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/CCTag">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/ChromaTag -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/ChromaTag">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">ChromaTag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/FiducialMarker -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/FiducialMarker">
+        <rdfs:subClassOf rdf:resource="http://purl.org/poso/VisualLandmark"/>
+        <rdfs:comment xml:lang="en">A fiducial marker or fiducial is an object placed in the field of view of an imaging system that appears in the image produced, for use as a point of reference or a measure. It may be either something placed into or on the imaging subject, or a mark or set of marks in the reticle of an optical instrument.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://dbpedia.org/resource/Fiducial_marker"/>
+        <rdfs:label xml:lang="en">Fiducial marker</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Fiducial_marker"/>
+        <skos:altLabel xml:lang="en">Fiducial</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/FourierTag -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/FourierTag">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">FourierTag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/InterSense -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/InterSense">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/MarkerDictionary -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/MarkerDictionary">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+        <rdfs:comment xml:lang="en">A marker dictionary is a specified encoding that produces a set of identifiers that can be used for markers.</rdfs:comment>
+        <rdfs:label xml:lang="en">Marker dictionary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/MultiRing -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/MultiRing">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">Multi-ring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/PiTag -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/PiTag">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">Pi-Tag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/QRCode -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/QRCode">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <color xml:lang="en">Monochrome</color>
+        <encoding xml:lang="en">Topological</encoding>
+        <shape xml:lang="en">Square</shape>
+        <rdfs:comment xml:lang="en">A QR code (an initialism for quick response code) is a type of matrix barcode (or two-dimensional barcode) invented in 1994 by the Japanese company Denso Wave. A barcode is a machine-readable optical label that can contain information about the item to which it is attached. In practice, QR codes often contain data for a locator, identifier, or tracker that points to a website or application. QR codes use four standardized encoding modes (numeric, alphanumeric, byte/binary, and kanji) to store data efficiently; extensions may also be used.</rdfs:comment>
+        <rdfs:label xml:lang="en">QR code</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/QR_code"/>
+        <skos:altLabel xml:lang="en">Quick-response code</skos:altLabel>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/RuneTag -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/RuneTag">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">RuneTag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/SIFT -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/SIFT">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/STag -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/STag">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">STag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/TRIP -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/TRIP">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">TRIP</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/TopoTag -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/TopoTag">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:comment xml:lang="en">Fiducial markers have been playing an important role in augmented reality (AR), robot navigation, and general applications where the relative pose between a camera and an object is required. Here we introduce TopoTag, a robust and scalable topological fiducial marker system, which supports reliable and accurate pose estimation from a single image. TopoTag uses topological and geometrical information in marker detection to achieve higher robustness. Topological information is extensively used for 2D marker detection, and further corresponding geometrical information for ID decoding. Robust 3D pose estimation is achieved by taking advantage of all TopoTag vertices. Without sacrificing bits for higher recall and precision like previous systems, TopoTag can use full bits for ID encoding. TopoTag supports tens of thousands unique IDs and easily extends to millions of unique tags resulting in massive scalability.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://herohuyongtao.github.io/research/publications/topo-tag/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">TopoTag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/VisualCode -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/VisualCode">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">VisualCode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/WhyCode -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/WhyCode">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/reacTIVision -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/reacTIVision">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:comment xml:lang="en">reacTIVision is an open source, cross-platform computer vision framework for the fast and robust tracking of fiducial markers attached onto physical objects, as well as for multi-touch finger tracking. It was mainly designed as a toolkit for the rapid development of table-based tangible user interfaces (TUI) and multi-touch interactive surfaces. This framework has been developed by Martin Kaltenbrunner and Ross Bencina as the underlying sensor component of the Reactable, a tangible modular synthesizer that has set the standards for tangible multi-touch applications.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://reactivision.sourceforge.net/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">reacTIVision</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#AllDisjointSet -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#AllDisjointSet"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#ApplicationProtocol -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#ApplicationProtocol"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#CharacterSet -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#CharacterSet"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#ContentType -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#ContentType"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#Context_CommonEntity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#Context_CommonEntity"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#Feature -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#Feature"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#FeatureRestriction -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#FeatureRestriction"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#InputModality -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#InputModality"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#Language -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#Language"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#Modality -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#Modality"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#NormativeStatus -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#NormativeStatus"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#OutputModality -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#OutputModality"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#SoundMode -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#SoundMode"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#TermGroup -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#TermGroup"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#TimeZone -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#TimeZone"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#TransferEncoding -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#TransferEncoding"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#UriScheme -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#UriScheme"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/common.owl#Vendor -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#Vendor"/>
+    
+
+
+    <!-- http://www.w3.org/2007/uwa/context/deliverycontext.owl#Context_Entity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/deliverycontext.owl#Context_Entity"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_APRILTAG_16h5 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_APRILTAG_16h5">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hammingDistance>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_APRILTAG_25h9 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_APRILTAG_25h9">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hammingDistance>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_APRILTAG_36h10 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_APRILTAG_36h10">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hammingDistance>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2320</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_APRILTAG_36h11 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_APRILTAG_36h11">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</hammingDistance>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">587</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_4X4_100 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_4X4_100">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_4X4_1000 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_4X4_1000">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_4X4_250 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_4X4_250">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_4X4_50 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_4X4_50">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_5X5_100 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_5X5_100">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_5X5_1000 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_5X5_1000">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_5X5_250 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_5X5_250">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_5X5_50 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_5X5_50">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_6X6_100 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_6X6_100">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_6X6_1000 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_6X6_1000">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_6X6_250 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_6X6_250">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_6X6_50 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_6X6_50">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_7X7_100 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_7X7_100">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_7X7_1000 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_7X7_1000">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_7X7_250 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_7X7_250">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_7X7_50 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_7X7_50">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</hammingDistance>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_MIP_36h12 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_MIP_36h12">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hammingDistance>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_ARUCO_ORIGINAL -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_ARUCO_ORIGINAL">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hammingDistance>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1024</maxIdentifiers>
+        <rdfs:label xml:lang="en">ArUco original dictionary</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_TOPOTAG_3X3 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_TOPOTAG_3X3">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_TOPOTAG_4X4 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_TOPOTAG_4X4">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16384</maxIdentifiers>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_TOPOTAG_5X5 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_TOPOTAG_5X5">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <markerSize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</markerSize>
+        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8388608</maxIdentifiers>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+
