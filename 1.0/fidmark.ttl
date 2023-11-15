@@ -1,0 +1,131 @@
+@prefix : <http://purl.org/fidmark/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix poso: <http://purl.org/poso/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://purl.org/fidmark/> .
+
+<http://purl.org/fidmark/> rdf:type owl:Ontology ;
+                            owl:versionIRI <http://purl.org/fidmark/1.0/> ;
+                            owl:imports <http://purl.org/poso/1.0/> ;
+                            dcterms:title "Fiducial Marker Ontology"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/fidmark/markerDictionary
+:markerDictionary rdf:type owl:ObjectProperty ;
+                  rdfs:domain :FiducialMarker ;
+                  rdfs:range :MarkerDictionary ;
+                  rdfs:label "marker dictionary"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/fidmark/hammingDistance
+:hammingDistance rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :FiducialMarker ;
+                 rdfs:range xsd:int ;
+                 rdfs:label "hamming distance"@en .
+
+
+###  http://purl.org/fidmark/markerIdentifier
+:markerIdentifier rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :FiducialMarker ;
+                  rdfs:label "marker identifier"@en .
+
+
+###  http://purl.org/fidmark/maxIdentifiers
+:maxIdentifiers rdf:type owl:DatatypeProperty ;
+                rdfs:domain :FiducialMarker ;
+                rdfs:range xsd:int ;
+                rdfs:label "maximum identifiers"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/fidmark/ARTag
+:ARTag rdf:type owl:Class ;
+       rdfs:subClassOf :FiducialMarker ;
+       rdfs:comment "An ARTag is a fiducial marker system to support 3D registration (alignment) and pose tracking in augmented reality. They can be used to facilitate the appearance of virtual objects, games, and animations within the real world. Like the earlier ARToolKit system, they allow for video tracking capabilities that calculate a camera's position and orientation relative to physical markers in real time. Once the camera's position is known, a virtual camera can be positioned at the same point, revealing the virtual object at the location of the ARTag. It thus addresses two of the key problems in Augmented Reality: viewpoint tracking and virtual object interaction. An ARTag appears on the Mars Science Laboratory.A similar technique is being used by NASA's Spacecraft 3D smartphone app as an educational outreach tool. ARTag is supported by the open source Goblin XNA software."@en ;
+       rdfs:isDefinedBy <https://dbpedia.org/resource/ARTag> ;
+       rdfs:label "ARTag"@en .
+
+
+###  http://purl.org/fidmark/ARToolKit
+:ARToolKit rdf:type owl:Class ;
+           rdfs:subClassOf :FiducialMarker ;
+           rdfs:label "ARToolKit"@en .
+
+
+###  http://purl.org/fidmark/AprilTag
+:AprilTag rdf:type owl:Class ;
+          rdfs:subClassOf :FiducialMarker ;
+          rdfs:label "AprilTag"@en .
+
+
+###  http://purl.org/fidmark/ArUco
+:ArUco rdf:type owl:Class ;
+       rdfs:subClassOf :FiducialMarker ;
+       rdfs:comment "An ArUco marker is a synthetic square marker composed by a wide black border and an inner binary matrix which determines its identifier (id). The black border facilitates its fast detection in the image and the binary codification allows its identification and the application of error detection and correction techniques. The marker size determines the size of the internal matrix. For instance a marker size of 4x4 is composed by 16 bits."@en ;
+       rdfs:label "ArUco"@en ;
+       rdfs:seeAlso "https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html" .
+
+
+###  http://purl.org/fidmark/FiducialMarker
+:FiducialMarker rdf:type owl:Class ;
+                rdfs:subClassOf poso:VisualLandmark ;
+                rdfs:comment "A fiducial marker or fiducial is an object placed in the field of view of an imaging system that appears in the image produced, for use as a point of reference or a measure. It may be either something placed into or on the imaging subject, or a mark or set of marks in the reticle of an optical instrument."@en ;
+                rdfs:isDefinedBy <https://dbpedia.org/resource/Fiducial_marker> ;
+                rdfs:label "Fiducial marker"@en ;
+                rdfs:seeAlso <http://dbpedia.org/resource/Fiducial_marker> ;
+                <http://www.w3.org/2004/02/skos/core#altLabel> "Fiducial"@en .
+
+
+###  http://purl.org/fidmark/Framedge
+:Framedge rdf:type owl:Class ;
+          rdfs:subClassOf :FiducialMarker ;
+          rdfs:label "Framedge"@en .
+
+
+###  http://purl.org/fidmark/MarkerDictionary
+:MarkerDictionary rdf:type owl:Class ;
+                  rdfs:label "Marker dictionary"@en .
+
+
+###  http://purl.org/fidmark/QRCode
+:QRCode rdf:type owl:Class ;
+        rdfs:subClassOf :FiducialMarker ;
+        rdfs:comment "A QR code (an initialism for quick response code) is a type of matrix barcode (or two-dimensional barcode) invented in 1994 by the Japanese company Denso Wave. A barcode is a machine-readable optical label that can contain information about the item to which it is attached. In practice, QR codes often contain data for a locator, identifier, or tracker that points to a website or application. QR codes use four standardized encoding modes (numeric, alphanumeric, byte/binary, and kanji) to store data efficiently; extensions may also be used."@en ;
+        rdfs:label "QRCode"@en ;
+        rdfs:seeAlso <http://dbpedia.org/resource/QR_code> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/fidmark/DICT_ARUCO_ORIGINAL
+:DICT_ARUCO_ORIGINAL rdf:type owl:NamedIndividual ;
+                     :hammingDistance "0"^^xsd:int ;
+                     :maxIdentifiers "1024"^^xsd:int ;
+                     rdfs:label "ArUco original dictionary"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
