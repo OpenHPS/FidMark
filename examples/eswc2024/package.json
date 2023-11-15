@@ -12,9 +12,13 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@monaco-editor/loader": "^1.4.0",
     "@openhps/core": "^0.5.17",
     "@openhps/rdf": "^0.4.23",
     "@techstark/opencv-js": "^4.8.0-release.10",
+    "monaco-editor": "^0.44.0",
+    "monaco-editor-webpack-plugin": "^7.1.0",
+    "monaco-languageclient": "^7.0.2",
     "pinia": "^2.1.7",
     "vue": "^3.3.4"
   },

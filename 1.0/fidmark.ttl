@@ -81,6 +81,14 @@ dcterms:title rdf:type owl:AnnotationProperty .
 
 
 #################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#int
+xsd:int rdfs:label "number of crowns"@en .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
@@ -157,6 +165,12 @@ dcterms:title rdf:type owl:AnnotationProperty .
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://purl.org/fidmark/crowns
+:crowns rdf:type owl:DatatypeProperty ;
+        rdfs:domain :CCTag ;
+        rdfs:range xsd:integer .
+
 
 ###  http://purl.org/fidmark/dictionarySize
 :dictionarySize rdf:type owl:DatatypeProperty ;
@@ -389,7 +403,8 @@ dcterms:title rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/fidmark/BullsEye
 :BullsEye rdf:type owl:Class ;
-          rdfs:subClassOf :FiducialMarker .
+          rdfs:subClassOf :FiducialMarker ;
+          rdfs:label "BullsEye"@en .
 
 
 ###  http://purl.org/fidmark/CALTag
@@ -407,7 +422,10 @@ dcterms:title rdf:type owl:AnnotationProperty .
 
 ###  http://purl.org/fidmark/CCTag
 :CCTag rdf:type owl:Class ;
-       rdfs:subClassOf :FiducialMarker .
+       rdfs:subClassOf :FiducialMarker ;
+       rdfs:comment "CCTag markers are a robust, highly accurate fiducial system that can be robustly localized in the image even under challenging conditions. The library can efficiently detect the position of the image of the (common) circle center and identify the marker based on the different ratio of their crown sizes. Each marker can be uniquely identified thanks to the thickness of each crown, which encodes the information of the marker, typically a unique ID."@en ;
+       rdfs:isDefinedBy "https://cctag.readthedocs.io/en/latest/"^^xsd:anyURI ;
+       rdfs:label "CCTag"@en .
 
 
 ###  http://purl.org/fidmark/ChromaTag
@@ -602,14 +620,16 @@ dcterms:title rdf:type owl:AnnotationProperty .
 :DICT_APRILTAG_16h5 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 5 ;
-                    :maxIdentifiers 30 .
+                    :maxIdentifiers 30 ;
+                    rdfs:label "AprilTag 16h5 dictionary"@en .
 
 
 ###  http://purl.org/fidmark/DICT_APRILTAG_25h9
 :DICT_APRILTAG_25h9 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 9 ;
-                    :maxIdentifiers 35 .
+                    :maxIdentifiers 35 ;
+                    rdfs:label "AprilTag 25h9 dictionary"@en .
 
 
 ###  http://purl.org/fidmark/DICT_APRILTAG_36h10

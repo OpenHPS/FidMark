@@ -1,10 +1,10 @@
-import { DataObject, SerializableObject } from '@openhps/core';
+import { ReferenceSpace, SerializableObject } from '@openhps/core';
 
 @SerializableObject({
     rdf: {
-        type: ""
+        type: "http://purl.org/fidmark/FiducialMarker"
     }
 })
-export class FiducialMarker extends DataObject {
+export class FiducialMarker extends ReferenceSpace {
 
 }
