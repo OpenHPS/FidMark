@@ -190,6 +190,10 @@
 }, {
   "@id" : "http://purl.org/fidmark/BullsEye",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "BullsEye"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/fidmark/FiducialMarker"
   } ]
@@ -220,6 +224,18 @@
 }, {
   "@id" : "http://purl.org/fidmark/CCTag",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "CCTag markers are a robust, highly accurate fiducial system that can be robustly localized in the image even under challenging conditions. The library can efficiently detect the position of the image of the (common) circle center and identify the marker based on the different ratio of their crown sizes. Each marker can be uniquely identified thanks to the thickness of each crown, which encodes the information of the marker, typically a unique ID."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://cctag.readthedocs.io/en/latest/"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "CCTag"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/fidmark/FiducialMarker"
   } ]
@@ -246,6 +262,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "AprilTag 16h5 dictionary"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/DICT_APRILTAG_25h9",
@@ -260,6 +280,10 @@
   } ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "AprilTag 25h9 dictionary"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/DICT_APRILTAG_36h10",
@@ -843,6 +867,15 @@
     "@value" : "marker color"
   } ]
 }, {
+  "@id" : "http://purl.org/fidmark/crowns",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://purl.org/fidmark/CCTag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
   "@id" : "http://purl.org/fidmark/dictionarySize",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1055,6 +1088,12 @@
   } ],
   "http://www.w3.org/2002/07/owl#equivalentProperty" : [ {
     "@id" : "http://www.w3.org/2007/uwa/context/common.owl#version"
+  } ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#int",
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "number of crowns"
   } ]
 }, {
   "@id" : "http://www.w3.org/2007/uwa/context/common.owl#AllDisjointSet",

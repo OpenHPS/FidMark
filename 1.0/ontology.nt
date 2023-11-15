@@ -67,6 +67,18 @@
 # 
 # #################################################################
 # #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#int
+<http://www.w3.org/2001/XMLSchema#int> <http://www.w3.org/2000/01/rdf-schema#label> "number of crowns"@en .
+# 
+# 
+# 
+# #################################################################
+# #
 # #    Object Properties
 # #
 # #################################################################
@@ -135,6 +147,11 @@
 # #
 # #################################################################
 # 
+# 
+# http://purl.org/fidmark/crowns
+<http://purl.org/fidmark/crowns> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://purl.org/fidmark/crowns> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/CCTag> .
+<http://purl.org/fidmark/crowns> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
 # 
 # http://purl.org/fidmark/dictionarySize
 <http://purl.org/fidmark/dictionarySize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -333,6 +350,7 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/BullsEye
 <http://purl.org/fidmark/BullsEye> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/BullsEye> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/BullsEye> <http://www.w3.org/2000/01/rdf-schema#label> "BullsEye"@en .
 # 
 # http://purl.org/fidmark/CALTag
 <http://purl.org/fidmark/CALTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -348,6 +366,9 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/CCTag
 <http://purl.org/fidmark/CCTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/CCTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/CCTag> <http://www.w3.org/2000/01/rdf-schema#comment> "CCTag markers are a robust, highly accurate fiducial system that can be robustly localized in the image even under challenging conditions. The library can efficiently detect the position of the image of the (common) circle center and identify the marker based on the different ratio of their crown sizes. Each marker can be uniquely identified thanks to the thickness of each crown, which encodes the information of the marker, typically a unique ID."@en .
+<http://purl.org/fidmark/CCTag> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://cctag.readthedocs.io/en/latest/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://purl.org/fidmark/CCTag> <http://www.w3.org/2000/01/rdf-schema#label> "CCTag"@en .
 # 
 # http://purl.org/fidmark/ChromaTag
 <http://purl.org/fidmark/ChromaTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -512,12 +533,14 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/DICT_APRILTAG_16h5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
 <http://purl.org/fidmark/DICT_APRILTAG_16h5> <http://purl.org/fidmark/hammingDistance> "5"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://purl.org/fidmark/DICT_APRILTAG_16h5> <http://purl.org/fidmark/maxIdentifiers> "30"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://purl.org/fidmark/DICT_APRILTAG_16h5> <http://www.w3.org/2000/01/rdf-schema#label> "AprilTag 16h5 dictionary"@en .
 # 
 # http://purl.org/fidmark/DICT_APRILTAG_25h9
 <http://purl.org/fidmark/DICT_APRILTAG_25h9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/fidmark/DICT_APRILTAG_25h9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
 <http://purl.org/fidmark/DICT_APRILTAG_25h9> <http://purl.org/fidmark/hammingDistance> "9"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://purl.org/fidmark/DICT_APRILTAG_25h9> <http://purl.org/fidmark/maxIdentifiers> "35"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://purl.org/fidmark/DICT_APRILTAG_25h9> <http://www.w3.org/2000/01/rdf-schema#label> "AprilTag 25h9 dictionary"@en .
 # 
 # http://purl.org/fidmark/DICT_APRILTAG_36h10
 <http://purl.org/fidmark/DICT_APRILTAG_36h10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
