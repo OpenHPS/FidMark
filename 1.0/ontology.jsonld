@@ -15,7 +15,7 @@
   "@id" : "_:genid2",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onDataRange" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#int"
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://purl.org/fidmark/markerIdentifier"
@@ -24,6 +24,24 @@
     "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
     "@value" : "1"
   } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/abstract",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/bibliographicCitation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/dc/terms/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
@@ -36,10 +54,6 @@
   } ],
   "http://purl.org/dc/terms/bibliographicCitation" : [ {
     "@value" : "Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark"
-  } ],
-  "http://purl.org/dc/terms/contributor" : [ {
-    "@language" : "en",
-    "@value" : "Beat Signer"
   } ],
   "http://purl.org/dc/terms/creator" : [ {
     "@language" : "en",
@@ -68,9 +82,6 @@
   "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
     "@value" : "http://purl.org/fidmark/"
-  } ],
-  "http://www.w3.org/2002/07/owl#imports" : [ {
-    "@id" : "http://purl.org/poso/1.0/"
   } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "http://purl.org/fidmark/1.0/"
@@ -102,7 +113,7 @@
     "@value" : "ARTag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/ARToolKit",
@@ -112,7 +123,7 @@
     "@value" : "ARToolKit"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/AprilTag",
@@ -142,7 +153,7 @@
     "@value" : "https://april.eecs.umich.edu/software/apriltag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/ArUco",
@@ -163,19 +174,30 @@
     "@language" : "en",
     "@value" : "An ArUco marker is a synthetic square marker composed by a wide black border and an inner binary matrix which determines its identifier (id). The black border facilitates its fast detection in the image and the binary codification allows its identification and the application of error detection and correction techniques. The marker size determines the size of the internal matrix. For instance a marker size of 4x4 is composed by 16 bits."
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ArUco"
   } ],
-  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
-    "@value" : "https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html"
-  } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   }, {
     "@id" : "_:genid1"
   }, {
     "@id" : "_:genid2"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/Barcode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Barcode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/fidmark/FiducialMarker"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/BinaryID",
@@ -185,7 +207,7 @@
     "@value" : "BinaryID"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/BullsEye",
@@ -195,7 +217,7 @@
     "@value" : "BullsEye"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/CALTag",
@@ -205,7 +227,7 @@
     "@value" : "CALTag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/CCC",
@@ -215,7 +237,7 @@
     "@value" : "Concentric contrasting circles"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ],
   "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
     "@language" : "en",
@@ -237,7 +259,25 @@
     "@value" : "CCTag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/Chilitags",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Chilitags are a C++ cross-platform software library for the detection and identification of 2D fiducial markers (a.k.a. tags). Their purpose is to be printed and placed on objects from the real world, to form the basis of Robotics or Augmented Reality (AR) applications. Using a camera, the position of the tagged objects can be acquired by a computer."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "@value" : "https://github.com/chili-epfl/chilitags"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Chilitags"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/ChromaTag",
@@ -247,7 +287,7 @@
     "@value" : "ChromaTag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/DICT_APRILTAG_16h5",
@@ -634,6 +674,12 @@
     "@value" : "ArUco original dictionary"
   } ]
 }, {
+  "@id" : "http://purl.org/fidmark/DICT_CHILLITAGS",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ]
+}, {
   "@id" : "http://purl.org/fidmark/DICT_TOPOTAG_3X3",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/fidmark/markerSize" : [ {
@@ -707,13 +753,13 @@
     "@value" : "FourierTag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/InterSense",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/MarkerDictionary",
@@ -730,6 +776,23 @@
     "@id" : "http://www.w3.org/ns/ssn/Property"
   } ]
 }, {
+  "@id" : "http://purl.org/fidmark/MaxiCode",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "MaxiCode is a public domain, machine-readable symbol system originally created by the United Parcel Service in 1992. Suitable for tracking and managing the shipment of packages, it resembles an Aztec Code or QR code, but uses dots arranged in a hexagonal grid instead of square grid."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://dbpedia.org/resource/MaxiCode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "MaxiCode"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/fidmark/Barcode"
+  } ]
+}, {
   "@id" : "http://purl.org/fidmark/MultiRing",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
@@ -737,7 +800,7 @@
     "@value" : "Multi-ring"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/PiTag",
@@ -747,7 +810,7 @@
     "@value" : "Pi-Tag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/QRCode",
@@ -776,7 +839,7 @@
     "@id" : "http://dbpedia.org/resource/QR_code"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ],
   "http://www.w3.org/2004/02/skos/core#altLabel" : [ {
     "@language" : "en",
@@ -790,13 +853,13 @@
     "@value" : "RuneTag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/SIFT",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/STag",
@@ -806,7 +869,7 @@
     "@value" : "STag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/TRIP",
@@ -816,7 +879,7 @@
     "@value" : "TRIP"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/TopoTag",
@@ -834,7 +897,7 @@
     "@value" : "TopoTag"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/VisualCode",
@@ -844,13 +907,13 @@
     "@value" : "VisualCode"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/WhyCode",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/color",
@@ -871,6 +934,10 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.org/fidmark/CCTag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "number of crowns"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
@@ -937,6 +1004,10 @@
 }, {
   "@id" : "http://purl.org/fidmark/markerDictionary",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A marker dictionary defines the different variants that can be achieved using the available encoded bits and error correction."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.org/fidmark/FiducialMarker"
   } ],
@@ -953,6 +1024,10 @@
 }, {
   "@id" : "http://purl.org/fidmark/markerHeight",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Defines the marker height in a specified unit. This can be used for determining the scale of the marker."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.org/fidmark/FiducialMarker"
   } ],
@@ -1018,6 +1093,10 @@
 }, {
   "@id" : "http://purl.org/fidmark/markerWidth",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Defines the marker width in a specified unit. This can be used for determining the scale of the marker."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "http://purl.org/fidmark/FiducialMarker"
   } ],
@@ -1057,7 +1136,7 @@
     "@value" : "reacTIVision"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://purl.org/fidmark/FiducialMarker"
+    "@id" : "http://purl.org/fidmark/Barcode"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/shape",
@@ -1090,11 +1169,17 @@
     "@id" : "http://www.w3.org/2007/uwa/context/common.owl#version"
   } ]
 }, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#int",
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "number of crowns"
-  } ]
+  "@id" : "http://purl.org/poso/VisualLandmark",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#altLabel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://www.w3.org/2007/uwa/context/common.owl#AllDisjointSet",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
@@ -1266,4 +1351,10 @@
 }, {
   "@id" : "http://www.w3.org/2007/uwa/context/deliverycontext.owl#Context_Entity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/ssn/Property",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/ssn/hasProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 } ]

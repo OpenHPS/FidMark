@@ -1,9 +1,7 @@
 <http://purl.org/fidmark/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://purl.org/fidmark/> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/fidmark/1.0/> .
-<http://purl.org/fidmark/> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/poso/1.0/> .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/abstract> ""@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/bibliographicCitation> "Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark" .
-<http://purl.org/fidmark/> <http://purl.org/dc/terms/contributor> "Beat Signer"@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/creator> "Isaac Valadez Mora"@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/creator> "Maxim Van de Wynckel"@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/description> "" .
@@ -20,6 +18,24 @@
 # #
 # #################################################################
 # 
+# 
+# http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/terms/title
 <http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -41,6 +57,15 @@
 <http://purl.org/fidmark/shape> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes the shape of the marker."@en .
 <http://purl.org/fidmark/shape> <http://www.w3.org/2000/01/rdf-schema#label> "marker shape"@en .
 <http://purl.org/fidmark/shape> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/FiducialMarker> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://www.w3.org/2007/uwa/context/common.owl#informativeReference
 <http://www.w3.org/2007/uwa/context/common.owl#informativeReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -67,18 +92,6 @@
 # 
 # #################################################################
 # #
-# #    Datatypes
-# #
-# #################################################################
-# 
-# 
-# http://www.w3.org/2001/XMLSchema#int
-<http://www.w3.org/2001/XMLSchema#int> <http://www.w3.org/2000/01/rdf-schema#label> "number of crowns"@en .
-# 
-# 
-# 
-# #################################################################
-# #
 # #    Object Properties
 # #
 # #################################################################
@@ -89,18 +102,21 @@
 <http://purl.org/fidmark/markerDictionary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/ssn/hasProperty> .
 <http://purl.org/fidmark/markerDictionary> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/FiducialMarker> .
 <http://purl.org/fidmark/markerDictionary> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/fidmark/MarkerDictionary> .
+<http://purl.org/fidmark/markerDictionary> <http://www.w3.org/2000/01/rdf-schema#comment> "A marker dictionary defines the different variants that can be achieved using the available encoded bits and error correction."@en .
 <http://purl.org/fidmark/markerDictionary> <http://www.w3.org/2000/01/rdf-schema#label> "marker dictionary"@en .
 # 
 # http://purl.org/fidmark/markerHeight
 <http://purl.org/fidmark/markerHeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://purl.org/fidmark/markerHeight> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/ssn/hasProperty> .
 <http://purl.org/fidmark/markerHeight> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/markerHeight> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the marker height in a specified unit. This can be used for determining the scale of the marker."@en .
 <http://purl.org/fidmark/markerHeight> <http://www.w3.org/2000/01/rdf-schema#label> "marker height"@en .
 # 
 # http://purl.org/fidmark/markerWidth
 <http://purl.org/fidmark/markerWidth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://purl.org/fidmark/markerWidth> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/ssn/hasProperty> .
 <http://purl.org/fidmark/markerWidth> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/markerWidth> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the marker width in a specified unit. This can be used for determining the scale of the marker."@en .
 <http://purl.org/fidmark/markerWidth> <http://www.w3.org/2000/01/rdf-schema#label> "marker width"@en .
 # 
 # http://www.w3.org/2007/uwa/context/common.owl#active
@@ -139,6 +155,9 @@
 # http://www.w3.org/2007/uwa/context/common.owl#vendor
 <http://www.w3.org/2007/uwa/context/common.owl#vendor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 # 
+# http://www.w3.org/ns/ssn/hasProperty
+<http://www.w3.org/ns/ssn/hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
 # 
 # 
 # #################################################################
@@ -152,6 +171,7 @@
 <http://purl.org/fidmark/crowns> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://purl.org/fidmark/crowns> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/CCTag> .
 <http://purl.org/fidmark/crowns> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://purl.org/fidmark/crowns> <http://www.w3.org/2000/01/rdf-schema#label> "number of crowns"@en .
 # 
 # http://purl.org/fidmark/dictionarySize
 <http://purl.org/fidmark/dictionarySize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -299,7 +319,7 @@
 # 
 # http://purl.org/fidmark/ARTag
 <http://purl.org/fidmark/ARTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/ARTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/ARTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/ARTag> <http://purl.org/fidmark/color> "Monochrome"@en .
 <http://purl.org/fidmark/ARTag> <http://purl.org/fidmark/encoding> "Topological"@en .
 <http://purl.org/fidmark/ARTag> <http://purl.org/fidmark/shape> "Square"@en .
@@ -309,12 +329,12 @@
 # 
 # http://purl.org/fidmark/ARToolKit
 <http://purl.org/fidmark/ARToolKit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/ARToolKit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/ARToolKit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/ARToolKit> <http://www.w3.org/2000/01/rdf-schema#label> "ARToolKit"@en .
 # 
 # http://purl.org/fidmark/AprilTag
 <http://purl.org/fidmark/AprilTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/AprilTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/AprilTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/AprilTag> <http://purl.org/fidmark/color> "Monochrome"@en .
 <http://purl.org/fidmark/AprilTag> <http://purl.org/fidmark/encoding> "Topological"@en .
 <http://purl.org/fidmark/AprilTag> <http://purl.org/fidmark/shape> "Square"@en .
@@ -324,14 +344,14 @@
 # 
 # http://purl.org/fidmark/ArUco
 <http://purl.org/fidmark/ArUco> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/ArUco> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/ArUco> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/ArUco> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
 _:genid1 <http://www.w3.org/2002/07/owl#onClass> <http://purl.org/fidmark/MarkerDictionary> .
 _:genid1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/fidmark/markerDictionary> .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://purl.org/fidmark/ArUco> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
-_:genid2 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#int> .
+_:genid2 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#integer> .
 _:genid2 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/fidmark/markerIdentifier> .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
@@ -339,40 +359,52 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/ArUco> <http://purl.org/fidmark/encoding> "Topological"@en .
 <http://purl.org/fidmark/ArUco> <http://purl.org/fidmark/shape> "Square"@en .
 <http://purl.org/fidmark/ArUco> <http://www.w3.org/2000/01/rdf-schema#comment> "An ArUco marker is a synthetic square marker composed by a wide black border and an inner binary matrix which determines its identifier (id). The black border facilitates its fast detection in the image and the binary codification allows its identification and the application of error detection and correction techniques. The marker size determines the size of the internal matrix. For instance a marker size of 4x4 is composed by 16 bits."@en .
+<http://purl.org/fidmark/ArUco> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/ArUco> <http://www.w3.org/2000/01/rdf-schema#label> "ArUco"@en .
-<http://purl.org/fidmark/ArUco> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html" .
+# 
+# http://purl.org/fidmark/Barcode
+<http://purl.org/fidmark/Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/Barcode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/Barcode> <http://www.w3.org/2000/01/rdf-schema#label> "Barcode"@en .
 # 
 # http://purl.org/fidmark/BinaryID
 <http://purl.org/fidmark/BinaryID> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/BinaryID> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/BinaryID> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/BinaryID> <http://www.w3.org/2000/01/rdf-schema#label> "BinaryID"@en .
 # 
 # http://purl.org/fidmark/BullsEye
 <http://purl.org/fidmark/BullsEye> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/BullsEye> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/BullsEye> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/BullsEye> <http://www.w3.org/2000/01/rdf-schema#label> "BullsEye"@en .
 # 
 # http://purl.org/fidmark/CALTag
 <http://purl.org/fidmark/CALTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/CALTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/CALTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/CALTag> <http://www.w3.org/2000/01/rdf-schema#label> "CALTag"@en .
 # 
 # http://purl.org/fidmark/CCC
 <http://purl.org/fidmark/CCC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/CCC> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/CCC> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/CCC> <http://www.w3.org/2000/01/rdf-schema#label> "Concentric contrasting circles"@en .
 <http://purl.org/fidmark/CCC> <http://www.w3.org/2004/02/skos/core#altLabel> "CCC"@en .
 # 
 # http://purl.org/fidmark/CCTag
 <http://purl.org/fidmark/CCTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/CCTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/CCTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/CCTag> <http://www.w3.org/2000/01/rdf-schema#comment> "CCTag markers are a robust, highly accurate fiducial system that can be robustly localized in the image even under challenging conditions. The library can efficiently detect the position of the image of the (common) circle center and identify the marker based on the different ratio of their crown sizes. Each marker can be uniquely identified thanks to the thickness of each crown, which encodes the information of the marker, typically a unique ID."@en .
 <http://purl.org/fidmark/CCTag> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://cctag.readthedocs.io/en/latest/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/CCTag> <http://www.w3.org/2000/01/rdf-schema#label> "CCTag"@en .
 # 
+# http://purl.org/fidmark/Chilitags
+<http://purl.org/fidmark/Chilitags> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/Chilitags> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
+<http://purl.org/fidmark/Chilitags> <http://www.w3.org/2000/01/rdf-schema#comment> "Chilitags are a C++ cross-platform software library for the detection and identification of 2D fiducial markers (a.k.a. tags). Their purpose is to be printed and placed on objects from the real world, to form the basis of Robotics or Augmented Reality (AR) applications. Using a camera, the position of the tagged objects can be acquired by a computer."@en .
+<http://purl.org/fidmark/Chilitags> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://github.com/chili-epfl/chilitags"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://purl.org/fidmark/Chilitags> <http://www.w3.org/2000/01/rdf-schema#label> "Chilitags"@en .
+# 
 # http://purl.org/fidmark/ChromaTag
 <http://purl.org/fidmark/ChromaTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/ChromaTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/ChromaTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/ChromaTag> <http://www.w3.org/2000/01/rdf-schema#label> "ChromaTag"@en .
 # 
 # http://purl.org/fidmark/FiducialMarker
@@ -386,12 +418,12 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://purl.org/fidmark/FourierTag
 <http://purl.org/fidmark/FourierTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/FourierTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/FourierTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/FourierTag> <http://www.w3.org/2000/01/rdf-schema#label> "FourierTag"@en .
 # 
 # http://purl.org/fidmark/InterSense
 <http://purl.org/fidmark/InterSense> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/InterSense> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/InterSense> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 # 
 # http://purl.org/fidmark/MarkerDictionary
 <http://purl.org/fidmark/MarkerDictionary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -399,19 +431,26 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/MarkerDictionary> <http://www.w3.org/2000/01/rdf-schema#comment> "A marker dictionary is a specified encoding that produces a set of identifiers that can be used for markers."@en .
 <http://purl.org/fidmark/MarkerDictionary> <http://www.w3.org/2000/01/rdf-schema#label> "Marker dictionary"@en .
 # 
+# http://purl.org/fidmark/MaxiCode
+<http://purl.org/fidmark/MaxiCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/MaxiCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
+<http://purl.org/fidmark/MaxiCode> <http://www.w3.org/2000/01/rdf-schema#comment> "MaxiCode is a public domain, machine-readable symbol system originally created by the United Parcel Service in 1992. Suitable for tracking and managing the shipment of packages, it resembles an Aztec Code or QR code, but uses dots arranged in a hexagonal grid instead of square grid."@en .
+<http://purl.org/fidmark/MaxiCode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://dbpedia.org/resource/MaxiCode> .
+<http://purl.org/fidmark/MaxiCode> <http://www.w3.org/2000/01/rdf-schema#label> "MaxiCode"@en .
+# 
 # http://purl.org/fidmark/MultiRing
 <http://purl.org/fidmark/MultiRing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/MultiRing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/MultiRing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/MultiRing> <http://www.w3.org/2000/01/rdf-schema#label> "Multi-ring"@en .
 # 
 # http://purl.org/fidmark/PiTag
 <http://purl.org/fidmark/PiTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/PiTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/PiTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/PiTag> <http://www.w3.org/2000/01/rdf-schema#label> "Pi-Tag"@en .
 # 
 # http://purl.org/fidmark/QRCode
 <http://purl.org/fidmark/QRCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/QRCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/QRCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/QRCode> <http://purl.org/fidmark/color> "Monochrome"@en .
 <http://purl.org/fidmark/QRCode> <http://purl.org/fidmark/encoding> "Topological"@en .
 <http://purl.org/fidmark/QRCode> <http://purl.org/fidmark/shape> "Square"@en .
@@ -422,45 +461,48 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://purl.org/fidmark/RuneTag
 <http://purl.org/fidmark/RuneTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/RuneTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/RuneTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/RuneTag> <http://www.w3.org/2000/01/rdf-schema#label> "RuneTag"@en .
 # 
 # http://purl.org/fidmark/SIFT
 <http://purl.org/fidmark/SIFT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/SIFT> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/SIFT> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 # 
 # http://purl.org/fidmark/STag
 <http://purl.org/fidmark/STag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/STag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/STag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/STag> <http://www.w3.org/2000/01/rdf-schema#label> "STag"@en .
 # 
 # http://purl.org/fidmark/TRIP
 <http://purl.org/fidmark/TRIP> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/TRIP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/TRIP> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/TRIP> <http://www.w3.org/2000/01/rdf-schema#label> "TRIP"@en .
 # 
 # http://purl.org/fidmark/TopoTag
 <http://purl.org/fidmark/TopoTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/TopoTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/TopoTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/TopoTag> <http://www.w3.org/2000/01/rdf-schema#comment> "Fiducial markers have been playing an important role in augmented reality (AR), robot navigation, and general applications where the relative pose between a camera and an object is required. Here we introduce TopoTag, a robust and scalable topological fiducial marker system, which supports reliable and accurate pose estimation from a single image. TopoTag uses topological and geometrical information in marker detection to achieve higher robustness. Topological information is extensively used for 2D marker detection, and further corresponding geometrical information for ID decoding. Robust 3D pose estimation is achieved by taking advantage of all TopoTag vertices. Without sacrificing bits for higher recall and precision like previous systems, TopoTag can use full bits for ID encoding. TopoTag supports tens of thousands unique IDs and easily extends to millions of unique tags resulting in massive scalability."@en .
 <http://purl.org/fidmark/TopoTag> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://herohuyongtao.github.io/research/publications/topo-tag/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/TopoTag> <http://www.w3.org/2000/01/rdf-schema#label> "TopoTag"@en .
 # 
 # http://purl.org/fidmark/VisualCode
 <http://purl.org/fidmark/VisualCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/VisualCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/VisualCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/VisualCode> <http://www.w3.org/2000/01/rdf-schema#label> "VisualCode"@en .
 # 
 # http://purl.org/fidmark/WhyCode
 <http://purl.org/fidmark/WhyCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/WhyCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/WhyCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 # 
 # http://purl.org/fidmark/reacTIVision
 <http://purl.org/fidmark/reacTIVision> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#comment> "reacTIVision is an open source, cross-platform computer vision framework for the fast and robust tracking of fiducial markers attached onto physical objects, as well as for multi-touch finger tracking. It was mainly designed as a toolkit for the rapid development of table-based tangible user interfaces (TUI) and multi-touch interactive surfaces. This framework has been developed by Martin Kaltenbrunner and Ross Bencina as the underlying sensor component of the Reactable, a tangible modular synthesizer that has set the standards for tangible multi-touch applications."@en .
 <http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://reactivision.sourceforge.net/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#label> "reacTIVision"@en .
+# 
+# http://purl.org/poso/VisualLandmark
+<http://purl.org/poso/VisualLandmark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://www.w3.org/2007/uwa/context/common.owl#AllDisjointSet
 <http://www.w3.org/2007/uwa/context/common.owl#AllDisjointSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -518,6 +560,9 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.w3.org/2007/uwa/context/deliverycontext.owl#Context_Entity
 <http://www.w3.org/2007/uwa/context/deliverycontext.owl#Context_Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/ssn/Property
+<http://www.w3.org/ns/ssn/Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # 
 # 
@@ -678,6 +723,10 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/DICT_ARUCO_ORIGINAL> <http://purl.org/fidmark/hammingDistance> "0"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://purl.org/fidmark/DICT_ARUCO_ORIGINAL> <http://purl.org/fidmark/maxIdentifiers> "1024"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://purl.org/fidmark/DICT_ARUCO_ORIGINAL> <http://www.w3.org/2000/01/rdf-schema#label> "ArUco original dictionary"@en .
+# 
+# http://purl.org/fidmark/DICT_CHILLITAGS
+<http://purl.org/fidmark/DICT_CHILLITAGS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/fidmark/DICT_CHILLITAGS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
 # 
 # http://purl.org/fidmark/DICT_TOPOTAG_3X3
 <http://purl.org/fidmark/DICT_TOPOTAG_3X3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .

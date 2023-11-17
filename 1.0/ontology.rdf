@@ -5,21 +5,16 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:qudt="http://qudt.org/schema/qudt/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:common="http://www.w3.org/2007/uwa/context/common.owl#"
-     xmlns:schema="http://schema.org/"
      xmlns:fidmark="http://purl.org/fidmark/">
     <owl:Ontology rdf:about="http://purl.org/fidmark/">
         <owl:versionIRI rdf:resource="http://purl.org/fidmark/1.0/"/>
-        <owl:imports rdf:resource="http://purl.org/poso/1.0/"/>
         <terms:abstract xml:lang="en"></terms:abstract>
         <terms:bibliographicCitation>Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark</terms:bibliographicCitation>
-        <terms:contributor xml:lang="en">Beat Signer</terms:contributor>
         <terms:creator xml:lang="en">Isaac Valadez Mora</terms:creator>
         <terms:creator xml:lang="en">Maxim Van de Wynckel</terms:creator>
         <terms:description></terms:description>
@@ -41,6 +36,48 @@
      -->
 
 
+    
+
+
+    <!-- http://purl.org/dc/terms/abstract -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/bibliographicCitation -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
     
 
 
@@ -81,6 +118,27 @@
         <rdfs:label xml:lang="en">marker shape</rdfs:label>
         <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
     </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
     
 
 
@@ -136,27 +194,6 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#int -->
-
-
-    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#int">
-        <rdfs:label xml:lang="en">number of crowns</rdfs:label>
-    </rdf:Description>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -173,6 +210,7 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
         <rdfs:range rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <rdfs:comment xml:lang="en">A marker dictionary defines the different variants that can be achieved using the available encoded bits and error correction.</rdfs:comment>
         <rdfs:label xml:lang="en">marker dictionary</rdfs:label>
     </owl:ObjectProperty>
     
@@ -184,6 +222,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/fidmark/markerHeight">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:comment xml:lang="en">Defines the marker height in a specified unit. This can be used for determining the scale of the marker.</rdfs:comment>
         <rdfs:label xml:lang="en">marker height</rdfs:label>
     </owl:ObjectProperty>
     
@@ -195,6 +234,7 @@
     <owl:ObjectProperty rdf:about="http://purl.org/fidmark/markerWidth">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:comment xml:lang="en">Defines the marker width in a specified unit. This can be used for determining the scale of the marker.</rdfs:comment>
         <rdfs:label xml:lang="en">marker width</rdfs:label>
     </owl:ObjectProperty>
     
@@ -284,6 +324,13 @@
     
 
 
+    <!-- http://www.w3.org/ns/ssn/hasProperty -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/hasProperty"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -302,6 +349,7 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/crowns">
         <rdfs:domain rdf:resource="http://purl.org/fidmark/CCTag"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">number of crowns</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -606,7 +654,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/ARTag">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <color xml:lang="en">Monochrome</color>
         <encoding xml:lang="en">Topological</encoding>
         <shape xml:lang="en">Square</shape>
@@ -621,7 +669,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/ARToolKit">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">ARToolKit</rdfs:label>
     </owl:Class>
     
@@ -631,7 +679,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/AprilTag">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <color xml:lang="en">Monochrome</color>
         <encoding xml:lang="en">Topological</encoding>
         <shape xml:lang="en">Square</shape>
@@ -646,7 +694,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/ArUco">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/fidmark/markerDictionary"/>
@@ -658,15 +706,25 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/fidmark/markerIdentifier"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <color xml:lang="en">Monochrome</color>
         <encoding xml:lang="en">Topological</encoding>
         <shape xml:lang="en">Square</shape>
         <rdfs:comment xml:lang="en">An ArUco marker is a synthetic square marker composed by a wide black border and an inner binary matrix which determines its identifier (id). The black border facilitates its fast detection in the image and the binary codification allows its identification and the application of error detection and correction techniques. The marker size determines the size of the internal matrix. For instance a marker size of 4x4 is composed by 16 bits.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ArUco</rdfs:label>
-        <rdfs:seeAlso>https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/Barcode -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/Barcode">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">Barcode</rdfs:label>
     </owl:Class>
     
 
@@ -675,7 +733,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/BinaryID">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">BinaryID</rdfs:label>
     </owl:Class>
     
@@ -685,7 +743,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/BullsEye">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">BullsEye</rdfs:label>
     </owl:Class>
     
@@ -695,7 +753,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/CALTag">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">CALTag</rdfs:label>
     </owl:Class>
     
@@ -705,7 +763,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/CCC">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">Concentric contrasting circles</rdfs:label>
         <skos:altLabel xml:lang="en">CCC</skos:altLabel>
     </owl:Class>
@@ -716,10 +774,22 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/CCTag">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:comment xml:lang="en">CCTag markers are a robust, highly accurate fiducial system that can be robustly localized in the image even under challenging conditions. The library can efficiently detect the position of the image of the (common) circle center and identify the marker based on the different ratio of their crown sizes. Each marker can be uniquely identified thanks to the thickness of each crown, which encodes the information of the marker, typically a unique ID.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cctag.readthedocs.io/en/latest/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">CCTag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/Chilitags -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/Chilitags">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
+        <rdfs:comment xml:lang="en">Chilitags are a C++ cross-platform software library for the detection and identification of 2D fiducial markers (a.k.a. tags). Their purpose is to be printed and placed on objects from the real world, to form the basis of Robotics or Augmented Reality (AR) applications. Using a camera, the position of the tagged objects can be acquired by a computer.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/chili-epfl/chilitags</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Chilitags</rdfs:label>
     </owl:Class>
     
 
@@ -728,7 +798,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/ChromaTag">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">ChromaTag</rdfs:label>
     </owl:Class>
     
@@ -752,7 +822,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/FourierTag">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">FourierTag</rdfs:label>
     </owl:Class>
     
@@ -762,7 +832,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/InterSense">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
     </owl:Class>
     
 
@@ -778,11 +848,23 @@
     
 
 
+    <!-- http://purl.org/fidmark/MaxiCode -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/MaxiCode">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
+        <rdfs:comment xml:lang="en">MaxiCode is a public domain, machine-readable symbol system originally created by the United Parcel Service in 1992. Suitable for tracking and managing the shipment of packages, it resembles an Aztec Code or QR code, but uses dots arranged in a hexagonal grid instead of square grid.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://dbpedia.org/resource/MaxiCode"/>
+        <rdfs:label xml:lang="en">MaxiCode</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/fidmark/MultiRing -->
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/MultiRing">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">Multi-ring</rdfs:label>
     </owl:Class>
     
@@ -792,7 +874,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/PiTag">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">Pi-Tag</rdfs:label>
     </owl:Class>
     
@@ -802,7 +884,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/QRCode">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <color xml:lang="en">Monochrome</color>
         <encoding xml:lang="en">Topological</encoding>
         <shape xml:lang="en">Square</shape>
@@ -818,7 +900,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/RuneTag">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">RuneTag</rdfs:label>
     </owl:Class>
     
@@ -828,7 +910,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/SIFT">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
     </owl:Class>
     
 
@@ -837,7 +919,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/STag">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">STag</rdfs:label>
     </owl:Class>
     
@@ -847,7 +929,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/TRIP">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">TRIP</rdfs:label>
     </owl:Class>
     
@@ -857,7 +939,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/TopoTag">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:comment xml:lang="en">Fiducial markers have been playing an important role in augmented reality (AR), robot navigation, and general applications where the relative pose between a camera and an object is required. Here we introduce TopoTag, a robust and scalable topological fiducial marker system, which supports reliable and accurate pose estimation from a single image. TopoTag uses topological and geometrical information in marker detection to achieve higher robustness. Topological information is extensively used for 2D marker detection, and further corresponding geometrical information for ID decoding. Robust 3D pose estimation is achieved by taking advantage of all TopoTag vertices. Without sacrificing bits for higher recall and precision like previous systems, TopoTag can use full bits for ID encoding. TopoTag supports tens of thousands unique IDs and easily extends to millions of unique tags resulting in massive scalability.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://herohuyongtao.github.io/research/publications/topo-tag/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">TopoTag</rdfs:label>
@@ -869,7 +951,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/VisualCode">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">VisualCode</rdfs:label>
     </owl:Class>
     
@@ -879,7 +961,7 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/WhyCode">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
     </owl:Class>
     
 
@@ -888,11 +970,18 @@
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/reacTIVision">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:comment xml:lang="en">reacTIVision is an open source, cross-platform computer vision framework for the fast and robust tracking of fiducial markers attached onto physical objects, as well as for multi-touch finger tracking. It was mainly designed as a toolkit for the rapid development of table-based tangible user interfaces (TUI) and multi-touch interactive surfaces. This framework has been developed by Martin Kaltenbrunner and Ross Bencina as the underlying sensor component of the Reactable, a tangible modular synthesizer that has set the standards for tangible multi-touch applications.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://reactivision.sourceforge.net/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">reacTIVision</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.org/poso/VisualLandmark -->
+
+
+    <owl:Class rdf:about="http://purl.org/poso/VisualLandmark"/>
     
 
 
@@ -1026,6 +1115,13 @@
 
 
     <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/deliverycontext.owl#Context_Entity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/Property -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/ssn/Property"/>
     
 
 
@@ -1298,6 +1394,15 @@
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hammingDistance>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1024</maxIdentifiers>
         <rdfs:label xml:lang="en">ArUco original dictionary</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_CHILLITAGS -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_CHILLITAGS">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
     </owl:NamedIndividual>
     
 
