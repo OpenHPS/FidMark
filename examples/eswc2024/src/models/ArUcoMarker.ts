@@ -1,5 +1,6 @@
 import { FiducialMarker } from "./FiducialMarker";
 import { SerializableMember, SerializableObject } from '@openhps/core';
+import { MarkerDictionary } from "./MarkerDictionary";
 
 @SerializableObject({
     rdf: {
@@ -13,4 +14,11 @@ export class ArUcoMarker extends FiducialMarker {
         }
     })
     identifier: number;
+
+    @SerializableMember({
+        rdf: {
+            predicate: "http://purl.org/fidmark/markerDictionary"
+        }
+    })
+    dictionary: MarkerDictionary;
 }

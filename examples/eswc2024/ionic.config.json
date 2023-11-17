@@ -1,0 +1,7 @@
+{
+  "name": "eswc2024",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}

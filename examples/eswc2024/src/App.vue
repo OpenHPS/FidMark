@@ -1,47 +1,28 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <ion-app>
+    <ion-router-outlet />
+  </ion-app>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script lang="ts">
+import { IonApp, IonRouterOutlet } from '@ionic/vue';
+import { Options, Vue } from 'vue-property-decorator';
+import { loadWASM } from 'onigasm';
+import { RDFSerializer } from '@openhps/rdf';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+@Options({
+  components: {
+    IonApp, IonRouterOutlet
+  }
+})
+export default class App extends Vue {
+  
+  async beforeMount() {
+    await loadWASM("/js/vendor/onigasm/onigasm.wasm");
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  mounted(): void {
+    RDFSerializer.initialize("video");
   }
 }
-</style>
+</script>
