@@ -19,12 +19,12 @@
       "creator" : [ {
         "identifier" : "creator",
         "language" : "en",
-        "value" : "Maxim Van de Wynckel",
+        "value" : "Isaac Valadez Mora",
         "type" : "label"
       }, {
         "identifier" : "creator",
         "language" : "en",
-        "value" : "Isaac Valadez Mora",
+        "value" : "Maxim Van de Wynckel",
         "type" : "label"
       } ],
       "preferredNamespacePrefix" : [ {
@@ -82,10 +82,10 @@
     "id" : "8",
     "type" : "owl:Class"
   }, {
-    "id" : "13",
+    "id" : "19",
     "type" : "owl:Class"
   }, {
-    "id" : "20",
+    "id" : "24",
     "type" : "owl:Class"
   }, {
     "id" : "25",
@@ -130,7 +130,7 @@
     "id" : "53",
     "type" : "owl:Class"
   }, {
-    "id" : "55",
+    "id" : "54",
     "type" : "owl:Class"
   }, {
     "id" : "44",
@@ -142,22 +142,22 @@
     "id" : "46",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "19",
+    "id" : "18",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "18",
+    "id" : "17",
     "type" : "owl:Thing"
   }, {
     "id" : "30",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "24",
+    "id" : "23",
     "type" : "rdfs:Literal"
   }, {
     "id" : "59",
     "type" : "owl:Thing"
   }, {
-    "id" : "15",
+    "id" : "14",
     "type" : "rdfs:Literal"
   }, {
     "id" : "6",
@@ -238,7 +238,7 @@
     "id" : "117",
     "type" : "owl:Class"
   }, {
-    "id" : "120",
+    "id" : "118",
     "type" : "owl:Class"
   }, {
     "id" : "76",
@@ -283,7 +283,7 @@
     "id" : "94",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "22",
+    "id" : "21",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "5",
@@ -295,7 +295,7 @@
     "id" : "11",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "119",
+    "id" : "120",
     "type" : "rdfs:Literal"
   }, {
     "id" : "152",
@@ -325,10 +325,10 @@
     "id" : "139",
     "type" : "owl:Class"
   }, {
-    "id" : "168",
+    "id" : "126",
     "type" : "owl:Class"
   }, {
-    "id" : "126",
+    "id" : "168",
     "type" : "owl:Class"
   }, {
     "id" : "2",
@@ -358,16 +358,16 @@
         "value" : "https://dbpedia.org/resource/ARTag",
         "type" : "iri"
       } ],
-      "color" : [ {
-        "identifier" : "color",
-        "language" : "en",
-        "value" : "Monochrome",
-        "type" : "label"
-      } ],
       "shape" : [ {
         "identifier" : "shape",
         "language" : "en",
         "value" : "Square",
+        "type" : "label"
+      } ],
+      "color" : [ {
+        "identifier" : "color",
+        "language" : "en",
+        "value" : "Monochrome",
         "type" : "label"
       } ],
       "encoding" : [ {
@@ -432,7 +432,7 @@
       "IRI-based" : "TransferEncoding"
     },
     "attributes" : [ "external" ],
-    "id" : "13"
+    "id" : "19"
   }, {
     "iri" : "http://purl.org/fidmark/CALTag",
     "baseIri" : "http://purl.org/fidmark",
@@ -441,7 +441,7 @@
       "IRI-based" : "CALTag",
       "en" : "CALTag"
     },
-    "id" : "20",
+    "id" : "24",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -593,7 +593,7 @@
       "IRI-based" : "STag",
       "en" : "STag"
     },
-    "id" : "55",
+    "id" : "54",
     "superClasses" : [ "2" ]
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -618,7 +618,7 @@
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "19",
+    "id" : "18",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -626,7 +626,7 @@
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "18",
+    "id" : "17",
     "label" : {
       "undefined" : "Thing"
     }
@@ -639,7 +639,7 @@
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "24",
+    "id" : "23",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -653,7 +653,7 @@
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "15",
+    "id" : "14",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -756,12 +756,12 @@
   }, {
     "instances" : 0,
     "union" : [ "91", "92" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "90"
   }, {
     "instances" : 0,
     "union" : [ "93", "94" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "28"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#ApplicationProtocol",
@@ -918,7 +918,7 @@
       "IRI-based" : "CharacterSet"
     },
     "attributes" : [ "external" ],
-    "id" : "120"
+    "id" : "118"
   }, {
     "iri" : "http://purl.org/fidmark/MultiRing",
     "baseIri" : "http://purl.org/fidmark",
@@ -1032,16 +1032,16 @@
         "IRI-based" : "DICT_ARUCO_5X5_1000"
       }
     }, {
-      "iri" : "http://purl.org/fidmark/DICT_CHILLITAGS",
-      "baseIri" : "http://purl.org/fidmark",
-      "labels" : {
-        "IRI-based" : "DICT_CHILLITAGS"
-      }
-    }, {
       "iri" : "http://purl.org/fidmark/DICT_APRILTAG_36h10",
       "baseIri" : "http://purl.org/fidmark",
       "labels" : {
         "IRI-based" : "DICT_APRILTAG_36h10"
+      }
+    }, {
+      "iri" : "http://purl.org/fidmark/DICT_CHILLITAGS",
+      "baseIri" : "http://purl.org/fidmark",
+      "labels" : {
+        "IRI-based" : "DICT_CHILLITAGS"
       }
     }, {
       "iri" : "http://purl.org/fidmark/DICT_ARUCO_4X4_50",
@@ -1203,23 +1203,23 @@
       "IRI-based" : "string"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#hexBinary",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "93",
-    "label" : {
-      "IRI-based" : "hexBinary"
-    }
-  }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "94",
+    "id" : "93",
     "label" : {
       "IRI-based" : "anyURI"
     }
   }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#hexBinary",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "94",
+    "label" : {
+      "IRI-based" : "hexBinary"
+    }
+  }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#integer",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "22",
+    "id" : "21",
     "label" : {
       "IRI-based" : "integer"
     }
@@ -1273,7 +1273,7 @@
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "119",
+    "id" : "120",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -1382,15 +1382,6 @@
     "id" : "139",
     "superClasses" : [ "2" ]
   }, {
-    "iri" : "http://www.w3.org/2007/uwa/context/common.owl#TermGroup",
-    "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "TermGroup"
-    },
-    "attributes" : [ "external" ],
-    "id" : "168"
-  }, {
     "iri" : "http://purl.org/fidmark/Chilitags",
     "baseIri" : "http://purl.org/fidmark",
     "instances" : 0,
@@ -1412,6 +1403,15 @@
     "id" : "126",
     "superClasses" : [ "2" ]
   }, {
+    "iri" : "http://www.w3.org/2007/uwa/context/common.owl#TermGroup",
+    "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TermGroup"
+    },
+    "attributes" : [ "external" ],
+    "id" : "168"
+  }, {
     "iri" : "http://purl.org/fidmark/Barcode",
     "baseIri" : "http://purl.org/fidmark",
     "instances" : 0,
@@ -1419,7 +1419,7 @@
       "IRI-based" : "Barcode",
       "en" : "Barcode"
     },
-    "subClasses" : [ "69", "1", "70", "3", "76", "7", "68", "66", "8", "152", "20", "73", "80", "148", "42", "136", "134", "62", "139", "55", "126", "132", "130", "124", "114" ],
+    "subClasses" : [ "69", "1", "70", "3", "76", "7", "68", "66", "8", "152", "24", "73", "80", "148", "42", "136", "134", "62", "139", "54", "126", "132", "130", "124", "114" ],
     "id" : "2",
     "superClasses" : [ "5" ]
   }, {
@@ -1427,16 +1427,16 @@
     "baseIri" : "http://purl.org/fidmark",
     "instances" : 0,
     "annotations" : {
-      "color" : [ {
-        "identifier" : "color",
-        "language" : "en",
-        "value" : "Monochrome",
-        "type" : "label"
-      } ],
       "shape" : [ {
         "identifier" : "shape",
         "language" : "en",
         "value" : "Square",
+        "type" : "label"
+      } ],
+      "color" : [ {
+        "identifier" : "color",
+        "language" : "en",
+        "value" : "Monochrome",
         "type" : "label"
       } ],
       "encoding" : [ {
@@ -1479,16 +1479,16 @@
     "id" : "9",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "14",
+    "id" : "13",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "17",
+    "id" : "16",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "21",
+    "id" : "20",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "23",
+    "id" : "22",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "27",
@@ -1512,7 +1512,7 @@
     "id" : "51",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "54",
+    "id" : "55",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "56",
@@ -1575,7 +1575,7 @@
     "id" : "88",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "16",
+    "id" : "15",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "12",
@@ -1599,11 +1599,11 @@
     "id" : "115",
     "type" : "owl:datatypeProperty"
   }, {
+    "id" : "119",
+    "type" : "owl:datatypeProperty"
+  }, {
     "id" : "48",
     "type" : "owl:objectProperty"
-  }, {
-    "id" : "118",
-    "type" : "owl:datatypeProperty"
   }, {
     "id" : "121",
     "type" : "owl:objectProperty"
@@ -1678,10 +1678,10 @@
     "type" : "owl:objectProperty"
   }, {
     "id" : "158",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "159",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "160",
     "type" : "owl:datatypeProperty"
@@ -1738,47 +1738,47 @@
     "id" : "9"
   }, {
     "iri" : "http://purl.org/fidmark/dictionarySize",
-    "equivalent" : [ "16" ],
+    "equivalent" : [ "15" ],
     "baseIri" : "http://purl.org/fidmark",
-    "range" : "15",
+    "range" : "14",
     "label" : {
       "IRI-based" : "dictionarySize",
       "en" : "dictionary size"
     },
     "domain" : "10",
     "attributes" : [ "datatype" ],
-    "id" : "14"
+    "id" : "13"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#serialNumber",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "19",
+    "range" : "18",
     "label" : {
       "IRI-based" : "serialNumber"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
-    "id" : "17"
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "16"
   }, {
     "iri" : "http://purl.org/fidmark/markerSize",
     "baseIri" : "http://purl.org/fidmark",
-    "range" : "22",
+    "range" : "21",
     "label" : {
       "IRI-based" : "markerSize",
       "en" : "marker size"
     },
     "domain" : "10",
     "attributes" : [ "datatype" ],
-    "id" : "21"
+    "id" : "20"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#standardNumber",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "24",
+    "range" : "23",
     "label" : {
       "IRI-based" : "standardNumber"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
-    "id" : "23"
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "22"
   }, {
     "iri" : "http://purl.org/fidmark/markerImage",
     "baseIri" : "http://purl.org/fidmark",
@@ -1800,8 +1800,8 @@
     "label" : {
       "IRI-based" : "contentTypeName"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "29"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#pixelAspectRatio",
@@ -1810,8 +1810,8 @@
     "label" : {
       "IRI-based" : "pixelAspectRatio"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "39"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#resolutionWidth",
@@ -1820,8 +1820,8 @@
     "label" : {
       "IRI-based" : "resolutionWidth"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "43"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#languageTag",
@@ -1830,29 +1830,29 @@
     "label" : {
       "IRI-based" : "languageTag"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "45"
   }, {
     "iri" : "http://www.w3.org/ns/ssn/hasProperty",
     "baseIri" : "http://www.w3.org/ns/ssn",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "hasProperty"
     },
-    "domain" : "18",
+    "domain" : "17",
     "subproperty" : [ "48", "49", "50" ],
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "47"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#vendor",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "vendor"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
     "id" : "51"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#timeZoneString",
@@ -1861,9 +1861,9 @@
     "label" : {
       "IRI-based" : "timeZoneString"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
-    "id" : "54"
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "55"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
@@ -1871,8 +1871,8 @@
     "label" : {
       "IRI-based" : "relatedDDRCoreVoc"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "56"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#tzName",
@@ -1881,8 +1881,8 @@
     "label" : {
       "IRI-based" : "tzName"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "57"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#uriSchemeName",
@@ -1891,8 +1891,8 @@
     "label" : {
       "IRI-based" : "uriSchemeName"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "58"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#normativeURI",
@@ -1901,8 +1901,8 @@
     "label" : {
       "IRI-based" : "normativeURI"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "60"
   }, {
     "iri" : "http://purl.org/fidmark/crowns",
@@ -1937,8 +1937,8 @@
     "label" : {
       "IRI-based" : "resolutionHeight"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "71"
   }, {
     "range" : "2",
@@ -1968,12 +1968,12 @@
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#termGroups",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "termGroups"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
     "id" : "81"
   }, {
     "range" : "83",
@@ -1992,8 +1992,8 @@
     "label" : {
       "IRI-based" : "countryCode"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "85"
   }, {
     "range" : "5",
@@ -2007,12 +2007,12 @@
     "label" : {
       "IRI-based" : "charsetName"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "88"
   }, {
     "iri" : "http://purl.org/fidmark/maxIdentifiers",
-    "equivalent" : [ "14" ],
+    "equivalent" : [ "13" ],
     "baseIri" : "http://purl.org/fidmark",
     "range" : "95",
     "label" : {
@@ -2021,7 +2021,7 @@
     },
     "domain" : "10",
     "attributes" : [ "datatype" ],
-    "id" : "16"
+    "id" : "15"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#version",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
@@ -2029,8 +2029,8 @@
     "label" : {
       "IRI-based" : "version"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "12"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#restrictionValue",
@@ -2039,8 +2039,8 @@
     "label" : {
       "IRI-based" : "restrictionValue"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "99"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#languageCode",
@@ -2049,8 +2049,8 @@
     "label" : {
       "IRI-based" : "languageCode"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "101"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#name",
@@ -2059,28 +2059,28 @@
     "label" : {
       "IRI-based" : "name"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "107"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#restrictions",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "restrictions"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
     "id" : "110"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#disjointSet",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "disjointSet"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
     "id" : "111"
   }, {
     "iri" : "http://purl.org/fidmark/hammingDistance",
@@ -2097,6 +2097,18 @@
     "attributes" : [ "datatype" ],
     "id" : "115"
   }, {
+    "iri" : "http://purl.org/fidmark/markerIdentifier",
+    "baseIri" : "http://purl.org/fidmark",
+    "range" : "120",
+    "label" : {
+      "IRI-based" : "markerIdentifier",
+      "en" : "marker identifier"
+    },
+    "cardinality" : "1",
+    "domain" : "5",
+    "attributes" : [ "datatype" ],
+    "id" : "119"
+  }, {
     "iri" : "http://purl.org/fidmark/markerHeight",
     "baseIri" : "http://purl.org/fidmark",
     "range" : "59",
@@ -2112,26 +2124,14 @@
     "attributes" : [ "object" ],
     "id" : "48"
   }, {
-    "iri" : "http://purl.org/fidmark/markerIdentifier",
-    "baseIri" : "http://purl.org/fidmark",
-    "range" : "119",
-    "label" : {
-      "IRI-based" : "markerIdentifier",
-      "en" : "marker identifier"
-    },
-    "cardinality" : "1",
-    "domain" : "5",
-    "attributes" : [ "datatype" ],
-    "id" : "118"
-  }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#restrictedElement",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "restrictedElement"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
     "id" : "121"
   }, {
     "range" : "2",
@@ -2150,7 +2150,7 @@
     "id" : "125"
   }, {
     "range" : "2",
-    "domain" : "55",
+    "domain" : "54",
     "attributes" : [ "anonymous", "object" ],
     "id" : "127"
   }, {
@@ -2197,12 +2197,12 @@
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#supports",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "supports"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
     "id" : "141"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#informativeReference",
@@ -2211,8 +2211,8 @@
     "label" : {
       "IRI-based" : "informativeReference"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "144"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#transferEncodingName",
@@ -2221,8 +2221,8 @@
     "label" : {
       "IRI-based" : "transferEncodingName"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "146"
   }, {
     "range" : "2",
@@ -2256,7 +2256,7 @@
     "id" : "154"
   }, {
     "range" : "2",
-    "domain" : "20",
+    "domain" : "24",
     "attributes" : [ "anonymous", "object" ],
     "id" : "155"
   }, {
@@ -2266,19 +2266,29 @@
     "label" : {
       "IRI-based" : "normativeReference"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "156"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#available",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "available"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
     "id" : "157"
+  }, {
+    "iri" : "http://www.w3.org/2007/uwa/context/common.owl#normativeStatus",
+    "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "normativeStatus"
+    },
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
+    "id" : "158"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#model",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
@@ -2286,18 +2296,8 @@
     "label" : {
       "IRI-based" : "model"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
-    "id" : "158"
-  }, {
-    "iri" : "http://www.w3.org/2007/uwa/context/common.owl#normativeStatus",
-    "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
-    "label" : {
-      "IRI-based" : "normativeStatus"
-    },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "159"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#disjointClass",
@@ -2306,8 +2306,8 @@
     "label" : {
       "IRI-based" : "disjointClass"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "160"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#id",
@@ -2316,8 +2316,8 @@
     "label" : {
       "IRI-based" : "id"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "161"
   }, {
     "iri" : "http://purl.org/fidmark/markerDictionary",
@@ -2337,12 +2337,12 @@
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#default",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "default"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
     "id" : "163"
   }, {
     "iri" : "http://purl.org/fidmark/markerWidth",
@@ -2362,22 +2362,22 @@
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#timeZone",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "timeZone"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
     "id" : "165"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#soundMode",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "soundMode"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
     "id" : "166"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity",
@@ -2386,18 +2386,18 @@
     "label" : {
       "IRI-based" : "relatedUAProfEntity"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "167"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#active",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "active"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "external" ],
     "id" : "169"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix",
@@ -2406,8 +2406,8 @@
     "label" : {
       "IRI-based" : "termGroupPrefix"
     },
-    "domain" : "18",
-    "attributes" : [ "external", "datatype" ],
+    "domain" : "17",
+    "attributes" : [ "datatype", "external" ],
     "id" : "170"
   } ]
 }
