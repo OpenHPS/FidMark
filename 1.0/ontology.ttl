@@ -8,16 +8,18 @@
 
 <http://purl.org/fidmark/> rdf:type owl:Ontology ;
                             owl:versionIRI <http://purl.org/fidmark/1.0/> ;
+                            owl:imports <http://purl.org/poso/1.0/> ;
                             <http://purl.org/dc/terms/abstract> ""@en ;
-                            <http://purl.org/dc/terms/bibliographicCitation> "Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark" ;
+                            <http://purl.org/dc/terms/bibliographicCitation> "Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers" ;
                             <http://purl.org/dc/terms/creator> "Isaac Valadez Mora"@en ,
                                                                "Maxim Van de Wynckel"@en ;
-                            <http://purl.org/dc/terms/description> "" ;
+                            <http://purl.org/dc/terms/description> ""@en ;
                             <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/MIT1.0> ;
                             <http://purl.org/dc/terms/modified> "2023-12-07T00:00:00"^^xsd:dateTime ;
                             <http://purl.org/dc/terms/title> "Fiducial Marker Ontology"@en ;
                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "fidmark" ;
-                            <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/fidmark/"^^xsd:anyURI .
+                            <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/fidmark/"^^xsd:anyURI ;
+                            <http://www.w3.org/2004/02/skos/core#example> "https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_object.ttl"^^xsd:anyURI .
 
 #################################################################
 #    Annotation properties
@@ -84,6 +86,10 @@
 <http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2007/uwa/context/common.owl#informativeReference
 <http://www.w3.org/2007/uwa/context/common.owl#informativeReference> rdf:type owl:AnnotationProperty .
 
@@ -116,29 +122,56 @@
 #    Object Properties
 #################################################################
 
-###  http://purl.org/fidmark/markerDictionary
-:markerDictionary rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf <http://www.w3.org/ns/ssn/hasProperty> ;
-                  rdfs:domain :FiducialMarker ;
-                  rdfs:range :MarkerDictionary ;
-                  rdfs:comment "A marker dictionary defines the different variants that can be achieved using the available encoded bits and error correction."@en ;
-                  rdfs:label "marker dictionary"@en .
+###  http://purl.org/fidmark/hasDictionary
+:hasDictionary rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://www.w3.org/ns/ssn/hasProperty> ;
+               rdfs:domain :FiducialMarker ;
+               rdfs:range :MarkerDictionary ;
+               rdfs:comment "A marker dictionary defines the different variants that can be achieved using the available encoded bits and error correction."@en ;
+               rdfs:label "has marker dictionary"@en .
 
 
-###  http://purl.org/fidmark/markerHeight
-:markerHeight rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf <http://www.w3.org/ns/ssn/hasProperty> ;
-              rdfs:domain :FiducialMarker ;
-              rdfs:comment "Defines the marker height in a specified unit. This can be used for determining the scale of the marker."@en ;
-              rdfs:label "marker height"@en .
+###  http://purl.org/fidmark/hasHeight
+:hasHeight rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://www.w3.org/ns/ssn/hasProperty> ;
+           rdfs:domain :FiducialMarker ;
+           rdfs:comment "Defines the marker height in a specified unit. This can be used for determining the scale of the marker."@en ;
+           rdfs:label "has marker height"@en .
 
 
-###  http://purl.org/fidmark/markerWidth
-:markerWidth rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <http://www.w3.org/ns/ssn/hasProperty> ;
-             rdfs:domain :FiducialMarker ;
-             rdfs:comment "Defines the marker width in a specified unit. This can be used for determining the scale of the marker."@en ;
-             rdfs:label "marker width"@en .
+###  http://purl.org/fidmark/hasImageDesciptor
+:hasImageDesciptor rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://www.w3.org/ns/ssn/hasProperty> ;
+                   rdfs:domain :FiducialMarker ;
+                   rdfs:range :ImageDescriptor ;
+                   rdfs:label "has image descriptor"@en .
+
+
+###  http://purl.org/fidmark/hasMarker
+:hasMarker rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+           rdfs:range :FiducialMarker ;
+           rdfs:comment "Indicates a marker on an (optical) positioning system"@en ;
+           rdfs:label "has marker"@en .
+
+
+###  http://purl.org/fidmark/hasOrigin
+:hasOrigin rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://www.w3.org/ns/ssn/hasProperty> ;
+           rdfs:label "has origin"@en .
+
+
+###  http://purl.org/fidmark/hasWidth
+:hasWidth rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://www.w3.org/ns/ssn/hasProperty> ;
+          rdfs:domain :FiducialMarker ;
+          rdfs:comment "Defines the marker width in a specified unit. This can be used for determining the scale of the marker."@en ;
+          rdfs:label "has marker width"@en .
+
+
+###  http://purl.org/fidmark/isImageDescriptorOf
+:isImageDescriptorOf rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf <http://www.w3.org/ns/ssn/isPropertyOf> .
 
 
 ###  http://www.w3.org/2007/uwa/context/common.owl#active
@@ -197,10 +230,36 @@
 #    Data properties
 #################################################################
 
+###  http://purl.org/fidmark/asImage
+:asImage rdf:type owl:DatatypeProperty ;
+         rdfs:domain :ImageDescriptor ;
+         rdfs:range xsd:anyURI ,
+                    xsd:hexBinary ;
+         rdfs:comment "A marker image links to an image URI or base64 representation of the marker."@en ;
+         rdfs:label "as image"@en .
+
+
+###  http://purl.org/fidmark/asNFT
+:asNFT rdf:type owl:DatatypeProperty ;
+       rdfs:domain :ImageDescriptor ;
+       rdfs:range xsd:anyURI ,
+                  xsd:hexBinary ;
+       rdfs:label "as NFT"@en .
+
+
+###  http://purl.org/fidmark/asZFT
+:asZFT rdf:type owl:DatatypeProperty ;
+       rdfs:domain :ImageDescriptor ;
+       rdfs:range xsd:anyURI ,
+                  xsd:hexBinary ;
+       rdfs:label "as ZFT"@en .
+
+
 ###  http://purl.org/fidmark/crowns
 :crowns rdf:type owl:DatatypeProperty ;
         rdfs:domain :CCTag ;
         rdfs:range xsd:integer ;
+        rdfs:comment "Indicates the number of crowns in a circular barcode."@en ;
         rdfs:label "number of crowns"@en .
 
 
@@ -216,7 +275,17 @@
                  rdfs:domain :MarkerDictionary ;
                  rdfs:range xsd:integer ;
                  rdfs:comment "The minimum hamming distance between two codes"@en ;
-                 rdfs:label "hamming distance"@en .
+                 rdfs:label "hamming distance"@en ;
+                 <http://www.w3.org/2004/02/skos/core#example> "In a 16h5 dictionary, the first number indicates the amount of bits that can be encoded, the second number the minimum hamming distance."@en .
+
+
+###  http://purl.org/fidmark/markerBits
+:markerBits rdf:type owl:DatatypeProperty ;
+            rdfs:domain :MarkerDictionary ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "Marker bits indicates the amount of bits that are available."@en ;
+            rdfs:label "marker bits"@en ;
+            <http://www.w3.org/2004/02/skos/core#example> "In a 16h5 dictionary, the first number indicates the amount of bits that can be encoded, the second number the minimum hamming distance."@en .
 
 
 ###  http://purl.org/fidmark/markerData
@@ -224,35 +293,16 @@
             rdfs:domain :FiducialMarker ;
             rdfs:range xsd:hexBinary ,
                        xsd:string ;
+            rdfs:comment "Encoded information within a marker."@en ;
             rdfs:label "marker data"@en .
 
 
 ###  http://purl.org/fidmark/markerIdentifier
 :markerIdentifier rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :markerData ;
                   rdfs:domain :FiducialMarker ;
+                  rdfs:comment "If the marker can be identified using a specified dictionary, its identifier can be indicated using this data property."@en ;
                   rdfs:label "marker identifier"@en .
-
-
-###  http://purl.org/fidmark/markerImage
-:markerImage rdf:type owl:DatatypeProperty ;
-             rdfs:domain :FiducialMarker ;
-             rdfs:range xsd:anyURI ,
-                        xsd:hexBinary ;
-             rdfs:comment "A marker image links to an image URI or base64 representation of the marker."@en ;
-             rdfs:label "marker image"@en .
-
-
-###  http://purl.org/fidmark/markerPattern
-:markerPattern rdf:type owl:DatatypeProperty ;
-               rdfs:domain :FiducialMarker ;
-               rdfs:label "marker pattern"@en .
-
-
-###  http://purl.org/fidmark/markerSize
-:markerSize rdf:type owl:DatatypeProperty ;
-            rdfs:domain :MarkerDictionary ;
-            rdfs:range xsd:integer ;
-            rdfs:label "marker size"@en .
 
 
 ###  http://purl.org/fidmark/maxIdentifiers
@@ -380,7 +430,7 @@
 
 ###  http://purl.org/fidmark/ARTag
 :ARTag rdf:type owl:Class ;
-       rdfs:subClassOf :Barcode ;
+       rdfs:subClassOf :Barcode2D ;
        :color "Monochrome"@en ;
        :encoding "Topological"@en ;
        :shape "Square"@en ;
@@ -397,7 +447,7 @@
 
 ###  http://purl.org/fidmark/AprilTag
 :AprilTag rdf:type owl:Class ;
-          rdfs:subClassOf :Barcode ;
+          rdfs:subClassOf :Barcode2D ;
           :color "Monochrome"@en ;
           :encoding "Topological"@en ;
           :shape "Square"@en ;
@@ -408,9 +458,9 @@
 
 ###  http://purl.org/fidmark/ArUco
 :ArUco rdf:type owl:Class ;
-       rdfs:subClassOf :Barcode ,
+       rdfs:subClassOf :Barcode2D ,
                        [ rdf:type owl:Restriction ;
-                         owl:onProperty :markerDictionary ;
+                         owl:onProperty :hasDictionary ;
                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                          owl:onClass :MarkerDictionary
                        ] ,
@@ -429,8 +479,32 @@
 
 ###  http://purl.org/fidmark/Barcode
 :Barcode rdf:type owl:Class ;
-         rdfs:subClassOf :FiducialMarker ;
+         owl:equivalentClass <http://purl.org/iot/vocab/m3-lite#Barcode> ,
+                             <http://schema.org/Barcode> ;
+         rdfs:subClassOf :FiducialMarker ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :markerData ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "A barcode or bar code is a method of representing data in a visual, machine-readable form."@en ;
+         rdfs:isDefinedBy <https://dbpedia.org/resource/Barcode> ;
          rdfs:label "Barcode"@en .
+
+
+###  http://purl.org/fidmark/Barcode1D
+:Barcode1D rdf:type owl:Class ;
+           rdfs:subClassOf :Barcode ;
+           rdfs:comment "A barcode or bar code is a method of representing data in a visual, machine-readable form. Initially, barcodes represented data by varying the widths, spacings and sizes of parallel lines. These barcodes, now commonly referred to as linear or one-dimensional (1D), can be scanned by special optical scanners, called barcode readers, of which there are several types."@en ;
+           rdfs:isDefinedBy <https://dbpedia.org/resource/Barcode> ;
+           rdfs:label "1D barcode"@en .
+
+
+###  http://purl.org/fidmark/Barcode2D
+:Barcode2D rdf:type owl:Class ;
+           rdfs:subClassOf :Barcode ;
+           rdfs:comment "Two-dimensional (2D) use rectangles, dots, hexagons and other patterns, called matrix codes or 2D barcodes, although they do not use bars as such. 2D barcodes can be read using purpose-built 2D optical scanners, which exist in a few different forms. 2D barcodes can also be read by a digital camera connected to a microcomputer running software that takes a photographic image of the barcode and analyzes the image to deconstruct and decode the 2D barcode. A mobile device with an inbuilt camera, such as smartphone, can function as the latter type of 2D barcode reader using specialized application software (The same sort of mobile device could also read 1D barcodes, depending on the application software)."@en ;
+           rdfs:isDefinedBy <https://dbpedia.org/resource/Barcode> ;
+           rdfs:label "2D barcode"@en .
 
 
 ###  http://purl.org/fidmark/BinaryID
@@ -447,20 +521,28 @@
 
 ###  http://purl.org/fidmark/CALTag
 :CALTag rdf:type owl:Class ;
-        rdfs:subClassOf :Barcode ;
-        rdfs:label "CALTag"@en .
+        rdfs:subClassOf :Barcode2D ;
+        rdfs:comment """CALTag is a self-identifying marker pattern that can be accurately and automatically detected in images. Detection is robust to occlusions, uneven illumination and moderate lens distortion.
+
+Chequerboards are often used for camera calibration, with the interior saddle points providing the necessary point correspondences. Manual identification of these points is at best tedious, and at worst, infeasible and unreliable (especially when calibrating large arrays of cameras). By augmenting the pattern with self-identifying binary codes, much like the excellent ARTag system, this process can be automated.
+
+Whereas ARTag has highly robust error detection and correction, it suffers from licence restrictions, and a somewhat inaccurate corner detector. CALTag employs rudimentary error detection, but the code is free to use and modify, and it detects corners using a very accurate saddle-point finder."""@en ;
+        rdfs:isDefinedBy "https://www.cs.ubc.ca/labs/imager/tr/2010/Atcheson_VMV2010_CALTag/"^^xsd:anyURI ;
+        rdfs:label "CALTag"@en ;
+        <http://www.w3.org/2004/02/skos/core#altLabel> "Calibration tags"@en .
 
 
 ###  http://purl.org/fidmark/CCC
 :CCC rdf:type owl:Class ;
-     rdfs:subClassOf :Barcode ;
+     rdfs:subClassOf :Barcode1D ,
+                     :CircularBarcode ;
      rdfs:label "Concentric contrasting circles"@en ;
      <http://www.w3.org/2004/02/skos/core#altLabel> "CCC"@en .
 
 
 ###  http://purl.org/fidmark/CCTag
 :CCTag rdf:type owl:Class ;
-       rdfs:subClassOf :Barcode ;
+       rdfs:subClassOf :CircularBarcode ;
        rdfs:comment "CCTag markers are a robust, highly accurate fiducial system that can be robustly localized in the image even under challenging conditions. The library can efficiently detect the position of the image of the (common) circle center and identify the marker based on the different ratio of their crown sizes. Each marker can be uniquely identified thanks to the thickness of each crown, which encodes the information of the marker, typically a unique ID."@en ;
        rdfs:isDefinedBy "https://cctag.readthedocs.io/en/latest/"^^xsd:anyURI ;
        rdfs:label "CCTag"@en .
@@ -468,7 +550,7 @@
 
 ###  http://purl.org/fidmark/Chilitags
 :Chilitags rdf:type owl:Class ;
-           rdfs:subClassOf :Barcode ;
+           rdfs:subClassOf :Barcode2D ;
            rdfs:comment "Chilitags are a C++ cross-platform software library for the detection and identification of 2D fiducial markers (a.k.a. tags). Their purpose is to be printed and placed on objects from the real world, to form the basis of Robotics or Augmented Reality (AR) applications. Using a camera, the position of the tagged objects can be acquired by a computer."@en ;
            rdfs:isDefinedBy "https://github.com/chili-epfl/chilitags"^^xsd:anyURI ;
            rdfs:label "Chilitags"@en .
@@ -476,13 +558,30 @@
 
 ###  http://purl.org/fidmark/ChromaTag
 :ChromaTag rdf:type owl:Class ;
-           rdfs:subClassOf :Barcode ;
+           rdfs:subClassOf :Barcode2D ;
+           :color "Multicolor"@en ;
+           rdfs:comment "ChromaTag is a colored fiducial marker and detection algorithm that is significantly faster than other markers."@en ;
+           rdfs:isDefinedBy "https://github.com/CogChameleon/ChromaTag"^^xsd:anyURI ;
            rdfs:label "ChromaTag"@en .
+
+
+###  http://purl.org/fidmark/CircularBarcode
+:CircularBarcode rdf:type owl:Class ;
+                 rdfs:subClassOf :Barcode ;
+                 rdfs:comment "A circular barcode is made up of a series of concentric circles and is typically based on a standard barcode symbology. The barcode is thus readable by the same devices used to read traditional barcodes. The circular barcode can be scanned from any angle. The reading is not influenced by the orientation of the symbol. The redundancy in information ensures a good reading in every case, even if the surface is partially damaged."@en ;
+                 rdfs:isDefinedBy "https://www.technoriversoft.com/CircularBarcode.html"^^xsd:anyURI ;
+                 rdfs:label "Circular barcode"@en .
+
+
+###  http://purl.org/fidmark/Cybercode
+:Cybercode rdf:type owl:Class ;
+           rdfs:subClassOf :Barcode2D .
 
 
 ###  http://purl.org/fidmark/FiducialMarker
 :FiducialMarker rdf:type owl:Class ;
-                rdfs:subClassOf <http://purl.org/poso/VisualLandmark> ;
+                rdfs:subClassOf <http://purl.org/poso/TrackedFeature> ,
+                                <http://purl.org/poso/VisualLandmark> ;
                 rdfs:comment "A fiducial marker or fiducial is an object placed in the field of view of an imaging system that appears in the image produced, for use as a point of reference or a measure. It may be either something placed into or on the imaging subject, or a mark or set of marks in the reticle of an optical instrument."@en ;
                 rdfs:isDefinedBy <https://dbpedia.org/resource/Fiducial_marker> ;
                 rdfs:label "Fiducial marker"@en ;
@@ -492,25 +591,52 @@
 
 ###  http://purl.org/fidmark/FourierTag
 :FourierTag rdf:type owl:Class ;
-            rdfs:subClassOf :Barcode ;
+            rdfs:subClassOf :CircularBarcode ;
             rdfs:label "FourierTag"@en .
+
+
+###  http://purl.org/fidmark/ImageDescriptor
+:ImageDescriptor rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ;
+                 rdfs:label "Image descriptor"@en .
 
 
 ###  http://purl.org/fidmark/InterSense
 :InterSense rdf:type owl:Class ;
-            rdfs:subClassOf :Barcode .
+            rdfs:subClassOf :CircularBarcode ;
+            rdfs:label "InterSense"@en .
 
 
 ###  http://purl.org/fidmark/MarkerDictionary
 :MarkerDictionary rdf:type owl:Class ;
                   rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ;
                   rdfs:comment "A marker dictionary is a specified encoding that produces a set of identifiers that can be used for markers."@en ;
-                  rdfs:label "Marker dictionary"@en .
+                  rdfs:label "Marker dictionary"@en ;
+                  <http://www.w3.org/2004/02/skos/core#altLabel> "Marker family"@en ,
+                                                                 "Marker symbology"@en .
+
+
+###  http://purl.org/fidmark/MarkerOrigin
+:MarkerOrigin rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ;
+              rdfs:label "Marker origin"@en .
+
+
+###  http://purl.org/fidmark/MarkerPoseEstimation
+:MarkerPoseEstimation rdf:type owl:Class ;
+                      rdfs:subClassOf <http://purl.org/poso/PositioningTechnique> ;
+                      rdfs:label "Marker based pose estimation"@en .
+
+
+###  http://purl.org/fidmark/MarkerlessPoseEstimation
+:MarkerlessPoseEstimation rdf:type owl:Class ;
+                          rdfs:subClassOf <http://purl.org/poso/PositioningTechnique> ;
+                          rdfs:label "Markerless pose estimation"@en .
 
 
 ###  http://purl.org/fidmark/MaxiCode
 :MaxiCode rdf:type owl:Class ;
-          rdfs:subClassOf :Barcode ;
+          rdfs:subClassOf :Barcode2D ;
           rdfs:comment "MaxiCode is a public domain, machine-readable symbol system originally created by the United Parcel Service in 1992. Suitable for tracking and managing the shipment of packages, it resembles an Aztec Code or QR code, but uses dots arranged in a hexagonal grid instead of square grid."@en ;
           rdfs:isDefinedBy <https://dbpedia.org/resource/MaxiCode> ;
           rdfs:label "MaxiCode"@en .
@@ -518,19 +644,20 @@
 
 ###  http://purl.org/fidmark/MultiRing
 :MultiRing rdf:type owl:Class ;
-           rdfs:subClassOf :Barcode ;
+           rdfs:subClassOf :FiducialMarker ;
            rdfs:label "Multi-ring"@en .
 
 
 ###  http://purl.org/fidmark/PiTag
 :PiTag rdf:type owl:Class ;
        rdfs:subClassOf :Barcode ;
+       rdfs:isDefinedBy "http://dx.doi.org/10.1007/s00138-012-0469-6"^^xsd:anyURI ;
        rdfs:label "Pi-Tag"@en .
 
 
 ###  http://purl.org/fidmark/QRCode
 :QRCode rdf:type owl:Class ;
-        rdfs:subClassOf :Barcode ;
+        rdfs:subClassOf :Barcode2D ;
         :color "Monochrome"@en ;
         :encoding "Topological"@en ;
         :shape "Square"@en ;
@@ -542,13 +669,16 @@
 
 ###  http://purl.org/fidmark/RuneTag
 :RuneTag rdf:type owl:Class ;
-         rdfs:subClassOf :Barcode ;
+         rdfs:subClassOf :CircularBarcode ;
          rdfs:label "RuneTag"@en .
 
 
 ###  http://purl.org/fidmark/SIFT
 :SIFT rdf:type owl:Class ;
-      rdfs:subClassOf :Barcode .
+      rdfs:subClassOf :Barcode ;
+      :color "Grayscale"@en ;
+      :encoding "Gradient"@en ;
+      rdfs:label "SIFT"@en .
 
 
 ###  http://purl.org/fidmark/STag
@@ -565,7 +695,7 @@
 
 ###  http://purl.org/fidmark/TopoTag
 :TopoTag rdf:type owl:Class ;
-         rdfs:subClassOf :Barcode ;
+         rdfs:subClassOf :Barcode2D ;
          rdfs:comment "Fiducial markers have been playing an important role in augmented reality (AR), robot navigation, and general applications where the relative pose between a camera and an object is required. Here we introduce TopoTag, a robust and scalable topological fiducial marker system, which supports reliable and accurate pose estimation from a single image. TopoTag uses topological and geometrical information in marker detection to achieve higher robustness. Topological information is extensively used for 2D marker detection, and further corresponding geometrical information for ID decoding. Robust 3D pose estimation is achieved by taking advantage of all TopoTag vertices. Without sacrificing bits for higher recall and precision like previous systems, TopoTag can use full bits for ID encoding. TopoTag supports tens of thousands unique IDs and easily extends to millions of unique tags resulting in massive scalability."@en ;
          rdfs:isDefinedBy "https://herohuyongtao.github.io/research/publications/topo-tag/"^^xsd:anyURI ;
          rdfs:label "TopoTag"@en .
@@ -579,19 +709,29 @@
 
 ###  http://purl.org/fidmark/WhyCode
 :WhyCode rdf:type owl:Class ;
-         rdfs:subClassOf :Barcode .
+         rdfs:subClassOf :CircularBarcode ;
+         rdfs:isDefinedBy "https://dl.acm.org/doi/10.1145/3161534.3161537"^^xsd:anyURI ;
+         rdfs:label "WhyCode"@en .
 
 
 ###  http://purl.org/fidmark/reacTIVision
 :reacTIVision rdf:type owl:Class ;
-              rdfs:subClassOf :Barcode ;
+              rdfs:subClassOf :FiducialMarker ;
               rdfs:comment "reacTIVision is an open source, cross-platform computer vision framework for the fast and robust tracking of fiducial markers attached onto physical objects, as well as for multi-touch finger tracking. It was mainly designed as a toolkit for the rapid development of table-based tangible user interfaces (TUI) and multi-touch interactive surfaces. This framework has been developed by Martin Kaltenbrunner and Ross Bencina as the underlying sensor component of the Reactable, a tangible modular synthesizer that has set the standards for tangible multi-touch applications."@en ;
               rdfs:isDefinedBy "https://reactivision.sourceforge.net/"^^xsd:anyURI ;
               rdfs:label "reacTIVision"@en .
 
 
+###  http://purl.org/iot/vocab/m3-lite#Barcode
+<http://purl.org/iot/vocab/m3-lite#Barcode> rdf:type owl:Class .
+
+
 ###  http://purl.org/poso/VisualLandmark
 <http://purl.org/poso/VisualLandmark> rdf:type owl:Class .
+
+
+###  http://schema.org/Barcode
+<http://schema.org/Barcode> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2007/uwa/context/common.owl#AllDisjointSet
@@ -682,6 +822,7 @@
 :DICT_APRILTAG_16h5 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 5 ;
+                    :markerBits 16 ;
                     :maxIdentifiers 30 ;
                     rdfs:label "AprilTag 16h5 dictionary"@en .
 
@@ -690,6 +831,7 @@
 :DICT_APRILTAG_25h9 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 9 ;
+                    :markerBits 25 ;
                     :maxIdentifiers 35 ;
                     rdfs:label "AprilTag 25h9 dictionary"@en .
 
@@ -698,6 +840,7 @@
 :DICT_APRILTAG_36h10 rdf:type owl:NamedIndividual ,
                               :MarkerDictionary ;
                      :hammingDistance 10 ;
+                     :markerBits 36 ;
                      :maxIdentifiers 2320 .
 
 
@@ -705,6 +848,7 @@
 :DICT_APRILTAG_36h11 rdf:type owl:NamedIndividual ,
                               :MarkerDictionary ;
                      :hammingDistance 11 ;
+                     :markerBits 36 ;
                      :maxIdentifiers 587 .
 
 
@@ -712,7 +856,7 @@
 :DICT_ARUCO_4X4_100 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 3 ;
-                    :markerSize 4 ;
+                    :markerBits 16 ;
                     :maxIdentifiers 100 .
 
 
@@ -720,7 +864,7 @@
 :DICT_ARUCO_4X4_1000 rdf:type owl:NamedIndividual ,
                               :MarkerDictionary ;
                      :hammingDistance 2 ;
-                     :markerSize 4 ;
+                     :markerBits 16 ;
                      :maxIdentifiers 1000 .
 
 
@@ -728,7 +872,7 @@
 :DICT_ARUCO_4X4_250 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 3 ;
-                    :markerSize 4 ;
+                    :markerBits 16 ;
                     :maxIdentifiers 250 .
 
 
@@ -736,7 +880,7 @@
 :DICT_ARUCO_4X4_50 rdf:type owl:NamedIndividual ,
                             :MarkerDictionary ;
                    :hammingDistance 4 ;
-                   :markerSize 4 ;
+                   :markerBits 16 ;
                    :maxIdentifiers 50 .
 
 
@@ -744,7 +888,7 @@
 :DICT_ARUCO_5X5_100 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 7 ;
-                    :markerSize 5 ;
+                    :markerBits 25 ;
                     :maxIdentifiers 100 .
 
 
@@ -752,7 +896,7 @@
 :DICT_ARUCO_5X5_1000 rdf:type owl:NamedIndividual ,
                               :MarkerDictionary ;
                      :hammingDistance 5 ;
-                     :markerSize 5 ;
+                     :markerBits 25 ;
                      :maxIdentifiers 1000 .
 
 
@@ -760,7 +904,7 @@
 :DICT_ARUCO_5X5_250 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 6 ;
-                    :markerSize 5 ;
+                    :markerBits 25 ;
                     :maxIdentifiers 250 .
 
 
@@ -768,7 +912,7 @@
 :DICT_ARUCO_5X5_50 rdf:type owl:NamedIndividual ,
                             :MarkerDictionary ;
                    :hammingDistance 8 ;
-                   :markerSize 5 ;
+                   :markerBits 25 ;
                    :maxIdentifiers 50 .
 
 
@@ -776,7 +920,7 @@
 :DICT_ARUCO_6X6_100 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 12 ;
-                    :markerSize 6 ;
+                    :markerBits 36 ;
                     :maxIdentifiers 100 .
 
 
@@ -784,7 +928,7 @@
 :DICT_ARUCO_6X6_1000 rdf:type owl:NamedIndividual ,
                               :MarkerDictionary ;
                      :hammingDistance 9 ;
-                     :markerSize 6 ;
+                     :markerBits 36 ;
                      :maxIdentifiers 1000 .
 
 
@@ -792,7 +936,7 @@
 :DICT_ARUCO_6X6_250 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 11 ;
-                    :markerSize 6 ;
+                    :markerBits 36 ;
                     :maxIdentifiers 250 .
 
 
@@ -800,7 +944,7 @@
 :DICT_ARUCO_6X6_50 rdf:type owl:NamedIndividual ,
                             :MarkerDictionary ;
                    :hammingDistance 13 ;
-                   :markerSize 6 ;
+                   :markerBits 36 ;
                    :maxIdentifiers 50 .
 
 
@@ -808,7 +952,7 @@
 :DICT_ARUCO_7X7_100 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 18 ;
-                    :markerSize 7 ;
+                    :markerBits 49 ;
                     :maxIdentifiers 100 .
 
 
@@ -816,7 +960,7 @@
 :DICT_ARUCO_7X7_1000 rdf:type owl:NamedIndividual ,
                               :MarkerDictionary ;
                      :hammingDistance 14 ;
-                     :markerSize 7 ;
+                     :markerBits 49 ;
                      :maxIdentifiers 1000 .
 
 
@@ -824,7 +968,7 @@
 :DICT_ARUCO_7X7_250 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
                     :hammingDistance 17 ;
-                    :markerSize 7 ;
+                    :markerBits 49 ;
                     :maxIdentifiers 250 .
 
 
@@ -832,7 +976,7 @@
 :DICT_ARUCO_7X7_50 rdf:type owl:NamedIndividual ,
                             :MarkerDictionary ;
                    :hammingDistance 19 ;
-                   :markerSize 7 ;
+                   :markerBits 49 ;
                    :maxIdentifiers 50 .
 
 
@@ -840,6 +984,7 @@
 :DICT_ARUCO_MIP_36h12 rdf:type owl:NamedIndividual ,
                                :MarkerDictionary ;
                       :hammingDistance 12 ;
+                      :markerBits 36 ;
                       :maxIdentifiers 250 .
 
 
@@ -859,22 +1004,48 @@
 ###  http://purl.org/fidmark/DICT_TOPOTAG_3X3
 :DICT_TOPOTAG_3X3 rdf:type owl:NamedIndividual ,
                            :MarkerDictionary ;
-                  :markerSize 3 ;
+                  :markerBits 9 ;
                   :maxIdentifiers 128 .
 
 
 ###  http://purl.org/fidmark/DICT_TOPOTAG_4X4
 :DICT_TOPOTAG_4X4 rdf:type owl:NamedIndividual ,
                            :MarkerDictionary ;
-                  :markerSize 4 ;
+                  :markerBits 16 ;
                   :maxIdentifiers 16384 .
 
 
 ###  http://purl.org/fidmark/DICT_TOPOTAG_5X5
 :DICT_TOPOTAG_5X5 rdf:type owl:NamedIndividual ,
                            :MarkerDictionary ;
-                  :markerSize 5 ;
+                  :markerBits 25 ;
                   :maxIdentifiers 8388608 .
+
+
+###  http://purl.org/fidmark/OriginBottomLeft
+:OriginBottomLeft rdf:type owl:NamedIndividual ,
+                           :MarkerOrigin .
+
+
+###  http://purl.org/fidmark/OriginBottomRight
+:OriginBottomRight rdf:type owl:NamedIndividual ,
+                            :MarkerOrigin .
+
+
+###  http://purl.org/fidmark/OriginCenter
+:OriginCenter rdf:type owl:NamedIndividual ,
+                       :MarkerOrigin ;
+              rdfs:label "Center origin"@en .
+
+
+###  http://purl.org/fidmark/OriginTopLeft
+:OriginTopLeft rdf:type owl:NamedIndividual ,
+                        :MarkerOrigin .
+
+
+###  http://purl.org/fidmark/OriginTopRight
+:OriginTopRight rdf:type owl:NamedIndividual ,
+                         :MarkerOrigin .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

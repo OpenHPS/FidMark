@@ -64,10 +64,13 @@ $(function(){
 <dt>Authors:</dt>
 <dd>Isaac Valadez Mora</dd><dd>Maxim Van de Wynckel</dd>
 
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://purl.org/poso/">&lt;http://purl.org/poso/&gt;</a></dd><dd><a href="http://www.w3.org/ns/sosa/">&lt;http://www.w3.org/ns/sosa/&gt;</a></dd><dd><a href="http://www.w3.org/ns/ssn/">&lt;http://www.w3.org/ns/ssn/&gt;</a></dd><dd><a href="http://www.w3.org/ns/ssn/systems/">&lt;http://www.w3.org/ns/ssn/systems/&gt;</a></dd>
+
 <dt>Download serialization:</dt><dd><span><a href="../ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="../ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="../ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="../ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://purl.org/NET/rdflicense/MIT1.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/MIT1.0-blue.svg" alt="http://purl.org/NET/rdflicense/MIT1.0" /></a>
 </dd><dt>Visualization:</dt><dd><a href="../webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="../OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark</dd>
+<dd>Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers</dd>
 </dl>
 
 <a href="../provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
@@ -84,6 +87,12 @@ $(function(){
 This ontology has the following classes and properties.</span>
 <h4>Classes</h4>
 <ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#Barcode1D" title="http://purl.org/fidmark/Barcode1D">1D barcode</a>
+   </li>
+   <li>
+      <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
+   </li>
    <li>
       <a href="#AprilTag" title="http://purl.org/fidmark/AprilTag">AprilTag</a>
    </li>
@@ -118,7 +127,15 @@ This ontology has the following classes and properties.</span>
       <a href="#ChromaTag" title="http://purl.org/fidmark/ChromaTag">ChromaTag</a>
    </li>
    <li>
+      <a href="#CircularBarcode" title="http://purl.org/fidmark/CircularBarcode">Circular barcode</a>
+   </li>
+   <li>
       <a href="#CCC" title="http://purl.org/fidmark/CCC">Concentric contrasting circles</a>
+   </li>
+   <li>
+      <a href="#Cybercode" title="http://purl.org/fidmark/Cybercode">
+         <span>cybercode</span>
+      </a>
    </li>
    <li>
       <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
@@ -127,12 +144,23 @@ This ontology has the following classes and properties.</span>
       <a href="#FourierTag" title="http://purl.org/fidmark/FourierTag">FourierTag</a>
    </li>
    <li>
-      <a href="#InterSense" title="http://purl.org/fidmark/InterSense">
-         <span>inter sense</span>
-      </a>
+      <a href="#ImageDescriptor" title="http://purl.org/fidmark/ImageDescriptor">Image descriptor</a>
+   </li>
+   <li>
+      <a href="#InterSense" title="http://purl.org/fidmark/InterSense">InterSense</a>
+   </li>
+   <li>
+      <a href="#MarkerPoseEstimation" title="http://purl.org/fidmark/MarkerPoseEstimation">Marker based pose estimation</a>
    </li>
    <li>
       <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+   </li>
+   <li>
+      <a href="#MarkerOrigin" title="http://purl.org/fidmark/MarkerOrigin">Marker origin</a>
+   </li>
+   <li>
+      <a href="#MarkerlessPoseEstimation"
+         title="http://purl.org/fidmark/MarkerlessPoseEstimation">Markerless pose estimation</a>
    </li>
    <li>
       <a href="#MaxiCode" title="http://purl.org/fidmark/MaxiCode">MaxiCode</a>
@@ -153,9 +181,7 @@ This ontology has the following classes and properties.</span>
       <a href="#RuneTag" title="http://purl.org/fidmark/RuneTag">RuneTag</a>
    </li>
    <li>
-      <a href="#SIFT" title="http://purl.org/fidmark/SIFT">
-         <span>s i f t</span>
-      </a>
+      <a href="#SIFT" title="http://purl.org/fidmark/SIFT">SIFT</a>
    </li>
    <li>
       <a href="#STag" title="http://purl.org/fidmark/STag">STag</a>
@@ -170,21 +196,42 @@ This ontology has the following classes and properties.</span>
       <a href="#VisualCode" title="http://purl.org/fidmark/VisualCode">VisualCode</a>
    </li>
    <li>
-      <a href="#WhyCode" title="http://purl.org/fidmark/WhyCode">
-         <span>why code</span>
-      </a>
+      <a href="#WhyCode" title="http://purl.org/fidmark/WhyCode">WhyCode</a>
    </li>
 </ul><h4>Object Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
-      <a href="#markerDictionary" title="http://purl.org/fidmark/markerDictionary">marker dictionary</a>
+      <a href="#hasImageDesciptor" title="http://purl.org/fidmark/hasImageDesciptor">has image descriptor</a>
    </li>
    <li>
-      <a href="#markerHeight" title="http://purl.org/fidmark/markerHeight">marker height</a>
+      <a href="#hasMarker" title="http://purl.org/fidmark/hasMarker">has marker</a>
    </li>
    <li>
-      <a href="#markerWidth" title="http://purl.org/fidmark/markerWidth">marker width</a>
+      <a href="#hasDictionary" title="http://purl.org/fidmark/hasDictionary">has marker dictionary</a>
+   </li>
+   <li>
+      <a href="#hasHeight" title="http://purl.org/fidmark/hasHeight">has marker height</a>
+   </li>
+   <li>
+      <a href="#hasWidth" title="http://purl.org/fidmark/hasWidth">has marker width</a>
+   </li>
+   <li>
+      <a href="#hasOrigin" title="http://purl.org/fidmark/hasOrigin">has origin</a>
+   </li>
+   <li>
+      <a href="#isImageDescriptorOf" title="http://purl.org/fidmark/isImageDescriptorOf">
+         <span>is image descriptor of</span>
+      </a>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
+   <li>
+      <a href="#asImage" title="http://purl.org/fidmark/asImage">as image</a>
+   </li>
+   <li>
+      <a href="#asNFT" title="http://purl.org/fidmark/asNFT">as NFT</a>
+   </li>
+   <li>
+      <a href="#asZFT" title="http://purl.org/fidmark/asZFT">as ZFT</a>
+   </li>
    <li>
       <a href="#dictionarySize" title="http://purl.org/fidmark/dictionarySize">dictionary size</a>
    </li>
@@ -192,19 +239,13 @@ This ontology has the following classes and properties.</span>
       <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
    </li>
    <li>
+      <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
+   </li>
+   <li>
       <a href="#markerData" title="http://purl.org/fidmark/markerData">marker data</a>
    </li>
    <li>
       <a href="#markerIdentifier" title="http://purl.org/fidmark/markerIdentifier">marker identifier</a>
-   </li>
-   <li>
-      <a href="#markerImage" title="http://purl.org/fidmark/markerImage">marker image</a>
-   </li>
-   <li>
-      <a href="#markerPattern" title="http://purl.org/fidmark/markerPattern">marker pattern</a>
-   </li>
-   <li>
-      <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
    </li>
    <li>
       <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
@@ -224,6 +265,9 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#DICT_ARUCO_ORIGINAL" title="http://purl.org/fidmark/DICT_ARUCO_ORIGINAL">ArUco original dictionary</a>
+   </li>
+   <li>
+      <a href="#OriginCenter" title="http://purl.org/fidmark/OriginCenter">Center origin</a>
    </li>
    <li>
       <a href="#DICT_APRILTAG_36h10" title="http://purl.org/fidmark/DICT_APRILTAG_36h10">
@@ -340,6 +384,26 @@ This ontology has the following classes and properties.</span>
          <span>d i c t t o p o t a g 5 x5</span>
       </a>
    </li>
+   <li>
+      <a href="#OriginBottomLeft" title="http://purl.org/fidmark/OriginBottomLeft">
+         <span>origin bottom left</span>
+      </a>
+   </li>
+   <li>
+      <a href="#OriginBottomRight" title="http://purl.org/fidmark/OriginBottomRight">
+         <span>origin bottom right</span>
+      </a>
+   </li>
+   <li>
+      <a href="#OriginTopLeft" title="http://purl.org/fidmark/OriginTopLeft">
+         <span>origin top left</span>
+      </a>
+   </li>
+   <li>
+      <a href="#OriginTopRight" title="http://purl.org/fidmark/OriginTopRight">
+         <span>origin top right</span>
+      </a>
+   </li>
 </ul><iframe align="center" width="100%" height ="500px" src="../webvowl/index.html"></iframe> 
 </div>
    
@@ -350,6 +414,12 @@ This section provides details for each class and property defined by Fiducial Ma
 <div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
+      <li>
+         <a href="#Barcode1D" title="http://purl.org/fidmark/Barcode1D">1D barcode</a>
+      </li>
+      <li>
+         <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
+      </li>
       <li>
          <a href="#AprilTag" title="http://purl.org/fidmark/AprilTag">AprilTag</a>
       </li>
@@ -384,7 +454,15 @@ This section provides details for each class and property defined by Fiducial Ma
          <a href="#ChromaTag" title="http://purl.org/fidmark/ChromaTag">ChromaTag</a>
       </li>
       <li>
+         <a href="#CircularBarcode" title="http://purl.org/fidmark/CircularBarcode">Circular barcode</a>
+      </li>
+      <li>
          <a href="#CCC" title="http://purl.org/fidmark/CCC">Concentric contrasting circles</a>
+      </li>
+      <li>
+         <a href="#Cybercode" title="http://purl.org/fidmark/Cybercode">
+            <span>cybercode</span>
+         </a>
       </li>
       <li>
          <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
@@ -393,12 +471,23 @@ This section provides details for each class and property defined by Fiducial Ma
          <a href="#FourierTag" title="http://purl.org/fidmark/FourierTag">FourierTag</a>
       </li>
       <li>
-         <a href="#InterSense" title="http://purl.org/fidmark/InterSense">
-            <span>inter sense</span>
-         </a>
+         <a href="#ImageDescriptor" title="http://purl.org/fidmark/ImageDescriptor">Image descriptor</a>
+      </li>
+      <li>
+         <a href="#InterSense" title="http://purl.org/fidmark/InterSense">InterSense</a>
+      </li>
+      <li>
+         <a href="#MarkerPoseEstimation" title="http://purl.org/fidmark/MarkerPoseEstimation">Marker based pose estimation</a>
       </li>
       <li>
          <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+      </li>
+      <li>
+         <a href="#MarkerOrigin" title="http://purl.org/fidmark/MarkerOrigin">Marker origin</a>
+      </li>
+      <li>
+         <a href="#MarkerlessPoseEstimation"
+            title="http://purl.org/fidmark/MarkerlessPoseEstimation">Markerless pose estimation</a>
       </li>
       <li>
          <a href="#MaxiCode" title="http://purl.org/fidmark/MaxiCode">MaxiCode</a>
@@ -419,9 +508,7 @@ This section provides details for each class and property defined by Fiducial Ma
          <a href="#RuneTag" title="http://purl.org/fidmark/RuneTag">RuneTag</a>
       </li>
       <li>
-         <a href="#SIFT" title="http://purl.org/fidmark/SIFT">
-            <span>s i f t</span>
-         </a>
+         <a href="#SIFT" title="http://purl.org/fidmark/SIFT">SIFT</a>
       </li>
       <li>
          <a href="#STag" title="http://purl.org/fidmark/STag">STag</a>
@@ -436,11 +523,76 @@ This section provides details for each class and property defined by Fiducial Ma
          <a href="#VisualCode" title="http://purl.org/fidmark/VisualCode">VisualCode</a>
       </li>
       <li>
-         <a href="#WhyCode" title="http://purl.org/fidmark/WhyCode">
-            <span>why code</span>
-         </a>
+         <a href="#WhyCode" title="http://purl.org/fidmark/WhyCode">WhyCode</a>
       </li>
    </ul>
+   <div class="entity" id="Barcode1D">
+      <h3>1D barcode<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/Barcode1D</p>
+      <div class="comment">
+         <span class="markdown">A barcode or bar code is a method of representing data in a visual, machine-readable form. Initially, barcodes represented data by varying the widths, spacings and sizes of parallel lines. These barcodes, now commonly referred to as linear or one-dimensional (1D), can be scanned by special optical scanners, called barcode readers, of which there are several types.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://dbpedia.org/resource/Barcode">https://dbpedia.org/resource/Barcode</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#CCC" title="http://purl.org/fidmark/CCC">Concentric contrasting circles</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Barcode2D">
+      <h3>2D barcode<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/Barcode2D</p>
+      <div class="comment">
+         <span class="markdown">Two-dimensional (2D) use rectangles, dots, hexagons and other patterns, called matrix codes or 2D barcodes, although they do not use bars as such. 2D barcodes can be read using purpose-built 2D optical scanners, which exist in a few different forms. 2D barcodes can also be read by a digital camera connected to a microcomputer running software that takes a photographic image of the barcode and analyzes the image to deconstruct and decode the 2D barcode. A mobile device with an inbuilt camera, such as smartphone, can function as the latter type of 2D barcode reader using specialized application software (The same sort of mobile device could also read 1D barcodes, depending on the application software).</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://dbpedia.org/resource/Barcode">https://dbpedia.org/resource/Barcode</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#ARTag" title="http://purl.org/fidmark/ARTag">ARTag</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#AprilTag" title="http://purl.org/fidmark/AprilTag">AprilTag</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ArUco" title="http://purl.org/fidmark/ArUco">ArUco</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#CALTag" title="http://purl.org/fidmark/CALTag">CALTag</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Chilitags" title="http://purl.org/fidmark/Chilitags">Chilitags</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ChromaTag" title="http://purl.org/fidmark/ChromaTag">ChromaTag</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MaxiCode" title="http://purl.org/fidmark/MaxiCode">MaxiCode</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#QRCode" title="http://purl.org/fidmark/QRCode">QR code</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#TopoTag" title="http://purl.org/fidmark/TopoTag">TopoTag</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Cybercode" title="http://purl.org/fidmark/Cybercode">cybercode</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="AprilTag">
       <h3>AprilTag<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -454,7 +606,7 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -478,7 +630,7 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -515,7 +667,7 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -527,7 +679,29 @@ This section provides details for each class and property defined by Fiducial Ma
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/Barcode</p>
+      <div class="comment">
+         <span class="markdown">A barcode or bar code is a method of representing data in a visual, machine-readable form.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://dbpedia.org/resource/Barcode">https://dbpedia.org/resource/Barcode</a>
+         </dd>
+      </dl>
       <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="http://purl.org/iot/vocab/m3-lite#Barcode"
+               target="_blank"
+               title="http://purl.org/iot/vocab/m3-lite#Barcode">barcode</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="http://schema.org/Barcode"
+               target="_blank"
+               title="http://schema.org/Barcode">barcode</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>has super-classes</dt>
          <dd>
             <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
@@ -535,31 +709,17 @@ This section provides details for each class and property defined by Fiducial Ma
          </dd>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#ARTag" title="http://purl.org/fidmark/ARTag">ARTag</a>
+            <a href="#Barcode1D" title="http://purl.org/fidmark/Barcode1D">1D barcode</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
             <sup class="type-c" title="class">c</sup>, <a href="#ARToolKit" title="http://purl.org/fidmark/ARToolKit">ARToolKit</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#AprilTag" title="http://purl.org/fidmark/AprilTag">AprilTag</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ArUco" title="http://purl.org/fidmark/ArUco">ArUco</a>
             <sup class="type-c" title="class">c</sup>, <a href="#BinaryID" title="http://purl.org/fidmark/BinaryID">BinaryID</a>
             <sup class="type-c" title="class">c</sup>, <a href="#BullsEye" title="http://purl.org/fidmark/BullsEye">BullsEye</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#CALTag" title="http://purl.org/fidmark/CALTag">CALTag</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#CCTag" title="http://purl.org/fidmark/CCTag">CCTag</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Chilitags" title="http://purl.org/fidmark/Chilitags">Chilitags</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ChromaTag" title="http://purl.org/fidmark/ChromaTag">ChromaTag</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#CCC" title="http://purl.org/fidmark/CCC">Concentric contrasting circles</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#FourierTag" title="http://purl.org/fidmark/FourierTag">FourierTag</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#MaxiCode" title="http://purl.org/fidmark/MaxiCode">MaxiCode</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#MultiRing" title="http://purl.org/fidmark/MultiRing">Multi-ring</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#CircularBarcode" title="http://purl.org/fidmark/CircularBarcode">Circular barcode</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PiTag" title="http://purl.org/fidmark/PiTag">Pi-Tag</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#QRCode" title="http://purl.org/fidmark/QRCode">QR code</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#RuneTag" title="http://purl.org/fidmark/RuneTag">RuneTag</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SIFT" title="http://purl.org/fidmark/SIFT">SIFT</a>
             <sup class="type-c" title="class">c</sup>, <a href="#STag" title="http://purl.org/fidmark/STag">STag</a>
             <sup class="type-c" title="class">c</sup>, <a href="#TRIP" title="http://purl.org/fidmark/TRIP">TRIP</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#TopoTag" title="http://purl.org/fidmark/TopoTag">TopoTag</a>
             <sup class="type-c" title="class">c</sup>, <a href="#VisualCode" title="http://purl.org/fidmark/VisualCode">VisualCode</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#InterSense" title="http://purl.org/fidmark/InterSense">inter sense</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#reacTIVision" title="http://purl.org/fidmark/reacTIVision">reacTIVision</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#SIFT" title="http://purl.org/fidmark/SIFT">s i f t</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#WhyCode" title="http://purl.org/fidmark/WhyCode">why code</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -601,10 +761,21 @@ This section provides details for each class and property defined by Fiducial Ma
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/CALTag</p>
+      <div class="comment">
+         <span class="markdown">CALTag is a self-identifying marker pattern that can be accurately and automatically detected in images. Detection is robust to occlusions, uneven illumination and moderate lens distortion.
+
+Chequerboards are often used for camera calibration, with the interior saddle points providing the necessary point correspondences. Manual identification of these points is at best tedious, and at worst, infeasible and unreliable (especially when calibrating large arrays of cameras). By augmenting the pattern with self-identifying binary codes, much like the excellent ARTag system, this process can be automated.
+
+Whereas ARTag has highly robust error detection and correction, it suffers from licence restrictions, and a somewhat inaccurate corner detector. CALTag employs rudimentary error detection, but the code is free to use and modify, and it detects corners using a very accurate saddle-point finder.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>http://purl.org/fidmark/</dd>
+      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -626,7 +797,7 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#CircularBarcode" title="http://purl.org/fidmark/CircularBarcode">Circular barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -653,7 +824,7 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -665,10 +836,49 @@ This section provides details for each class and property defined by Fiducial Ma
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/ChromaTag</p>
+      <div class="comment">
+         <span class="markdown">ChromaTag is a colored fiducial marker and detection algorithm that is significantly faster than other markers.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>http://purl.org/fidmark/</dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="CircularBarcode">
+      <h3>Circular barcode<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/CircularBarcode</p>
+      <div class="comment">
+         <span class="markdown">A circular barcode is made up of a series of concentric circles and is typically based on a standard barcode symbology. The barcode is thus readable by the same devices used to read traditional barcodes. The circular barcode can be scanned from any angle. The reading is not influenced by the orientation of the symbol. The redundancy in information ensures a good reading in every case, even if the surface is partially damaged.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>http://purl.org/fidmark/</dd>
+      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
             <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#CCTag" title="http://purl.org/fidmark/CCTag">CCTag</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#CCC" title="http://purl.org/fidmark/CCC">Concentric contrasting circles</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#FourierTag" title="http://purl.org/fidmark/FourierTag">FourierTag</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#InterSense" title="http://purl.org/fidmark/InterSense">InterSense</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#RuneTag" title="http://purl.org/fidmark/RuneTag">RuneTag</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#WhyCode" title="http://purl.org/fidmark/WhyCode">WhyCode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -683,7 +893,23 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#Barcode1D" title="http://purl.org/fidmark/Barcode1D">1D barcode</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#CircularBarcode" title="http://purl.org/fidmark/CircularBarcode">Circular barcode</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Cybercode">
+      <h3>cybercode<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/Cybercode</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -707,7 +933,9 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="http://purl.org/poso/VisualLandmark"
+            <a href="http://purl.org/poso/TrackedFeature"
+               target="_blank"
+               title="http://purl.org/poso/TrackedFeature">tracked feature</a>, <a href="http://purl.org/poso/VisualLandmark"
                target="_blank"
                title="http://purl.org/poso/VisualLandmark">visual landmark</a>
             <sup class="type-c" title="class">c</sup>
@@ -715,23 +943,29 @@ This section provides details for each class and property defined by Fiducial Ma
          <dt>has sub-classes</dt>
          <dd>
             <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MultiRing" title="http://purl.org/fidmark/MultiRing">Multi-ring</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#reacTIVision" title="http://purl.org/fidmark/reacTIVision">reacTIVision</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="http://purl.org/fidmark/color"
+            <a href="#hasImageDesciptor" title="http://purl.org/fidmark/hasImageDesciptor">has image descriptor</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasDictionary" title="http://purl.org/fidmark/hasDictionary">has marker dictionary</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasHeight" title="http://purl.org/fidmark/hasHeight">has marker height</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasWidth" title="http://purl.org/fidmark/hasWidth">has marker width</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="http://purl.org/fidmark/color"
                target="_blank"
                title="http://purl.org/fidmark/color">marker color</a>, <a href="#markerData" title="http://purl.org/fidmark/markerData">marker data</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#markerDictionary" title="http://purl.org/fidmark/markerDictionary">marker dictionary</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="http://purl.org/fidmark/encoding"
+            <sup class="type-dp" title="data property">dp</sup>, <a href="http://purl.org/fidmark/encoding"
                target="_blank"
-               title="http://purl.org/fidmark/encoding">marker encoding</a>, <a href="#markerHeight" title="http://purl.org/fidmark/markerHeight">marker height</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#markerIdentifier" title="http://purl.org/fidmark/markerIdentifier">marker identifier</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#markerImage" title="http://purl.org/fidmark/markerImage">marker image</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#markerPattern" title="http://purl.org/fidmark/markerPattern">marker pattern</a>
+               title="http://purl.org/fidmark/encoding">marker encoding</a>, <a href="#markerIdentifier" title="http://purl.org/fidmark/markerIdentifier">marker identifier</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="http://purl.org/fidmark/shape"
                target="_blank"
-               title="http://purl.org/fidmark/shape">marker shape</a>, <a href="#markerWidth" title="http://purl.org/fidmark/markerWidth">marker width</a>
+               title="http://purl.org/fidmark/shape">marker shape</a>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasMarker" title="http://purl.org/fidmark/hasMarker">has marker</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -746,13 +980,42 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#CircularBarcode" title="http://purl.org/fidmark/CircularBarcode">Circular barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
+   <div class="entity" id="ImageDescriptor">
+      <h3>Image descriptor<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/ImageDescriptor</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/ssn/Property"
+               target="_blank"
+               title="http://www.w3.org/ns/ssn/Property">property</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#asNFT" title="http://purl.org/fidmark/asNFT">as NFT</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#asZFT" title="http://purl.org/fidmark/asZFT">as ZFT</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#asImage" title="http://purl.org/fidmark/asImage">as image</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasImageDesciptor" title="http://purl.org/fidmark/hasImageDesciptor">has image descriptor</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="InterSense">
-      <h3>inter sense<sup class="type-c" title="class">c</sup>
+      <h3>InterSense<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -761,8 +1024,24 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#CircularBarcode" title="http://purl.org/fidmark/CircularBarcode">Circular barcode</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MarkerPoseEstimation">
+      <h3>Marker based pose estimation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/MarkerPoseEstimation</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://purl.org/poso/PositioningTechnique"
+               target="_blank"
+               title="http://purl.org/poso/PositioningTechnique">positioning technique</a>
          </dd>
       </dl>
    </div>
@@ -788,14 +1067,14 @@ This section provides details for each class and property defined by Fiducial Ma
          <dd>
             <a href="#dictionarySize" title="http://purl.org/fidmark/dictionarySize">dictionary size</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#version" title="http://purl.org/fidmark/version">version</a>
             <sup class="type-dp" title="data property">dp</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#markerDictionary" title="http://purl.org/fidmark/markerDictionary">marker dictionary</a>
+            <a href="#hasDictionary" title="http://purl.org/fidmark/hasDictionary">has marker dictionary</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>has members</dt>
@@ -830,6 +1109,48 @@ This section provides details for each class and property defined by Fiducial Ma
          </dd>
       </dl>
    </div>
+   <div class="entity" id="MarkerOrigin">
+      <h3>Marker origin<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/MarkerOrigin</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/ssn/Property"
+               target="_blank"
+               title="http://www.w3.org/ns/ssn/Property">property</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#OriginCenter" title="http://purl.org/fidmark/OriginCenter">Center origin</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#OriginBottomLeft" title="http://purl.org/fidmark/OriginBottomLeft">origin bottom left</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#OriginBottomRight" title="http://purl.org/fidmark/OriginBottomRight">origin bottom right</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#OriginTopLeft" title="http://purl.org/fidmark/OriginTopLeft">origin top left</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#OriginTopRight" title="http://purl.org/fidmark/OriginTopRight">origin top right</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MarkerlessPoseEstimation">
+      <h3>Markerless pose estimation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/MarkerlessPoseEstimation</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://purl.org/poso/PositioningTechnique"
+               target="_blank"
+               title="http://purl.org/poso/PositioningTechnique">positioning technique</a>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="MaxiCode">
       <h3>MaxiCode<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -849,7 +1170,7 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -864,7 +1185,7 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -876,6 +1197,10 @@ This section provides details for each class and property defined by Fiducial Ma
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/PiTag</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>http://purl.org/fidmark/</dd>
+      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -897,7 +1222,7 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -919,7 +1244,7 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -934,13 +1259,13 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#CircularBarcode" title="http://purl.org/fidmark/CircularBarcode">Circular barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
    <div class="entity" id="SIFT">
-      <h3>s i f t<sup class="type-c" title="class">c</sup>
+      <h3>SIFT<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
@@ -986,7 +1311,7 @@ This section provides details for each class and property defined by Fiducial Ma
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1022,16 +1347,20 @@ This section provides details for each class and property defined by Fiducial Ma
       </dl>
    </div>
    <div class="entity" id="WhyCode">
-      <h3>why code<sup class="type-c" title="class">c</sup>
+      <h3>WhyCode<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/WhyCode</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>http://purl.org/fidmark/</dd>
+      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <a href="#CircularBarcode" title="http://purl.org/fidmark/CircularBarcode">Circular barcode</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1040,22 +1369,91 @@ This section provides details for each class and property defined by Fiducial Ma
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#markerDictionary" title="http://purl.org/fidmark/markerDictionary">marker dictionary</a>
+         <a href="#hasImageDesciptor" title="http://purl.org/fidmark/hasImageDesciptor">has image descriptor</a>
       </li>
       <li>
-         <a href="#markerHeight" title="http://purl.org/fidmark/markerHeight">marker height</a>
+         <a href="#hasMarker" title="http://purl.org/fidmark/hasMarker">has marker</a>
       </li>
       <li>
-         <a href="#markerWidth" title="http://purl.org/fidmark/markerWidth">marker width</a>
+         <a href="#hasDictionary" title="http://purl.org/fidmark/hasDictionary">has marker dictionary</a>
+      </li>
+      <li>
+         <a href="#hasHeight" title="http://purl.org/fidmark/hasHeight">has marker height</a>
+      </li>
+      <li>
+         <a href="#hasWidth" title="http://purl.org/fidmark/hasWidth">has marker width</a>
+      </li>
+      <li>
+         <a href="#hasOrigin" title="http://purl.org/fidmark/hasOrigin">has origin</a>
+      </li>
+      <li>
+         <a href="#isImageDescriptorOf" title="http://purl.org/fidmark/isImageDescriptorOf">
+            <span>is image descriptor of</span>
+         </a>
       </li>
    </ul>
-   <div class="entity" id="markerDictionary">
-      <h3>marker dictionary<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="hasImageDesciptor">
+      <h3>has image descriptor<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://purl.org/fidmark/markerDictionary</p>
+         <strong>IRI:</strong> http://purl.org/fidmark/hasImageDesciptor</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/ssn/hasProperty"
+                  target="_blank"
+                  title="http://www.w3.org/ns/ssn/hasProperty">has property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ImageDescriptor" title="http://purl.org/fidmark/ImageDescriptor">Image descriptor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasMarker">
+      <h3>has marker<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/hasMarker</p>
+      <div class="comment">
+         <span class="markdown">Indicates a marker on an (optical) positioning system</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest"
+                  target="_blank"
+                  title="http://www.w3.org/ns/sosa/hasFeatureOfInterest">has feature of interest</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasDictionary">
+      <h3>has marker dictionary<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/hasDictionary</p>
       <div class="comment">
          <span class="markdown">A marker dictionary defines the different variants that can be achieved using the available encoded bits and error correction.</span>
       </div>
@@ -1081,13 +1479,13 @@ This section provides details for each class and property defined by Fiducial Ma
          </dl>
       </div>
    </div>
-   <div class="entity" id="markerHeight">
-      <h3>marker height<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="hasHeight">
+      <h3>has marker height<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://purl.org/fidmark/markerHeight</p>
+         <strong>IRI:</strong> http://purl.org/fidmark/hasHeight</p>
       <div class="comment">
          <span class="markdown">Defines the marker height in a specified unit. This can be used for determining the scale of the marker.</span>
       </div>
@@ -1108,13 +1506,13 @@ This section provides details for each class and property defined by Fiducial Ma
          </dl>
       </div>
    </div>
-   <div class="entity" id="markerWidth">
-      <h3>marker width<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="hasWidth">
+      <h3>has marker width<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://purl.org/fidmark/markerWidth</p>
+         <strong>IRI:</strong> http://purl.org/fidmark/hasWidth</p>
       <div class="comment">
          <span class="markdown">Defines the marker width in a specified unit. This can be used for determining the scale of the marker.</span>
       </div>
@@ -1135,9 +1533,55 @@ This section provides details for each class and property defined by Fiducial Ma
          </dl>
       </div>
    </div>
+   <div class="entity" id="hasOrigin">
+      <h3>has origin<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/hasOrigin</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/ssn/hasProperty"
+                  target="_blank"
+                  title="http://www.w3.org/ns/ssn/hasProperty">has property</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isImageDescriptorOf">
+      <h3>is image descriptor of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/isImageDescriptorOf</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/ssn/isPropertyOf"
+                  target="_blank"
+                  title="http://www.w3.org/ns/ssn/isPropertyOf">is property of</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
 </div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
+      <li>
+         <a href="#asImage" title="http://purl.org/fidmark/asImage">as image</a>
+      </li>
+      <li>
+         <a href="#asNFT" title="http://purl.org/fidmark/asNFT">as NFT</a>
+      </li>
+      <li>
+         <a href="#asZFT" title="http://purl.org/fidmark/asZFT">as ZFT</a>
+      </li>
       <li>
          <a href="#dictionarySize" title="http://purl.org/fidmark/dictionarySize">dictionary size</a>
       </li>
@@ -1145,19 +1589,13 @@ This section provides details for each class and property defined by Fiducial Ma
          <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
       </li>
       <li>
+         <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
+      </li>
+      <li>
          <a href="#markerData" title="http://purl.org/fidmark/markerData">marker data</a>
       </li>
       <li>
          <a href="#markerIdentifier" title="http://purl.org/fidmark/markerIdentifier">marker identifier</a>
-      </li>
-      <li>
-         <a href="#markerImage" title="http://purl.org/fidmark/markerImage">marker image</a>
-      </li>
-      <li>
-         <a href="#markerPattern" title="http://purl.org/fidmark/markerPattern">marker pattern</a>
-      </li>
-      <li>
-         <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
       </li>
       <li>
          <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
@@ -1169,6 +1607,93 @@ This section provides details for each class and property defined by Fiducial Ma
          <a href="#version" title="http://purl.org/fidmark/version">version</a>
       </li>
    </ul>
+   <div class="entity" id="asImage">
+      <h3>as image<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/asImage</p>
+      <div class="comment">
+         <span class="markdown">A marker image links to an image URI or base64 representation of the marker.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ImageDescriptor" title="http://purl.org/fidmark/ImageDescriptor">Image descriptor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#anyURI"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</a>
+            </dd>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#hexBinary"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#hexBinary">hex binary</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="asNFT">
+      <h3>as NFT<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/asNFT</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ImageDescriptor" title="http://purl.org/fidmark/ImageDescriptor">Image descriptor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#anyURI"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</a>
+            </dd>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#hexBinary"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#hexBinary">hex binary</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="asZFT">
+      <h3>as ZFT<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/asZFT</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ImageDescriptor" title="http://purl.org/fidmark/ImageDescriptor">Image descriptor</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#anyURI"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</a>
+            </dd>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#hexBinary"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#hexBinary">hex binary</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="dictionarySize">
       <h3>dictionary size<sup class="type-dp" title="data property">dp</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
@@ -1201,6 +1726,44 @@ This section provides details for each class and property defined by Fiducial Ma
       <div class="comment">
          <span class="markdown">The minimum hamming distance between two codes</span>
       </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>In a 16h5 dictionary, the first number indicates the amount of bits that can be encoded, the second number the minimum hamming distance.</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="markerBits">
+      <h3>marker bits<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/markerBits</p>
+      <div class="comment">
+         <span class="markdown">Marker bits indicates the amount of bits that are available.</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>In a 16h5 dictionary, the first number indicates the amount of bits that can be encoded, the second number the minimum hamming distance.</pre>
+         </dd>
+      </dl>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -1224,8 +1787,16 @@ This section provides details for each class and property defined by Fiducial Ma
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/markerData</p>
+      <div class="comment">
+         <span class="markdown">Encoded information within a marker.</span>
+      </div>
       <div class="description">
          <dl>
+            <dt>has sub-properties</dt>
+            <dd>
+               <a href="#markerIdentifier" title="http://purl.org/fidmark/markerIdentifier">marker identifier</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
@@ -1252,83 +1823,20 @@ This section provides details for each class and property defined by Fiducial Ma
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/markerIdentifier</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="markerImage">
-      <h3>marker image<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://purl.org/fidmark/markerImage</p>
       <div class="comment">
-         <span class="markdown">A marker image links to an image URI or base64 representation of the marker.</span>
+         <span class="markdown">If the marker can be identified using a specified dictionary, its identifier can be indicated using this data property.</span>
       </div>
       <div class="description">
          <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#markerData" title="http://purl.org/fidmark/markerData">marker data</a>
+               <sup class="type-dp" title="data property">dp</sup>
+            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
                <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#anyURI"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#anyURI">any u r i</a>
-            </dd>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#hexBinary"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#hexBinary">hex binary</a>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="markerPattern">
-      <h3>marker pattern<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://purl.org/fidmark/markerPattern</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="markerSize">
-      <h3>marker size<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://purl.org/fidmark/markerSize</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#integer"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </dd>
          </dl>
       </div>
@@ -1368,6 +1876,9 @@ This section provides details for each class and property defined by Fiducial Ma
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/crowns</p>
+      <div class="comment">
+         <span class="markdown">Indicates the number of crowns in a circular barcode.</span>
+      </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -1425,6 +1936,9 @@ This section provides details for each class and property defined by Fiducial Ma
       </li>
       <li>
          <a href="#DICT_ARUCO_ORIGINAL" title="http://purl.org/fidmark/DICT_ARUCO_ORIGINAL">ArUco original dictionary</a>
+      </li>
+      <li>
+         <a href="#OriginCenter" title="http://purl.org/fidmark/OriginCenter">Center origin</a>
       </li>
       <li>
          <a href="#DICT_APRILTAG_36h10" title="http://purl.org/fidmark/DICT_APRILTAG_36h10">
@@ -1541,6 +2055,26 @@ This section provides details for each class and property defined by Fiducial Ma
             <span>d i c t t o p o t a g 5 x5</span>
          </a>
       </li>
+      <li>
+         <a href="#OriginBottomLeft" title="http://purl.org/fidmark/OriginBottomLeft">
+            <span>origin bottom left</span>
+         </a>
+      </li>
+      <li>
+         <a href="#OriginBottomRight" title="http://purl.org/fidmark/OriginBottomRight">
+            <span>origin bottom right</span>
+         </a>
+      </li>
+      <li>
+         <a href="#OriginTopLeft" title="http://purl.org/fidmark/OriginTopLeft">
+            <span>origin top left</span>
+         </a>
+      </li>
+      <li>
+         <a href="#OriginTopRight" title="http://purl.org/fidmark/OriginTopRight">
+            <span>origin top right</span>
+         </a>
+      </li>
    </ul>
    <div class="entity" id="DICT_APRILTAG_16h5">
       <h3>AprilTag 16h5 dictionary<sup class="type-ni" title="named individual">ni</sup>
@@ -1560,6 +2094,14 @@ This section provides details for each class and property defined by Fiducial Ma
             <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"16"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -1592,6 +2134,14 @@ This section provides details for each class and property defined by Fiducial Ma
             <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"9"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"25"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -1638,6 +2188,21 @@ This section provides details for each class and property defined by Fiducial Ma
          </dd>
       </dl>
    </div>
+   <div class="entity" id="OriginCenter">
+      <h3>Center origin<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/OriginCenter</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#MarkerOrigin" title="http://purl.org/fidmark/MarkerOrigin">Marker origin</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="DICT_APRILTAG_36h10">
       <h3>d i c t a p r i l t a g 36h10<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -1656,6 +2221,14 @@ This section provides details for each class and property defined by Fiducial Ma
             <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"10"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"36"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -1693,6 +2266,14 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"36"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
             <a href="#maxIdentifiers" title="http://purl.org/fidmark/maxIdentifiers">maximum identifiers</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"587"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
@@ -1725,9 +2306,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"16"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -1765,9 +2346,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"16"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -1805,9 +2386,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"16"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -1845,9 +2426,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"16"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -1885,9 +2466,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"25"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -1925,9 +2506,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"25"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -1965,9 +2546,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"25"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2005,9 +2586,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"25"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2045,9 +2626,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"6"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"36"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2085,9 +2666,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"6"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"36"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2125,9 +2706,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"6"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"36"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2165,9 +2746,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"6"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"36"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2205,9 +2786,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"7"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"49"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2245,9 +2826,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"7"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"49"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2285,9 +2866,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"7"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"49"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2325,9 +2906,9 @@ This section provides details for each class and property defined by Fiducial Ma
             </span>
          </dd>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"7"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"49"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2360,6 +2941,14 @@ This section provides details for each class and property defined by Fiducial Ma
             <a href="#hammingDistance" title="http://purl.org/fidmark/hammingDistance">hamming distance</a>
             <sup class="type-dp" title="data property">dp</sup> 
             <span class="literal">"12"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+         <dd>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
+            <sup class="type-dp" title="data property">dp</sup> 
+            <span class="literal">"36"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2404,9 +2993,9 @@ This section provides details for each class and property defined by Fiducial Ma
          </dd>
          <dt>has facts</dt>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"3"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"9"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2436,9 +3025,9 @@ This section provides details for each class and property defined by Fiducial Ma
          </dd>
          <dt>has facts</dt>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"4"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"16"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2468,9 +3057,9 @@ This section provides details for each class and property defined by Fiducial Ma
          </dd>
          <dt>has facts</dt>
          <dd>
-            <a href="#markerSize" title="http://purl.org/fidmark/markerSize">marker size</a>
+            <a href="#markerBits" title="http://purl.org/fidmark/markerBits">marker bits</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+            <span class="literal">"25"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
@@ -2482,6 +3071,66 @@ This section provides details for each class and property defined by Fiducial Ma
                   target="_blank"
                   title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="OriginBottomLeft">
+      <h3>origin bottom left<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/OriginBottomLeft</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#MarkerOrigin" title="http://purl.org/fidmark/MarkerOrigin">Marker origin</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="OriginBottomRight">
+      <h3>origin bottom right<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/OriginBottomRight</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#MarkerOrigin" title="http://purl.org/fidmark/MarkerOrigin">Marker origin</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="OriginTopLeft">
+      <h3>origin top left<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/OriginTopLeft</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#MarkerOrigin" title="http://purl.org/fidmark/MarkerOrigin">Marker origin</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="OriginTopRight">
+      <h3>origin top right<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/OriginTopRight</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#MarkerOrigin" title="http://purl.org/fidmark/MarkerOrigin">Marker origin</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
