@@ -17,7 +17,7 @@ export class ArUcoMarker extends FiducialMarker {
 
     @SerializableMember({
         rdf: {
-            predicate: "http://purl.org/fidmark/markerDictionary"
+            predicate: "http://purl.org/fidmark/hasDictionary"
         }
     })
     dictionary: MarkerDictionary;

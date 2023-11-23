@@ -1,5 +1,6 @@
 import { DataObject, SerializableMember, SerializableObject } from "@openhps/core";
-import { sosa, xsd } from "@openhps/rdf";
+import { sosa } from "@openhps/rdf";
+import { Geometry } from "./geometry/Geometry";
 
 @SerializableObject({
     rdf: {
@@ -9,9 +10,8 @@ import { sosa, xsd } from "@openhps/rdf";
 export class VirtualObject extends DataObject {
     @SerializableMember({
         rdf: {
-            predicate: "https://w3id.org/fog#asGltf",
-            datatype: xsd.anyURI
+            predicate: "https://w3id.org/omg#hasGeometry",
         }
     })
-    asGltf?: string;
+    geometry?: Geometry;
 }

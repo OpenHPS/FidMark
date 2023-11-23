@@ -12,4 +12,11 @@ export class MarkerDictionary {
         }
     })
     size: number;
+
+    @SerializableMember({
+        rdf: {
+            predicate: "http://purl.org/fidmark/hammingDistance"
+        }
+    })
+    hammingSize: number;
 }

@@ -39,6 +39,7 @@ export default class EditorPage extends Vue {
 
   mounted(): void {
     loader.init().then((monaco) => {
+      monaco.editor.setTheme('vs-dark');
       const registry = new Registry({
         getGrammarDefinition: async (scopeName) => {
           return {
@@ -65,6 +66,7 @@ export default class EditorPage extends Vue {
 
   async loadExample() {
     const marker = new ArUcoMarker();
+    marker.identifier = 10;
     marker.setPosition(new Absolute3DPosition(0, 0, 0));
     marker.position.orientation = Orientation.fromEuler({
       pitch: 0,
@@ -72,7 +74,12 @@ export default class EditorPage extends Vue {
       roll: 0
     });
     const turtle = await RDFSerializer.stringify(marker, {
-      prettyPrint: true
+      prettyPrint: true,
+      baseUri: "http://example.org/",
+      prefixes: {
+        fidmark: "http://purl.org/fidmark/",
+        example: "http://example.org/"
+      }
     });
     this.editor.setValue(turtle);
   }
@@ -83,6 +90,5 @@ export default class EditorPage extends Vue {
 #editor {
   width: 100%;
   height: 100%;
-  margin-top: 2em;
 }
 </style>

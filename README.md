@@ -13,6 +13,9 @@ Ontology documentation is provided using WIDOCO [1] and generated in the `./webs
 ## Methodology
 
 
+## Usage and Examples
+
+
 ## License
 FidMark is licensed under the [MIT license](LICENSE) and maintained by the Web & Information Systems Engineering Lab at the Vrije Universiteit Brussel.
 

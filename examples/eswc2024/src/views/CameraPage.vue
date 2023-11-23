@@ -12,7 +12,7 @@
         </ion-toolbar>
       </ion-header>
 
-      <video id="camera"></video>
+      <video id="camera" muted="true"></video>
     </ion-content>
   </ion-page>
 </template>
