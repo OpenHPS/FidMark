@@ -31,7 +31,7 @@ export const useCameraStore = defineStore('camera', {
                     (stream: any) => {
                         const video = document.getElementById('camera') as HTMLVideoElement;
                         video.srcObject = stream;
-                        video.onloadedmetadata = (e) => {
+                        video.onloadedmetadata = () => {
                             video.play();
                             ModelBuilder.create()
                                 .from(new VideoSource({

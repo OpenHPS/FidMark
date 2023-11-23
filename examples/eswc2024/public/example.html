@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARTest</title>
+
+  <style> canvas { position: absolute; margin: 0px; top: 0px; left: 0px; } </style>
+
+</head>
+
+<body>
+
+  <canvas id="arucoCanvas" width="812" height="339"></canvas>
+  <canvas id="threeCanvas" width="812" height="339"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r111/build/three.min.js"></script>
+
+  <script async src="https://cdn.jsdelivr.net/gh/ganwenyao/opencv_js@master/docs/opencv.js" onload="onOpenCVReady();" type="text/javascript"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/ganwenyao/opencv_js@master/docs/utils.js"></script>
+
+  <script type="text/javascript">
+
+    // three.js part
+
+    var camera, scene, renderer;
+    var geometry, material, mesh;
+
+    function init() {
+
+      var threeCanvas = document.getElementById("threeCanvas");
+
+      camera = new THREE.PerspectiveCamera(40, 812 / 339, 0.01, 1000); // Does it change according to the camera parameters?
+      camera.position.z = 1;
+
+      scene = new THREE.Scene();
+
+      geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
+      material = new THREE.MeshNormalMaterial();
+
+      mesh = new THREE.Mesh(geometry, material);
+      scene.add(mesh);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas: threeCanvas });
+      renderer.setSize(812, 339);
+      document.body.appendChild(renderer.domElement);
+
+    }
+
+    init();
+
+    loadImageToCanvas("https://cdn.jsdelivr.net/gh/ganwenyao/opencv_js@master/docs/openCV_js_demo1_aruco/aruco.png", "arucoCanvas");
+
+    function onOpenCVReady() {
+
+      // aruco part
+
+      let inputImage = cv.imread("arucoCanvas"); // Replace camera input
+      cv.cvtColor(inputImage, inputImage, cv.COLOR_RGBA2RGB, 0);
+      let markerImage = new cv.Mat();
+      let dictionary = new cv.Dictionary(cv.DICT_6X6_250);
+      let markerIds = new cv.Mat();
+      let markerCorners = new cv.MatVector();
+      let rvecs = new cv.Mat();
+      let tvecs = new cv.Mat();
+      let cameraMatrix = cv.matFromArray(3, 3, cv.CV_64F, [9.6635571716090658e+02, 0., 2.0679307818305685e+02, 0., 9.6635571716090658e+02, 2.9370020600555273e+02, 0., 0., 1.]);
+      let distCoeffs = cv.matFromArray(5, 1, cv.CV_64F, [-1.5007354215536557e-03, 9.8722389825801837e-01, 1.7188452542408809e-02, -2.6805958820424611e-02, -2.3313928379240205e+00]);
+
+      cv.detectMarkers(inputImage, dictionary, markerCorners, markerIds);
+
+      if (markerIds.rows > 0) {
+
+        cv.drawDetectedMarkers(inputImage, markerCorners, markerIds);
+        cv.estimatePoseSingleMarkers(markerCorners, 0.1, cameraMatrix, distCoeffs, rvecs, tvecs);
+
+
+
+        // Here! Pose Estimation
+        // I don't understand what the data rvecs and tvecs returned by estimatePoseSingleMarkers represent, or to be precise I don't know how to apply them to three.js.
+        renderer.render(scene, camera);
+
+
+        for (let i = 0; i < markerIds.rows; ++i) {
+
+          let rvec = cv.matFromArray(3, 1, cv.CV_64F, [rvecs.doublePtr(0, i)[0], rvecs.doublePtr(0, i)[1], rvecs.doublePtr(0, i)[2]]);
+          let tvec = cv.matFromArray(3, 1, cv.CV_64F, [tvecs.doublePtr(0, i)[0], tvecs.doublePtr(0, i)[1], tvecs.doublePtr(0, i)[2]]);
+
+          console.log(rvecs.doublePtr(0, i)[0], rvecs.doublePtr(0, i)[1], rvecs.doublePtr(0, i)[2]);
+          console.log(tvecs.doublePtr(0, i)[0], tvecs.doublePtr(0, i)[1], tvecs.doublePtr(0, i)[2]);
+
+          cv.drawAxis(inputImage, cameraMatrix, distCoeffs, rvec, tvec, 0.1);
+          rvec.delete(); tvec.delete();
+
+        }
+
+      }
+
+      cv.imshow("arucoCanvas", inputImage);
+      inputImage.delete(); markerImage.delete(); dictionary.delete(); markerIds.delete(); markerCorners.delete(); rvecs.delete(); tvecs.delete(); cameraMatrix.delete(); distCoeffs.delete();
+
+    }
+
+  </script>
+
+</body>
+
+</html>

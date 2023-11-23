@@ -29,6 +29,8 @@ import { ArUcoMarker } from '@/models';
 import { Absolute3DPosition, Orientation } from '@openhps/core';
 import { RDFSerializer } from '@openhps/rdf';
 
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
 @Options({
   components: {
     IonPage, IonHeader, IonToolbar, IonTitle, IonContent
@@ -39,9 +41,9 @@ export default class EditorPage extends Vue {
 
   mounted(): void {
     loader.init().then((monaco) => {
-      monaco.editor.setTheme('vs-dark');
+      monaco.editor.setTheme(prefersDark.matches ? 'vs-dark' : 'vs');
       const registry = new Registry({
-        getGrammarDefinition: async (scopeName) => {
+        getGrammarDefinition: async () => {
           return {
             format: 'json',
             content: await (await fetch(`assets/grammars/turtle.tmLanguage.json`)).text()
@@ -62,6 +64,10 @@ export default class EditorPage extends Vue {
     }).then(() => {
       return this.loadExample();
     }).catch(console.error);
+  }
+
+  get value(): string {
+    return this.editor.getValue();
   }
 
   async loadExample() {
