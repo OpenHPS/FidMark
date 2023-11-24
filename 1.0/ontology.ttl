@@ -8,7 +8,6 @@
 
 <http://purl.org/fidmark/> rdf:type owl:Ontology ;
                             owl:versionIRI <http://purl.org/fidmark/1.0/> ;
-                            owl:imports <http://purl.org/poso/1.0/> ;
                             <http://purl.org/dc/terms/abstract> ""@en ;
                             <http://purl.org/dc/terms/bibliographicCitation> "Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers" ;
                             <http://purl.org/dc/terms/creator> "Isaac Valadez Mora"@en ,
@@ -67,11 +66,25 @@
           rdfs:domain :FiducialMarker .
 
 
+###  http://purl.org/fidmark/opencvName
+:opencvName rdf:type owl:AnnotationProperty ;
+            rdfs:comment "OpenCV variable/object name"@en ;
+            rdfs:label "OpenCV name"@en .
+
+
 ###  http://purl.org/fidmark/shape
 :shape rdf:type owl:AnnotationProperty ;
        rdfs:comment "Describes the shape of the marker."@en ;
        rdfs:label "marker shape"@en ;
        rdfs:domain :FiducialMarker .
+
+
+###  http://purl.org/fidmark/supportedMarker
+:supportedMarker rdf:type owl:AnnotationProperty ;
+                 rdfs:comment "Inidicates the relationship of a dictionary to a marker type."@en ;
+                 rdfs:label "supported marker"@en ;
+                 rdfs:range :FiducialMarker ;
+                 rdfs:domain :MarkerDictionary .
 
 
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
@@ -142,6 +155,8 @@
 ###  http://purl.org/fidmark/hasImageDesciptor
 :hasImageDesciptor rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf <http://www.w3.org/ns/ssn/hasProperty> ;
+                   rdf:type owl:FunctionalProperty ,
+                            owl:InverseFunctionalProperty ;
                    rdfs:domain :FiducialMarker ;
                    rdfs:range :ImageDescriptor ;
                    rdfs:label "has image descriptor"@en .
@@ -171,7 +186,10 @@
 
 ###  http://purl.org/fidmark/isImageDescriptorOf
 :isImageDescriptorOf rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf <http://www.w3.org/ns/ssn/isPropertyOf> .
+                     rdfs:subPropertyOf <http://www.w3.org/ns/ssn/isPropertyOf> ;
+                     rdf:type owl:FunctionalProperty ,
+                              owl:InverseFunctionalProperty ;
+                     rdfs:label "is image descriptor of"@en .
 
 
 ###  http://www.w3.org/2007/uwa/context/common.owl#active
@@ -222,8 +240,16 @@
 <http://www.w3.org/2007/uwa/context/common.owl#vendor> rdf:type owl:ObjectProperty .
 
 
+###  http://www.w3.org/ns/sosa/hasFeatureOfInterest
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> rdf:type owl:ObjectProperty .
+
+
 ###  http://www.w3.org/ns/ssn/hasProperty
 <http://www.w3.org/ns/ssn/hasProperty> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/ssn/isPropertyOf
+<http://www.w3.org/ns/ssn/isPropertyOf> rdf:type owl:ObjectProperty .
 
 
 #################################################################
@@ -276,6 +302,7 @@
                  rdfs:range xsd:integer ;
                  rdfs:comment "The minimum hamming distance between two codes"@en ;
                  rdfs:label "hamming distance"@en ;
+                 <http://www.w3.org/2004/02/skos/core#altLabel> "tau"@en ;
                  <http://www.w3.org/2004/02/skos/core#example> "In a 16h5 dictionary, the first number indicates the amount of bits that can be encoded, the second number the minimum hamming distance."@en .
 
 
@@ -286,6 +313,13 @@
             rdfs:comment "Marker bits indicates the amount of bits that are available."@en ;
             rdfs:label "marker bits"@en ;
             <http://www.w3.org/2004/02/skos/core#example> "In a 16h5 dictionary, the first number indicates the amount of bits that can be encoded, the second number the minimum hamming distance."@en .
+
+
+###  http://purl.org/fidmark/markerCode
+:markerCode rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:hexBinary ;
+            rdfs:comment "Marker hexadecimal code"@en ;
+            rdfs:label "marker code"@en .
 
 
 ###  http://purl.org/fidmark/markerData
@@ -726,6 +760,14 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 <http://purl.org/iot/vocab/m3-lite#Barcode> rdf:type owl:Class .
 
 
+###  http://purl.org/poso/PositioningTechnique
+<http://purl.org/poso/PositioningTechnique> rdf:type owl:Class .
+
+
+###  http://purl.org/poso/TrackedFeature
+<http://purl.org/poso/TrackedFeature> rdf:type owl:Class .
+
+
 ###  http://purl.org/poso/VisualLandmark
 <http://purl.org/poso/VisualLandmark> rdf:type owl:Class .
 
@@ -824,6 +866,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                     :hammingDistance 5 ;
                     :markerBits 16 ;
                     :maxIdentifiers 30 ;
+                    :supportedMarker :AprilTag ;
                     rdfs:label "AprilTag 16h5 dictionary"@en .
 
 
@@ -833,6 +876,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                     :hammingDistance 9 ;
                     :markerBits 25 ;
                     :maxIdentifiers 35 ;
+                    :supportedMarker :AprilTag ;
                     rdfs:label "AprilTag 25h9 dictionary"@en .
 
 
@@ -841,7 +885,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                               :MarkerDictionary ;
                      :hammingDistance 10 ;
                      :markerBits 36 ;
-                     :maxIdentifiers 2320 .
+                     :maxIdentifiers 2320 ;
+                     :supportedMarker :AprilTag ;
+                     rdfs:label "AprilTag 36h10 dictionary"@en .
 
 
 ###  http://purl.org/fidmark/DICT_APRILTAG_36h11
@@ -849,7 +895,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                               :MarkerDictionary ;
                      :hammingDistance 11 ;
                      :markerBits 36 ;
-                     :maxIdentifiers 587 .
+                     :maxIdentifiers 587 ;
+                     :supportedMarker :AprilTag ;
+                     rdfs:label "AprilTag 36h11 dictionary"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_4X4_100
@@ -857,7 +905,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                              :MarkerDictionary ;
                     :hammingDistance 3 ;
                     :markerBits 16 ;
-                    :maxIdentifiers 100 .
+                    :maxIdentifiers 100 ;
+                    :opencvName "DICT_4X4_100" ;
+                    :supportedMarker :ArUco ;
+                    rdfs:label "ArUco 4x4 dictionary with 100 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_4X4_1000
@@ -865,7 +916,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                               :MarkerDictionary ;
                      :hammingDistance 2 ;
                      :markerBits 16 ;
-                     :maxIdentifiers 1000 .
+                     :maxIdentifiers 1000 ;
+                     :opencvName "DICT_4X4_1000" ;
+                     :supportedMarker :ArUco ;
+                     rdfs:label "ArUco 4x4 dictionary with 1000 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_4X4_250
@@ -873,7 +927,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                              :MarkerDictionary ;
                     :hammingDistance 3 ;
                     :markerBits 16 ;
-                    :maxIdentifiers 250 .
+                    :maxIdentifiers 250 ;
+                    :opencvName "DICT_4X4_250" ;
+                    :supportedMarker :ArUco ;
+                    rdfs:label "ArUco 4x4 dictionary with 250 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_4X4_50
@@ -881,7 +938,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                             :MarkerDictionary ;
                    :hammingDistance 4 ;
                    :markerBits 16 ;
-                   :maxIdentifiers 50 .
+                   :maxIdentifiers 50 ;
+                   :opencvName "DICT_4X4_50" ;
+                   :supportedMarker :ArUco ;
+                   rdfs:label "ArUco 4x4 dictionary with 50 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_5X5_100
@@ -889,7 +949,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                              :MarkerDictionary ;
                     :hammingDistance 7 ;
                     :markerBits 25 ;
-                    :maxIdentifiers 100 .
+                    :maxIdentifiers 100 ;
+                    :opencvName "DICT_5X5_100" ;
+                    :supportedMarker :ArUco ;
+                    rdfs:label "ArUco 5x5 dictionary with 100 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_5X5_1000
@@ -897,7 +960,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                               :MarkerDictionary ;
                      :hammingDistance 5 ;
                      :markerBits 25 ;
-                     :maxIdentifiers 1000 .
+                     :maxIdentifiers 1000 ;
+                     :opencvName "DICT_5X5_1000" ;
+                     :supportedMarker :ArUco ;
+                     rdfs:label "ArUco 5x5 dictionary with 1000 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_5X5_250
@@ -905,7 +971,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                              :MarkerDictionary ;
                     :hammingDistance 6 ;
                     :markerBits 25 ;
-                    :maxIdentifiers 250 .
+                    :maxIdentifiers 250 ;
+                    :opencvName "DICT_5X5_250" ;
+                    :supportedMarker :ArUco ;
+                    rdfs:label "ArUco 5x5 dictionary with 250 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_5X5_50
@@ -913,7 +982,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                             :MarkerDictionary ;
                    :hammingDistance 8 ;
                    :markerBits 25 ;
-                   :maxIdentifiers 50 .
+                   :maxIdentifiers 50 ;
+                   :opencvName "DICT_5X5_50" ;
+                   :supportedMarker :ArUco ;
+                   rdfs:label "ArUco 5x5 dictionary with 50 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_6X6_100
@@ -921,7 +993,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                              :MarkerDictionary ;
                     :hammingDistance 12 ;
                     :markerBits 36 ;
-                    :maxIdentifiers 100 .
+                    :maxIdentifiers 100 ;
+                    :opencvName "DICT_6X6_100" ;
+                    :supportedMarker :ArUco ;
+                    rdfs:label "ArUco 6x6 dictionary with 100 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_6X6_1000
@@ -929,7 +1004,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                               :MarkerDictionary ;
                      :hammingDistance 9 ;
                      :markerBits 36 ;
-                     :maxIdentifiers 1000 .
+                     :maxIdentifiers 1000 ;
+                     :opencvName "DICT_6X6_1000" ;
+                     :supportedMarker :ArUco ;
+                     rdfs:label "ArUco 6x6 dictionary with 1000 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_6X6_250
@@ -937,7 +1015,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                              :MarkerDictionary ;
                     :hammingDistance 11 ;
                     :markerBits 36 ;
-                    :maxIdentifiers 250 .
+                    :maxIdentifiers 250 ;
+                    :opencvName "DICT_6X6_250" ;
+                    :supportedMarker :ArUco ;
+                    rdfs:label "ArUco 6x6 dictionary with 250 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_6X6_50
@@ -945,7 +1026,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                             :MarkerDictionary ;
                    :hammingDistance 13 ;
                    :markerBits 36 ;
-                   :maxIdentifiers 50 .
+                   :maxIdentifiers 50 ;
+                   :opencvName "DICT_6X6_50" ;
+                   :supportedMarker :ArUco ;
+                   rdfs:label "ArUco 6x6 dictionary with 50 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_7X7_100
@@ -953,7 +1037,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                              :MarkerDictionary ;
                     :hammingDistance 18 ;
                     :markerBits 49 ;
-                    :maxIdentifiers 100 .
+                    :maxIdentifiers 100 ;
+                    :opencvName "DICT_7X7_100" ;
+                    :supportedMarker :ArUco ;
+                    rdfs:label "ArUco 7x7 dictionary with 100 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_7X7_1000
@@ -961,7 +1048,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                               :MarkerDictionary ;
                      :hammingDistance 14 ;
                      :markerBits 49 ;
-                     :maxIdentifiers 1000 .
+                     :maxIdentifiers 1000 ;
+                     :opencvName "DICT_7X7_1000" ;
+                     :supportedMarker :ArUco ;
+                     rdfs:label "ArUco 7x7 dictionary with 1000 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_7X7_250
@@ -969,7 +1059,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                              :MarkerDictionary ;
                     :hammingDistance 17 ;
                     :markerBits 49 ;
-                    :maxIdentifiers 250 .
+                    :maxIdentifiers 250 ;
+                    :opencvName "DICT_7X7_250" ;
+                    :supportedMarker :ArUco ;
+                    rdfs:label "ArUco 7x7 dictionary with 250 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_7X7_50
@@ -977,7 +1070,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                             :MarkerDictionary ;
                    :hammingDistance 19 ;
                    :markerBits 49 ;
-                   :maxIdentifiers 50 .
+                   :maxIdentifiers 50 ;
+                   :opencvName "DICT_7X7_50" ;
+                   :supportedMarker :ArUco ;
+                   rdfs:label "ArUco 7x7 dictionary with 50 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_MIP_36h12
@@ -985,7 +1081,8 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                                :MarkerDictionary ;
                       :hammingDistance 12 ;
                       :markerBits 36 ;
-                      :maxIdentifiers 250 .
+                      :maxIdentifiers 250 ;
+                      :supportedMarker :ArUco .
 
 
 ###  http://purl.org/fidmark/DICT_ARUCO_ORIGINAL
@@ -993,38 +1090,45 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                               :MarkerDictionary ;
                      :hammingDistance 0 ;
                      :maxIdentifiers 1024 ;
+                     :opencvName "DICT_ARUCO_ORIGINAL" ;
+                     :supportedMarker :ArUco ;
                      rdfs:label "ArUco original dictionary"@en .
 
 
 ###  http://purl.org/fidmark/DICT_CHILLITAGS
 :DICT_CHILLITAGS rdf:type owl:NamedIndividual ,
-                          :MarkerDictionary .
+                          :MarkerDictionary ;
+                 rdfs:label "ChilliTags dictionary"@en .
 
 
 ###  http://purl.org/fidmark/DICT_TOPOTAG_3X3
 :DICT_TOPOTAG_3X3 rdf:type owl:NamedIndividual ,
                            :MarkerDictionary ;
                   :markerBits 9 ;
-                  :maxIdentifiers 128 .
+                  :maxIdentifiers 128 ;
+                  rdfs:label "TopoTag 3x3 dictionary"@en .
 
 
 ###  http://purl.org/fidmark/DICT_TOPOTAG_4X4
 :DICT_TOPOTAG_4X4 rdf:type owl:NamedIndividual ,
                            :MarkerDictionary ;
                   :markerBits 16 ;
-                  :maxIdentifiers 16384 .
+                  :maxIdentifiers 16384 ;
+                  rdfs:label "TopoTag 4x4 dictionary"@en .
 
 
 ###  http://purl.org/fidmark/DICT_TOPOTAG_5X5
 :DICT_TOPOTAG_5X5 rdf:type owl:NamedIndividual ,
                            :MarkerDictionary ;
                   :markerBits 25 ;
-                  :maxIdentifiers 8388608 .
+                  :maxIdentifiers 8388608 ;
+                  rdfs:label "TopoTag 5x5 dictionary"@en .
 
 
 ###  http://purl.org/fidmark/OriginBottomLeft
 :OriginBottomLeft rdf:type owl:NamedIndividual ,
-                           :MarkerOrigin .
+                           :MarkerOrigin ;
+                  rdfs:label "Bottom left origin"@en .
 
 
 ###  http://purl.org/fidmark/OriginBottomRight
@@ -1035,6 +1139,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 ###  http://purl.org/fidmark/OriginCenter
 :OriginCenter rdf:type owl:NamedIndividual ,
                        :MarkerOrigin ;
+              rdfs:comment "The center origin is the absolute center of a marker."@en ;
               rdfs:label "Center origin"@en .
 
 

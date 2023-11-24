@@ -5,18 +5,14 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:qudt="http://qudt.org/schema/qudt/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:common="http://www.w3.org/2007/uwa/context/common.owl#"
-     xmlns:schema="http://schema.org/"
      xmlns:fidmark="http://purl.org/fidmark/">
     <owl:Ontology rdf:about="http://purl.org/fidmark/">
         <owl:versionIRI rdf:resource="http://purl.org/fidmark/1.0/"/>
-        <owl:imports rdf:resource="http://purl.org/poso/1.0/"/>
         <terms:abstract xml:lang="en"></terms:abstract>
         <terms:bibliographicCitation>Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers</terms:bibliographicCitation>
         <terms:creator xml:lang="en">Isaac Valadez Mora</terms:creator>
@@ -115,6 +111,16 @@
     
 
 
+    <!-- http://purl.org/fidmark/opencvName -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/fidmark/opencvName">
+        <rdfs:comment xml:lang="en">OpenCV variable/object name</rdfs:comment>
+        <rdfs:label xml:lang="en">OpenCV name</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.org/fidmark/shape -->
 
 
@@ -122,6 +128,18 @@
         <rdfs:comment xml:lang="en">Describes the shape of the marker.</rdfs:comment>
         <rdfs:label xml:lang="en">marker shape</rdfs:label>
         <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/supportedMarker -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/fidmark/supportedMarker">
+        <rdfs:comment xml:lang="en">Inidicates the relationship of a dictionary to a marker type.</rdfs:comment>
+        <rdfs:label xml:lang="en">supported marker</rdfs:label>
+        <rdfs:range rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
     </owl:AnnotationProperty>
     
 
@@ -245,6 +263,8 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/fidmark/hasImageDesciptor">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ssn/hasProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
         <rdfs:range rdf:resource="http://purl.org/fidmark/ImageDescriptor"/>
         <rdfs:label xml:lang="en">has image descriptor</rdfs:label>
@@ -291,6 +311,9 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/fidmark/isImageDescriptorOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/ssn/isPropertyOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:label xml:lang="en">is image descriptor of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -379,10 +402,24 @@
     
 
 
+    <!-- http://www.w3.org/ns/sosa/hasFeatureOfInterest -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+    
+
+
     <!-- http://www.w3.org/ns/ssn/hasProperty -->
 
 
     <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/hasProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ssn/isPropertyOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/isPropertyOf"/>
     
 
 
@@ -466,6 +503,7 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment xml:lang="en">The minimum hamming distance between two codes</rdfs:comment>
         <rdfs:label xml:lang="en">hamming distance</rdfs:label>
+        <skos:altLabel xml:lang="en">tau</skos:altLabel>
         <skos:example xml:lang="en">In a 16h5 dictionary, the first number indicates the amount of bits that can be encoded, the second number the minimum hamming distance.</skos:example>
     </owl:DatatypeProperty>
     
@@ -480,6 +518,17 @@
         <rdfs:comment xml:lang="en">Marker bits indicates the amount of bits that are available.</rdfs:comment>
         <rdfs:label xml:lang="en">marker bits</rdfs:label>
         <skos:example xml:lang="en">In a 16h5 dictionary, the first number indicates the amount of bits that can be encoded, the second number the minimum hamming distance.</skos:example>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/fidmark/markerCode -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/markerCode">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment xml:lang="en">Marker hexadecimal code</rdfs:comment>
+        <rdfs:label xml:lang="en">marker code</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1177,6 +1226,20 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
     
 
 
+    <!-- http://purl.org/poso/PositioningTechnique -->
+
+
+    <owl:Class rdf:about="http://purl.org/poso/PositioningTechnique"/>
+    
+
+
+    <!-- http://purl.org/poso/TrackedFeature -->
+
+
+    <owl:Class rdf:about="http://purl.org/poso/TrackedFeature"/>
+    
+
+
     <!-- http://purl.org/poso/VisualLandmark -->
 
 
@@ -1351,6 +1414,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</maxIdentifiers>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/AprilTag"/>
         <rdfs:label xml:lang="en">AprilTag 16h5 dictionary</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1364,6 +1428,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">35</maxIdentifiers>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/AprilTag"/>
         <rdfs:label xml:lang="en">AprilTag 25h9 dictionary</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1377,6 +1442,8 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2320</maxIdentifiers>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/AprilTag"/>
+        <rdfs:label xml:lang="en">AprilTag 36h10 dictionary</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1389,6 +1456,8 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">587</maxIdentifiers>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/AprilTag"/>
+        <rdfs:label xml:lang="en">AprilTag 36h11 dictionary</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1401,6 +1470,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</maxIdentifiers>
+        <opencvName>DICT_4X4_100</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 4x4 dictionary with 100 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1413,6 +1485,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</maxIdentifiers>
+        <opencvName>DICT_4X4_1000</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 4x4 dictionary with 1000 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1425,6 +1500,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
+        <opencvName>DICT_4X4_250</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 4x4 dictionary with 250 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1437,6 +1515,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxIdentifiers>
+        <opencvName>DICT_4X4_50</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 4x4 dictionary with 50 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1449,6 +1530,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</maxIdentifiers>
+        <opencvName>DICT_5X5_100</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 5x5 dictionary with 100 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1461,6 +1545,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</maxIdentifiers>
+        <opencvName>DICT_5X5_1000</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 5x5 dictionary with 1000 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1473,6 +1560,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
+        <opencvName>DICT_5X5_250</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 5x5 dictionary with 250 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1485,6 +1575,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxIdentifiers>
+        <opencvName>DICT_5X5_50</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 5x5 dictionary with 50 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1497,6 +1590,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</maxIdentifiers>
+        <opencvName>DICT_6X6_100</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 6x6 dictionary with 100 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1509,6 +1605,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</maxIdentifiers>
+        <opencvName>DICT_6X6_1000</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 6x6 dictionary with 1000 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1521,6 +1620,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
+        <opencvName>DICT_6X6_250</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 6x6 dictionary with 250 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1533,6 +1635,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxIdentifiers>
+        <opencvName>DICT_6X6_50</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 6x6 dictionary with 50 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1545,6 +1650,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">18</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</maxIdentifiers>
+        <opencvName>DICT_7X7_100</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 7x7 dictionary with 100 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1557,6 +1665,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</maxIdentifiers>
+        <opencvName>DICT_7X7_1000</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 7x7 dictionary with 1000 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1569,6 +1680,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">17</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
+        <opencvName>DICT_7X7_250</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 7x7 dictionary with 250 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1581,6 +1695,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">49</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxIdentifiers>
+        <opencvName>DICT_7X7_50</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:label xml:lang="en">ArUco 7x7 dictionary with 50 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1593,6 +1710,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</hammingDistance>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
     </owl:NamedIndividual>
     
 
@@ -1604,6 +1722,8 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
         <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</hammingDistance>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1024</maxIdentifiers>
+        <opencvName>DICT_ARUCO_ORIGINAL</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
         <rdfs:label xml:lang="en">ArUco original dictionary</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1614,6 +1734,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_CHILLITAGS">
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <rdfs:label xml:lang="en">ChilliTags dictionary</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1625,6 +1746,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</maxIdentifiers>
+        <rdfs:label xml:lang="en">TopoTag 3x3 dictionary</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1636,6 +1758,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16384</maxIdentifiers>
+        <rdfs:label xml:lang="en">TopoTag 4x4 dictionary</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1647,6 +1770,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8388608</maxIdentifiers>
+        <rdfs:label xml:lang="en">TopoTag 5x5 dictionary</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1656,6 +1780,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:NamedIndividual rdf:about="http://purl.org/fidmark/OriginBottomLeft">
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerOrigin"/>
+        <rdfs:label xml:lang="en">Bottom left origin</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1674,6 +1799,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:NamedIndividual rdf:about="http://purl.org/fidmark/OriginCenter">
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerOrigin"/>
+        <rdfs:comment xml:lang="en">The center origin is the absolute center of a marker.</rdfs:comment>
         <rdfs:label xml:lang="en">Center origin</rdfs:label>
     </owl:NamedIndividual>
     
