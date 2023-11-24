@@ -1,9 +1,10 @@
 /// <reference types="webrtc" />
 
-import { Model, ModelBuilder } from '@openhps/core';
+import { CallbackSinkNode, Model, ModelBuilder } from '@openhps/core';
 import { defineStore } from 'pinia';
 import { VideoSource } from '@openhps/opencv';
 import { ArUcoMarkerDetection } from '@/nodes';
+import { ThreeJSNode } from '@/nodes/ThreeJSNode';
 
 export interface CameraState {
     model: Model<any, any>
@@ -38,14 +39,21 @@ export const useCameraStore = defineStore('camera', {
                                 .from(new VideoSource({
                                     autoPlay: true,
                                     fps: 25,
-                                    videoSource: video
+                                    videoSource: video,
                                 }))
                                 .via(new ArUcoMarkerDetection({
 
                                 }))
-                                .to()
+                                .via(new ThreeJSNode({
+                                    canvas: document.getElementById("threeCanvas") as HTMLCanvasElement
+                                }))
+                                .to(new CallbackSinkNode(() => {
+
+                                }))
                                 .build((model: Model) => {
+                                    console.log("model ok")
                                     this.model = model;
+                                    this.model.on('error', console.error);
                                     resolve();
                                 }).catch(reject);
                         };

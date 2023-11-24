@@ -15,7 +15,8 @@
         </ion-toolbar>
       </ion-header>
 
-      <video id="camera" muted="true"></video>
+      <video class="ar" id="camera" muted="true"></video>
+      <canvas class="ar" id="threeCanvas"></canvas>
     </ion-content>
   </ion-page>
 </template>
@@ -35,14 +36,22 @@ export default class CameraPage extends Vue {
   cameraStore = useCameraStore();
 
   mounted(): void {
-    this.cameraStore.initialize();
+    this.cameraStore.initialize().then(() => {
+      console.log("ok")
+    }).catch(console.error);
   }
 }
 </script>
 
 <style scoped>
 #camera {
+  display: none;
+}
+.ar {
   width: 100%;
   height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 </style>
