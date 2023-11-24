@@ -39,16 +39,16 @@
         "value" : "2023-12-07T00:00:00",
         "type" : "label"
       } ],
-      "preferredNamespaceUri" : [ {
-        "identifier" : "preferredNamespaceUri",
-        "language" : "undefined",
-        "value" : "http://purl.org/fidmark/",
-        "type" : "label"
-      } ],
       "bibliographicCitation" : [ {
         "identifier" : "bibliographicCitation",
         "language" : "undefined",
         "value" : "Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers",
+        "type" : "label"
+      } ],
+      "preferredNamespaceUri" : [ {
+        "identifier" : "preferredNamespaceUri",
+        "language" : "undefined",
+        "value" : "http://purl.org/fidmark/",
         "type" : "label"
       } ],
       "abstract" : [ {
@@ -76,7 +76,7 @@
     "id" : "4",
     "type" : "owl:Class"
   }, {
-    "id" : "16",
+    "id" : "20",
     "type" : "owl:Class"
   }, {
     "id" : "8",
@@ -112,7 +112,7 @@
     "id" : "58",
     "type" : "owl:Class"
   }, {
-    "id" : "62",
+    "id" : "61",
     "type" : "owl:Class"
   }, {
     "id" : "40",
@@ -133,7 +133,7 @@
     "id" : "79",
     "type" : "owl:Class"
   }, {
-    "id" : "18",
+    "id" : "17",
     "type" : "owl:Class"
   }, {
     "id" : "64",
@@ -205,7 +205,7 @@
     "id" : "111",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "19",
+    "id" : "18",
     "type" : "rdfs:Literal"
   }, {
     "id" : "113",
@@ -370,10 +370,10 @@
     "id" : "145",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "63",
+    "id" : "187",
     "type" : "owl:Class"
   }, {
-    "id" : "187",
+    "id" : "63",
     "type" : "owl:Class"
   }, {
     "id" : "193",
@@ -388,10 +388,10 @@
     "id" : "65",
     "type" : "owl:Class"
   }, {
-    "id" : "10",
+    "id" : "198",
     "type" : "owl:Class"
   }, {
-    "id" : "198",
+    "id" : "10",
     "type" : "owl:Class"
   }, {
     "id" : "13",
@@ -430,7 +430,7 @@
       "IRI-based" : "TransferEncoding"
     },
     "attributes" : [ "external" ],
-    "id" : "16"
+    "id" : "20"
   }, {
     "iri" : "http://purl.org/fidmark/CALTag",
     "baseIri" : "http://purl.org/fidmark",
@@ -482,16 +482,16 @@
     "baseIri" : "http://purl.org/fidmark",
     "instances" : 0,
     "annotations" : {
-      "shape" : [ {
-        "identifier" : "shape",
-        "language" : "en",
-        "value" : "Square",
-        "type" : "label"
-      } ],
       "color" : [ {
         "identifier" : "color",
         "language" : "en",
         "value" : "Monochrome",
+        "type" : "label"
+      } ],
+      "shape" : [ {
+        "identifier" : "shape",
+        "language" : "en",
+        "value" : "Square",
         "type" : "label"
       } ],
       "altLabel" : [ {
@@ -566,7 +566,7 @@
     "label" : {
       "IRI-based" : "Property"
     },
-    "subClasses" : [ "18", "45", "46" ],
+    "subClasses" : [ "17", "45", "46" ],
     "attributes" : [ "external" ],
     "id" : "44"
   }, {
@@ -617,7 +617,7 @@
       "IRI-based" : "Modality"
     },
     "attributes" : [ "external" ],
-    "id" : "62"
+    "id" : "61"
   }, {
     "iri" : "http://purl.org/fidmark/CircularBarcode",
     "baseIri" : "http://purl.org/fidmark",
@@ -822,17 +822,17 @@
       "iri" : "http://purl.org/fidmark/DICT_ARUCO_4X4_50",
       "baseIri" : "http://purl.org/fidmark",
       "annotations" : {
-        "supportedMarker" : [ {
-          "identifier" : "supportedMarker",
-          "language" : "undefined",
-          "value" : "http://purl.org/fidmark/ArUco",
-          "type" : "iri"
-        } ],
         "opencvName" : [ {
           "identifier" : "opencvName",
           "language" : "undefined",
           "value" : "DICT_4X4_50",
           "type" : "label"
+        } ],
+        "supportedMarker" : [ {
+          "identifier" : "supportedMarker",
+          "language" : "undefined",
+          "value" : "http://purl.org/fidmark/ArUco",
+          "type" : "iri"
         } ]
       },
       "labels" : {
@@ -879,17 +879,17 @@
       "iri" : "http://purl.org/fidmark/DICT_ARUCO_6X6_250",
       "baseIri" : "http://purl.org/fidmark",
       "annotations" : {
-        "supportedMarker" : [ {
-          "identifier" : "supportedMarker",
-          "language" : "undefined",
-          "value" : "http://purl.org/fidmark/ArUco",
-          "type" : "iri"
-        } ],
         "opencvName" : [ {
           "identifier" : "opencvName",
           "language" : "undefined",
           "value" : "DICT_6X6_250",
           "type" : "label"
+        } ],
+        "supportedMarker" : [ {
+          "identifier" : "supportedMarker",
+          "language" : "undefined",
+          "value" : "http://purl.org/fidmark/ArUco",
+          "type" : "iri"
         } ]
       },
       "labels" : {
@@ -900,17 +900,17 @@
       "iri" : "http://purl.org/fidmark/DICT_ARUCO_6X6_1000",
       "baseIri" : "http://purl.org/fidmark",
       "annotations" : {
-        "opencvName" : [ {
-          "identifier" : "opencvName",
-          "language" : "undefined",
-          "value" : "DICT_6X6_1000",
-          "type" : "label"
-        } ],
         "supportedMarker" : [ {
           "identifier" : "supportedMarker",
           "language" : "undefined",
           "value" : "http://purl.org/fidmark/ArUco",
           "type" : "iri"
+        } ],
+        "opencvName" : [ {
+          "identifier" : "opencvName",
+          "language" : "undefined",
+          "value" : "DICT_6X6_1000",
+          "type" : "label"
         } ]
       },
       "labels" : {
@@ -950,17 +950,17 @@
       "iri" : "http://purl.org/fidmark/DICT_ARUCO_7X7_50",
       "baseIri" : "http://purl.org/fidmark",
       "annotations" : {
-        "supportedMarker" : [ {
-          "identifier" : "supportedMarker",
-          "language" : "undefined",
-          "value" : "http://purl.org/fidmark/ArUco",
-          "type" : "iri"
-        } ],
         "opencvName" : [ {
           "identifier" : "opencvName",
           "language" : "undefined",
           "value" : "DICT_7X7_50",
           "type" : "label"
+        } ],
+        "supportedMarker" : [ {
+          "identifier" : "supportedMarker",
+          "language" : "undefined",
+          "value" : "http://purl.org/fidmark/ArUco",
+          "type" : "iri"
         } ]
       },
       "labels" : {
@@ -1034,17 +1034,17 @@
       "iri" : "http://purl.org/fidmark/DICT_ARUCO_7X7_250",
       "baseIri" : "http://purl.org/fidmark",
       "annotations" : {
-        "opencvName" : [ {
-          "identifier" : "opencvName",
-          "language" : "undefined",
-          "value" : "DICT_7X7_250",
-          "type" : "label"
-        } ],
         "supportedMarker" : [ {
           "identifier" : "supportedMarker",
           "language" : "undefined",
           "value" : "http://purl.org/fidmark/ArUco",
           "type" : "iri"
+        } ],
+        "opencvName" : [ {
+          "identifier" : "opencvName",
+          "language" : "undefined",
+          "value" : "DICT_7X7_250",
+          "type" : "label"
         } ]
       },
       "labels" : {
@@ -1062,17 +1062,17 @@
       "iri" : "http://purl.org/fidmark/DICT_ARUCO_6X6_100",
       "baseIri" : "http://purl.org/fidmark",
       "annotations" : {
-        "opencvName" : [ {
-          "identifier" : "opencvName",
-          "language" : "undefined",
-          "value" : "DICT_6X6_100",
-          "type" : "label"
-        } ],
         "supportedMarker" : [ {
           "identifier" : "supportedMarker",
           "language" : "undefined",
           "value" : "http://purl.org/fidmark/ArUco",
           "type" : "iri"
+        } ],
+        "opencvName" : [ {
+          "identifier" : "opencvName",
+          "language" : "undefined",
+          "value" : "DICT_6X6_100",
+          "type" : "label"
         } ]
       },
       "labels" : {
@@ -1136,27 +1136,6 @@
         "en" : "ArUco 6x6 dictionary with 50 tags"
       }
     }, {
-      "iri" : "http://purl.org/fidmark/DICT_ARUCO_7X7_1000",
-      "baseIri" : "http://purl.org/fidmark",
-      "annotations" : {
-        "supportedMarker" : [ {
-          "identifier" : "supportedMarker",
-          "language" : "undefined",
-          "value" : "http://purl.org/fidmark/ArUco",
-          "type" : "iri"
-        } ],
-        "opencvName" : [ {
-          "identifier" : "opencvName",
-          "language" : "undefined",
-          "value" : "DICT_7X7_1000",
-          "type" : "label"
-        } ]
-      },
-      "labels" : {
-        "IRI-based" : "DICT_ARUCO_7X7_1000",
-        "en" : "ArUco 7x7 dictionary with 1000 tags"
-      }
-    }, {
       "iri" : "http://purl.org/fidmark/DICT_ARUCO_4X4_1000",
       "baseIri" : "http://purl.org/fidmark",
       "annotations" : {
@@ -1178,6 +1157,27 @@
         "en" : "ArUco 4x4 dictionary with 1000 tags"
       }
     }, {
+      "iri" : "http://purl.org/fidmark/DICT_ARUCO_7X7_1000",
+      "baseIri" : "http://purl.org/fidmark",
+      "annotations" : {
+        "opencvName" : [ {
+          "identifier" : "opencvName",
+          "language" : "undefined",
+          "value" : "DICT_7X7_1000",
+          "type" : "label"
+        } ],
+        "supportedMarker" : [ {
+          "identifier" : "supportedMarker",
+          "language" : "undefined",
+          "value" : "http://purl.org/fidmark/ArUco",
+          "type" : "iri"
+        } ]
+      },
+      "labels" : {
+        "IRI-based" : "DICT_ARUCO_7X7_1000",
+        "en" : "ArUco 7x7 dictionary with 1000 tags"
+      }
+    }, {
       "iri" : "http://purl.org/fidmark/DICT_APRILTAG_16h5",
       "baseIri" : "http://purl.org/fidmark",
       "annotations" : {
@@ -1196,7 +1196,7 @@
     "comment" : {
       "en" : "A marker dictionary is a specified encoding that produces a set of identifiers that can be used for markers."
     },
-    "id" : "18",
+    "id" : "17",
     "superClasses" : [ "44" ]
   }, {
     "iri" : "http://purl.org/fidmark/RuneTag",
@@ -1315,16 +1315,16 @@
         "value" : "https://dbpedia.org/resource/ARTag",
         "type" : "iri"
       } ],
-      "color" : [ {
-        "identifier" : "color",
-        "language" : "en",
-        "value" : "Monochrome",
-        "type" : "label"
-      } ],
       "shape" : [ {
         "identifier" : "shape",
         "language" : "en",
         "value" : "Square",
+        "type" : "label"
+      } ],
+      "color" : [ {
+        "identifier" : "color",
+        "language" : "en",
+        "value" : "Monochrome",
         "type" : "label"
       } ],
       "encoding" : [ {
@@ -1479,7 +1479,7 @@
     }
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
-    "id" : "19",
+    "id" : "18",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -1520,11 +1520,11 @@
       "undefined" : "Thing"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "iri" : "http://www.w3.org/2001/XMLSchema#hexBinary",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
     "id" : "128",
     "label" : {
-      "IRI-based" : "string"
+      "IRI-based" : "hexBinary"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#integer",
@@ -1534,11 +1534,11 @@
       "IRI-based" : "integer"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#hexBinary",
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
     "id" : "131",
     "label" : {
-      "IRI-based" : "hexBinary"
+      "IRI-based" : "string"
     }
   }, {
     "iri" : "http://purl.org/fidmark/VisualCode",
@@ -1553,7 +1553,7 @@
   }, {
     "instances" : 0,
     "union" : [ "136", "137" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "135"
   }, {
     "iri" : "http://purl.org/fidmark/PiTag",
@@ -1576,7 +1576,7 @@
   }, {
     "instances" : 0,
     "union" : [ "138", "139" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "94"
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -1596,16 +1596,16 @@
         "value" : "https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html",
         "type" : "label"
       } ],
-      "shape" : [ {
-        "identifier" : "shape",
-        "language" : "en",
-        "value" : "Square",
-        "type" : "label"
-      } ],
       "color" : [ {
         "identifier" : "color",
         "language" : "en",
         "value" : "Monochrome",
+        "type" : "label"
+      } ],
+      "shape" : [ {
+        "identifier" : "shape",
+        "language" : "en",
+        "value" : "Square",
         "type" : "label"
       } ],
       "encoding" : [ {
@@ -1634,12 +1634,12 @@
   }, {
     "instances" : 0,
     "union" : [ "144", "145" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "83"
   }, {
     "instances" : 0,
     "union" : [ "128", "131" ],
-    "attributes" : [ "anonymous", "union" ],
+    "attributes" : [ "union", "anonymous" ],
     "id" : "73"
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -1856,7 +1856,7 @@
     "label" : {
       "IRI-based" : "Barcode"
     },
-    "attributes" : [ "external", "equivalent" ],
+    "attributes" : [ "equivalent", "external" ],
     "id" : "101"
   }, {
     "iri" : "http://purl.org/fidmark/CCTag",
@@ -1908,32 +1908,32 @@
     "attributes" : [ "external" ],
     "id" : "85"
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#hexBinary",
+    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
     "id" : "138",
     "label" : {
-      "IRI-based" : "hexBinary"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "139",
-    "label" : {
-      "IRI-based" : "anyURI"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "136",
-    "label" : {
       "IRI-based" : "anyURI"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#hexBinary",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "137",
+    "id" : "139",
     "label" : {
       "IRI-based" : "hexBinary"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#hexBinary",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "136",
+    "label" : {
+      "IRI-based" : "hexBinary"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "137",
+    "label" : {
+      "IRI-based" : "anyURI"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#integer",
@@ -1991,19 +1991,28 @@
     "id" : "7",
     "superClasses" : [ "4" ]
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "iri" : "http://www.w3.org/2001/XMLSchema#hexBinary",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
     "id" : "144",
+    "label" : {
+      "IRI-based" : "hexBinary"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#anyURI",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "145",
     "label" : {
       "IRI-based" : "anyURI"
     }
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#hexBinary",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "145",
+    "iri" : "http://www.w3.org/2007/uwa/context/common.owl#TimeZone",
+    "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
+    "instances" : 0,
     "label" : {
-      "IRI-based" : "hexBinary"
-    }
+      "IRI-based" : "TimeZone"
+    },
+    "attributes" : [ "external" ],
+    "id" : "187"
   }, {
     "iri" : "http://purl.org/fidmark/InterSense",
     "baseIri" : "http://purl.org/fidmark",
@@ -2014,15 +2023,6 @@
     },
     "id" : "63",
     "superClasses" : [ "40" ]
-  }, {
-    "iri" : "http://www.w3.org/2007/uwa/context/common.owl#TimeZone",
-    "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "TimeZone"
-    },
-    "attributes" : [ "external" ],
-    "id" : "187"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#OutputModality",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
@@ -2060,7 +2060,7 @@
     "label" : {
       "IRI-based" : "Barcode"
     },
-    "attributes" : [ "external", "equivalent" ],
+    "attributes" : [ "equivalent", "external" ],
     "id" : "102"
   }, {
     "iri" : "http://purl.org/fidmark/FourierTag",
@@ -2072,6 +2072,15 @@
     },
     "id" : "65",
     "superClasses" : [ "40" ]
+  }, {
+    "iri" : "http://www.w3.org/2007/uwa/context/common.owl#TermGroup",
+    "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "TermGroup"
+    },
+    "attributes" : [ "external" ],
+    "id" : "198"
   }, {
     "iri" : "http://purl.org/fidmark/Chilitags",
     "baseIri" : "http://purl.org/fidmark",
@@ -2093,15 +2102,6 @@
     },
     "id" : "10",
     "superClasses" : [ "4" ]
-  }, {
-    "iri" : "http://www.w3.org/2007/uwa/context/common.owl#TermGroup",
-    "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "TermGroup"
-    },
-    "attributes" : [ "external" ],
-    "id" : "198"
   }, {
     "iri" : "http://purl.org/fidmark/AprilTag",
     "baseIri" : "http://purl.org/fidmark",
@@ -2156,7 +2156,7 @@
     "id" : "0",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "17",
+    "id" : "16",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "24",
@@ -2195,7 +2195,7 @@
     "id" : "59",
     "type" : "owl:datatypeProperty"
   }, {
-    "id" : "61",
+    "id" : "62",
     "type" : "owl:objectProperty"
   }, {
     "id" : "66",
@@ -2303,7 +2303,7 @@
     "id" : "119",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "20",
+    "id" : "19",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "151",
@@ -2464,16 +2464,16 @@
     "id" : "0"
   }, {
     "iri" : "http://purl.org/fidmark/dictionarySize",
-    "equivalent" : [ "20" ],
+    "equivalent" : [ "19" ],
     "baseIri" : "http://purl.org/fidmark",
-    "range" : "19",
+    "range" : "18",
     "label" : {
       "IRI-based" : "dictionarySize",
       "en" : "dictionary size"
     },
-    "domain" : "18",
+    "domain" : "17",
     "attributes" : [ "datatype" ],
-    "id" : "17"
+    "id" : "16"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#contentTypeName",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
@@ -2497,7 +2497,7 @@
   }, {
     "iri" : "http://purl.org/fidmark/hasDictionary",
     "baseIri" : "http://purl.org/fidmark",
-    "range" : "18",
+    "range" : "17",
     "label" : {
       "IRI-based" : "hasDictionary",
       "en" : "has marker dictionary"
@@ -2527,7 +2527,7 @@
       "IRI-based" : "vendor"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "34"
   }, {
     "iri" : "http://purl.org/fidmark/crowns",
@@ -2611,8 +2611,8 @@
       "IRI-based" : "restrictions"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
-    "id" : "61"
+    "attributes" : [ "object", "external" ],
+    "id" : "62"
   }, {
     "iri" : "http://purl.org/fidmark/hasWidth",
     "baseIri" : "http://purl.org/fidmark",
@@ -2638,7 +2638,7 @@
     },
     "superproperty" : [ "31" ],
     "domain" : "2",
-    "attributes" : [ "functional", "inverse functional", "object" ],
+    "attributes" : [ "object", "functional", "inverse functional" ],
     "id" : "68"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#restrictedElement",
@@ -2648,7 +2648,7 @@
       "IRI-based" : "restrictedElement"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "71"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
@@ -2659,7 +2659,7 @@
     },
     "domain" : "25",
     "subproperty" : [ "0" ],
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "3"
   }, {
     "iri" : "http://purl.org/fidmark/markerData",
@@ -2684,7 +2684,7 @@
       "IRI-based" : "supports"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "74"
   }, {
     "iri" : "http://purl.org/fidmark/isImageDescriptorOf",
@@ -2696,7 +2696,7 @@
     },
     "superproperty" : [ "76" ],
     "domain" : "25",
-    "attributes" : [ "functional", "inverse functional", "object" ],
+    "attributes" : [ "object", "functional", "inverse functional" ],
     "id" : "75"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#informativeReference",
@@ -2740,7 +2740,7 @@
       "IRI-based" : "available"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "84"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#model",
@@ -2770,7 +2770,7 @@
       "IRI-based" : "soundMode"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "92"
   }, {
     "iri" : "http://purl.org/fidmark/asNFT",
@@ -2813,7 +2813,7 @@
       "IRI-based" : "markerBits",
       "en" : "marker bits"
     },
-    "domain" : "18",
+    "domain" : "17",
     "comment" : {
       "en" : "Marker bits indicates the amount of bits that are available."
     },
@@ -2828,7 +2828,7 @@
       "IRI-based" : "version",
       "en" : "version"
     },
-    "domain" : "18",
+    "domain" : "17",
     "attributes" : [ "datatype" ],
     "id" : "108"
   }, {
@@ -2860,7 +2860,7 @@
     },
     "domain" : "25",
     "subproperty" : [ "30", "68", "119", "120", "66" ],
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "31"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#languageTag",
@@ -2925,27 +2925,27 @@
   }, {
     "range" : "4",
     "domain" : "8",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "132"
   }, {
     "range" : "4",
     "domain" : "10",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "133"
   }, {
     "range" : "4",
     "domain" : "9",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "134"
   }, {
     "range" : "4",
     "domain" : "7",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "140"
   }, {
     "range" : "4",
     "domain" : "6",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "141"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#termGroups",
@@ -2955,7 +2955,7 @@
       "IRI-based" : "termGroups"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "143"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#charsetName",
@@ -2981,16 +2981,16 @@
     "id" : "119"
   }, {
     "iri" : "http://purl.org/fidmark/maxIdentifiers",
-    "equivalent" : [ "17" ],
+    "equivalent" : [ "16" ],
     "baseIri" : "http://purl.org/fidmark",
     "range" : "129",
     "label" : {
       "IRI-based" : "maxIdentifiers",
       "en" : "maximum identifiers"
     },
-    "domain" : "18",
+    "domain" : "17",
     "attributes" : [ "datatype" ],
-    "id" : "20"
+    "id" : "19"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#disjointSet",
     "baseIri" : "http://www.w3.org/2007/uwa/context/common.owl",
@@ -2999,17 +2999,17 @@
       "IRI-based" : "disjointSet"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "151"
   }, {
     "range" : "2",
     "domain" : "5",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "155"
   }, {
     "range" : "85",
     "domain" : "2",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "156"
   }, {
     "iri" : "http://purl.org/fidmark/hammingDistance",
@@ -3033,7 +3033,7 @@
       "IRI-based" : "hammingDistance",
       "en" : "hamming distance"
     },
-    "domain" : "18",
+    "domain" : "17",
     "comment" : {
       "en" : "The minimum hamming distance between two codes"
     },
@@ -3042,12 +3042,12 @@
   }, {
     "range" : "2",
     "domain" : "67",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "159"
   }, {
     "range" : "2",
     "domain" : "87",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "160"
   }, {
     "iri" : "http://purl.org/fidmark/markerIdentifier",
@@ -3067,7 +3067,7 @@
   }, {
     "range" : "86",
     "domain" : "2",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "163"
   }, {
     "iri" : "http://www.w3.org/ns/ssn/isPropertyOf",
@@ -3078,92 +3078,92 @@
     },
     "domain" : "25",
     "subproperty" : [ "75" ],
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "76"
   }, {
     "range" : "40",
     "domain" : "65",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "164"
   }, {
     "range" : "40",
     "domain" : "37",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "165"
   }, {
     "range" : "40",
     "domain" : "63",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "166"
   }, {
     "range" : "40",
     "domain" : "52",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "167"
   }, {
     "range" : "40",
     "domain" : "64",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "169"
   }, {
     "range" : "40",
     "domain" : "39",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "170"
   }, {
     "range" : "44",
     "domain" : "45",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "171"
   }, {
     "range" : "44",
-    "domain" : "18",
-    "attributes" : [ "anonymous", "object" ],
+    "domain" : "17",
+    "attributes" : [ "object", "anonymous" ],
     "id" : "172"
   }, {
     "range" : "51",
     "domain" : "52",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "173"
   }, {
     "range" : "44",
     "domain" : "46",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "174"
   }, {
     "range" : "21",
     "domain" : "22",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "177"
   }, {
     "range" : "4",
     "domain" : "15",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "178"
   }, {
     "range" : "21",
     "domain" : "23",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "179"
   }, {
     "range" : "4",
     "domain" : "12",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "180"
   }, {
     "range" : "4",
     "domain" : "11",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "181"
   }, {
     "range" : "4",
     "domain" : "14",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "182"
   }, {
     "range" : "4",
     "domain" : "13",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "183"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#normativeReference",
@@ -3198,7 +3198,7 @@
       "IRI-based" : "normativeStatus"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "185"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#disjointClass",
@@ -3213,17 +3213,17 @@
   }, {
     "range" : "5",
     "domain" : "41",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "188"
   }, {
     "range" : "5",
     "domain" : "40",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "189"
   }, {
     "range" : "5",
     "domain" : "70",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "190"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#default",
@@ -3233,22 +3233,22 @@
       "IRI-based" : "default"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "191"
   }, {
     "range" : "5",
     "domain" : "51",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "192"
   }, {
     "range" : "5",
     "domain" : "100",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "194"
   }, {
     "range" : "5",
     "domain" : "99",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "195"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#timeZone",
@@ -3258,7 +3258,7 @@
       "IRI-based" : "timeZone"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "196"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity",
@@ -3284,7 +3284,7 @@
   }, {
     "range" : "5",
     "domain" : "98",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "200"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#active",
@@ -3294,22 +3294,22 @@
       "IRI-based" : "active"
     },
     "domain" : "25",
-    "attributes" : [ "external", "object" ],
+    "attributes" : [ "object", "external" ],
     "id" : "201"
   }, {
     "range" : "5",
     "domain" : "96",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "202"
   }, {
     "range" : "5",
     "domain" : "95",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "203"
   }, {
     "range" : "5",
     "domain" : "97",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "204"
   }, {
     "iri" : "http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix",
@@ -3324,7 +3324,7 @@
   }, {
     "range" : "5",
     "domain" : "4",
-    "attributes" : [ "anonymous", "object" ],
+    "attributes" : [ "object", "anonymous" ],
     "id" : "206"
   } ]
 }
