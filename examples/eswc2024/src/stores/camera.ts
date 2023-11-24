@@ -3,6 +3,7 @@
 import { Model, ModelBuilder } from '@openhps/core';
 import { defineStore } from 'pinia';
 import { VideoSource } from '@openhps/opencv';
+import { ArUcoMarkerDetection } from '@/nodes';
 
 export interface CameraState {
     model: Model<any, any>
@@ -38,6 +39,9 @@ export const useCameraStore = defineStore('camera', {
                                     autoPlay: true,
                                     fps: 25,
                                     videoSource: video
+                                }))
+                                .via(new ArUcoMarkerDetection({
+
                                 }))
                                 .to()
                                 .build((model: Model) => {

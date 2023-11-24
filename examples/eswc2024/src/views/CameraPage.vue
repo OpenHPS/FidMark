@@ -3,6 +3,9 @@
     <ion-header>
       <ion-toolbar>
         <ion-title>Camera</ion-title>
+        <ion-buttons slot="end">
+          <ion-button slot="icon-only" icon="qrCodeOutline"></ion-button>
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
@@ -25,10 +28,10 @@ import { useCameraStore } from '@/stores/camera';
 
 @Options({
   components: {
-    IonPage, IonHeader, IonToolbar, IonTitle, IonContent
+    IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
   }
 })
-export default class ARPage extends Vue {
+export default class CameraPage extends Vue {
   cameraStore = useCameraStore();
 
   mounted(): void {

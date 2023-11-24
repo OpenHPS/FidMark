@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router';
 import { createPinia } from 'pinia';
+import { addIcons } from 'ionicons';
+import * as icons from 'ionicons/icons';
 
 import { IonicVue } from '@ionic/vue';
 
@@ -30,5 +32,6 @@ const app = createApp(App)
   .use(createPinia());
   
 router.isReady().then(() => {
+  addIcons({ ...icons });
   app.mount('#app');
 });
