@@ -6,5 +6,5 @@ import { SerializableObject } from '@openhps/core';
     }
 })
 export class ImageDescriptor {
-
+    image: string;
 }

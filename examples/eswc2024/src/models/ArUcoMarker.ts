@@ -10,7 +10,7 @@ import { MarkerDictionary } from "./MarkerDictionary";
 export class ArUcoMarker extends FiducialMarker {
     @SerializableMember({
         rdf: {
-            predicate: "http://purl.org/fidmark/markerIdentifier"
+            predicate: "http://purl.org/fidmark/identifier"
         }
     })
     identifier: number;

@@ -2,7 +2,7 @@
 
 import { CallbackSinkNode, Model, ModelBuilder } from '@openhps/core';
 import { defineStore } from 'pinia';
-import { VideoSource } from '@openhps/opencv';
+import { VideoSource } from '@/nodes/VideoSource';
 import { ArUcoMarkerDetection } from '@/nodes';
 import { ThreeJSNode } from '@/nodes/ThreeJSNode';
 
@@ -32,30 +32,43 @@ export const useCameraStore = defineStore('camera', {
                     }},
                     (stream: any) => {
                         const video = document.getElementById('camera') as HTMLVideoElement;
+                        const canvas = document.getElementById("threeCanvas") as HTMLCanvasElement;
                         video.srcObject = stream;
                         video.onloadedmetadata = () => {
-                            video.play();
-                            ModelBuilder.create()
-                                .from(new VideoSource({
-                                    autoPlay: true,
-                                    fps: 25,
-                                    videoSource: video,
-                                }))
-                                .via(new ArUcoMarkerDetection({
+                            video.play().then(() => {
+                                return ModelBuilder.create()
+                                    .withLogger((level, message, data) => {
+                                        if (level === 'error') {
+                                            console.error(level, message, data);
+                                        }
+                                    })
+                                    .from(new VideoSource({
+                                        fps: 30,
+                                        uid: "video"
+                                    }))
+                                    .via(new ArUcoMarkerDetection({
 
-                                }))
-                                .via(new ThreeJSNode({
-                                    canvas: document.getElementById("threeCanvas") as HTMLCanvasElement
-                                }))
-                                .to(new CallbackSinkNode(() => {
+                                    }))
+                                    .via(new ThreeJSNode({
+                                        canvas
+                                    }))
+                                    .to(new CallbackSinkNode(() => {
 
-                                }))
-                                .build((model: Model) => {
-                                    console.log("model ok")
-                                    this.model = model;
-                                    this.model.on('error', console.error);
-                                    resolve();
-                                }).catch(reject);
+                                    }))
+                                    .build();
+                            }).then((model: Model) => {
+                                const videoNode = model.findNodeByUID("video") as VideoSource;
+                                videoNode.load(video);
+                                videoNode.load("camera");
+                                videoNode.play();
+
+                                canvas.width = video.videoWidth;
+                                canvas.height = video.videoHeight;
+                                
+                                this.model = model;
+                                this.model.on('error', console.error);
+                                resolve();
+                            }).catch(reject);
                         };
                     },
                     (err: Error) => {

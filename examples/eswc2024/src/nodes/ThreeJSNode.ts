@@ -1,9 +1,6 @@
-import { ImageProcessingNode, ImageProcessingOptions } from "@openhps/opencv";
+import { cv, ImageProcessingNode, ImageProcessingOptions } from "@openhps/opencv/web";
 import { ImageFrame } from "@openhps/video";
-import { Mat } from "@u4/opencv4nodejs";
 import * as THREE from 'three';
-
-const { OpenCV } = require('@openhps/opencv'); // eslint-disable-line
 
 export class ThreeJSNode<InOut extends ImageFrame> extends ImageProcessingNode<InOut> {
     declare protected options: ThreeJSNodeOptions;
@@ -13,9 +10,8 @@ export class ThreeJSNode<InOut extends ImageFrame> extends ImageProcessingNode<I
         super(options);
     }
 
-    processImage(image: Mat): Promise<Mat> {
+    processImage(image: cv.Mat): Promise<cv.Mat> {
         return new Promise((resolve) => {
-            console.log("test");
             this.options.canvas.width = image.cols;
             this.options.canvas.height = image.rows;
 
@@ -34,13 +30,11 @@ export class ThreeJSNode<InOut extends ImageFrame> extends ImageProcessingNode<I
             // renderer.setSize(this.options.canvas.width, this.options.canvas.height);
             // renderer.render(scene, camera);
 
-            try{
-                OpenCV.imshow(this.options.canvas, image);
-            }catch(ex) {
+            try {
+                cv.imshow(this.options.canvas, image);
+            } catch(ex) {
                 console.log(ex)
             }
-
-            (image as any).delete(); // Ready
             resolve(image);
         });
     }

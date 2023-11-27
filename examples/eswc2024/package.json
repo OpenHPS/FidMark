@@ -21,7 +21,7 @@
     "@ionic/vue-router": "^7.5.6",
     "@monaco-editor/loader": "^1.4.0",
     "@openhps/core": "^0.6.3",
-    "@openhps/opencv": "^0.2.4",
+    "@openhps/opencv": "^0.3.4",
     "@openhps/rdf": "^0.4.24",
     "@openhps/video": "^0.1.11",
     "@techstark/opencv-js": "^4.8.0-release.10",

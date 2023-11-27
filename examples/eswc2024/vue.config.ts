@@ -17,6 +17,7 @@ export default defineConfig({
       '@openhps/rdf': ['OpenHPS', 'rdf'],
       '@openhps/video': ['OpenHPS', 'video'],
       '@openhps/opencv': ['OpenHPS', 'opencv'],
+      '@openhps/opencv/web': ['OpenHPS', 'opencv'],
     },
   },
   chainWebpack: (config) => {
