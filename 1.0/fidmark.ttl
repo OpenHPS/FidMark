@@ -428,6 +428,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 ###  http://purl.org/fidmark/MarkerOrigin
 :MarkerOrigin rdf:type owl:Class ;
               rdfs:subClassOf <http://www.w3.org/ns/ssn/Property> ;
+              rdfs:comment "Marker origin indicates the origin of the 0-point on the marker's surface."@en ;
               rdfs:label "Marker origin"@en .
 
 
@@ -463,6 +464,14 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
        rdfs:subClassOf :Barcode ;
        rdfs:isDefinedBy "http://dx.doi.org/10.1007/s00138-012-0469-6"^^xsd:anyURI ;
        rdfs:label "Pi-Tag"@en .
+
+
+###  http://purl.org/fidmark/PnPPoseComputation
+:PnPPoseComputation rdf:type owl:Class ;
+                    rdfs:subClassOf poso:PositioningTechnique ;
+                    rdfs:comment "The pose computation problem consists in solving for the rotation and translation that minimizes the reprojection error from 3D-2D point correspondences."@en ;
+                    rdfs:isDefinedBy <https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html> ;
+                    rdfs:label "Perspective-n-Point (PnP) pose computation"@en .
 
 
 ###  http://purl.org/fidmark/QRCode
@@ -839,6 +848,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 ###  http://purl.org/fidmark/OriginBottomRight
 :OriginBottomRight rdf:type owl:NamedIndividual ,
                             :MarkerOrigin ;
+                   rdfs:comment "Bottom right origin of a square marker."@en ;
                    rdfs:label "Bottom right origin"@en .
 
 

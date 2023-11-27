@@ -1,5 +1,7 @@
 import { ImageFrame } from "@openhps/video";
+import { Absolute3DPosition } from '@openhps/core';
 import { ImageProcessingNode, cv as OpenCV, ImageProcessingOptions } from '@openhps/opencv/web';
+import { ArUcoMarker } from "@/models";
 
 const { cv } = require('@openhps/opencv/web'); // eslint-disable-line
 
@@ -12,7 +14,7 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame> extends ImageProcess
             try {
                 const params = new cv.aruco_DetectorParameters();
                 const refineParams = new cv.aruco_RefineParameters(10, 3, true);
-                const dictionary = cv.getPredefinedDictionary(cv['DICT_6X6_250']);
+                const dictionary = cv.getPredefinedDictionary(cv['DICT_ARUCO_ORIGINAL']);
                 const detector = new cv.aruco_ArucoDetector(dictionary, params, refineParams);
                 const corners = new cv.MatVector();
                 const markerIds = new cv.Mat();
@@ -20,33 +22,53 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame> extends ImageProcess
                 cv.cvtColor(image, gray, cv.COLOR_RGBA2GRAY);
                 detector.detectMarkers(gray, corners, markerIds);
                 if (markerIds.rows > 0) {
-                    const rvecs = new cv.Mat(markerIds.rows, 1, cv.CV_8UC3);
-                    const tvecs = new cv.Mat(markerIds.rows, 1, cv.CV_8UC3);
-                    const cameraMatrix = cv.matFromArray(3, 3, cv.CV_64F, [9.6635571716090658e+02, 0., 2.0679307818305685e+02, 0., 9.6635571716090658e+02, 2.9370020600555273e+02, 0., 0., 1.]);
+                    const rotationMat = new cv.Mat(3, 3, cv.CV_32F);
+                    const rvec = new cv.Mat(markerIds.rows, 1, cv.CV_32FC3);
+                    const tvec = new cv.Mat(markerIds.rows, 1, cv.CV_32FC3);
+                    const cameraMatrix = cv.matFromArray(3, 3, cv.CV_64F, [
+                        9.6635571716090658e+02, 
+                        0., 
+                        2.0679307818305685e+02, 
+                        0., 
+                        9.6635571716090658e+02, 
+                        2.9370020600555273e+02, 
+                        0., 0., 1.]);
                     const distCoeffs = cv.matFromArray(5, 1, cv.CV_64F, [-1.5007354215536557e-03, 9.8722389825801837e-01, 1.7188452542408809e-02, -2.6805958820424611e-02, -2.3313928379240205e+00]);
-                    const objPoints = new cv.Mat(4, 1, cv.CV_32FC3);
                     const markerLength = 0.05;
-                    objPoints.floatPtr(0)[0] = -markerLength / 2;
-                    objPoints.floatPtr(1)[0] = markerLength / 2;
-                    objPoints.floatPtr(2)[0] = markerLength / 2;
-                    objPoints.floatPtr(3)[0] = markerLength / 2;
-                    objPoints.floatPtr(4)[0] = markerLength / 2;
-                    objPoints.floatPtr(5)[0] = -markerLength / 2;
-                    objPoints.floatPtr(6)[0] = -markerLength / 2;
-                    objPoints.floatPtr(7)[0] = -markerLength / 2;
+                    const objPoints = cv.matFromArray(4, 1, cv.CV_32FC3, [
+                        -markerLength / 2,
+                        markerLength / 2,
+                        0., 
+                        markerLength / 2,
+                        markerLength / 2,
+                        0., 
+                        markerLength / 2,
+                        -markerLength / 2,
+                        0., 
+                        -markerLength / 2,
+                        -markerLength / 2,
+                        0.
+                    ]);
 
                     // Calculate pose for each marker
                     for (let i = 0; i < markerIds.rows; i++) {
-                        cv.solvePnP(objPoints, corners.get(i), cameraMatrix, distCoeffs, rvecs, tvecs);
+                        cv.solvePnP(objPoints, corners.get(i), cameraMatrix, distCoeffs, rvec, tvec);
+                        // Get rotation matrix
+                        cv.Rodrigues(rvec, rotationMat);
+                        cv.drawFrameAxes(image, cameraMatrix, distCoeffs, rvec, tvec, 0.1);
+                        const marker = new ArUcoMarker();
+                        marker.identifier = markerIds.data[i];
+                        marker.setPosition(new Absolute3DPosition());
                     }
 
-                    for (let i = 0; i < rvecs.size(); ++i) {
-                        const rvec = rvecs[i];
-                        const tvec = tvecs[i];
-                        cv.drawFrameAxes(gray, cameraMatrix, distCoeffs, rvec, tvec, 0.1);
-                    }
+                    rvec.delete();
+                    tvec.delete();
+                    cameraMatrix.delete();
+                    distCoeffs.delete();
+                    objPoints.delete();
+                    rotationMat.delete();
                 }
-                cv.drawDetectedMarkers(gray, corners, markerIds);
+
                 // Cleanup
                 markerIds.delete();
                 corners.delete();
@@ -54,7 +76,7 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame> extends ImageProcess
                 dictionary.delete();
                 detector.delete();
                 refineParams.delete();
-                resolve(gray);
+                resolve(image);
             } catch (ex) {
                 if (typeof ex === 'number') {
                     const info = cv.exceptionFromPtr(ex);

@@ -3,7 +3,6 @@
     "openhps-core.min.js",
     "openhps-video.min.js",
     "openhps-opencv.external.min.js",
-    "openhps-opencv.external.js",
     "openhps-rdf.all.min.js",
     "openhps-core.es.min.js",
     "openhps-video.es.min.js",
