@@ -1,5 +1,5 @@
 import { ImageFrame } from "@openhps/video";
-import { Absolute3DPosition, Matrix3, Matrix4, Orientation } from '@openhps/core';
+import { Absolute3DPosition, LengthUnit, Matrix3, Matrix4, Orientation } from '@openhps/core';
 import { ImageProcessingNode, cv as OpenCV, ImageProcessingOptions } from '@openhps/opencv/web';
 import { ArUcoMarker } from "../models";
 
@@ -33,7 +33,13 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame> extends ImageProcess
                         9.6635571716090658e+02, 
                         2.9370020600555273e+02, 
                         0., 0., 1.]);
-                    const distCoeffs = cv.matFromArray(5, 1, cv.CV_64F, [-1.5007354215536557e-03, 9.8722389825801837e-01, 1.7188452542408809e-02, -2.6805958820424611e-02, -2.3313928379240205e+00]);
+                    const distCoeffs = cv.matFromArray(5, 1, cv.CV_64F, [
+                        -1.5007354215536557e-03, 
+                        9.8722389825801837e-01, 
+                        1.7188452542408809e-02, 
+                        -2.6805958820424611e-02, 
+                        -2.3313928379240205e+00
+                    ]);
                     const markerLength = 0.05;
                     const objPoints = cv.matFromArray(4, 1, cv.CV_32FC3, [
                         -markerLength / 2,
@@ -54,11 +60,17 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame> extends ImageProcess
                     for (let i = 0; i < markerIds.rows; i++) {
                         cv.solvePnP(objPoints, corners.get(i), cameraMatrix, distCoeffs, rvec, tvec);
                         cv.drawFrameAxes(image, cameraMatrix, distCoeffs, rvec, tvec, 0.1);
-                        // Get rotation matrix
-                        cv.Rodrigues(rvec, rotationMat);
                         const marker = new ArUcoMarker();
                         marker.identifier = markerIds.data[i];
-                        marker.setPosition(new Absolute3DPosition());
+                        
+                        // Get position
+                        marker.setPosition(new Absolute3DPosition(
+                            tvec.data32F[0], 
+                            -tvec.data32F[1], 
+                            tvec.data32F[2], LengthUnit.METER));
+
+                        // Get rotation matrix
+                        cv.Rodrigues(rvec, rotationMat);
                         const matrix = new Matrix4().setFromMatrix3(new Matrix3(
                             rotationMat.data32F[0],
                             rotationMat.data32F[1],

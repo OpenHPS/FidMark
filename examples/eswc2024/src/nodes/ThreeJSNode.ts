@@ -24,15 +24,20 @@ export class ThreeJSNode<InOut extends ImageFrame> extends ImageProcessingNode<I
             this.options.canvas.height = image.rows;
 
             const camera = new THREE.PerspectiveCamera(40, 812 / 339, 0.01, 1000);
-            camera.position.z = 1;
+            camera.position.z = 0.8;
 
             const scene = new THREE.Scene();
 
             frame.getObjects(ArUcoMarker).forEach(marker => {
-                const geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
+                if (marker.identifier !== 12) {
+                    return;
+                }
+                const markerSize = 0.05;
+                const geometry = new THREE.BoxGeometry(markerSize, markerSize, markerSize);
                 const material = new THREE.MeshNormalMaterial();
                 const mesh = new THREE.Mesh(geometry, material);
                 mesh.rotation.setFromRotationMatrix(marker.position.orientation.toRotationMatrix());
+                mesh.position.set(...marker.position.toVector3().toArray());
                 scene.add(mesh);
             });
 
