@@ -1193,6 +1193,10 @@
 }, {
   "@id" : "http://purl.org/fidmark/MarkerOrigin",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Marker origin indicates the origin of the 0-point on the marker's surface."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Marker origin"
@@ -1267,6 +1271,10 @@
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "http://purl.org/fidmark/MarkerOrigin"
   } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Bottom right origin of a square marker."
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Bottom right origin"
@@ -1318,6 +1326,23 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/fidmark/Barcode"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/PnPPoseComputation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The pose computation problem consists in solving for the rotation and translation that minimizes the reprojection error from 3D-2D point correspondences."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Perspective-n-Point (PnP) pose computation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/poso/PositioningTechnique"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/QRCode",

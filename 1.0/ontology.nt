@@ -387,6 +387,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/MarkerOrigin
 <http://purl.org/fidmark/MarkerOrigin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/MarkerOrigin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/Property> .
+<http://purl.org/fidmark/MarkerOrigin> <http://www.w3.org/2000/01/rdf-schema#comment> "Marker origin indicates the origin of the 0-point on the marker's surface."@en .
 <http://purl.org/fidmark/MarkerOrigin> <http://www.w3.org/2000/01/rdf-schema#label> "Marker origin"@en .
 # 
 # http://purl.org/fidmark/MarkerPoseEstimation
@@ -417,6 +418,13 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/PiTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/PiTag> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://dx.doi.org/10.1007/s00138-012-0469-6"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/PiTag> <http://www.w3.org/2000/01/rdf-schema#label> "Pi-Tag"@en .
+# 
+# http://purl.org/fidmark/PnPPoseComputation
+<http://purl.org/fidmark/PnPPoseComputation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/PnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/poso/PositioningTechnique> .
+<http://purl.org/fidmark/PnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#comment> "The pose computation problem consists in solving for the rotation and translation that minimizes the reprojection error from 3D-2D point correspondences."@en .
+<http://purl.org/fidmark/PnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html> .
+<http://purl.org/fidmark/PnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#label> "Perspective-n-Point (PnP) pose computation"@en .
 # 
 # http://purl.org/fidmark/QRCode
 <http://purl.org/fidmark/QRCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -757,6 +765,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/OriginBottomRight
 <http://purl.org/fidmark/OriginBottomRight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/fidmark/OriginBottomRight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerOrigin> .
+<http://purl.org/fidmark/OriginBottomRight> <http://www.w3.org/2000/01/rdf-schema#comment> "Bottom right origin of a square marker."@en .
 <http://purl.org/fidmark/OriginBottomRight> <http://www.w3.org/2000/01/rdf-schema#label> "Bottom right origin"@en .
 # 
 # http://purl.org/fidmark/OriginCenter

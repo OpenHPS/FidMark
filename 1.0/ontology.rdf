@@ -660,6 +660,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/MarkerOrigin">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+        <rdfs:comment xml:lang="en">Marker origin indicates the origin of the 0-point on the marker&apos;s surface.</rdfs:comment>
         <rdfs:label xml:lang="en">Marker origin</rdfs:label>
     </owl:Class>
     
@@ -715,6 +716,18 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://dx.doi.org/10.1007/s00138-012-0469-6</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Pi-Tag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/PnPPoseComputation -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/PnPPoseComputation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/poso/PositioningTechnique"/>
+        <rdfs:comment xml:lang="en">The pose computation problem consists in solving for the rotation and translation that minimizes the reprojection error from 3D-2D point correspondences.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html"/>
+        <rdfs:label xml:lang="en">Perspective-n-Point (PnP) pose computation</rdfs:label>
     </owl:Class>
     
 
@@ -1261,6 +1274,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:NamedIndividual rdf:about="http://purl.org/fidmark/OriginBottomRight">
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerOrigin"/>
+        <rdfs:comment xml:lang="en">Bottom right origin of a square marker.</rdfs:comment>
         <rdfs:label xml:lang="en">Bottom right origin</rdfs:label>
     </owl:NamedIndividual>
     

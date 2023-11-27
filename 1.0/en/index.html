@@ -177,6 +177,9 @@ This ontology has the following classes and properties.</span>
       <a href="#MultiRing" title="http://purl.org/fidmark/MultiRing">Multi-ring</a>
    </li>
    <li>
+      <a href="#PnPPoseComputation" title="http://purl.org/fidmark/PnPPoseComputation">Perspective-n-Point (PnP) pose computation</a>
+   </li>
+   <li>
       <a href="#PiTag" title="http://purl.org/fidmark/PiTag">Pi-Tag</a>
    </li>
    <li>
@@ -461,6 +464,9 @@ This section provides details for each class and property defined by Fiducial Ma
       </li>
       <li>
          <a href="#MultiRing" title="http://purl.org/fidmark/MultiRing">Multi-ring</a>
+      </li>
+      <li>
+         <a href="#PnPPoseComputation" title="http://purl.org/fidmark/PnPPoseComputation">Perspective-n-Point (PnP) pose computation</a>
       </li>
       <li>
          <a href="#PiTag" title="http://purl.org/fidmark/PiTag">Pi-Tag</a>
@@ -1113,6 +1119,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/MarkerOrigin</p>
+      <div class="comment">
+         <span class="markdown">Marker origin indicates the origin of the 0-point on the marker's surface.</span>
+      </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -1183,6 +1192,31 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
          <dd>
             <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PnPPoseComputation">
+      <h3>Perspective-n-Point (PnP) pose computation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/PnPPoseComputation</p>
+      <div class="comment">
+         <span class="markdown">The pose computation problem consists in solving for the rotation and translation that minimizes the reprojection error from 3D-2D point correspondences.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html">https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://purl.org/poso/PositioningTechnique"
+               target="_blank"
+               title="http://purl.org/poso/PositioningTechnique">positioning technique</a>
          </dd>
       </dl>
    </div>
@@ -2898,6 +2932,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/OriginBottomRight</p>
+      <div class="comment">
+         <span class="markdown">Bottom right origin of a square marker.</span>
+      </div>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
