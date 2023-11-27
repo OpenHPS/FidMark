@@ -44,9 +44,6 @@ export default class CameraPage extends Vue {
 </script>
 
 <style scoped>
-#camera {
-  display: none;
-}
 .ar {
   position: absolute;
   top: 0;

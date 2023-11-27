@@ -1,7 +1,7 @@
 import { ImageFrame } from "@openhps/video";
-import { Absolute3DPosition } from '@openhps/core';
+import { Absolute3DPosition, Matrix3, Matrix4, Orientation } from '@openhps/core';
 import { ImageProcessingNode, cv as OpenCV, ImageProcessingOptions } from '@openhps/opencv/web';
-import { ArUcoMarker } from "@/models";
+import { ArUcoMarker } from "../models";
 
 const { cv } = require('@openhps/opencv/web'); // eslint-disable-line
 
@@ -53,12 +53,25 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame> extends ImageProcess
                     // Calculate pose for each marker
                     for (let i = 0; i < markerIds.rows; i++) {
                         cv.solvePnP(objPoints, corners.get(i), cameraMatrix, distCoeffs, rvec, tvec);
+                        cv.drawFrameAxes(image, cameraMatrix, distCoeffs, rvec, tvec, 0.1);
                         // Get rotation matrix
                         cv.Rodrigues(rvec, rotationMat);
-                        cv.drawFrameAxes(image, cameraMatrix, distCoeffs, rvec, tvec, 0.1);
                         const marker = new ArUcoMarker();
                         marker.identifier = markerIds.data[i];
                         marker.setPosition(new Absolute3DPosition());
+                        const matrix = new Matrix4().setFromMatrix3(new Matrix3(
+                            rotationMat.data32F[0],
+                            rotationMat.data32F[1],
+                            rotationMat.data32F[2],
+                            rotationMat.data32F[3],
+                            rotationMat.data32F[4],
+                            rotationMat.data32F[5],
+                            rotationMat.data32F[6],
+                            rotationMat.data32F[7],
+                            rotationMat.data32F[8],
+                        ));
+                        marker.position.orientation = Orientation.fromRotationMatrix(matrix);
+                        frame.addObject(marker);
                     }
 
                     rvec.delete();
@@ -76,6 +89,7 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame> extends ImageProcess
                 dictionary.delete();
                 detector.delete();
                 refineParams.delete();
+                gray.delete();
                 resolve(image);
             } catch (ex) {
                 if (typeof ex === 'number') {
