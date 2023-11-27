@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/fidmark/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/fidmark/","name":"Fiducial Marker Ontology", "headline":"Document describing the ontology http://purl.org/fidmark/", "datePublished":"2023-12-07T00:00:00", "license":"http://purl.org/NET/rdflicense/MIT1.0", "author":[{"@type":"Person","name":"Isaac Valadez Mora"},{"@type":"Person","name":"Maxim Van de Wynckel"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/fidmark/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/fidmark/","name":"Fiducial Marker Ontology", "headline":"test", "datePublished":"2023-12-07T00:00:00", "license":"http://purl.org/NET/rdflicense/MIT1.0", "author":[{"@type":"Person","name":"Isaac Valadez Mora"},{"@type":"Person","name":"Maxim Van de Wynckel"}], "contributor":[{"@type":"Person","name":"Beat Signer"}]}</script>
 
 <script src="../resources/jquery.js"></script> 
 <script src="../resources/marked.min.js"></script> 
@@ -64,6 +64,12 @@ $(function(){
 <dt>Auteurs:</dt>
 <dd>Isaac Valadez Mora</dd><dd>Maxim Van de Wynckel</dd>
 
+<dt>Bijdragers:</dt>
+<dd>Beat Signer</dd>
+
+<dt>GeÃ¯mporteerde ontologieÃ«n:</dt>
+<dd><a href="http://purl.org/poso/">&lt;http://purl.org/poso/&gt;</a></dd><dd><a href="http://www.w3.org/ns/sosa/">&lt;http://www.w3.org/ns/sosa/&gt;</a></dd><dd><a href="http://www.w3.org/ns/ssn/">&lt;http://www.w3.org/ns/ssn/&gt;</a></dd><dd><a href="http://www.w3.org/ns/ssn/systems/">&lt;http://www.w3.org/ns/ssn/systems/&gt;</a></dd>
+
 <dt>Download serialisatie:</dt><dd><span><a href="../ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="../ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="../ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="../ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>Licentie: </dt><dd><a href="http://purl.org/NET/rdflicense/MIT1.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/MIT1.0-blue.svg" alt="http://purl.org/NET/rdflicense/MIT1.0" /></a>
 </dd><dt>Visualisatie:</dt><dd><a href="../webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="../OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Citeren als:</dt>
@@ -76,7 +82,10 @@ $(function(){
 <div>
 <span>Ontology Specification Draft</span>
 </div>
-</div><div id="toc"></div>  
+</div>     <div id="abstract"><h2>Samenvatting</h2><span class="markdown">
+test</span>
+</div>
+<div id="toc"></div>  
 
 <!--OVERVIEW SECTION-->
     <div id="overview"><h2 id="overv" class="list">Fiducial Marker Ontology: Overzicht <span class="backlink"> terug naar <a href="#toc">Index</a></span></h2>
@@ -150,14 +159,16 @@ Deze ontologie heeft de volgende klassen en eigenschappen.</span>
       <a href="#MarkerPoseEstimation" title="http://purl.org/fidmark/MarkerPoseEstimation">Marker based pose estimation</a>
    </li>
    <li>
+      <a href="#MarkerDetection" title="http://purl.org/fidmark/MarkerDetection">Marker detection</a>
+   </li>
+   <li>
       <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
    </li>
    <li>
       <a href="#MarkerOrigin" title="http://purl.org/fidmark/MarkerOrigin">Marker origin</a>
    </li>
    <li>
-      <a href="#MarkerlessPoseEstimation"
-         title="http://purl.org/fidmark/MarkerlessPoseEstimation">Markerless pose estimation</a>
+      <a href="#MarkerlessPoseEstimation" title="http://purl.org/fidmark/MarkerlessPoseEstimation">Markerless pose estimation</a>
    </li>
    <li>
       <a href="#MaxiCode" title="http://purl.org/fidmark/MaxiCode">MaxiCode</a>
@@ -322,6 +333,9 @@ Deze ontologie heeft de volgende klassen en eigenschappen.</span>
       <a href="#OriginBottomLeft" title="http://purl.org/fidmark/OriginBottomLeft">Bottom left origin</a>
    </li>
    <li>
+      <a href="#OriginBottomRight" title="http://purl.org/fidmark/OriginBottomRight">Bottom right origin</a>
+   </li>
+   <li>
       <a href="#OriginCenter" title="http://purl.org/fidmark/OriginCenter">Center origin</a>
    </li>
    <li>
@@ -333,19 +347,18 @@ Deze ontologie heeft de volgende klassen en eigenschappen.</span>
       </a>
    </li>
    <li>
-      <a href="#OriginBottomRight" title="http://purl.org/fidmark/OriginBottomRight">
-         <span>origin bottom right</span>
-      </a>
+      <a href="#DICT_REACTIVISION_AMOEBA"
+         title="http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA">reacTIVision amoeba symbology</a>
    </li>
    <li>
-      <a href="#OriginTopLeft" title="http://purl.org/fidmark/OriginTopLeft">
-         <span>origin top left</span>
-      </a>
+      <a href="#DICT_REACTIVISION_YAMAARASHI"
+         title="http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI">reacTIVision yamaarashi symbology</a>
    </li>
    <li>
-      <a href="#OriginTopRight" title="http://purl.org/fidmark/OriginTopRight">
-         <span>origin top right</span>
-      </a>
+      <a href="#OriginTopLeft" title="http://purl.org/fidmark/OriginTopLeft">Top left origin</a>
+   </li>
+   <li>
+      <a href="#OriginTopRight" title="http://purl.org/fidmark/OriginTopRight">Top right origin</a>
    </li>
    <li>
       <a href="#DICT_TOPOTAG_3X3" title="http://purl.org/fidmark/DICT_TOPOTAG_3X3">TopoTag 3x3 dictionary</a>
@@ -432,14 +445,16 @@ Deze sectie geeft details voor elke klasse en eigenschap gedefinieerd door  Fidu
          <a href="#MarkerPoseEstimation" title="http://purl.org/fidmark/MarkerPoseEstimation">Marker based pose estimation</a>
       </li>
       <li>
+         <a href="#MarkerDetection" title="http://purl.org/fidmark/MarkerDetection">Marker detection</a>
+      </li>
+      <li>
          <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
       </li>
       <li>
          <a href="#MarkerOrigin" title="http://purl.org/fidmark/MarkerOrigin">Marker origin</a>
       </li>
       <li>
-         <a href="#MarkerlessPoseEstimation"
-            title="http://purl.org/fidmark/MarkerlessPoseEstimation">Markerless pose estimation</a>
+         <a href="#MarkerlessPoseEstimation" title="http://purl.org/fidmark/MarkerlessPoseEstimation">Markerless pose estimation</a>
       </li>
       <li>
          <a href="#MaxiCode" title="http://purl.org/fidmark/MaxiCode">MaxiCode</a>
@@ -752,11 +767,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
             <a href="#CircularBarcode" title="http://purl.org/fidmark/CircularBarcode">Circular barcode</a>
             <sup class="type-c" title="klasse">c</sup>
          </dd>
-         <dt>is in domein van</dt>
-         <dd>
-            <a href="#crowns" title="http://purl.org/fidmark/crowns">number of crowns</a>
-            <sup class="type-dp" title="data-eigenschap">dp</sup>
-         </dd>
       </dl>
    </div>
    <div class="entity" id="Chilitags">
@@ -833,6 +843,11 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
             <sup class="type-c" title="klasse">c</sup>, <a href="#WhyCode" title="http://purl.org/fidmark/WhyCode">WhyCode</a>
             <sup class="type-c" title="klasse">c</sup>
          </dd>
+         <dt>is in domein van</dt>
+         <dd>
+            <a href="#crowns" title="http://purl.org/fidmark/crowns">number of crowns</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="CCC">
@@ -887,11 +902,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
          <dd>
             <a href="http://purl.org/poso/TrackedFeature"
                target="_blank"
-               title="http://purl.org/poso/TrackedFeature">tracked feature</a>
-            <sup class="type-c" title="klasse">c</sup>, <a href="http://purl.org/poso/VisualLandmark"
+               title="http://purl.org/poso/TrackedFeature">tracked feature</a>, <a href="http://purl.org/poso/VisualLandmark"
                target="_blank"
                title="http://purl.org/poso/VisualLandmark">visual landmark</a>
-            <sup class="type-c" title="klasse">c</sup>
          </dd>
          <dt>heeft subklassen</dt>
          <dd>
@@ -947,13 +960,15 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/ImageDescriptor</p>
+      <div class="comment">
+         <span class="markdown">An image descriptor is a visual descriptor of a fiducial marker.</span>
+      </div>
       <dl class="description">
          <dt>heeft superklassen</dt>
          <dd>
             <a href="http://www.w3.org/ns/ssn/Property"
                target="_blank"
                title="http://www.w3.org/ns/ssn/Property">property</a>
-            <sup class="type-c" title="klasse">c</sup>
          </dd>
          <dt>is in domein van</dt>
          <dd>
@@ -991,13 +1006,34 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/MarkerPoseEstimation</p>
+      <div class="comment">
+         <span class="markdown">Marker based pose estimation is a positioning technique that determines a position and orientation from a detected marker.</span>
+      </div>
       <dl class="description">
          <dt>heeft superklassen</dt>
          <dd>
             <a href="http://purl.org/poso/PositioningTechnique"
                target="_blank"
                title="http://purl.org/poso/PositioningTechnique">positioning technique</a>
-            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MarkerDetection">
+      <h3>Marker detection<sup class="type-c" title="klasse">c</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#classes">Index van klassen</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/MarkerDetection</p>
+      <div class="comment">
+         <span class="markdown">Marker detection is a procedure where an image sensor (e.g. a camera) detects a fiducial marker in its field of view.</span>
+      </div>
+      <dl class="description">
+         <dt>heeft superklassen</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/sosa/Procedure"
+               target="_blank"
+               title="http://www.w3.org/ns/sosa/Procedure">procedure</a>
          </dd>
       </dl>
    </div>
@@ -1017,7 +1053,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
             <a href="http://www.w3.org/ns/ssn/Property"
                target="_blank"
                title="http://www.w3.org/ns/ssn/Property">property</a>
-            <sup class="type-c" title="klasse">c</sup>
          </dd>
          <dt>is in domein van</dt>
          <dd>
@@ -1063,6 +1098,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
             <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_TOPOTAG_4X4" title="http://purl.org/fidmark/DICT_TOPOTAG_4X4">TopoTag 4x4 dictionary</a>
             <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_TOPOTAG_5X5" title="http://purl.org/fidmark/DICT_TOPOTAG_5X5">TopoTag 5x5 dictionary</a>
             <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_ARUCO_MIP_36h12" title="http://purl.org/fidmark/DICT_ARUCO_MIP_36h12">d i c t a r u c o m i p 36h12</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_REACTIVISION_AMOEBA"
+               title="http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA">reacTIVision amoeba symbology</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#DICT_REACTIVISION_YAMAARASHI"
+               title="http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI">reacTIVision yamaarashi symbology</a>
             <sup class="type-ni" title="concreet exemplaar">ni</sup>
          </dd>
       </dl>
@@ -1080,15 +1119,14 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
             <a href="http://www.w3.org/ns/ssn/Property"
                target="_blank"
                title="http://www.w3.org/ns/ssn/Property">property</a>
-            <sup class="type-c" title="klasse">c</sup>
          </dd>
          <dt>heeft leden</dt>
          <dd>
             <a href="#OriginBottomLeft" title="http://purl.org/fidmark/OriginBottomLeft">Bottom left origin</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#OriginBottomRight" title="http://purl.org/fidmark/OriginBottomRight">Bottom right origin</a>
             <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#OriginCenter" title="http://purl.org/fidmark/OriginCenter">Center origin</a>
-            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#OriginBottomRight" title="http://purl.org/fidmark/OriginBottomRight">origin bottom right</a>
-            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#OriginTopLeft" title="http://purl.org/fidmark/OriginTopLeft">origin top left</a>
-            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#OriginTopRight" title="http://purl.org/fidmark/OriginTopRight">origin top right</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#OriginTopLeft" title="http://purl.org/fidmark/OriginTopLeft">Top left origin</a>
+            <sup class="type-ni" title="concreet exemplaar">ni</sup>, <a href="#OriginTopRight" title="http://purl.org/fidmark/OriginTopRight">Top right origin</a>
             <sup class="type-ni" title="concreet exemplaar">ni</sup>
          </dd>
       </dl>
@@ -1106,7 +1144,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
             <a href="http://purl.org/poso/PositioningTechnique"
                target="_blank"
                title="http://purl.org/poso/PositioningTechnique">positioning technique</a>
-            <sup class="type-c" title="klasse">c</sup>
          </dd>
       </dl>
    </div>
@@ -1366,7 +1403,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                <a href="http://www.w3.org/ns/ssn/hasProperty"
                   target="_blank"
                   title="http://www.w3.org/ns/ssn/hasProperty">has property</a>
-               <sup class="type-op" title="objecteigenschap">op</sup>
             </dd>
             <dt>heeft domein</dt>
             <dd>
@@ -1398,7 +1434,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest"
                   target="_blank"
                   title="http://www.w3.org/ns/sosa/hasFeatureOfInterest">has feature of interest</a>
-               <sup class="type-op" title="objecteigenschap">op</sup>
             </dd>
             <dt>heeft bereik</dt>
             <dd>
@@ -1425,7 +1460,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                <a href="http://www.w3.org/ns/ssn/hasProperty"
                   target="_blank"
                   title="http://www.w3.org/ns/ssn/hasProperty">has property</a>
-               <sup class="type-op" title="objecteigenschap">op</sup>
             </dd>
             <dt>heeft domein</dt>
             <dd>
@@ -1457,7 +1491,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                <a href="http://www.w3.org/ns/ssn/hasProperty"
                   target="_blank"
                   title="http://www.w3.org/ns/ssn/hasProperty">has property</a>
-               <sup class="type-op" title="objecteigenschap">op</sup>
             </dd>
             <dt>heeft domein</dt>
             <dd>
@@ -1484,7 +1517,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                <a href="http://www.w3.org/ns/ssn/hasProperty"
                   target="_blank"
                   title="http://www.w3.org/ns/ssn/hasProperty">has property</a>
-               <sup class="type-op" title="objecteigenschap">op</sup>
             </dd>
             <dt>heeft domein</dt>
             <dd>
@@ -1508,7 +1540,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                <a href="http://www.w3.org/ns/ssn/hasProperty"
                   target="_blank"
                   title="http://www.w3.org/ns/ssn/hasProperty">has property</a>
-               <sup class="type-op" title="objecteigenschap">op</sup>
             </dd>
          </dl>
       </div>
@@ -1530,7 +1561,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
                <a href="http://www.w3.org/ns/ssn/isPropertyOf"
                   target="_blank"
                   title="http://www.w3.org/ns/ssn/isPropertyOf">is property of</a>
-               <sup class="type-op" title="objecteigenschap">op</sup>
             </dd>
          </dl>
       </div>
@@ -1872,7 +1902,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
          <dl>
             <dt>heeft domein</dt>
             <dd>
-               <a href="#CCTag" title="http://purl.org/fidmark/CCTag">CCTag</a>
+               <a href="#CircularBarcode" title="http://purl.org/fidmark/CircularBarcode">Circular barcode</a>
                <sup class="type-c" title="klasse">c</sup>
             </dd>
             <dt>heeft bereik</dt>
@@ -1893,13 +1923,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
          <strong>IRI:</strong> http://purl.org/fidmark/version</p>
       <div class="description">
          <dl>
-            <dt>heeft equivalente eigenschappen</dt>
-            <dd>
-               <a href="http://www.w3.org/2007/uwa/context/common.owl#version"
-                  target="_blank"
-                  title="http://www.w3.org/2007/uwa/context/common.owl#version">version</a>
-               <sup class="type-dp" title="data-eigenschap">dp</sup>
-            </dd>
             <dt>heeft domein</dt>
             <dd>
                <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
@@ -1984,6 +2007,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
          <a href="#OriginBottomLeft" title="http://purl.org/fidmark/OriginBottomLeft">Bottom left origin</a>
       </li>
       <li>
+         <a href="#OriginBottomRight" title="http://purl.org/fidmark/OriginBottomRight">Bottom right origin</a>
+      </li>
+      <li>
          <a href="#OriginCenter" title="http://purl.org/fidmark/OriginCenter">Center origin</a>
       </li>
       <li>
@@ -1995,19 +2021,18 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
          </a>
       </li>
       <li>
-         <a href="#OriginBottomRight" title="http://purl.org/fidmark/OriginBottomRight">
-            <span>origin bottom right</span>
-         </a>
+         <a href="#DICT_REACTIVISION_AMOEBA"
+            title="http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA">reacTIVision amoeba symbology</a>
       </li>
       <li>
-         <a href="#OriginTopLeft" title="http://purl.org/fidmark/OriginTopLeft">
-            <span>origin top left</span>
-         </a>
+         <a href="#DICT_REACTIVISION_YAMAARASHI"
+            title="http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI">reacTIVision yamaarashi symbology</a>
       </li>
       <li>
-         <a href="#OriginTopRight" title="http://purl.org/fidmark/OriginTopRight">
-            <span>origin top right</span>
-         </a>
+         <a href="#OriginTopLeft" title="http://purl.org/fidmark/OriginTopLeft">Top left origin</a>
+      </li>
+      <li>
+         <a href="#OriginTopRight" title="http://purl.org/fidmark/OriginTopRight">Top right origin</a>
       </li>
       <li>
          <a href="#DICT_TOPOTAG_3X3" title="http://purl.org/fidmark/DICT_TOPOTAG_3X3">TopoTag 3x3 dictionary</a>
@@ -2866,6 +2891,21 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
          </dd>
       </dl>
    </div>
+   <div class="entity" id="OriginBottomRight">
+      <h3>Bottom right origin<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/OriginBottomRight</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerOrigin" title="http://purl.org/fidmark/MarkerOrigin">Marker origin</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="OriginCenter">
       <h3>Center origin<sup class="type-ni" title="concreet exemplaar">ni</sup>
          <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
@@ -2906,6 +2946,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/DICT_ARUCO_MIP_36h12</p>
+      <dl class="definedBy">
+         <dt>Is gedefinieerd door</dt>
+         <dd>http://purl.org/fidmark/</dd>
+      </dl>
       <dl class="description">
          <dt>behoort tot</dt>
          <dd>
@@ -2939,23 +2983,56 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
          </dd>
       </dl>
    </div>
-   <div class="entity" id="OriginBottomRight">
-      <h3>origin bottom right<sup class="type-ni" title="concreet exemplaar">ni</sup>
+   <div class="entity" id="DICT_REACTIVISION_AMOEBA">
+      <h3>reacTIVision amoeba symbology<sup class="type-ni" title="concreet exemplaar">ni</sup>
          <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://purl.org/fidmark/OriginBottomRight</p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA</p>
       <dl class="description">
          <dt>behoort tot</dt>
          <dd>
-            <a href="#MarkerOrigin" title="http://purl.org/fidmark/MarkerOrigin">Marker origin</a>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
             <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#dictionarySize" title="http://purl.org/fidmark/dictionarySize">dictionary size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"215"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_REACTIVISION_YAMAARASHI">
+      <h3>reacTIVision yamaarashi symbology<sup class="type-ni" title="concreet exemplaar">ni</sup>
+         <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI</p>
+      <dl class="description">
+         <dt>behoort tot</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="klasse">c</sup>
+         </dd>
+         <dt>heeft feiten</dt>
+         <dd>
+            <a href="#dictionarySize" title="http://purl.org/fidmark/dictionarySize">dictionary size</a>
+            <sup class="type-dp" title="data-eigenschap">dp</sup> 
+            <span class="literal">"299"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
+                  target="_blank"
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+            </span>
          </dd>
       </dl>
    </div>
    <div class="entity" id="OriginTopLeft">
-      <h3>origin top left<sup class="type-ni" title="concreet exemplaar">ni</sup>
+      <h3>Top left origin<sup class="type-ni" title="concreet exemplaar">ni</sup>
          <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
          </span>
       </h3>
@@ -2970,7 +3047,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       </dl>
    </div>
    <div class="entity" id="OriginTopRight">
-      <h3>origin top right<sup class="type-ni" title="concreet exemplaar">ni</sup>
+      <h3>Top right origin<sup class="type-ni" title="concreet exemplaar">ni</sup>
          <span class="backlink"> terug naar <a href="#toc">Index</a> of <a href="#namedindividuals">Index concrete exemplaren</a>
          </span>
       </h3>

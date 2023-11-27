@@ -1,10 +1,12 @@
 <http://purl.org/fidmark/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://purl.org/fidmark/> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/fidmark/1.0/> .
+<http://purl.org/fidmark/> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/poso/1.0/> .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/abstract> ""@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/bibliographicCitation> "Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers" .
+<http://purl.org/fidmark/> <http://purl.org/dc/terms/contributor> "Beat Signer"@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/creator> "Isaac Valadez Mora"@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/creator> "Maxim Van de Wynckel"@en .
-<http://purl.org/fidmark/> <http://purl.org/dc/terms/description> ""@en .
+<http://purl.org/fidmark/> <http://purl.org/dc/terms/description> "test"@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/MIT1.0> .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/modified> "2023-12-07T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/title> "Fiducial Marker Ontology"@en .
@@ -19,27 +21,6 @@
 # #
 # #################################################################
 # 
-# 
-# http://purl.org/dc/terms/abstract
-<http://purl.org/dc/terms/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/bibliographicCitation
-<http://purl.org/dc/terms/bibliographicCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/creator
-<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/description
-<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/license
-<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/modified
-<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/fidmark/color
 <http://purl.org/fidmark/color> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
@@ -70,39 +51,6 @@
 <http://purl.org/fidmark/supportedMarker> <http://www.w3.org/2000/01/rdf-schema#label> "supported marker"@en .
 <http://purl.org/fidmark/supportedMarker> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/fidmark/FiducialMarker> .
 <http://purl.org/fidmark/supportedMarker> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/MarkerDictionary> .
-# 
-# http://purl.org/vocab/vann/preferredNamespacePrefix
-<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://purl.org/vocab/vann/preferredNamespaceUri
-<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2004/02/skos/core#altLabel
-<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2004/02/skos/core#example
-<http://www.w3.org/2004/02/skos/core#example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#informativeReference
-<http://www.w3.org/2007/uwa/context/common.owl#informativeReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#normativeReference
-<http://www.w3.org/2007/uwa/context/common.owl#normativeReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#normativeStatus
-<http://www.w3.org/2007/uwa/context/common.owl#normativeStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc
-<http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity
-<http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix
-<http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#termGroups
-<http://www.w3.org/2007/uwa/context/common.owl#termGroups> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # 
 # 
@@ -163,51 +111,6 @@
 <http://purl.org/fidmark/isImageDescriptorOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
 <http://purl.org/fidmark/isImageDescriptorOf> <http://www.w3.org/2000/01/rdf-schema#label> "is image descriptor of"@en .
 # 
-# http://www.w3.org/2007/uwa/context/common.owl#active
-<http://www.w3.org/2007/uwa/context/common.owl#active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#available
-<http://www.w3.org/2007/uwa/context/common.owl#available> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#default
-<http://www.w3.org/2007/uwa/context/common.owl#default> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#disjointSet
-<http://www.w3.org/2007/uwa/context/common.owl#disjointSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#normativeStatus
-<http://www.w3.org/2007/uwa/context/common.owl#normativeStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#restrictedElement
-<http://www.w3.org/2007/uwa/context/common.owl#restrictedElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#restrictions
-<http://www.w3.org/2007/uwa/context/common.owl#restrictions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#soundMode
-<http://www.w3.org/2007/uwa/context/common.owl#soundMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#supports
-<http://www.w3.org/2007/uwa/context/common.owl#supports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#termGroups
-<http://www.w3.org/2007/uwa/context/common.owl#termGroups> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#timeZone
-<http://www.w3.org/2007/uwa/context/common.owl#timeZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#vendor
-<http://www.w3.org/2007/uwa/context/common.owl#vendor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/ns/sosa/hasFeatureOfInterest
-<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/ns/ssn/hasProperty
-<http://www.w3.org/ns/ssn/hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
-# http://www.w3.org/ns/ssn/isPropertyOf
-<http://www.w3.org/ns/ssn/isPropertyOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-# 
 # 
 # 
 # #################################################################
@@ -241,7 +144,7 @@
 # 
 # http://purl.org/fidmark/crowns
 <http://purl.org/fidmark/crowns> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://purl.org/fidmark/crowns> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/CCTag> .
+<http://purl.org/fidmark/crowns> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/CircularBarcode> .
 <http://purl.org/fidmark/crowns> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
 <http://purl.org/fidmark/crowns> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates the number of crowns in a circular barcode."@en .
 <http://purl.org/fidmark/crowns> <http://www.w3.org/2000/01/rdf-schema#label> "number of crowns"@en .
@@ -298,88 +201,9 @@
 # 
 # http://purl.org/fidmark/version
 <http://purl.org/fidmark/version> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://purl.org/fidmark/version> <http://www.w3.org/2002/07/owl#equivalentProperty> <http://www.w3.org/2007/uwa/context/common.owl#version> .
 <http://purl.org/fidmark/version> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/MarkerDictionary> .
 <http://purl.org/fidmark/version> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
 <http://purl.org/fidmark/version> <http://www.w3.org/2000/01/rdf-schema#label> "version"@en .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#charsetName
-<http://www.w3.org/2007/uwa/context/common.owl#charsetName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#contentTypeName
-<http://www.w3.org/2007/uwa/context/common.owl#contentTypeName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#countryCode
-<http://www.w3.org/2007/uwa/context/common.owl#countryCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#disjointClass
-<http://www.w3.org/2007/uwa/context/common.owl#disjointClass> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#id
-<http://www.w3.org/2007/uwa/context/common.owl#id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#informativeReference
-<http://www.w3.org/2007/uwa/context/common.owl#informativeReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#languageCode
-<http://www.w3.org/2007/uwa/context/common.owl#languageCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#languageTag
-<http://www.w3.org/2007/uwa/context/common.owl#languageTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#model
-<http://www.w3.org/2007/uwa/context/common.owl#model> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#name
-<http://www.w3.org/2007/uwa/context/common.owl#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#normativeReference
-<http://www.w3.org/2007/uwa/context/common.owl#normativeReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#normativeURI
-<http://www.w3.org/2007/uwa/context/common.owl#normativeURI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#pixelAspectRatio
-<http://www.w3.org/2007/uwa/context/common.owl#pixelAspectRatio> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc
-<http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity
-<http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#resolutionHeight
-<http://www.w3.org/2007/uwa/context/common.owl#resolutionHeight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#resolutionWidth
-<http://www.w3.org/2007/uwa/context/common.owl#resolutionWidth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#restrictionValue
-<http://www.w3.org/2007/uwa/context/common.owl#restrictionValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#serialNumber
-<http://www.w3.org/2007/uwa/context/common.owl#serialNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#standardNumber
-<http://www.w3.org/2007/uwa/context/common.owl#standardNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix
-<http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#timeZoneString
-<http://www.w3.org/2007/uwa/context/common.owl#timeZoneString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#transferEncodingName
-<http://www.w3.org/2007/uwa/context/common.owl#transferEncodingName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#tzName
-<http://www.w3.org/2007/uwa/context/common.owl#tzName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#uriSchemeName
-<http://www.w3.org/2007/uwa/context/common.owl#uriSchemeName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#version
-<http://www.w3.org/2007/uwa/context/common.owl#version> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 # 
 # 
 # 
@@ -538,12 +362,19 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/ImageDescriptor
 <http://purl.org/fidmark/ImageDescriptor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/ImageDescriptor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/Property> .
+<http://purl.org/fidmark/ImageDescriptor> <http://www.w3.org/2000/01/rdf-schema#comment> "An image descriptor is a visual descriptor of a fiducial marker."@en .
 <http://purl.org/fidmark/ImageDescriptor> <http://www.w3.org/2000/01/rdf-schema#label> "Image descriptor"@en .
 # 
 # http://purl.org/fidmark/InterSense
 <http://purl.org/fidmark/InterSense> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/InterSense> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/CircularBarcode> .
 <http://purl.org/fidmark/InterSense> <http://www.w3.org/2000/01/rdf-schema#label> "InterSense"@en .
+# 
+# http://purl.org/fidmark/MarkerDetection
+<http://purl.org/fidmark/MarkerDetection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/MarkerDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Procedure> .
+<http://purl.org/fidmark/MarkerDetection> <http://www.w3.org/2000/01/rdf-schema#comment> "Marker detection is a procedure where an image sensor (e.g. a camera) detects a fiducial marker in its field of view."@en .
+<http://purl.org/fidmark/MarkerDetection> <http://www.w3.org/2000/01/rdf-schema#label> "Marker detection"@en .
 # 
 # http://purl.org/fidmark/MarkerDictionary
 <http://purl.org/fidmark/MarkerDictionary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -561,6 +392,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/MarkerPoseEstimation
 <http://purl.org/fidmark/MarkerPoseEstimation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/MarkerPoseEstimation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/poso/PositioningTechnique> .
+<http://purl.org/fidmark/MarkerPoseEstimation> <http://www.w3.org/2000/01/rdf-schema#comment> "Marker based pose estimation is a positioning technique that determines a position and orientation from a detected marker."@en .
 <http://purl.org/fidmark/MarkerPoseEstimation> <http://www.w3.org/2000/01/rdf-schema#label> "Marker based pose estimation"@en .
 # 
 # http://purl.org/fidmark/MarkerlessPoseEstimation
@@ -647,77 +479,8 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/iot/vocab/m3-lite#Barcode
 <http://purl.org/iot/vocab/m3-lite#Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# http://purl.org/poso/PositioningTechnique
-<http://purl.org/poso/PositioningTechnique> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://purl.org/poso/TrackedFeature
-<http://purl.org/poso/TrackedFeature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://purl.org/poso/VisualLandmark
-<http://purl.org/poso/VisualLandmark> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
 # http://schema.org/Barcode
 <http://schema.org/Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#AllDisjointSet
-<http://www.w3.org/2007/uwa/context/common.owl#AllDisjointSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#ApplicationProtocol
-<http://www.w3.org/2007/uwa/context/common.owl#ApplicationProtocol> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#CharacterSet
-<http://www.w3.org/2007/uwa/context/common.owl#CharacterSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#ContentType
-<http://www.w3.org/2007/uwa/context/common.owl#ContentType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#Context_CommonEntity
-<http://www.w3.org/2007/uwa/context/common.owl#Context_CommonEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#Feature
-<http://www.w3.org/2007/uwa/context/common.owl#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#FeatureRestriction
-<http://www.w3.org/2007/uwa/context/common.owl#FeatureRestriction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#InputModality
-<http://www.w3.org/2007/uwa/context/common.owl#InputModality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#Language
-<http://www.w3.org/2007/uwa/context/common.owl#Language> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#Modality
-<http://www.w3.org/2007/uwa/context/common.owl#Modality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#NormativeStatus
-<http://www.w3.org/2007/uwa/context/common.owl#NormativeStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#OutputModality
-<http://www.w3.org/2007/uwa/context/common.owl#OutputModality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#SoundMode
-<http://www.w3.org/2007/uwa/context/common.owl#SoundMode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#TermGroup
-<http://www.w3.org/2007/uwa/context/common.owl#TermGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#TimeZone
-<http://www.w3.org/2007/uwa/context/common.owl#TimeZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#TransferEncoding
-<http://www.w3.org/2007/uwa/context/common.owl#TransferEncoding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#UriScheme
-<http://www.w3.org/2007/uwa/context/common.owl#UriScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/common.owl#Vendor
-<http://www.w3.org/2007/uwa/context/common.owl#Vendor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/2007/uwa/context/deliverycontext.owl#Context_Entity
-<http://www.w3.org/2007/uwa/context/deliverycontext.owl#Context_Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-# 
-# http://www.w3.org/ns/ssn/Property
-<http://www.w3.org/ns/ssn/Property> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # 
 # 
@@ -931,6 +694,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/DICT_ARUCO_MIP_36h12> <http://purl.org/fidmark/markerBits> "36"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://purl.org/fidmark/DICT_ARUCO_MIP_36h12> <http://purl.org/fidmark/maxIdentifiers> "250"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://purl.org/fidmark/DICT_ARUCO_MIP_36h12> <http://purl.org/fidmark/supportedMarker> <http://purl.org/fidmark/ArUco> .
+<http://purl.org/fidmark/DICT_ARUCO_MIP_36h12> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "ArUco MIP 36h12 dictionary"@en .
 # 
 # http://purl.org/fidmark/DICT_ARUCO_ORIGINAL
 <http://purl.org/fidmark/DICT_ARUCO_ORIGINAL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -944,13 +708,29 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/DICT_CHILLITAGS
 <http://purl.org/fidmark/DICT_CHILLITAGS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/fidmark/DICT_CHILLITAGS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
+<http://purl.org/fidmark/DICT_CHILLITAGS> <http://purl.org/fidmark/supportedMarker> <http://purl.org/fidmark/ChilliTags> .
 <http://purl.org/fidmark/DICT_CHILLITAGS> <http://www.w3.org/2000/01/rdf-schema#label> "ChilliTags dictionary"@en .
+# 
+# http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA
+<http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
+<http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA> <http://purl.org/fidmark/dictionarySize> "215"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA> <http://purl.org/fidmark/supportedMarker> <http://purl.org/fidmark/reacTIVision> .
+<http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA> <http://www.w3.org/2000/01/rdf-schema#label> "reacTIVision amoeba symbology"@en .
+# 
+# http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI
+<http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
+<http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI> <http://purl.org/fidmark/dictionarySize> "299"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI> <http://purl.org/fidmark/supportedMarker> <http://purl.org/fidmark/reacTIVision> .
+<http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI> <http://www.w3.org/2000/01/rdf-schema#label> "reacTIVision yamaarashi symbology"@en .
 # 
 # http://purl.org/fidmark/DICT_TOPOTAG_3X3
 <http://purl.org/fidmark/DICT_TOPOTAG_3X3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/fidmark/DICT_TOPOTAG_3X3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
 <http://purl.org/fidmark/DICT_TOPOTAG_3X3> <http://purl.org/fidmark/markerBits> "9"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://purl.org/fidmark/DICT_TOPOTAG_3X3> <http://purl.org/fidmark/maxIdentifiers> "128"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://purl.org/fidmark/DICT_TOPOTAG_3X3> <http://purl.org/fidmark/supportedMarker> <http://purl.org/fidmark/TopoTag> .
 <http://purl.org/fidmark/DICT_TOPOTAG_3X3> <http://www.w3.org/2000/01/rdf-schema#label> "TopoTag 3x3 dictionary"@en .
 # 
 # http://purl.org/fidmark/DICT_TOPOTAG_4X4
@@ -958,6 +738,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/DICT_TOPOTAG_4X4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
 <http://purl.org/fidmark/DICT_TOPOTAG_4X4> <http://purl.org/fidmark/markerBits> "16"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://purl.org/fidmark/DICT_TOPOTAG_4X4> <http://purl.org/fidmark/maxIdentifiers> "16384"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://purl.org/fidmark/DICT_TOPOTAG_4X4> <http://purl.org/fidmark/supportedMarker> <http://purl.org/fidmark/TopoTag> .
 <http://purl.org/fidmark/DICT_TOPOTAG_4X4> <http://www.w3.org/2000/01/rdf-schema#label> "TopoTag 4x4 dictionary"@en .
 # 
 # http://purl.org/fidmark/DICT_TOPOTAG_5X5
@@ -965,6 +746,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/DICT_TOPOTAG_5X5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
 <http://purl.org/fidmark/DICT_TOPOTAG_5X5> <http://purl.org/fidmark/markerBits> "25"^^<http://www.w3.org/2001/XMLSchema#integer> .
 <http://purl.org/fidmark/DICT_TOPOTAG_5X5> <http://purl.org/fidmark/maxIdentifiers> "8388608"^^<http://www.w3.org/2001/XMLSchema#integer> .
+<http://purl.org/fidmark/DICT_TOPOTAG_5X5> <http://purl.org/fidmark/supportedMarker> <http://purl.org/fidmark/TopoTag> .
 <http://purl.org/fidmark/DICT_TOPOTAG_5X5> <http://www.w3.org/2000/01/rdf-schema#label> "TopoTag 5x5 dictionary"@en .
 # 
 # http://purl.org/fidmark/OriginBottomLeft
@@ -975,6 +757,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/OriginBottomRight
 <http://purl.org/fidmark/OriginBottomRight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/fidmark/OriginBottomRight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerOrigin> .
+<http://purl.org/fidmark/OriginBottomRight> <http://www.w3.org/2000/01/rdf-schema#label> "Bottom right origin"@en .
 # 
 # http://purl.org/fidmark/OriginCenter
 <http://purl.org/fidmark/OriginCenter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -985,9 +768,11 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/OriginTopLeft
 <http://purl.org/fidmark/OriginTopLeft> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/fidmark/OriginTopLeft> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerOrigin> .
+<http://purl.org/fidmark/OriginTopLeft> <http://www.w3.org/2000/01/rdf-schema#label> "Top left origin"@en .
 # 
 # http://purl.org/fidmark/OriginTopRight
 <http://purl.org/fidmark/OriginTopRight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <http://purl.org/fidmark/OriginTopRight> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerOrigin> .
+<http://purl.org/fidmark/OriginTopRight> <http://www.w3.org/2000/01/rdf-schema#label> "Top right origin"@en .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

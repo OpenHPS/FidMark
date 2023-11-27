@@ -5,19 +5,23 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:qudt="http://qudt.org/schema/qudt/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:common="http://www.w3.org/2007/uwa/context/common.owl#"
+     xmlns:schema="http://schema.org/"
      xmlns:fidmark="http://purl.org/fidmark/">
     <owl:Ontology rdf:about="http://purl.org/fidmark/">
         <owl:versionIRI rdf:resource="http://purl.org/fidmark/1.0/"/>
+        <owl:imports rdf:resource="http://purl.org/poso/1.0/"/>
         <terms:abstract xml:lang="en"></terms:abstract>
         <terms:bibliographicCitation>Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers</terms:bibliographicCitation>
+        <terms:contributor xml:lang="en">Beat Signer</terms:contributor>
         <terms:creator xml:lang="en">Isaac Valadez Mora</terms:creator>
         <terms:creator xml:lang="en">Maxim Van de Wynckel</terms:creator>
-        <terms:description xml:lang="en"></terms:description>
+        <terms:description xml:lang="en">test</terms:description>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/MIT1.0"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-12-07T00:00:00</terms:modified>
         <terms:title xml:lang="en">Fiducial Marker Ontology</terms:title>
@@ -37,55 +41,6 @@
      -->
 
 
-    
-
-
-    <!-- http://purl.org/dc/terms/abstract -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/abstract"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/bibliographicCitation -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/creator -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/description -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/license -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/modified -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/title -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 
@@ -141,83 +96,6 @@
         <rdfs:range rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
         <rdfs:domain rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
     </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
-    
-
-
-    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
-    
-
-
-    <!-- http://www.w3.org/2004/02/skos/core#example -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#informativeReference -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#informativeReference"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#normativeReference -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#normativeReference"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#normativeStatus -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#normativeStatus"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#termGroups -->
-
-
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#termGroups"/>
     
 
 
@@ -318,111 +196,6 @@
     
 
 
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#active -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#active"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#available -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#available"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#default -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#default"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#disjointSet -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#disjointSet"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#normativeStatus -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#normativeStatus"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#restrictedElement -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#restrictedElement"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#restrictions -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#restrictions"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#soundMode -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#soundMode"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#supports -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#supports"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#termGroups -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#termGroups"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#timeZone -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#timeZone"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#vendor -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#vendor"/>
-    
-
-
-    <!-- http://www.w3.org/ns/sosa/hasFeatureOfInterest -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
-    
-
-
-    <!-- http://www.w3.org/ns/ssn/hasProperty -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/hasProperty"/>
-    
-
-
-    <!-- http://www.w3.org/ns/ssn/isPropertyOf -->
-
-
-    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/ssn/isPropertyOf"/>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -476,7 +249,7 @@
 
 
     <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/crowns">
-        <rdfs:domain rdf:resource="http://purl.org/fidmark/CCTag"/>
+        <rdfs:domain rdf:resource="http://purl.org/fidmark/CircularBarcode"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment xml:lang="en">Indicates the number of crowns in a circular barcode.</rdfs:comment>
         <rdfs:label xml:lang="en">number of crowns</rdfs:label>
@@ -573,193 +346,10 @@
 
 
     <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/version">
-        <owl:equivalentProperty rdf:resource="http://www.w3.org/2007/uwa/context/common.owl#version"/>
         <rdfs:domain rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:label xml:lang="en">version</rdfs:label>
     </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#charsetName -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#charsetName"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#contentTypeName -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#contentTypeName"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#countryCode -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#countryCode"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#disjointClass -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#disjointClass"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#id -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#id"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#informativeReference -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#informativeReference"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#languageCode -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#languageCode"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#languageTag -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#languageTag"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#model -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#model"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#name -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#name"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#normativeReference -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#normativeReference"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#normativeURI -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#normativeURI"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#pixelAspectRatio -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#pixelAspectRatio"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#relatedDDRCoreVoc"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#relatedUAProfEntity"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#resolutionHeight -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#resolutionHeight"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#resolutionWidth -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#resolutionWidth"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#restrictionValue -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#restrictionValue"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#serialNumber -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#serialNumber"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#standardNumber -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#standardNumber"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#termGroupPrefix"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#timeZoneString -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#timeZoneString"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#transferEncodingName -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#transferEncodingName"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#tzName -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#tzName"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#uriSchemeName -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#uriSchemeName"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#version -->
-
-
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/2007/uwa/context/common.owl#version"/>
     
 
 
@@ -1025,6 +615,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/ImageDescriptor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+        <rdfs:comment xml:lang="en">An image descriptor is a visual descriptor of a fiducial marker.</rdfs:comment>
         <rdfs:label xml:lang="en">Image descriptor</rdfs:label>
     </owl:Class>
     
@@ -1036,6 +627,17 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
     <owl:Class rdf:about="http://purl.org/fidmark/InterSense">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/CircularBarcode"/>
         <rdfs:label xml:lang="en">InterSense</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/MarkerDetection -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/MarkerDetection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+        <rdfs:comment xml:lang="en">Marker detection is a procedure where an image sensor (e.g. a camera) detects a fiducial marker in its field of view.</rdfs:comment>
+        <rdfs:label xml:lang="en">Marker detection</rdfs:label>
     </owl:Class>
     
 
@@ -1068,6 +670,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/MarkerPoseEstimation">
         <rdfs:subClassOf rdf:resource="http://purl.org/poso/PositioningTechnique"/>
+        <rdfs:comment xml:lang="en">Marker based pose estimation is a positioning technique that determines a position and orientation from a detected marker.</rdfs:comment>
         <rdfs:label xml:lang="en">Marker based pose estimation</rdfs:label>
     </owl:Class>
     
@@ -1226,171 +829,10 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
     
 
 
-    <!-- http://purl.org/poso/PositioningTechnique -->
-
-
-    <owl:Class rdf:about="http://purl.org/poso/PositioningTechnique"/>
-    
-
-
-    <!-- http://purl.org/poso/TrackedFeature -->
-
-
-    <owl:Class rdf:about="http://purl.org/poso/TrackedFeature"/>
-    
-
-
-    <!-- http://purl.org/poso/VisualLandmark -->
-
-
-    <owl:Class rdf:about="http://purl.org/poso/VisualLandmark"/>
-    
-
-
     <!-- http://schema.org/Barcode -->
 
 
     <owl:Class rdf:about="http://schema.org/Barcode"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#AllDisjointSet -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#AllDisjointSet"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#ApplicationProtocol -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#ApplicationProtocol"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#CharacterSet -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#CharacterSet"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#ContentType -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#ContentType"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#Context_CommonEntity -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#Context_CommonEntity"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#Feature -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#Feature"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#FeatureRestriction -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#FeatureRestriction"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#InputModality -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#InputModality"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#Language -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#Language"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#Modality -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#Modality"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#NormativeStatus -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#NormativeStatus"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#OutputModality -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#OutputModality"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#SoundMode -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#SoundMode"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#TermGroup -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#TermGroup"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#TimeZone -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#TimeZone"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#TransferEncoding -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#TransferEncoding"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#UriScheme -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#UriScheme"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/common.owl#Vendor -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/common.owl#Vendor"/>
-    
-
-
-    <!-- http://www.w3.org/2007/uwa/context/deliverycontext.owl#Context_Entity -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/2007/uwa/context/deliverycontext.owl#Context_Entity"/>
-    
-
-
-    <!-- http://www.w3.org/ns/ssn/Property -->
-
-
-    <owl:Class rdf:about="http://www.w3.org/ns/ssn/Property"/>
     
 
 
@@ -1711,6 +1153,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">36</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
         <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
+        <rdfs:isDefinedBy xml:lang="en">ArUco MIP 36h12 dictionary</rdfs:isDefinedBy>
     </owl:NamedIndividual>
     
 
@@ -1734,7 +1177,32 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_CHILLITAGS">
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ChilliTags"/>
         <rdfs:label xml:lang="en">ChilliTags dictionary</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <dictionarySize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">215</dictionarySize>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/reacTIVision"/>
+        <rdfs:label xml:lang="en">reacTIVision amoeba symbology</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_REACTIVISION_YAMAARASHI">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <dictionarySize rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">299</dictionarySize>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/reacTIVision"/>
+        <rdfs:label xml:lang="en">reacTIVision yamaarashi symbology</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1746,6 +1214,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">128</maxIdentifiers>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/TopoTag"/>
         <rdfs:label xml:lang="en">TopoTag 3x3 dictionary</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1758,6 +1227,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16384</maxIdentifiers>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/TopoTag"/>
         <rdfs:label xml:lang="en">TopoTag 4x4 dictionary</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1770,6 +1240,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8388608</maxIdentifiers>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/TopoTag"/>
         <rdfs:label xml:lang="en">TopoTag 5x5 dictionary</rdfs:label>
     </owl:NamedIndividual>
     
@@ -1790,6 +1261,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:NamedIndividual rdf:about="http://purl.org/fidmark/OriginBottomRight">
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerOrigin"/>
+        <rdfs:label xml:lang="en">Bottom right origin</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1810,6 +1282,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:NamedIndividual rdf:about="http://purl.org/fidmark/OriginTopLeft">
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerOrigin"/>
+        <rdfs:label xml:lang="en">Top left origin</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1819,6 +1292,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:NamedIndividual rdf:about="http://purl.org/fidmark/OriginTopRight">
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerOrigin"/>
+        <rdfs:label xml:lang="en">Top right origin</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
