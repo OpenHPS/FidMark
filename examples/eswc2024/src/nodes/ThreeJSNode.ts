@@ -1,7 +1,7 @@
 import { ArUcoMarker } from "@/models";
 import { DataFrame } from "@openhps/core";
 import { cv, ImageProcessingNode, ImageProcessingOptions } from "@openhps/opencv/web";
-import { ImageFrame, PerspectiveCameraObject } from "@openhps/video";
+import { ImageFrame } from "@openhps/video";
 import * as THREE from 'three';
 
 export class ThreeJSNode<InOut extends ImageFrame> extends ImageProcessingNode<InOut> {
@@ -10,12 +10,6 @@ export class ThreeJSNode<InOut extends ImageFrame> extends ImageProcessingNode<I
 
     constructor(options?: ThreeJSNodeOptions) {
         super(options);
-        const camera = new PerspectiveCameraObject("camera");
-        camera.fov = 40;
-        camera.width = 1024;
-        camera.height = 720;
-        camera.near = 0.01;
-        camera.far = 1000;
     }
 
     processImage(image: cv.Mat, frame: DataFrame): Promise<cv.Mat> {

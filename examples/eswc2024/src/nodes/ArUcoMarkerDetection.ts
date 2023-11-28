@@ -1,16 +1,18 @@
-import { ImageFrame } from "@openhps/video";
-import { Absolute3DPosition, LengthUnit, Matrix3, Matrix4, Orientation } from '@openhps/core';
-import { ImageProcessingNode, cv as OpenCV, ImageProcessingOptions } from '@openhps/opencv/web';
+import { Absolute3DPosition, LengthUnit, Matrix3, Matrix4, Orientation, ProcessingNode } from '@openhps/core';
+import { ImageProcessingOptions } from '@openhps/opencv/web';
 import { ArUcoMarker } from "../models";
+import { XRDataFrame } from '@openhps/webxr';
 
 const { cv } = require('@openhps/opencv/web'); // eslint-disable-line
 
 /**
- * @source @link {https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html}
+ * @see {@link https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html}
+ * @see {@link https://github.com/mozilla/webxr-polyfill/blob/master/examples/opencv-aruco/worker.js}
  */
-export class ArUcoMarkerDetection<InOut extends ImageFrame> extends ImageProcessingNode<InOut> {
-    processImage(image: OpenCV.Mat, frame: InOut): Promise<OpenCV.Mat> {
+export class ArUcoMarkerDetection<InOut extends XRDataFrame> extends ProcessingNode<InOut> {
+    process(frame: InOut): Promise<InOut> {
         return new Promise((resolve, reject) => {
+            const camera = frame.source;
             try {
                 const params = new cv.aruco_DetectorParameters();
                 const refineParams = new cv.aruco_RefineParameters(10, 3, true);
@@ -18,6 +20,9 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame> extends ImageProcess
                 const detector = new cv.aruco_ArucoDetector(dictionary, params, refineParams);
                 const corners = new cv.MatVector();
                 const markerIds = new cv.Mat();
+
+                const image = cv.matFromArray(frame.height, frame.width, cv.CV_8UC4, Array.from(frame.image));
+
                 const gray = new cv.Mat(frame.height, frame.width, cv.CV_8UC1);
                 cv.cvtColor(image, gray, cv.COLOR_RGBA2GRAY);
                 detector.detectMarkers(gray, corners, markerIds);
@@ -33,13 +38,8 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame> extends ImageProcess
                         9.6635571716090658e+02, 
                         2.9370020600555273e+02, 
                         0., 0., 1.]);
-                    const distCoeffs = cv.matFromArray(5, 1, cv.CV_64F, [
-                        -1.5007354215536557e-03, 
-                        9.8722389825801837e-01, 
-                        1.7188452542408809e-02, 
-                        -2.6805958820424611e-02, 
-                        -2.3313928379240205e+00
-                    ]);
+                    const distCoeffs = cv.matFromArray(5, 1, cv.CV_64F, 
+                        camera.distortionCoefficients.slice(0, 4));
                     const markerLength = 0.05;
                     const objPoints = cv.matFromArray(4, 1, cv.CV_32FC3, [
                         -markerLength / 2,
@@ -102,7 +102,8 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame> extends ImageProcess
                 detector.delete();
                 refineParams.delete();
                 gray.delete();
-                resolve(image);
+                image.delete();
+                resolve(frame);
             } catch (ex) {
                 if (typeof ex === 'number') {
                     const info = cv.exceptionFromPtr(ex);

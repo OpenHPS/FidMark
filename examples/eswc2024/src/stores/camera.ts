@@ -2,17 +2,20 @@
 
 import { CallbackSinkNode, Model, ModelBuilder } from '@openhps/core';
 import { defineStore } from 'pinia';
-import { VideoSource } from '@/nodes/VideoSource';
 import { ArUcoMarkerDetection } from '@/nodes';
 import { ThreeJSNode } from '@/nodes/ThreeJSNode';
+import { PerspectiveCameraObject } from '@openhps/video';
+import { WebXRService, XRSource } from '@openhps/webxr';
 
 export interface CameraState {
-    model: Model<any, any>
+    model: Model<any, any>,
+    service: WebXRService
 }
 
 export const useCameraStore = defineStore('camera', {
   state: (): CameraState => ({
-    model: undefined
+    model: undefined,
+    service: undefined
   }),
   getters: {
 
@@ -20,64 +23,40 @@ export const useCameraStore = defineStore('camera', {
   actions: {
     initialize(): Promise<void> {
         return new Promise((resolve, reject) => {
-            navigator.getUserMedia = navigator.getUserMedia ||
-                navigator.webkitGetUserMedia ||
-                navigator.mozGetUserMedia;
+            this.service = new WebXRService();
 
-            if (navigator.getUserMedia) {
-                navigator.getUserMedia({ audio: true, video: { 
-                        width: 1024, 
-                        height: 720,
-                        facingMode: "user"  // Front facing camera
-                    }},
-                    (stream: any) => {
-                        const video = document.getElementById('camera') as HTMLVideoElement;
-                        const canvas = document.getElementById("threeCanvas") as HTMLCanvasElement;
-                        video.srcObject = stream;
-                        video.onloadedmetadata = () => {
-                            video.play().then(() => {
-                                return ModelBuilder.create()
-                                    .withLogger((level, message, data) => {
-                                        if (level === 'error') {
-                                            console.error(level, message, data);
-                                        }
-                                    })
-                                    .from(new VideoSource({
-                                        fps: 30,
-                                        uid: "video"
-                                    }))
-                                    .via(new ArUcoMarkerDetection({
+            const canvas = document.getElementById("threeCanvas") as HTMLCanvasElement;
+            const camera = new PerspectiveCameraObject();
+            camera.distortionCoefficients = [0, 0, 0, 0, 0];
+            camera.near = 0.01;
+            camera.far = 1000;
+            camera.fov = 40;
 
-                                    }))
-                                    .via(new ThreeJSNode({
-                                        canvas
-                                    }))
-                                    .to(new CallbackSinkNode(() => {
-
-                                    }))
-                                    .build();
-                            }).then((model: Model) => {
-                                const videoNode = model.findNodeByUID("video") as VideoSource;
-                                videoNode.load(video);
-                                videoNode.load("camera");
-                                videoNode.play();
-
-                                canvas.width = video.videoWidth;
-                                canvas.height = video.videoHeight;
-                                
-                                this.model = model;
-                                this.model.on('error', console.error);
-                                resolve();
-                            }).catch(reject);
-                        };
-                    },
-                    (err: Error) => {
-                        reject(new Error("The following error occurred: " + err.name));
+            ModelBuilder.create()
+                .withLogger((level, message, data) => {
+                    if (level === 'error') {
+                        console.error(level, message, data);
                     }
-                );
-            } else {
-                reject(new Error("getUserMedia not supported"));
-            }
+                })
+                .addService(this.service)
+                .from(new XRSource({
+                    uid: "video",
+                    source: camera
+                }))
+                .via(new ArUcoMarkerDetection({
+
+                }))
+                .via(new ThreeJSNode({
+                    canvas
+                }))
+                .to(new CallbackSinkNode(() => {
+
+                }))
+                .build().then((model: Model) => {
+                    this.model = model;
+                    this.model.on('error', console.error);
+                    resolve();
+                }).catch(reject);
         });
     }
   },

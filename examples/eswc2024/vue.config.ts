@@ -14,6 +14,7 @@ export default defineConfig({
     externals: {
       'path': [],
       '@openhps/core': ['OpenHPS', 'core'],
+      '@openhps/webxr': ['OpenHPS', 'webxr'],
       '@openhps/rdf': ['OpenHPS', 'rdf'],
       '@openhps/video': ['OpenHPS', 'video'],
       '@openhps/opencv': ['OpenHPS', 'opencv'],

@@ -27,7 +27,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         working-directory: ./examples/eswc2024
         run: |
-          npm install
+          npm install --force
           npm run build
           cp ./dist ../website/application
       - name: Deploy site to GitHub
