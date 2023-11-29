@@ -9,7 +9,7 @@ const { cv } = require('@openhps/opencv/web'); // eslint-disable-line
  * @see {@link https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html}
  * @see {@link https://github.com/mozilla/webxr-polyfill/blob/master/examples/opencv-aruco/worker.js}
  */
-export class ArUcoMarkerDetection<InOut extends XRDataFrame> extends ProcessingNode<InOut> {
+export class ArUcoMarkerDetection<InOut extends XRDataFrame> extends ProcessingNode<InOut, InOut> {
     process(frame: InOut): Promise<InOut> {
         return new Promise((resolve, reject) => {
             const camera = frame.source;
@@ -94,6 +94,8 @@ export class ArUcoMarkerDetection<InOut extends XRDataFrame> extends ProcessingN
                     rotationMat.delete();
                 }
 
+                console.log(image)
+                cv.imshow("cameraCanvas", image);
                 // Cleanup
                 markerIds.delete();
                 corners.delete();
@@ -102,7 +104,7 @@ export class ArUcoMarkerDetection<InOut extends XRDataFrame> extends ProcessingN
                 detector.delete();
                 refineParams.delete();
                 gray.delete();
-                image.delete();
+                //image.delete();
                 resolve(frame);
             } catch (ex) {
                 if (typeof ex === 'number') {

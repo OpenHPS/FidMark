@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-11-22T13:26:45.987Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="odDHr5P1SPVT3mgZFP_7" version="22.1.2" type="device" pages="2">
+<mxfile host="Electron" modified="2023-11-27T13:37:21.564Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.0 Chrome/114.0.5735.289 Electron/25.8.3 Safari/537.36" etag="XKFhdIgXYvgWCC5N82XN" version="22.0.0" type="device" pages="2">
   <diagram name="Page-1" id="ylHgLPsrtK1L2cb60V36">
-    <mxGraphModel dx="1418" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -59,156 +59,247 @@
     </mxGraphModel>
   </diagram>
   <diagram id="P2Bpmq_uOMs_CDguxbq2" name="Page-2">
-    <mxGraphModel dx="1418" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="ZPjEkWGmV2tCZZptJfDr-28" target="ZPjEkWGmV2tCZZptJfDr-30">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-28" target="ZPjEkWGmV2tCZZptJfDr-30" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-43" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="ZPjEkWGmV2tCZZptJfDr-42">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-43" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="ZPjEkWGmV2tCZZptJfDr-42" vertex="1" connectable="0">
           <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
             <mxPoint x="-1" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-28" value="&lt;span style=&quot;font-weight: 400&quot;&gt;poso:VisualLandmark&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-28" value="&lt;span style=&quot;font-weight: 400&quot;&gt;poso:VisualLandmark&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="339" y="130" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="ZPjEkWGmV2tCZZptJfDr-29" target="1Ya3VmGurWaEj4DGSfTz-1">
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-29" target="1Ya3VmGurWaEj4DGSfTz-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="610" y="200" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-29" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:FiducialMarker&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-29" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:FiducialMarker&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="649" y="170" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-30" value="&lt;span style=&quot;font-weight: 400&quot;&gt;poso:Landmark&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-30" value="&lt;span style=&quot;font-weight: 400&quot;&gt;poso:Landmark&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry y="130" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="ZPjEkWGmV2tCZZptJfDr-35" target="ZPjEkWGmV2tCZZptJfDr-46">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-35" target="ZPjEkWGmV2tCZZptJfDr-46" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-35" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:Barcode1D&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-35" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:Barcode1D&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="339" y="250" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="ZPjEkWGmV2tCZZptJfDr-36" target="ZPjEkWGmV2tCZZptJfDr-46">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-36" target="ZPjEkWGmV2tCZZptJfDr-46" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-36" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:Barcode2D&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-36" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:Barcode2D&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="339" y="290" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="ZPjEkWGmV2tCZZptJfDr-37" target="ZPjEkWGmV2tCZZptJfDr-46">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-37" target="ZPjEkWGmV2tCZZptJfDr-46" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-37" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:CircularBarcode&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-37" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:CircularBarcode&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="339" y="330" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-41" value="&lt;span style=&quot;font-weight: 400&quot;&gt;ssn:Property&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-41" value="&lt;span style=&quot;font-weight: 400&quot;&gt;ssn:Property&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry y="90" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="ZPjEkWGmV2tCZZptJfDr-29" target="ZPjEkWGmV2tCZZptJfDr-28">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-29" target="ZPjEkWGmV2tCZZptJfDr-28" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="349" y="195" as="sourcePoint" />
             <mxPoint x="189" y="195" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-45" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="ZPjEkWGmV2tCZZptJfDr-44">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-45" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="ZPjEkWGmV2tCZZptJfDr-44" vertex="1" connectable="0">
           <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
             <mxPoint x="-31" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="ZPjEkWGmV2tCZZptJfDr-29" target="ZPjEkWGmV2tCZZptJfDr-53">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-29" target="ZPjEkWGmV2tCZZptJfDr-53" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-58" value="fidmark:hasDictionary" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="ZPjEkWGmV2tCZZptJfDr-57">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-58" value="fidmark:hasDictionary" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="ZPjEkWGmV2tCZZptJfDr-57" vertex="1" connectable="0">
           <mxGeometry x="0.0328" y="-2" relative="1" as="geometry">
             <mxPoint x="-54" y="2" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-46" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:Barcode&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-46" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:Barcode&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="649" y="290" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="ZPjEkWGmV2tCZZptJfDr-46" target="ZPjEkWGmV2tCZZptJfDr-29">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-46" target="ZPjEkWGmV2tCZZptJfDr-29" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="659" y="195" as="sourcePoint" />
             <mxPoint x="499" y="195" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-48" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="ZPjEkWGmV2tCZZptJfDr-47">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-48" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="ZPjEkWGmV2tCZZptJfDr-47" vertex="1" connectable="0">
           <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
             <mxPoint x="-1" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-52" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="1">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-52" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="559" y="303" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-53" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:MarkerDictionary&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-53" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:MarkerDictionary&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="339" y="90" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="ZPjEkWGmV2tCZZptJfDr-53" target="ZPjEkWGmV2tCZZptJfDr-41">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-53" target="ZPjEkWGmV2tCZZptJfDr-41" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="659" y="-75" as="sourcePoint" />
             <mxPoint x="499" y="-75" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-56" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="ZPjEkWGmV2tCZZptJfDr-55">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-56" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="ZPjEkWGmV2tCZZptJfDr-55" vertex="1" connectable="0">
           <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
             <mxPoint x="-1" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-1" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:MarkerOrigin&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-1" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:MarkerOrigin&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="339" y="170" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-3" value="fidmark:hasOrigin" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="1">
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-3" value="fidmark:hasOrigin" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="570" y="185" as="geometry" />
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-5" value="fidmark:OriginCenter, fidmark:OriginTopLeft, ..." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-5" value="e.g. fidmark:OriginCenter, fidmark:OriginTopLeft, ..." style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=2;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="160" y="170" width="167" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-6" value="&lt;span style=&quot;font-weight: 400&quot;&gt;poso:TrackedFeature&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-6" value="&lt;span style=&quot;font-weight: 400&quot;&gt;poso:TrackedFeature&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="339" y="210" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="ZPjEkWGmV2tCZZptJfDr-29" target="1Ya3VmGurWaEj4DGSfTz-6">
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-29" target="1Ya3VmGurWaEj4DGSfTz-6" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="690" y="50" as="sourcePoint" />
             <mxPoint x="530" y="50" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-8" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="1Ya3VmGurWaEj4DGSfTz-7">
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-8" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1Ya3VmGurWaEj4DGSfTz-7" vertex="1" connectable="0">
           <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
             <mxPoint x="-31" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-10" value="&lt;span style=&quot;font-weight: 400&quot;&gt;poso:PositioningTechnique&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
-          <mxGeometry y="210" width="190" height="30" as="geometry" />
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-10" value="&lt;span style=&quot;font-weight: 400&quot;&gt;poso:PositioningTechnique&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
+          <mxGeometry x="129" y="210" width="201" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-11" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:MarkerPoseEstimation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
-          <mxGeometry x="129" y="290" width="201" height="30" as="geometry" />
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-11" value="&lt;span style=&quot;font-weight: 400; font-size: 10px;&quot;&gt;fidmark:MarkerPoseEstimation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="150" y="250" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-12" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:MarkerlessPoseEstimation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
-          <mxGeometry x="130" y="330" width="200" height="30" as="geometry" />
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-12" value="&lt;span style=&quot;font-weight: 400; font-size: 10px;&quot;&gt;fidmark:MarkerlessPoseEstimation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="150" y="290" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="1Ya3VmGurWaEj4DGSfTz-11" target="1Ya3VmGurWaEj4DGSfTz-10">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="229" y="460" as="sourcePoint" />
-            <mxPoint x="40" y="460" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-14" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="1Ya3VmGurWaEj4DGSfTz-13">
-          <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
-            <mxPoint x="2" y="-15" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="1Ya3VmGurWaEj4DGSfTz-12" target="1Ya3VmGurWaEj4DGSfTz-10">
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="1Ya3VmGurWaEj4DGSfTz-12" target="1Ya3VmGurWaEj4DGSfTz-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="127" y="315" as="sourcePoint" />
             <mxPoint x="63" y="250" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1Ya3VmGurWaEj4DGSfTz-16" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="1Ya3VmGurWaEj4DGSfTz-15">
-          <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
-            <mxPoint x="-1" y="-27" as="offset" />
+        <mxCell id="1Ya3VmGurWaEj4DGSfTz-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="1Ya3VmGurWaEj4DGSfTz-11" target="1Ya3VmGurWaEj4DGSfTz-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="229" y="460" as="sourcePoint" />
+            <mxPoint x="40" y="460" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-1" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:ImageDescriptor&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
+          <mxGeometry x="339" y="50" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-29" target="gZBrB4sUzZnaTctpq4KN-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="734" y="180" as="sourcePoint" />
+            <mxPoint x="499" y="115" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-3" value="fidmark:hasImageDescriptor" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="gZBrB4sUzZnaTctpq4KN-2" vertex="1" connectable="0">
+          <mxGeometry x="0.0328" y="-2" relative="1" as="geometry">
+            <mxPoint x="-71" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-4" value="&lt;span style=&quot;font-weight: 400&quot;&gt;sosa:Procedure&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
+          <mxGeometry y="170" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="1Ya3VmGurWaEj4DGSfTz-10" target="gZBrB4sUzZnaTctpq4KN-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="349" y="155" as="sourcePoint" />
+            <mxPoint x="160" y="155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-6" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=9;" parent="gZBrB4sUzZnaTctpq4KN-5" vertex="1" connectable="0">
+          <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
+            <mxPoint y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-7" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;rotation=90;fontSize=9;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="122" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-8" value="&lt;span style=&quot;font-weight: 400; font-size: 12px;&quot;&gt;fidmark:MarkerDetection&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="150" y="330" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="gZBrB4sUzZnaTctpq4KN-8" target="gZBrB4sUzZnaTctpq4KN-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="139" y="235" as="sourcePoint" />
+            <mxPoint x="85" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-10" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=11;" parent="gZBrB4sUzZnaTctpq4KN-9" vertex="1" connectable="0">
+          <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
+            <mxPoint x="55" y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-12" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;endArrow=open;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="gZBrB4sUzZnaTctpq4KN-11" target="gZBrB4sUzZnaTctpq4KN-15" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-11" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:ImageDescriptor&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
+          <mxGeometry x="40" y="440" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-13" value="&lt;span style=&quot;font-weight: 400; font-size: 10px;&quot;&gt;xsd:hexBinary&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="409" y="430" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-15" value="" style="ellipse;whiteSpace=wrap;html=1;dashed=1;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="359" y="446" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-18" value="&lt;span style=&quot;font-weight: 400; font-size: 10px;&quot;&gt;xsd:anyURI&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="409" y="460" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-19" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;dashed=1;endArrow=open;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="gZBrB4sUzZnaTctpq4KN-15" target="gZBrB4sUzZnaTctpq4KN-13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="409" y="440" as="targetPoint" />
+            <mxPoint x="376" y="388" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-20" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;dashed=1;endArrow=open;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="gZBrB4sUzZnaTctpq4KN-15" target="gZBrB4sUzZnaTctpq4KN-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="369" y="470" as="targetPoint" />
+            <mxPoint x="249" y="488" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-22" value="fidmark:asImage,&lt;br&gt;fidmark:asNFT,&lt;br&gt;fidmark:asZFT" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=11;" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="270.00353541872323" y="455.00018285468786" as="geometry" />
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-39" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:FiducialMarker&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
+          <mxGeometry x="240" y="630" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-40" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:MarkerDictionary&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
+          <mxGeometry x="240" y="750" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gZBrB4sUzZnaTctpq4KN-41" value="fidmark:DICT_ARUCO_ORIGINAL" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;fontFamily=Inconsolata;" parent="1" vertex="1">
+          <mxGeometry x="240" y="860" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="uxe74oTkdHLyFUuFVSrc-1" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:CircularBarcode&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+          <mxGeometry x="40" y="480" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uxe74oTkdHLyFUuFVSrc-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;endArrow=open;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="uxe74oTkdHLyFUuFVSrc-1" target="uxe74oTkdHLyFUuFVSrc-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="495" as="targetPoint" />
+            <mxPoint x="200" y="445" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uxe74oTkdHLyFUuFVSrc-3" value="&lt;span style=&quot;font-weight: 400; font-size: 10px;&quot;&gt;xsd:integer&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="409" y="485" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="uxe74oTkdHLyFUuFVSrc-4" value="fidmark:crowns" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=11;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="270.00353541872323" y="494.00018285468786" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

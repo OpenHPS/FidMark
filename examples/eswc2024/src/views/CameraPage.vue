@@ -15,7 +15,8 @@
         </ion-toolbar>
       </ion-header>
 
-      <video class="ar" id="camera" muted="true"></video>
+      <ion-button @click="start">Test</ion-button>
+      <canvas class="ar" id="cameraCanvas"></canvas>
       <canvas class="ar" id="threeCanvas"></canvas>
     </ion-content>
   </ion-page>
@@ -23,13 +24,13 @@
 
 
 <script lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/vue';
 import { Options, Vue } from 'vue-property-decorator';
-import { useCameraStore } from '@/stores/camera';
+import { useCameraStore } from '../stores/camera';
 
 @Options({
   components: {
-    IonPage, IonHeader, IonToolbar, IonTitle, IonContent,
+    IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButton
   }
 })
 export default class CameraPage extends Vue {
@@ -40,6 +41,10 @@ export default class CameraPage extends Vue {
       console.log("ok")
     }).catch(console.error);
   }
+
+  start(): void {
+    this.cameraStore.start();
+  }
 }
 </script>
 
@@ -48,5 +53,8 @@ export default class CameraPage extends Vue {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }
 </style>

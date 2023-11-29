@@ -11,12 +11,12 @@
 <http://purl.org/fidmark/> rdf:type owl:Ontology ;
                             owl:versionIRI <http://purl.org/fidmark/1.0/> ;
                             owl:imports <http://purl.org/poso/1.0/> ;
-                            dcterms:abstract ""@en ;
-                            dcterms:bibliographicCitation "Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers"^^xsd:string ;
+                            dcterms:abstract "Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information."@en ;
+                            dcterms:bibliographicCitation "Maxim Van de Wynckel, Isaac Valadez and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers"@en ;
                             dcterms:contributor "Beat Signer"@en ;
-                            dcterms:creator "Isaac Valadez Mora"@en ,
+                            dcterms:creator "Isaac Valadez"@en ,
                                             "Maxim Van de Wynckel"@en ;
-                            dcterms:description "test"@en ;
+                            dcterms:description "Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information."@en ;
                             dcterms:license <http://purl.org/NET/rdflicense/MIT1.0> ;
                             dcterms:modified "2023-12-07T00:00:00"^^xsd:dateTime ;
                             dcterms:title "Fiducial Marker Ontology"@en ;
@@ -66,6 +66,15 @@
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://purl.org/fidmark/consistsOf
+:consistsOf rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+            rdfs:range <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+            rdfs:comment "Describes a feature of interest being part of another feature of interest."@en ;
+            rdfs:label "part of"@en ;
+            <http://www.w3.org/2004/02/skos/core#example> "A fiducial marker can be part of a larger fiducial marker."@en .
+
 
 ###  http://purl.org/fidmark/hasDictionary
 :hasDictionary rdf:type owl:ObjectProperty ;
@@ -142,6 +151,7 @@
        rdfs:domain :ImageDescriptor ;
        rdfs:range xsd:anyURI ,
                   xsd:hexBinary ;
+       rdfs:comment "Image descriptor as natural feature tracking descriptor"@en ;
        rdfs:label "as NFT"@en .
 
 
@@ -150,7 +160,8 @@
        rdfs:domain :ImageDescriptor ;
        rdfs:range xsd:anyURI ,
                   xsd:hexBinary ;
-       rdfs:label "as ZFT"@en .
+       rdfs:label "as ZFT"@en ;
+       <http://www.w3.org/2004/02/skos/core#altLabel> "as Ziva Face Trainer"@en .
 
 
 ###  http://purl.org/fidmark/crowns
@@ -229,6 +240,19 @@
 #    Classes
 #################################################################
 
+###  http://purl.org/fidmark/AP3PPoseComputation
+:AP3PPoseComputation rdf:type owl:Class ;
+                     rdfs:subClassOf :PnPPoseComputation ;
+                     rdfs:isDefinedBy <https://openaccess.thecvf.com/content_cvpr_2017/html/Ke_An_Efficient_Algebraic_CVPR_2017_paper.html> ;
+                     rdfs:label "Algebraic Perspective-Three-Point (AP3P) pose computation"@en .
+
+
+###  http://purl.org/fidmark/ARPlatform
+:ARPlatform rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/ns/sosa/Platform> ;
+            rdfs:label "Augmented Reality (AR) platform"@en .
+
+
 ###  http://purl.org/fidmark/ARTag
 :ARTag rdf:type owl:Class ;
        rdfs:subClassOf :Barcode2D ;
@@ -244,6 +268,15 @@
 :ARToolKit rdf:type owl:Class ;
            rdfs:subClassOf :Barcode ;
            rdfs:label "ARToolKit"@en .
+
+
+###  http://purl.org/fidmark/ActiveMarker
+:ActiveMarker rdf:type owl:Class ;
+              rdfs:subClassOf :FiducialMarker ;
+              rdfs:comment "An active fiducial marker is a dynamic marker that can dynamically change its visual appearance in order to enable detection or identification."@en ;
+              rdfs:isDefinedBy <https://intapi.sciendo.com/pdf/10.2478/lpts-2022-0040> ;
+              rdfs:label "Active marker"@en ;
+              <http://www.w3.org/2004/02/skos/core#example> "A marker that uses visible light communication in order to transmit data."@en .
 
 
 ###  http://purl.org/fidmark/AprilTag
@@ -282,7 +315,7 @@
 :Barcode rdf:type owl:Class ;
          owl:equivalentClass <http://purl.org/iot/vocab/m3-lite#Barcode> ,
                              <http://schema.org/Barcode> ;
-         rdfs:subClassOf :FiducialMarker ,
+         rdfs:subClassOf :PassiveMarker ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :markerData ;
                            owl:minCardinality "1"^^xsd:nonNegativeInteger
@@ -379,6 +412,13 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
            rdfs:subClassOf :Barcode2D .
 
 
+###  http://purl.org/fidmark/EPnPPoseComputation
+:EPnPPoseComputation rdf:type owl:Class ;
+                     rdfs:subClassOf :PnPPoseComputation ;
+                     rdfs:isDefinedBy <https://infoscience.epfl.ch/record/160138> ;
+                     rdfs:label "Efficient Perspective-n-Point (EPnP) pose computation"@en .
+
+
 ###  http://purl.org/fidmark/FiducialMarker
 :FiducialMarker rdf:type owl:Class ;
                 rdfs:subClassOf poso:TrackedFeature ,
@@ -394,6 +434,13 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 :FourierTag rdf:type owl:Class ;
             rdfs:subClassOf :CircularBarcode ;
             rdfs:label "FourierTag"@en .
+
+
+###  http://purl.org/fidmark/IPPEPoseComputation
+:IPPEPoseComputation rdf:type owl:Class ;
+                     rdfs:subClassOf :PnPPoseComputation ;
+                     rdfs:isDefinedBy <https://doi.org/10.1007/s11263-014-0725-5> ;
+                     rdfs:label "Infinitesimal Plane-Based Pose Estimation (IPPE)"@en .
 
 
 ###  http://purl.org/fidmark/ImageDescriptor
@@ -455,8 +502,24 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
 ###  http://purl.org/fidmark/MultiRing
 :MultiRing rdf:type owl:Class ;
-           rdfs:subClassOf :FiducialMarker ;
+           rdfs:subClassOf :PassiveMarker ;
+           rdfs:comment "Multi-ring color fiducials have different number of rings at different fiducial levels. We extend the concentric circular fiducials to multi-ring, multi-size fiducial systems. These provide scalability to fiducial tracking AR. Because the fiducial systems are incremental, they allow the tracking range to be easily extended. The fiducial systems also introduce a large number of unique fiducials, and that makes fiducial identification easier. These fiducial systems help in building large-scale applications by providing a convenient way to unify multiple local coordinate systems."@en ;
+           rdfs:isDefinedBy <https://doi.org/10.1109/VRAIS.1998.658494> ;
            rdfs:label "Multi-ring"@en .
+
+
+###  http://purl.org/fidmark/P3PPoseComputation
+:P3PPoseComputation rdf:type owl:Class ;
+                    rdfs:subClassOf :PnPPoseComputation ;
+                    rdfs:isDefinedBy <https://doi.org/10.1109/TPAMI.2003.1217599> ;
+                    rdfs:label "Perspective-Three-Point (P3P) pose computation"@en .
+
+
+###  http://purl.org/fidmark/PassiveMarker
+:PassiveMarker rdf:type owl:Class ;
+               rdfs:subClassOf :FiducialMarker ;
+               rdfs:label "Passive marker"@en ;
+               <http://www.w3.org/2004/02/skos/core#example> "A printed marker is a passive marker."@en .
 
 
 ###  http://purl.org/fidmark/PiTag
@@ -535,7 +598,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
 ###  http://purl.org/fidmark/reacTIVision
 :reacTIVision rdf:type owl:Class ;
-              rdfs:subClassOf :FiducialMarker ;
+              rdfs:subClassOf :PassiveMarker ;
               rdfs:comment "reacTIVision is an open source, cross-platform computer vision framework for the fast and robust tracking of fiducial markers attached onto physical objects, as well as for multi-touch finger tracking. It was mainly designed as a toolkit for the rapid development of table-based tangible user interfaces (TUI) and multi-touch interactive surfaces. This framework has been developed by Martin Kaltenbrunner and Ross Bencina as the underlying sensor component of the Reactable, a tangible modular synthesizer that has set the standards for tangible multi-touch applications."@en ;
               rdfs:isDefinedBy "https://reactivision.sourceforge.net/"^^xsd:anyURI ;
               rdfs:label "reacTIVision"@en .
