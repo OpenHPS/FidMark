@@ -152,6 +152,9 @@
 <http://purl.org/fidmark/asZFT> <http://www.w3.org/2000/01/rdf-schema#label> "as ZFT"@en .
 <http://purl.org/fidmark/asZFT> <http://www.w3.org/2004/02/skos/core#altLabel> "as Ziva Face Trainer"@en .
 # 
+# http://purl.org/fidmark/crc
+<http://purl.org/fidmark/crc> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
 # http://purl.org/fidmark/crowns
 <http://purl.org/fidmark/crowns> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://purl.org/fidmark/crowns> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/CircularBarcode> .
@@ -292,9 +295,7 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/Barcode
 <http://purl.org/fidmark/Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/Barcode> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/iot/vocab/m3-lite#Barcode> .
-<http://purl.org/iot/vocab/m3-lite#Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/Barcode> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Barcode> .
-<http://schema.org/Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/Barcode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/PassiveMarker> .
 <http://purl.org/fidmark/Barcode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
 _:genid3 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
@@ -446,6 +447,10 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/MarkerDetection
 <http://purl.org/fidmark/MarkerDetection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/MarkerDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Procedure> .
+<http://purl.org/fidmark/MarkerDetection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/poso/VisualInput> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/ssn/hasInput> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://purl.org/fidmark/MarkerDetection> <http://www.w3.org/2000/01/rdf-schema#comment> "Marker detection is a procedure where an image sensor (e.g. a camera) detects a fiducial marker in its field of view."@en .
 <http://purl.org/fidmark/MarkerDetection> <http://www.w3.org/2000/01/rdf-schema#label> "Marker detection"@en .
 # 
@@ -512,9 +517,18 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/PnPPoseComputation
 <http://purl.org/fidmark/PnPPoseComputation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/PnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/poso/PositioningTechnique> .
+<http://purl.org/fidmark/PnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/fidmark/PoseOutput> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/ssn/hasOutput> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <http://purl.org/fidmark/PnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#comment> "The pose computation problem consists in solving for the rotation and translation that minimizes the reprojection error from 3D-2D point correspondences."@en .
 <http://purl.org/fidmark/PnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html> .
 <http://purl.org/fidmark/PnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#label> "Perspective-n-Point (PnP) pose computation"@en .
+# 
+# http://purl.org/fidmark/PoseOutput
+<http://purl.org/fidmark/PoseOutput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/PoseOutput> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/ssn/Output> .
+<http://purl.org/fidmark/PoseOutput> <http://www.w3.org/2000/01/rdf-schema#label> "Pose output"@en .
 # 
 # http://purl.org/fidmark/QRCode
 <http://purl.org/fidmark/QRCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -579,6 +593,10 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/WhyCode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://dl.acm.org/doi/10.1145/3161534.3161537> .
 <http://purl.org/fidmark/WhyCode> <http://www.w3.org/2000/01/rdf-schema#label> "WhyCode"@en .
 # 
+# http://purl.org/fidmark/WhyCon
+<http://purl.org/fidmark/WhyCon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/WhyCon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/CircularBarcode> .
+# 
 # http://purl.org/fidmark/reacTIVision
 <http://purl.org/fidmark/reacTIVision> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/PassiveMarker> .
@@ -587,8 +605,10 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#label> "reacTIVision"@en .
 # 
 # http://purl.org/iot/vocab/m3-lite#Barcode
+<http://purl.org/iot/vocab/m3-lite#Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://schema.org/Barcode
+<http://schema.org/Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # 
 # 

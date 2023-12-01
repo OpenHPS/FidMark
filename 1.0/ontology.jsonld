@@ -35,6 +35,24 @@
     "@id" : "http://purl.org/fidmark/markerData"
   } ]
 }, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://purl.org/poso/VisualInput"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.w3.org/ns/ssn/hasInput"
+  } ]
+}, {
+  "@id" : "_:genid5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://purl.org/fidmark/PoseOutput"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.w3.org/ns/ssn/hasOutput"
+  } ]
+}, {
   "@id" : "http://purl.org/fidmark/",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://purl.org/dc/terms/abstract" : [ {
@@ -1322,6 +1340,8 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/Procedure"
+  }, {
+    "@id" : "_:genid4"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/MarkerDictionary",
@@ -1539,6 +1559,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/poso/PositioningTechnique"
+  }, {
+    "@id" : "_:genid5"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/PoseOutput",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Pose output"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/ssn/Output"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/QRCode",
@@ -1697,6 +1729,12 @@
     "@id" : "http://purl.org/fidmark/CircularBarcode"
   } ]
 }, {
+  "@id" : "http://purl.org/fidmark/WhyCon",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://purl.org/fidmark/CircularBarcode"
+  } ]
+}, {
   "@id" : "http://purl.org/fidmark/asImage",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -1767,6 +1805,9 @@
     "@language" : "en",
     "@value" : "marker color"
   } ]
+}, {
+  "@id" : "http://purl.org/fidmark/crc",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
 }, {
   "@id" : "http://purl.org/fidmark/crowns",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],

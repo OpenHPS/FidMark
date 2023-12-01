@@ -260,6 +260,13 @@
     
 
 
+    <!-- http://purl.org/fidmark/crc -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/fidmark/crc"/>
+    
+
+
     <!-- http://purl.org/fidmark/crowns -->
 
 
@@ -737,6 +744,12 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/MarkerDetection">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasInput"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/poso/VisualInput"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Marker detection is a procedure where an image sensor (e.g. a camera) detects a fiducial marker in its field of view.</rdfs:comment>
         <rdfs:label xml:lang="en">Marker detection</rdfs:label>
     </owl:Class>
@@ -853,9 +866,25 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/PnPPoseComputation">
         <rdfs:subClassOf rdf:resource="http://purl.org/poso/PositioningTechnique"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasOutput"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/fidmark/PoseOutput"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The pose computation problem consists in solving for the rotation and translation that minimizes the reprojection error from 3D-2D point correspondences.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html"/>
         <rdfs:label xml:lang="en">Perspective-n-Point (PnP) pose computation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/PoseOutput -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/PoseOutput">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/ssn/Output"/>
+        <rdfs:label xml:lang="en">Pose output</rdfs:label>
     </owl:Class>
     
 
@@ -960,6 +989,15 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
         <shape>Circular</shape>
         <rdfs:isDefinedBy rdf:resource="https://dl.acm.org/doi/10.1145/3161534.3161537"/>
         <rdfs:label xml:lang="en">WhyCode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/WhyCon -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/WhyCon">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/CircularBarcode"/>
     </owl:Class>
     
 
