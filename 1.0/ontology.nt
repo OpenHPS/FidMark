@@ -1,12 +1,12 @@
 <http://purl.org/fidmark/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
 <http://purl.org/fidmark/> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/fidmark/1.0/> .
 <http://purl.org/fidmark/> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/poso/1.0/> .
-<http://purl.org/fidmark/> <http://purl.org/dc/terms/abstract> ""@en .
-<http://purl.org/fidmark/> <http://purl.org/dc/terms/bibliographicCitation> "Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers" .
+<http://purl.org/fidmark/> <http://purl.org/dc/terms/abstract> "Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information."@en .
+<http://purl.org/fidmark/> <http://purl.org/dc/terms/bibliographicCitation> "Maxim Van de Wynckel, Isaac Valadez and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers"@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/contributor> "Beat Signer"@en .
-<http://purl.org/fidmark/> <http://purl.org/dc/terms/creator> "Isaac Valadez Mora"@en .
+<http://purl.org/fidmark/> <http://purl.org/dc/terms/creator> "Isaac Valadez"@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/creator> "Maxim Van de Wynckel"@en .
-<http://purl.org/fidmark/> <http://purl.org/dc/terms/description> "test"@en .
+<http://purl.org/fidmark/> <http://purl.org/dc/terms/description> "Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information."@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/MIT1.0> .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/modified> "2023-12-07T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/title> "Fiducial Marker Ontology"@en .
@@ -60,6 +60,14 @@
 # #
 # #################################################################
 # 
+# 
+# http://purl.org/fidmark/consistsOf
+<http://purl.org/fidmark/consistsOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/fidmark/consistsOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://purl.org/fidmark/consistsOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://purl.org/fidmark/consistsOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Describes a feature of interest being part of another feature of interest."@en .
+<http://purl.org/fidmark/consistsOf> <http://www.w3.org/2000/01/rdf-schema#label> "part of"@en .
+<http://purl.org/fidmark/consistsOf> <http://www.w3.org/2004/02/skos/core#example> "A fiducial marker can be part of a larger fiducial marker."@en .
 # 
 # http://purl.org/fidmark/hasDictionary
 <http://purl.org/fidmark/hasDictionary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -133,6 +141,7 @@
 <http://purl.org/fidmark/asNFT> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/fidmark/ImageDescriptor> .
 <http://purl.org/fidmark/asNFT> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/asNFT> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#hexBinary> .
+<http://purl.org/fidmark/asNFT> <http://www.w3.org/2000/01/rdf-schema#comment> "Image descriptor as natural feature tracking descriptor"@en .
 <http://purl.org/fidmark/asNFT> <http://www.w3.org/2000/01/rdf-schema#label> "as NFT"@en .
 # 
 # http://purl.org/fidmark/asZFT
@@ -141,6 +150,7 @@
 <http://purl.org/fidmark/asZFT> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/asZFT> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#hexBinary> .
 <http://purl.org/fidmark/asZFT> <http://www.w3.org/2000/01/rdf-schema#label> "as ZFT"@en .
+<http://purl.org/fidmark/asZFT> <http://www.w3.org/2004/02/skos/core#altLabel> "as Ziva Face Trainer"@en .
 # 
 # http://purl.org/fidmark/crowns
 <http://purl.org/fidmark/crowns> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -214,6 +224,17 @@
 # #################################################################
 # 
 # 
+# http://purl.org/fidmark/AP3PPoseComputation
+<http://purl.org/fidmark/AP3PPoseComputation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/AP3PPoseComputation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/PnPPoseComputation> .
+<http://purl.org/fidmark/AP3PPoseComputation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://openaccess.thecvf.com/content_cvpr_2017/html/Ke_An_Efficient_Algebraic_CVPR_2017_paper.html> .
+<http://purl.org/fidmark/AP3PPoseComputation> <http://www.w3.org/2000/01/rdf-schema#label> "Algebraic Perspective-Three-Point (AP3P) pose computation"@en .
+# 
+# http://purl.org/fidmark/ARPlatform
+<http://purl.org/fidmark/ARPlatform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/ARPlatform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Platform> .
+<http://purl.org/fidmark/ARPlatform> <http://www.w3.org/2000/01/rdf-schema#label> "Augmented Reality (AR) platform"@en .
+# 
 # http://purl.org/fidmark/ARTag
 <http://purl.org/fidmark/ARTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/ARTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode2D> .
@@ -228,6 +249,14 @@
 <http://purl.org/fidmark/ARToolKit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/ARToolKit> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode> .
 <http://purl.org/fidmark/ARToolKit> <http://www.w3.org/2000/01/rdf-schema#label> "ARToolKit"@en .
+# 
+# http://purl.org/fidmark/ActiveMarker
+<http://purl.org/fidmark/ActiveMarker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/ActiveMarker> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/ActiveMarker> <http://www.w3.org/2000/01/rdf-schema#comment> "An active fiducial marker is a dynamic marker that can dynamically change its visual appearance in order to enable detection or identification."@en .
+<http://purl.org/fidmark/ActiveMarker> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://intapi.sciendo.com/pdf/10.2478/lpts-2022-0040> .
+<http://purl.org/fidmark/ActiveMarker> <http://www.w3.org/2000/01/rdf-schema#label> "Active marker"@en .
+<http://purl.org/fidmark/ActiveMarker> <http://www.w3.org/2004/02/skos/core#example> "A marker that uses visible light communication in order to transmit data."@en .
 # 
 # http://purl.org/fidmark/AprilTag
 <http://purl.org/fidmark/AprilTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -262,8 +291,10 @@ _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/Barcode
 <http://purl.org/fidmark/Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/Barcode> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/iot/vocab/m3-lite#Barcode> .
+<http://purl.org/iot/vocab/m3-lite#Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/Barcode> <http://www.w3.org/2002/07/owl#equivalentClass> <http://schema.org/Barcode> .
-<http://purl.org/fidmark/Barcode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://schema.org/Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/Barcode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/PassiveMarker> .
 <http://purl.org/fidmark/Barcode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
 _:genid3 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/fidmark/markerData> .
@@ -299,6 +330,9 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/CALTag
 <http://purl.org/fidmark/CALTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/CALTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode2D> .
+<http://purl.org/fidmark/CALTag> <http://purl.org/fidmark/color> "Monochrome" .
+<http://purl.org/fidmark/CALTag> <http://purl.org/fidmark/encoding> "Topological" .
+<http://purl.org/fidmark/CALTag> <http://purl.org/fidmark/shape> "Square" .
 <http://purl.org/fidmark/CALTag> <http://www.w3.org/2000/01/rdf-schema#comment> "CALTag is a self-identifying marker pattern that can be accurately and automatically detected in images. Detection is robust to occlusions, uneven illumination and moderate lens distortion.\n\nChequerboards are often used for camera calibration, with the interior saddle points providing the necessary point correspondences. Manual identification of these points is at best tedious, and at worst, infeasible and unreliable (especially when calibrating large arrays of cameras). By augmenting the pattern with self-identifying binary codes, much like the excellent ARTag system, this process can be automated.\n\nWhereas ARTag has highly robust error detection and correction, it suffers from licence restrictions, and a somewhat inaccurate corner detector. CALTag employs rudimentary error detection, but the code is free to use and modify, and it detects corners using a very accurate saddle-point finder."@en .
 <http://purl.org/fidmark/CALTag> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://www.cs.ubc.ca/labs/imager/tr/2010/Atcheson_VMV2010_CALTag/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/CALTag> <http://www.w3.org/2000/01/rdf-schema#label> "CALTag"@en .
@@ -308,7 +342,12 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/CCC> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/CCC> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode1D> .
 <http://purl.org/fidmark/CCC> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/CircularBarcode> .
+<http://purl.org/fidmark/CCC> <http://purl.org/fidmark/color> "Monochrome" .
+<http://purl.org/fidmark/CCC> <http://purl.org/fidmark/encoding> "Not supported" .
+<http://purl.org/fidmark/CCC> <http://purl.org/fidmark/shape> "Circular" .
+<http://purl.org/fidmark/CCC> <http://www.w3.org/2000/01/rdf-schema#comment> "A CCC is formed by placing a black ring on a white background. A CCC can also be thought of as a small white circle whose center is coincident with the center of a larger black circle, all on a white background. CCCs can be easily manufactured, it is easily extracted from the image, its extrtion is robust, it is a passive feature, and its centroid is completely invariant to the three translational and one rotational degrees of freedom and nearly invariant to the remaining two rotational degrees of freedom." .
 <http://purl.org/fidmark/CCC> <http://www.w3.org/2000/01/rdf-schema#label> "Concentric contrasting circles"@en .
+<http://purl.org/fidmark/CCC> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://doi.org/10.1117/12.56761"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/CCC> <http://www.w3.org/2004/02/skos/core#altLabel> "CCC"@en .
 # 
 # http://purl.org/fidmark/CCTag
@@ -321,6 +360,9 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/Chilitags
 <http://purl.org/fidmark/Chilitags> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/Chilitags> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode2D> .
+<http://purl.org/fidmark/Chilitags> <http://purl.org/fidmark/color> "Monochrome" .
+<http://purl.org/fidmark/Chilitags> <http://purl.org/fidmark/encoding> "Topological" .
+<http://purl.org/fidmark/Chilitags> <http://purl.org/fidmark/shape> "Square" .
 <http://purl.org/fidmark/Chilitags> <http://www.w3.org/2000/01/rdf-schema#comment> "Chilitags are a C++ cross-platform software library for the detection and identification of 2D fiducial markers (a.k.a. tags). Their purpose is to be printed and placed on objects from the real world, to form the basis of Robotics or Augmented Reality (AR) applications. Using a camera, the position of the tagged objects can be acquired by a computer."@en .
 <http://purl.org/fidmark/Chilitags> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://github.com/chili-epfl/chilitags"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/Chilitags> <http://www.w3.org/2000/01/rdf-schema#label> "Chilitags"@en .
@@ -329,7 +371,9 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/ChromaTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/ChromaTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode2D> .
 <http://purl.org/fidmark/ChromaTag> <http://purl.org/fidmark/color> "Multicolor"@en .
-<http://purl.org/fidmark/ChromaTag> <http://www.w3.org/2000/01/rdf-schema#comment> "ChromaTag is a colored fiducial marker and detection algorithm that is significantly faster than other markers."@en .
+<http://purl.org/fidmark/ChromaTag> <http://purl.org/fidmark/encoding> "Topological" .
+<http://purl.org/fidmark/ChromaTag> <http://purl.org/fidmark/shape> "Square" .
+<http://purl.org/fidmark/ChromaTag> <http://www.w3.org/2000/01/rdf-schema#comment> "ChromaTag is a colored fiducial marker and detection algorithm that is significantly faster than other markers; it uses opponent colors to limit and quickly reject initial false detections and grayscale for precise localization."@en .
 <http://purl.org/fidmark/ChromaTag> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://github.com/CogChameleon/ChromaTag"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/ChromaTag> <http://www.w3.org/2000/01/rdf-schema#label> "ChromaTag"@en .
 # 
@@ -343,6 +387,19 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/Cybercode
 <http://purl.org/fidmark/Cybercode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/Cybercode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode2D> .
+<http://purl.org/fidmark/Cybercode> <http://purl.org/fidmark/color> "Monochrome"@en .
+<http://purl.org/fidmark/Cybercode> <http://purl.org/fidmark/encoding> "Topological"@en .
+<http://purl.org/fidmark/Cybercode> <http://purl.org/fidmark/shape> "Rectangular"@en .
+<http://purl.org/fidmark/Cybercode> <http://purl.org/fidmark/shape> "Square"@en .
+<http://purl.org/fidmark/Cybercode> <http://www.w3.org/2000/01/rdf-schema#comment> "The CyberCode is a visual tagging system based on a 2D-barcode technology and provides several features not provided by other tagging systems. CyberCode tags can be recognized by the low-cost CMOS or CCD cameras found in more and more mobile devices, and it can also be used to determine the 3D position of the tagged object as well as its ID number." .
+<http://purl.org/fidmark/Cybercode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://dl.acm.org/doi/abs/10.1145/354666.354667"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://purl.org/fidmark/Cybercode> <http://www.w3.org/2000/01/rdf-schema#label> "CyberCode" .
+# 
+# http://purl.org/fidmark/EPnPPoseComputation
+<http://purl.org/fidmark/EPnPPoseComputation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/EPnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/PnPPoseComputation> .
+<http://purl.org/fidmark/EPnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://infoscience.epfl.ch/record/160138> .
+<http://purl.org/fidmark/EPnPPoseComputation> <http://www.w3.org/2000/01/rdf-schema#label> "Efficient Perspective-n-Point (EPnP) pose computation"@en .
 # 
 # http://purl.org/fidmark/FiducialMarker
 <http://purl.org/fidmark/FiducialMarker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -358,6 +415,12 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <http://purl.org/fidmark/FourierTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/FourierTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/CircularBarcode> .
 <http://purl.org/fidmark/FourierTag> <http://www.w3.org/2000/01/rdf-schema#label> "FourierTag"@en .
+# 
+# http://purl.org/fidmark/IPPEPoseComputation
+<http://purl.org/fidmark/IPPEPoseComputation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/IPPEPoseComputation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/PnPPoseComputation> .
+<http://purl.org/fidmark/IPPEPoseComputation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://doi.org/10.1007/s11263-014-0725-5> .
+<http://purl.org/fidmark/IPPEPoseComputation> <http://www.w3.org/2000/01/rdf-schema#label> "Infinitesimal Plane-Based Pose Estimation (IPPE)"@en .
 # 
 # http://purl.org/fidmark/ImageDescriptor
 <http://purl.org/fidmark/ImageDescriptor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -404,14 +467,31 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/MaxiCode
 <http://purl.org/fidmark/MaxiCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/MaxiCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode2D> .
+<http://purl.org/fidmark/MaxiCode> <http://purl.org/fidmark/color> "Monochrome" .
+<http://purl.org/fidmark/MaxiCode> <http://purl.org/fidmark/encoding> "Topological" .
+<http://purl.org/fidmark/MaxiCode> <http://purl.org/fidmark/shape> "Square" .
 <http://purl.org/fidmark/MaxiCode> <http://www.w3.org/2000/01/rdf-schema#comment> "MaxiCode is a public domain, machine-readable symbol system originally created by the United Parcel Service in 1992. Suitable for tracking and managing the shipment of packages, it resembles an Aztec Code or QR code, but uses dots arranged in a hexagonal grid instead of square grid."@en .
 <http://purl.org/fidmark/MaxiCode> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://dbpedia.org/resource/MaxiCode> .
 <http://purl.org/fidmark/MaxiCode> <http://www.w3.org/2000/01/rdf-schema#label> "MaxiCode"@en .
 # 
 # http://purl.org/fidmark/MultiRing
 <http://purl.org/fidmark/MultiRing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/MultiRing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/MultiRing> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/PassiveMarker> .
+<http://purl.org/fidmark/MultiRing> <http://www.w3.org/2000/01/rdf-schema#comment> "Multi-ring color fiducials have different number of rings at different fiducial levels. We extend the concentric circular fiducials to multi-ring, multi-size fiducial systems. These provide scalability to fiducial tracking AR. Because the fiducial systems are incremental, they allow the tracking range to be easily extended. The fiducial systems also introduce a large number of unique fiducials, and that makes fiducial identification easier. These fiducial systems help in building large-scale applications by providing a convenient way to unify multiple local coordinate systems."@en .
+<http://purl.org/fidmark/MultiRing> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://doi.org/10.1109/VRAIS.1998.658494> .
 <http://purl.org/fidmark/MultiRing> <http://www.w3.org/2000/01/rdf-schema#label> "Multi-ring"@en .
+# 
+# http://purl.org/fidmark/P3PPoseComputation
+<http://purl.org/fidmark/P3PPoseComputation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/P3PPoseComputation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/PnPPoseComputation> .
+<http://purl.org/fidmark/P3PPoseComputation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://doi.org/10.1109/TPAMI.2003.1217599> .
+<http://purl.org/fidmark/P3PPoseComputation> <http://www.w3.org/2000/01/rdf-schema#label> "Perspective-Three-Point (P3P) pose computation"@en .
+# 
+# http://purl.org/fidmark/PassiveMarker
+<http://purl.org/fidmark/PassiveMarker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/fidmark/PassiveMarker> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/PassiveMarker> <http://www.w3.org/2000/01/rdf-schema#label> "Passive marker"@en .
+<http://purl.org/fidmark/PassiveMarker> <http://www.w3.org/2004/02/skos/core#example> "A printed marker is a passive marker."@en .
 # 
 # http://purl.org/fidmark/PiTag
 <http://purl.org/fidmark/PiTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -462,9 +542,13 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://purl.org/fidmark/TopoTag
 <http://purl.org/fidmark/TopoTag> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://purl.org/fidmark/TopoTag> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/Barcode2D> .
+<http://purl.org/fidmark/TopoTag> <http://purl.org/fidmark/color> "Monochrome" .
+<http://purl.org/fidmark/TopoTag> <http://purl.org/fidmark/encoding> "Topological and geometrical" .
+<http://purl.org/fidmark/TopoTag> <http://purl.org/fidmark/shape> "Varies" .
 <http://purl.org/fidmark/TopoTag> <http://www.w3.org/2000/01/rdf-schema#comment> "Fiducial markers have been playing an important role in augmented reality (AR), robot navigation, and general applications where the relative pose between a camera and an object is required. Here we introduce TopoTag, a robust and scalable topological fiducial marker system, which supports reliable and accurate pose estimation from a single image. TopoTag uses topological and geometrical information in marker detection to achieve higher robustness. Topological information is extensively used for 2D marker detection, and further corresponding geometrical information for ID decoding. Robust 3D pose estimation is achieved by taking advantage of all TopoTag vertices. Without sacrificing bits for higher recall and precision like previous systems, TopoTag can use full bits for ID encoding. TopoTag supports tens of thousands unique IDs and easily extends to millions of unique tags resulting in massive scalability."@en .
 <http://purl.org/fidmark/TopoTag> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://herohuyongtao.github.io/research/publications/topo-tag/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/TopoTag> <http://www.w3.org/2000/01/rdf-schema#label> "TopoTag"@en .
+<http://purl.org/fidmark/TopoTag> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "https://github.com/herohuyongtao/topotag" .
 # 
 # http://purl.org/fidmark/VisualCode
 <http://purl.org/fidmark/VisualCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -479,16 +563,14 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://purl.org/fidmark/reacTIVision
 <http://purl.org/fidmark/reacTIVision> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/FiducialMarker> .
+<http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/fidmark/PassiveMarker> .
 <http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#comment> "reacTIVision is an open source, cross-platform computer vision framework for the fast and robust tracking of fiducial markers attached onto physical objects, as well as for multi-touch finger tracking. It was mainly designed as a toolkit for the rapid development of table-based tangible user interfaces (TUI) and multi-touch interactive surfaces. This framework has been developed by Martin Kaltenbrunner and Ross Bencina as the underlying sensor component of the Reactable, a tangible modular synthesizer that has set the standards for tangible multi-touch applications."@en .
 <http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "https://reactivision.sourceforge.net/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/reacTIVision> <http://www.w3.org/2000/01/rdf-schema#label> "reacTIVision"@en .
 # 
 # http://purl.org/iot/vocab/m3-lite#Barcode
-<http://purl.org/iot/vocab/m3-lite#Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # http://schema.org/Barcode
-<http://schema.org/Barcode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
 # 
 # 

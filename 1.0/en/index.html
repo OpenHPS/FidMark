@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/fidmark/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/fidmark/","name":"Fiducial Marker Ontology", "headline":"test", "datePublished":"2023-12-07T00:00:00", "license":"http://purl.org/NET/rdflicense/MIT1.0", "author":[{"@type":"Person","name":"Isaac Valadez Mora"},{"@type":"Person","name":"Maxim Van de Wynckel"}], "contributor":[{"@type":"Person","name":"Beat Signer"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/fidmark/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/fidmark/","name":"Fiducial Marker Ontology", "headline":"Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information.", "datePublished":"2023-12-07T00:00:00", "license":"http://purl.org/NET/rdflicense/MIT1.0", "author":[{"@type":"Person","name":"Isaac Valadez"},{"@type":"Person","name":"Maxim Van de Wynckel"}], "contributor":[{"@type":"Person","name":"Beat Signer"}]}</script>
 
 <script src="../resources/jquery.js"></script> 
 <script src="../resources/marked.min.js"></script> 
@@ -62,7 +62,7 @@ $(function(){
 <dt>This version:</dt>
 <dd><a href="http://purl.org/fidmark/1.0/">http://purl.org/fidmark/1.0/</a></dd>
 <dt>Authors:</dt>
-<dd>Isaac Valadez Mora</dd><dd>Maxim Van de Wynckel</dd>
+<dd>Isaac Valadez</dd><dd>Maxim Van de Wynckel</dd>
 
 <dt>Contributors:</dt>
 <dd>Beat Signer</dd>
@@ -73,7 +73,7 @@ $(function(){
 <dt>Download serialization:</dt><dd><span><a href="../ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="../ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="../ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="../ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://purl.org/NET/rdflicense/MIT1.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/MIT1.0-blue.svg" alt="http://purl.org/NET/rdflicense/MIT1.0" /></a>
 </dd><dt>Visualization:</dt><dd><a href="../webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="../OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers</dd>
+<dd>Maxim Van de Wynckel, Isaac Valadez and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers</dd>
 </dl>
 
 <a href="../provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
@@ -83,7 +83,7 @@ $(function(){
 <span>Ontology Specification Draft</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-test</span>
+Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information.</span>
 </div>
 <div id="toc"></div>  
 
@@ -100,6 +100,12 @@ This ontology has the following classes and properties.</span>
       <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
    </li>
    <li>
+      <a href="#ActiveMarker" title="http://purl.org/fidmark/ActiveMarker">Active marker</a>
+   </li>
+   <li>
+      <a href="#AP3PPoseComputation" title="http://purl.org/fidmark/AP3PPoseComputation">Algebraic Perspective-Three-Point (AP3P) pose computation</a>
+   </li>
+   <li>
       <a href="#AprilTag" title="http://purl.org/fidmark/AprilTag">AprilTag</a>
    </li>
    <li>
@@ -110,6 +116,9 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#ArUco" title="http://purl.org/fidmark/ArUco">ArUco</a>
+   </li>
+   <li>
+      <a href="#ARPlatform" title="http://purl.org/fidmark/ARPlatform">Augmented Reality (AR) platform</a>
    </li>
    <li>
       <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
@@ -139,9 +148,10 @@ This ontology has the following classes and properties.</span>
       <a href="#CCC" title="http://purl.org/fidmark/CCC">Concentric contrasting circles</a>
    </li>
    <li>
-      <a href="#Cybercode" title="http://purl.org/fidmark/Cybercode">
-         <span>cybercode</span>
-      </a>
+      <a href="#Cybercode" title="http://purl.org/fidmark/Cybercode">CyberCode</a>
+   </li>
+   <li>
+      <a href="#EPnPPoseComputation" title="http://purl.org/fidmark/EPnPPoseComputation">Efficient Perspective-n-Point (EPnP) pose computation</a>
    </li>
    <li>
       <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
@@ -151,6 +161,9 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#ImageDescriptor" title="http://purl.org/fidmark/ImageDescriptor">Image descriptor</a>
+   </li>
+   <li>
+      <a href="#IPPEPoseComputation" title="http://purl.org/fidmark/IPPEPoseComputation">Infinitesimal Plane-Based Pose Estimation (IPPE)</a>
    </li>
    <li>
       <a href="#InterSense" title="http://purl.org/fidmark/InterSense">InterSense</a>
@@ -177,7 +190,13 @@ This ontology has the following classes and properties.</span>
       <a href="#MultiRing" title="http://purl.org/fidmark/MultiRing">Multi-ring</a>
    </li>
    <li>
+      <a href="#PassiveMarker" title="http://purl.org/fidmark/PassiveMarker">Passive marker</a>
+   </li>
+   <li>
       <a href="#PnPPoseComputation" title="http://purl.org/fidmark/PnPPoseComputation">Perspective-n-Point (PnP) pose computation</a>
+   </li>
+   <li>
+      <a href="#P3PPoseComputation" title="http://purl.org/fidmark/P3PPoseComputation">Perspective-Three-Point (P3P) pose computation</a>
    </li>
    <li>
       <a href="#PiTag" title="http://purl.org/fidmark/PiTag">Pi-Tag</a>
@@ -230,6 +249,9 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#isImageDescriptorOf" title="http://purl.org/fidmark/isImageDescriptorOf">is image descriptor of</a>
+   </li>
+   <li>
+      <a href="#consistsOf" title="http://purl.org/fidmark/consistsOf">part of</a>
    </li>
 </ul><h4>Data Properties</h4><ul xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" class="hlist">
    <li>
@@ -389,6 +411,12 @@ This section provides details for each class and property defined by Fiducial Ma
          <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
       </li>
       <li>
+         <a href="#ActiveMarker" title="http://purl.org/fidmark/ActiveMarker">Active marker</a>
+      </li>
+      <li>
+         <a href="#AP3PPoseComputation" title="http://purl.org/fidmark/AP3PPoseComputation">Algebraic Perspective-Three-Point (AP3P) pose computation</a>
+      </li>
+      <li>
          <a href="#AprilTag" title="http://purl.org/fidmark/AprilTag">AprilTag</a>
       </li>
       <li>
@@ -399,6 +427,9 @@ This section provides details for each class and property defined by Fiducial Ma
       </li>
       <li>
          <a href="#ArUco" title="http://purl.org/fidmark/ArUco">ArUco</a>
+      </li>
+      <li>
+         <a href="#ARPlatform" title="http://purl.org/fidmark/ARPlatform">Augmented Reality (AR) platform</a>
       </li>
       <li>
          <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
@@ -428,9 +459,10 @@ This section provides details for each class and property defined by Fiducial Ma
          <a href="#CCC" title="http://purl.org/fidmark/CCC">Concentric contrasting circles</a>
       </li>
       <li>
-         <a href="#Cybercode" title="http://purl.org/fidmark/Cybercode">
-            <span>cybercode</span>
-         </a>
+         <a href="#Cybercode" title="http://purl.org/fidmark/Cybercode">CyberCode</a>
+      </li>
+      <li>
+         <a href="#EPnPPoseComputation" title="http://purl.org/fidmark/EPnPPoseComputation">Efficient Perspective-n-Point (EPnP) pose computation</a>
       </li>
       <li>
          <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
@@ -440,6 +472,9 @@ This section provides details for each class and property defined by Fiducial Ma
       </li>
       <li>
          <a href="#ImageDescriptor" title="http://purl.org/fidmark/ImageDescriptor">Image descriptor</a>
+      </li>
+      <li>
+         <a href="#IPPEPoseComputation" title="http://purl.org/fidmark/IPPEPoseComputation">Infinitesimal Plane-Based Pose Estimation (IPPE)</a>
       </li>
       <li>
          <a href="#InterSense" title="http://purl.org/fidmark/InterSense">InterSense</a>
@@ -466,7 +501,13 @@ This section provides details for each class and property defined by Fiducial Ma
          <a href="#MultiRing" title="http://purl.org/fidmark/MultiRing">Multi-ring</a>
       </li>
       <li>
+         <a href="#PassiveMarker" title="http://purl.org/fidmark/PassiveMarker">Passive marker</a>
+      </li>
+      <li>
          <a href="#PnPPoseComputation" title="http://purl.org/fidmark/PnPPoseComputation">Perspective-n-Point (PnP) pose computation</a>
+      </li>
+      <li>
+         <a href="#P3PPoseComputation" title="http://purl.org/fidmark/P3PPoseComputation">Perspective-Three-Point (P3P) pose computation</a>
       </li>
       <li>
          <a href="#PiTag" title="http://purl.org/fidmark/PiTag">Pi-Tag</a>
@@ -558,10 +599,61 @@ This section provides details for each class and property defined by Fiducial Ma
             <sup class="type-c" title="class">c</sup>, <a href="#CALTag" title="http://purl.org/fidmark/CALTag">CALTag</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Chilitags" title="http://purl.org/fidmark/Chilitags">Chilitags</a>
             <sup class="type-c" title="class">c</sup>, <a href="#ChromaTag" title="http://purl.org/fidmark/ChromaTag">ChromaTag</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Cybercode" title="http://purl.org/fidmark/Cybercode">CyberCode</a>
             <sup class="type-c" title="class">c</sup>, <a href="#MaxiCode" title="http://purl.org/fidmark/MaxiCode">MaxiCode</a>
             <sup class="type-c" title="class">c</sup>, <a href="#QRCode" title="http://purl.org/fidmark/QRCode">QR code</a>
             <sup class="type-c" title="class">c</sup>, <a href="#TopoTag" title="http://purl.org/fidmark/TopoTag">TopoTag</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Cybercode" title="http://purl.org/fidmark/Cybercode">cybercode</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="ActiveMarker">
+      <h3>Active marker<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/ActiveMarker</p>
+      <div class="comment">
+         <span class="markdown">An active fiducial marker is a dynamic marker that can dynamically change its visual appearance in order to enable detection or identification.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://intapi.sciendo.com/pdf/10.2478/lpts-2022-0040">https://intapi.sciendo.com/pdf/10.2478/lpts-2022-0040</a>
+         </dd>
+      </dl>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>A marker that uses visible light communication in order to transmit data.</pre>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="AP3PPoseComputation">
+      <h3>Algebraic Perspective-Three-Point (AP3P) pose computation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/AP3PPoseComputation</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://openaccess.thecvf.com/content_cvpr_2017/html/Ke_An_Efficient_Algebraic_CVPR_2017_paper.html">https://openaccess.thecvf.com/content_cvpr_2017/html/Ke_An_Efficient_Algebraic_CVPR_2017_paper.html</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#PnPPoseComputation" title="http://purl.org/fidmark/PnPPoseComputation">Perspective-n-Point (PnP) pose computation</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -645,6 +737,22 @@ This section provides details for each class and property defined by Fiducial Ma
          </dd>
       </dl>
    </div>
+   <div class="entity" id="ARPlatform">
+      <h3>Augmented Reality (AR) platform<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/ARPlatform</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/sosa/Platform"
+               target="_blank"
+               title="http://www.w3.org/ns/sosa/Platform">platform</a>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Barcode">
       <h3>Barcode<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -677,7 +785,7 @@ This section provides details for each class and property defined by Fiducial Ma
          </dd>
          <dt>has super-classes</dt>
          <dd>
-            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <a href="#PassiveMarker" title="http://purl.org/fidmark/PassiveMarker">Passive marker</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
@@ -805,7 +913,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/ChromaTag</p>
       <div class="comment">
-         <span class="markdown">ChromaTag is a colored fiducial marker and detection algorithm that is significantly faster than other markers.</span>
+         <span class="markdown">ChromaTag is a colored fiducial marker and detection algorithm that is significantly faster than other markers; it uses opponent colors to limit and quickly reject initial false detections and grayscale for precise localization.</span>
       </div>
       <dl class="definedBy">
          <dt>Is defined by</dt>
@@ -863,6 +971,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/CCC</p>
+      <div class="comment">
+         <span class="markdown">A CCC is formed by placing a black ring on a white background. A CCC can also be thought of as a small white circle whose center is coincident with the center of a larger black circle, all on a white background. CCCs can be easily manufactured, it is easily extracted from the image, its extrtion is robust, it is a passive feature, and its centroid is completely invariant to the three translational and one rotational degrees of freedom and nearly invariant to the remaining two rotational degrees of freedom.</span>
+      </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
@@ -873,16 +984,44 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       </dl>
    </div>
    <div class="entity" id="Cybercode">
-      <h3>cybercode<sup class="type-c" title="class">c</sup>
+      <h3>CyberCode<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/Cybercode</p>
+      <div class="comment">
+         <span class="markdown">The CyberCode is a visual tagging system based on a 2D-barcode technology and provides several features not provided by other tagging systems. CyberCode tags can be recognized by the low-cost CMOS or CCD cameras found in more and more mobile devices, and it can also be used to determine the 3D position of the tagged object as well as its ID number.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>http://purl.org/fidmark/</dd>
+      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
             <a href="#Barcode2D" title="http://purl.org/fidmark/Barcode2D">2D barcode</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="EPnPPoseComputation">
+      <h3>Efficient Perspective-n-Point (EPnP) pose computation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/EPnPPoseComputation</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://infoscience.epfl.ch/record/160138">https://infoscience.epfl.ch/record/160138</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#PnPPoseComputation" title="http://purl.org/fidmark/PnPPoseComputation">Perspective-n-Point (PnP) pose computation</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -914,9 +1053,8 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
          </dd>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#MultiRing" title="http://purl.org/fidmark/MultiRing">Multi-ring</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#reacTIVision" title="http://purl.org/fidmark/reacTIVision">reacTIVision</a>
+            <a href="#ActiveMarker" title="http://purl.org/fidmark/ActiveMarker">Active marker</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#PassiveMarker" title="http://purl.org/fidmark/PassiveMarker">Passive marker</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -987,6 +1125,27 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
          <dd>
             <a href="#hasImageDesciptor" title="http://purl.org/fidmark/hasImageDesciptor">has image descriptor</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="IPPEPoseComputation">
+      <h3>Infinitesimal Plane-Based Pose Estimation (IPPE)<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/IPPEPoseComputation</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://doi.org/10.1007/s11263-014-0725-5">https://doi.org/10.1007/s11263-014-0725-5</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#PnPPoseComputation" title="http://purl.org/fidmark/PnPPoseComputation">Perspective-n-Point (PnP) pose computation</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -1187,10 +1346,47 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/MultiRing</p>
+      <div class="comment">
+         <span class="markdown">Multi-ring color fiducials have different number of rings at different fiducial levels. We extend the concentric circular fiducials to multi-ring, multi-size fiducial systems. These provide scalability to fiducial tracking AR. Because the fiducial systems are incremental, they allow the tracking range to be easily extended. The fiducial systems also introduce a large number of unique fiducials, and that makes fiducial identification easier. These fiducial systems help in building large-scale applications by providing a convenient way to unify multiple local coordinate systems.</span>
+      </div>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://doi.org/10.1109/VRAIS.1998.658494">https://doi.org/10.1109/VRAIS.1998.658494</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#PassiveMarker" title="http://purl.org/fidmark/PassiveMarker">Passive marker</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="PassiveMarker">
+      <h3>Passive marker<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/PassiveMarker</p>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>A printed marker is a passive marker.</pre>
+         </dd>
+      </dl>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
             <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Barcode" title="http://purl.org/fidmark/Barcode">Barcode</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MultiRing" title="http://purl.org/fidmark/MultiRing">Multi-ring</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#reacTIVision" title="http://purl.org/fidmark/reacTIVision">reacTIVision</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1217,6 +1413,35 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
             <a href="http://purl.org/poso/PositioningTechnique"
                target="_blank"
                title="http://purl.org/poso/PositioningTechnique">positioning technique</a>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#AP3PPoseComputation" title="http://purl.org/fidmark/AP3PPoseComputation">Algebraic Perspective-Three-Point (AP3P) pose computation</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#EPnPPoseComputation" title="http://purl.org/fidmark/EPnPPoseComputation">Efficient Perspective-n-Point (EPnP) pose computation</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#IPPEPoseComputation" title="http://purl.org/fidmark/IPPEPoseComputation">Infinitesimal Plane-Based Pose Estimation (IPPE)</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#P3PPoseComputation" title="http://purl.org/fidmark/P3PPoseComputation">Perspective-Three-Point (P3P) pose computation</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="P3PPoseComputation">
+      <h3>Perspective-Three-Point (P3P) pose computation<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/P3PPoseComputation</p>
+      <dl class="definedBy">
+         <dt>Is defined by</dt>
+         <dd>
+            <a href="https://doi.org/10.1109/TPAMI.2003.1217599">https://doi.org/10.1109/TPAMI.2003.1217599</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#PnPPoseComputation" title="http://purl.org/fidmark/PnPPoseComputation">Perspective-n-Point (PnP) pose computation</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -1274,7 +1499,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#FiducialMarker" title="http://purl.org/fidmark/FiducialMarker">Fiducial marker</a>
+            <a href="#PassiveMarker" title="http://purl.org/fidmark/PassiveMarker">Passive marker</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1418,6 +1643,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       </li>
       <li>
          <a href="#isImageDescriptorOf" title="http://purl.org/fidmark/isImageDescriptorOf">is image descriptor of</a>
+      </li>
+      <li>
+         <a href="#consistsOf" title="http://purl.org/fidmark/consistsOf">part of</a>
       </li>
    </ul>
    <div class="entity" id="hasImageDesciptor">
@@ -1599,6 +1827,39 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
          </dl>
       </div>
    </div>
+   <div class="entity" id="consistsOf">
+      <h3>part of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/consistsOf</p>
+      <div class="comment">
+         <span class="markdown">Describes a feature of interest being part of another feature of interest.</span>
+      </div>
+      <dl>
+         <dt>Example</dt>
+         <dd>
+            <pre>A fiducial marker can be part of a larger fiducial marker.</pre>
+         </dd>
+      </dl>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/sosa/FeatureOfInterest"
+                  target="_blank"
+                  title="http://www.w3.org/ns/sosa/FeatureOfInterest">feature of interest</a>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="http://www.w3.org/ns/sosa/FeatureOfInterest"
+                  target="_blank"
+                  title="http://www.w3.org/ns/sosa/FeatureOfInterest">feature of interest</a>
+            </dd>
+         </dl>
+      </div>
+   </div>
 </div><div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
    <h3 id="dataproperties-headline" class="list">Data Properties</h3>
    <ul class="hlist">
@@ -1677,6 +1938,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/asNFT</p>
+      <div class="comment">
+         <span class="markdown">Image descriptor as natural feature tracking descriptor</span>
+      </div>
       <div class="description">
          <dl>
             <dt>has domain</dt>

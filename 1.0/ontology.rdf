@@ -16,12 +16,12 @@
     <owl:Ontology rdf:about="http://purl.org/fidmark/">
         <owl:versionIRI rdf:resource="http://purl.org/fidmark/1.0/"/>
         <owl:imports rdf:resource="http://purl.org/poso/1.0/"/>
-        <terms:abstract xml:lang="en"></terms:abstract>
-        <terms:bibliographicCitation>Maxim Van de Wynckel, Isaac Valadez Mora and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers</terms:bibliographicCitation>
+        <terms:abstract xml:lang="en">Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information.</terms:abstract>
+        <terms:bibliographicCitation xml:lang="en">Maxim Van de Wynckel, Isaac Valadez and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers</terms:bibliographicCitation>
         <terms:contributor xml:lang="en">Beat Signer</terms:contributor>
-        <terms:creator xml:lang="en">Isaac Valadez Mora</terms:creator>
+        <terms:creator xml:lang="en">Isaac Valadez</terms:creator>
         <terms:creator xml:lang="en">Maxim Van de Wynckel</terms:creator>
-        <terms:description xml:lang="en">test</terms:description>
+        <terms:description xml:lang="en">Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information.</terms:description>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/MIT1.0"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-12-07T00:00:00</terms:modified>
         <terms:title xml:lang="en">Fiducial Marker Ontology</terms:title>
@@ -108,6 +108,19 @@
      -->
 
 
+    
+
+
+    <!-- http://purl.org/fidmark/consistsOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/fidmark/consistsOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:comment xml:lang="en">Describes a feature of interest being part of another feature of interest.</rdfs:comment>
+        <rdfs:label xml:lang="en">part of</rdfs:label>
+        <skos:example xml:lang="en">A fiducial marker can be part of a larger fiducial marker.</skos:example>
+    </owl:ObjectProperty>
     
 
 
@@ -228,6 +241,7 @@
         <rdfs:domain rdf:resource="http://purl.org/fidmark/ImageDescriptor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
+        <rdfs:comment xml:lang="en">Image descriptor as natural feature tracking descriptor</rdfs:comment>
         <rdfs:label xml:lang="en">as NFT</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -241,6 +255,7 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
         <rdfs:label xml:lang="en">as ZFT</rdfs:label>
+        <skos:altLabel xml:lang="en">as Ziva Face Trainer</skos:altLabel>
     </owl:DatatypeProperty>
     
 
@@ -365,6 +380,27 @@
     
 
 
+    <!-- http://purl.org/fidmark/AP3PPoseComputation -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/AP3PPoseComputation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/PnPPoseComputation"/>
+        <rdfs:isDefinedBy rdf:resource="https://openaccess.thecvf.com/content_cvpr_2017/html/Ke_An_Efficient_Algebraic_CVPR_2017_paper.html"/>
+        <rdfs:label xml:lang="en">Algebraic Perspective-Three-Point (AP3P) pose computation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/ARPlatform -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/ARPlatform">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:label xml:lang="en">Augmented Reality (AR) platform</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/fidmark/ARTag -->
 
 
@@ -386,6 +422,19 @@
     <owl:Class rdf:about="http://purl.org/fidmark/ARToolKit">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode"/>
         <rdfs:label xml:lang="en">ARToolKit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/ActiveMarker -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/ActiveMarker">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:comment xml:lang="en">An active fiducial marker is a dynamic marker that can dynamically change its visual appearance in order to enable detection or identification.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://intapi.sciendo.com/pdf/10.2478/lpts-2022-0040"/>
+        <rdfs:label xml:lang="en">Active marker</rdfs:label>
+        <skos:example xml:lang="en">A marker that uses visible light communication in order to transmit data.</skos:example>
     </owl:Class>
     
 
@@ -440,7 +489,7 @@
     <owl:Class rdf:about="http://purl.org/fidmark/Barcode">
         <owl:equivalentClass rdf:resource="http://purl.org/iot/vocab/m3-lite#Barcode"/>
         <owl:equivalentClass rdf:resource="http://schema.org/Barcode"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/PassiveMarker"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/fidmark/markerData"/>
@@ -503,6 +552,9 @@
 
     <owl:Class rdf:about="http://purl.org/fidmark/CALTag">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode2D"/>
+        <color>Monochrome</color>
+        <encoding>Topological</encoding>
+        <shape>Square</shape>
         <rdfs:comment xml:lang="en">CALTag is a self-identifying marker pattern that can be accurately and automatically detected in images. Detection is robust to occlusions, uneven illumination and moderate lens distortion.
 
 Chequerboards are often used for camera calibration, with the interior saddle points providing the necessary point correspondences. Manual identification of these points is at best tedious, and at worst, infeasible and unreliable (especially when calibrating large arrays of cameras). By augmenting the pattern with self-identifying binary codes, much like the excellent ARTag system, this process can be automated.
@@ -521,7 +573,12 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
     <owl:Class rdf:about="http://purl.org/fidmark/CCC">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode1D"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/CircularBarcode"/>
+        <color>Monochrome</color>
+        <encoding>Not supported</encoding>
+        <shape>Circular</shape>
+        <rdfs:comment>A CCC is formed by placing a black ring on a white background. A CCC can also be thought of as a small white circle whose center is coincident with the center of a larger black circle, all on a white background. CCCs can be easily manufactured, it is easily extracted from the image, its extrtion is robust, it is a passive feature, and its centroid is completely invariant to the three translational and one rotational degrees of freedom and nearly invariant to the remaining two rotational degrees of freedom.</rdfs:comment>
         <rdfs:label xml:lang="en">Concentric contrasting circles</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://doi.org/10.1117/12.56761</rdfs:seeAlso>
         <skos:altLabel xml:lang="en">CCC</skos:altLabel>
     </owl:Class>
     
@@ -544,6 +601,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/Chilitags">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode2D"/>
+        <color>Monochrome</color>
+        <encoding>Topological</encoding>
+        <shape>Square</shape>
         <rdfs:comment xml:lang="en">Chilitags are a C++ cross-platform software library for the detection and identification of 2D fiducial markers (a.k.a. tags). Their purpose is to be printed and placed on objects from the real world, to form the basis of Robotics or Augmented Reality (AR) applications. Using a camera, the position of the tagged objects can be acquired by a computer.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/chili-epfl/chilitags</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Chilitags</rdfs:label>
@@ -557,7 +617,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
     <owl:Class rdf:about="http://purl.org/fidmark/ChromaTag">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode2D"/>
         <color xml:lang="en">Multicolor</color>
-        <rdfs:comment xml:lang="en">ChromaTag is a colored fiducial marker and detection algorithm that is significantly faster than other markers.</rdfs:comment>
+        <encoding>Topological</encoding>
+        <shape>Square</shape>
+        <rdfs:comment xml:lang="en">ChromaTag is a colored fiducial marker and detection algorithm that is significantly faster than other markers; it uses opponent colors to limit and quickly reject initial false detections and grayscale for precise localization.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/CogChameleon/ChromaTag</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">ChromaTag</rdfs:label>
     </owl:Class>
@@ -581,6 +643,24 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/Cybercode">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode2D"/>
+        <color xml:lang="en">Monochrome</color>
+        <encoding xml:lang="en">Topological</encoding>
+        <shape xml:lang="en">Rectangular</shape>
+        <shape xml:lang="en">Square</shape>
+        <rdfs:comment>The CyberCode is a visual tagging system based on a 2D-barcode technology and provides several features not provided by other tagging systems. CyberCode tags can be recognized by the low-cost CMOS or CCD cameras found in more and more mobile devices, and it can also be used to determine the 3D position of the tagged object as well as its ID number.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://dl.acm.org/doi/abs/10.1145/354666.354667</rdfs:isDefinedBy>
+        <rdfs:label>CyberCode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/EPnPPoseComputation -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/EPnPPoseComputation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/PnPPoseComputation"/>
+        <rdfs:isDefinedBy rdf:resource="https://infoscience.epfl.ch/record/160138"/>
+        <rdfs:label xml:lang="en">Efficient Perspective-n-Point (EPnP) pose computation</rdfs:label>
     </owl:Class>
     
 
@@ -606,6 +686,17 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
     <owl:Class rdf:about="http://purl.org/fidmark/FourierTag">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/CircularBarcode"/>
         <rdfs:label xml:lang="en">FourierTag</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/IPPEPoseComputation -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/IPPEPoseComputation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/PnPPoseComputation"/>
+        <rdfs:isDefinedBy rdf:resource="https://doi.org/10.1007/s11263-014-0725-5"/>
+        <rdfs:label xml:lang="en">Infinitesimal Plane-Based Pose Estimation (IPPE)</rdfs:label>
     </owl:Class>
     
 
@@ -692,6 +783,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/MaxiCode">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode2D"/>
+        <color>Monochrome</color>
+        <encoding>Topological</encoding>
+        <shape>Square</shape>
         <rdfs:comment xml:lang="en">MaxiCode is a public domain, machine-readable symbol system originally created by the United Parcel Service in 1992. Suitable for tracking and managing the shipment of packages, it resembles an Aztec Code or QR code, but uses dots arranged in a hexagonal grid instead of square grid.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://dbpedia.org/resource/MaxiCode"/>
         <rdfs:label xml:lang="en">MaxiCode</rdfs:label>
@@ -703,8 +797,32 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/MultiRing">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/PassiveMarker"/>
+        <rdfs:comment xml:lang="en">Multi-ring color fiducials have different number of rings at different fiducial levels. We extend the concentric circular fiducials to multi-ring, multi-size fiducial systems. These provide scalability to fiducial tracking AR. Because the fiducial systems are incremental, they allow the tracking range to be easily extended. The fiducial systems also introduce a large number of unique fiducials, and that makes fiducial identification easier. These fiducial systems help in building large-scale applications by providing a convenient way to unify multiple local coordinate systems.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://doi.org/10.1109/VRAIS.1998.658494"/>
         <rdfs:label xml:lang="en">Multi-ring</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/P3PPoseComputation -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/P3PPoseComputation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/PnPPoseComputation"/>
+        <rdfs:isDefinedBy rdf:resource="https://doi.org/10.1109/TPAMI.2003.1217599"/>
+        <rdfs:label xml:lang="en">Perspective-Three-Point (P3P) pose computation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/fidmark/PassiveMarker -->
+
+
+    <owl:Class rdf:about="http://purl.org/fidmark/PassiveMarker">
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:label xml:lang="en">Passive marker</rdfs:label>
+        <skos:example xml:lang="en">A printed marker is a passive marker.</skos:example>
     </owl:Class>
     
 
@@ -795,9 +913,13 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/TopoTag">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode2D"/>
+        <color>Monochrome</color>
+        <encoding>Topological and geometrical</encoding>
+        <shape>Varies</shape>
         <rdfs:comment xml:lang="en">Fiducial markers have been playing an important role in augmented reality (AR), robot navigation, and general applications where the relative pose between a camera and an object is required. Here we introduce TopoTag, a robust and scalable topological fiducial marker system, which supports reliable and accurate pose estimation from a single image. TopoTag uses topological and geometrical information in marker detection to achieve higher robustness. Topological information is extensively used for 2D marker detection, and further corresponding geometrical information for ID decoding. Robust 3D pose estimation is achieved by taking advantage of all TopoTag vertices. Without sacrificing bits for higher recall and precision like previous systems, TopoTag can use full bits for ID encoding. TopoTag supports tens of thousands unique IDs and easily extends to millions of unique tags resulting in massive scalability.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://herohuyongtao.github.io/research/publications/topo-tag/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">TopoTag</rdfs:label>
+        <rdfs:seeAlso>https://github.com/herohuyongtao/topotag</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -827,7 +949,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
 
     <owl:Class rdf:about="http://purl.org/fidmark/reacTIVision">
-        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/FiducialMarker"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/PassiveMarker"/>
         <rdfs:comment xml:lang="en">reacTIVision is an open source, cross-platform computer vision framework for the fast and robust tracking of fiducial markers attached onto physical objects, as well as for multi-touch finger tracking. It was mainly designed as a toolkit for the rapid development of table-based tangible user interfaces (TUI) and multi-touch interactive surfaces. This framework has been developed by Martin Kaltenbrunner and Ross Bencina as the underlying sensor component of the Reactable, a tangible modular synthesizer that has set the standards for tangible multi-touch applications.</rdfs:comment>
         <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://reactivision.sourceforge.net/</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">reacTIVision</rdfs:label>
