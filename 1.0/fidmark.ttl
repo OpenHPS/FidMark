@@ -636,7 +636,7 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
 :WhyCode rdf:type owl:Class ;
          rdfs:subClassOf :CircularBarcode ;
          :color "Monochrome" ,
-        :encoding "Topological" ;
+         "Topological" ;
          :shape "Circular" ;
          rdfs:isDefinedBy <https://dl.acm.org/doi/10.1145/3161534.3161537> ;
          rdfs:label "WhyCode"@en .
