@@ -16,6 +16,7 @@ async function buildOntology(version = '1.0') {
     const widocoJar = await downloadWidoco();
     await rmdir(path.join(__dirname, `../_site/${version}/`));
 
+    // Main
     await executeWidoco(
         widocoJar, 
         path.join(__dirname, `../../${version}/fidmark.ttl`), 
@@ -24,6 +25,16 @@ async function buildOntology(version = '1.0') {
     fse.copySync(path.join(__dirname, `../_site/${version}/doc`), path.join(__dirname, `../_site/${version}`));
     await rewriteLanguagePaths(path.join(__dirname, `../_site/${version}`));
     await rmdir(path.join(__dirname, `../_site/${version}/doc`));
+
+    // Dicom
+    await executeWidoco(
+        widocoJar, 
+        path.join(__dirname, `../../${version}/dicom/fidmark-dicom.ttl`), 
+        path.join(__dirname, `../_site/${version}/dicom`)
+    );
+    fse.copySync(path.join(__dirname, `../_site/${version}/dicom/doc`), path.join(__dirname, `../_site/${version}/dicom`));
+    await rewriteLanguagePaths(path.join(__dirname, `../_site/${version}/dicom`));
+    await rmdir(path.join(__dirname, `../_site/${version}/dicom/doc`));
 }
 
 async function downloadWidoco(version = "1.4.17") {

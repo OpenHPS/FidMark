@@ -424,7 +424,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
            rdfs:subClassOf :Barcode2D ;
            :color "Monochrome"@en ;
            :encoding "Topological"@en ;
-           :shape "Square"@en, :shape "Rectangular"@en ;
+           :shape "Square"@en, "Rectangular"@en ;
            rdfs:comment "The CyberCode is a visual tagging system based on a 2D-barcode technology and provides several features not provided by other tagging systems. CyberCode tags can be recognized by the low-cost CMOS or CCD cameras found in more and more mobile devices, and it can also be used to determine the 3D position of the tagged object as well as its ID number." ;
            rdfs:isDefinedBy "https://dl.acm.org/doi/abs/10.1145/354666.354667"^^xsd:anyURI ;
            rdfs:label "CyberCode" .
