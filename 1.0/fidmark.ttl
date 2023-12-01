@@ -13,9 +13,8 @@
                             owl:imports <http://purl.org/poso/1.0/> ;
                             dcterms:abstract "Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information."@en ;
                             dcterms:bibliographicCitation "Maxim Van de Wynckel, Isaac Valadez and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers"@en ;
+                            dcterms:creator "Maxim Van de Wynckel"@en, "Isaac Valadez"@en ;
                             dcterms:contributor "Beat Signer"@en ;
-                            dcterms:creator "Isaac Valadez"@en ,
-                                            "Maxim Van de Wynckel"@en ;
                             dcterms:description "Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information."@en ;
                             dcterms:license <http://purl.org/NET/rdflicense/MIT1.0> ;
                             dcterms:modified "2023-12-07T00:00:00"^^xsd:dateTime ;
@@ -378,7 +377,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
      :shape "Circular" ;
      rdfs:comment "A CCC is formed by placing a black ring on a white background. A CCC can also be thought of as a small white circle whose center is coincident with the center of a larger black circle, all on a white background. CCCs can be easily manufactured, it is easily extracted from the image, its extrtion is robust, it is a passive feature, and its centroid is completely invariant to the three translational and one rotational degrees of freedom and nearly invariant to the remaining two rotational degrees of freedom." ;
      rdfs:label "Concentric contrasting circles"@en ;
-     rdfs:seeAlso "https://doi.org/10.1117/12.56761" ;
+     rdfs:seeAlso "https://doi.org/10.1117/12.56761"^^xsd:anyURI ;
      <http://www.w3.org/2004/02/skos/core#altLabel> "CCC"@en .
 
 
@@ -423,11 +422,11 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 ###  http://purl.org/fidmark/Cybercode
 :Cybercode rdf:type owl:Class ;
            rdfs:subClassOf :Barcode2D ;
-           :color "Monochrome" ;
-           :encoding "Topological" ;
-           :shape "Square / Rectangular" ;
+           :color "Monochrome"@en ;
+           :encoding "Topological"@en ;
+           :shape "Square"@en, :shape "Rectangular"@en ;
            rdfs:comment "The CyberCode is a visual tagging system based on a 2D-barcode technology and provides several features not provided by other tagging systems. CyberCode tags can be recognized by the low-cost CMOS or CCD cameras found in more and more mobile devices, and it can also be used to determine the 3D position of the tagged object as well as its ID number." ;
-           rdfs:isDefinedBy "https://dl.acm.org/doi/abs/10.1145/354666.354667" ;
+           rdfs:isDefinedBy "https://dl.acm.org/doi/abs/10.1145/354666.354667"^^xsd:anyURI ;
            rdfs:label "CyberCode" .
 
 
@@ -628,15 +627,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
               rdfs:comment "reacTIVision is an open source, cross-platform computer vision framework for the fast and robust tracking of fiducial markers attached onto physical objects, as well as for multi-touch finger tracking. It was mainly designed as a toolkit for the rapid development of table-based tangible user interfaces (TUI) and multi-touch interactive surfaces. This framework has been developed by Martin Kaltenbrunner and Ross Bencina as the underlying sensor component of the Reactable, a tangible modular synthesizer that has set the standards for tangible multi-touch applications."@en ;
               rdfs:isDefinedBy "https://reactivision.sourceforge.net/"^^xsd:anyURI ;
               rdfs:label "reacTIVision"@en .
-
-
-###  http://purl.org/iot/vocab/m3-lite#Barcode
-<http://purl.org/iot/vocab/m3-lite#Barcode> rdf:type owl:Class .
-
-
-###  http://schema.org/Barcode
-<http://schema.org/Barcode> rdf:type owl:Class .
-
 
 #################################################################
 #    Individuals
