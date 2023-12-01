@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-11-27T13:37:21.564Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.0 Chrome/114.0.5735.289 Electron/25.8.3 Safari/537.36" etag="XKFhdIgXYvgWCC5N82XN" version="22.0.0" type="device" pages="2">
+<mxfile host="Electron" modified="2023-11-29T17:20:14.136Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="SsiHt2wWOXaZC66wsQgf" version="22.1.2" type="device" pages="2">
   <diagram name="Page-1" id="ylHgLPsrtK1L2cb60V36">
-    <mxGraphModel dx="1038" dy="608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1418" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -59,7 +59,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="P2Bpmq_uOMs_CDguxbq2" name="Page-2">
-    <mxGraphModel dx="1038" dy="608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1418" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -89,19 +89,19 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ZPjEkWGmV2tCZZptJfDr-35" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:Barcode1D&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
-          <mxGeometry x="339" y="250" width="150" height="30" as="geometry" />
+          <mxGeometry x="339" y="290" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ZPjEkWGmV2tCZZptJfDr-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-36" target="ZPjEkWGmV2tCZZptJfDr-46" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ZPjEkWGmV2tCZZptJfDr-36" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:Barcode2D&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
-          <mxGeometry x="339" y="290" width="150" height="30" as="geometry" />
+          <mxGeometry x="339" y="330" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ZPjEkWGmV2tCZZptJfDr-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-37" target="ZPjEkWGmV2tCZZptJfDr-46" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="ZPjEkWGmV2tCZZptJfDr-37" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:CircularBarcode&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
-          <mxGeometry x="339" y="330" width="150" height="30" as="geometry" />
+          <mxGeometry x="339" y="370" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ZPjEkWGmV2tCZZptJfDr-41" value="&lt;span style=&quot;font-weight: 400&quot;&gt;ssn:Property&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry y="90" width="150" height="30" as="geometry" />
@@ -126,21 +126,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="ZPjEkWGmV2tCZZptJfDr-46" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:Barcode&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
-          <mxGeometry x="649" y="290" width="150" height="30" as="geometry" />
+          <mxGeometry x="649" y="330" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ZPjEkWGmV2tCZZptJfDr-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-46" target="ZPjEkWGmV2tCZZptJfDr-29" edge="1">
+        <mxCell id="ZPjEkWGmV2tCZZptJfDr-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="ZPjEkWGmV2tCZZptJfDr-46" target="0waSsI7NUh45174Zp9q3-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="659" y="195" as="sourcePoint" />
-            <mxPoint x="499" y="195" as="targetPoint" />
+            <mxPoint x="720" y="250" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="ZPjEkWGmV2tCZZptJfDr-48" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="ZPjEkWGmV2tCZZptJfDr-47" vertex="1" connectable="0">
           <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
-            <mxPoint x="-1" y="-2" as="offset" />
+            <mxPoint x="18" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="ZPjEkWGmV2tCZZptJfDr-52" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="559" y="303" as="geometry" />
+          <mxGeometry x="559" y="343" as="geometry" />
         </mxCell>
         <mxCell id="ZPjEkWGmV2tCZZptJfDr-53" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:MarkerDictionary&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="339" y="90" width="150" height="30" as="geometry" />
@@ -183,10 +183,10 @@
           <mxGeometry x="129" y="210" width="201" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1Ya3VmGurWaEj4DGSfTz-11" value="&lt;span style=&quot;font-weight: 400; font-size: 10px;&quot;&gt;fidmark:MarkerPoseEstimation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="150" y="250" width="180" height="30" as="geometry" />
+          <mxGeometry x="150" y="290" width="180" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1Ya3VmGurWaEj4DGSfTz-12" value="&lt;span style=&quot;font-weight: 400; font-size: 10px;&quot;&gt;fidmark:MarkerlessPoseEstimation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" parent="1" vertex="1">
-          <mxGeometry x="150" y="290" width="180" height="30" as="geometry" />
+          <mxGeometry x="150" y="330" width="180" height="30" as="geometry" />
         </mxCell>
         <mxCell id="1Ya3VmGurWaEj4DGSfTz-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="1Ya3VmGurWaEj4DGSfTz-12" target="1Ya3VmGurWaEj4DGSfTz-10" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -229,10 +229,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="gZBrB4sUzZnaTctpq4KN-7" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;rotation=90;fontSize=9;" parent="1" vertex="1" connectable="0">
-          <mxGeometry x="122" y="290" as="geometry" />
+          <mxGeometry x="122" y="305" as="geometry" />
         </mxCell>
         <mxCell id="gZBrB4sUzZnaTctpq4KN-8" value="&lt;span style=&quot;font-weight: 400; font-size: 12px;&quot;&gt;fidmark:MarkerDetection&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="150" y="330" width="180" height="30" as="geometry" />
+          <mxGeometry x="150" y="370" width="180" height="30" as="geometry" />
         </mxCell>
         <mxCell id="gZBrB4sUzZnaTctpq4KN-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="gZBrB4sUzZnaTctpq4KN-8" target="gZBrB4sUzZnaTctpq4KN-4" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -286,20 +286,37 @@
         <mxCell id="gZBrB4sUzZnaTctpq4KN-41" value="fidmark:DICT_ARUCO_ORIGINAL" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;fontFamily=Inconsolata;" parent="1" vertex="1">
           <mxGeometry x="240" y="860" width="190" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="uxe74oTkdHLyFUuFVSrc-1" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:CircularBarcode&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="uxe74oTkdHLyFUuFVSrc-1" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:CircularBarcode&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="40" y="480" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="uxe74oTkdHLyFUuFVSrc-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;endArrow=open;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="uxe74oTkdHLyFUuFVSrc-1" target="uxe74oTkdHLyFUuFVSrc-3">
+        <mxCell id="uxe74oTkdHLyFUuFVSrc-2" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;endArrow=open;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="uxe74oTkdHLyFUuFVSrc-1" target="uxe74oTkdHLyFUuFVSrc-3" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="400" y="495" as="targetPoint" />
             <mxPoint x="200" y="445" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="uxe74oTkdHLyFUuFVSrc-3" value="&lt;span style=&quot;font-weight: 400; font-size: 10px;&quot;&gt;xsd:integer&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" vertex="1" parent="1">
+        <mxCell id="uxe74oTkdHLyFUuFVSrc-3" value="&lt;span style=&quot;font-weight: 400; font-size: 10px;&quot;&gt;xsd:integer&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="409" y="485" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="uxe74oTkdHLyFUuFVSrc-4" value="fidmark:crowns" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=11;" vertex="1" connectable="0" parent="1">
+        <mxCell id="uxe74oTkdHLyFUuFVSrc-4" value="fidmark:crowns" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=11;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="270.00353541872323" y="494.00018285468786" as="geometry" />
+        </mxCell>
+        <mxCell id="0waSsI7NUh45174Zp9q3-1" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:PassiveMarker&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+          <mxGeometry x="649" y="250" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0waSsI7NUh45174Zp9q3-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="0waSsI7NUh45174Zp9q3-1" target="ZPjEkWGmV2tCZZptJfDr-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="734" y="340" as="sourcePoint" />
+            <mxPoint x="734" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0waSsI7NUh45174Zp9q3-3" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="0waSsI7NUh45174Zp9q3-2">
+          <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
+            <mxPoint x="18" y="5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0waSsI7NUh45174Zp9q3-4" value="&lt;span style=&quot;font-weight: 400; font-size: 12px;&quot;&gt;fidmark:MarkerPoseEstimation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="460" y="630" width="180" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

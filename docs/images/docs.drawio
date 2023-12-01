@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-11-29T17:20:14.136Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="SsiHt2wWOXaZC66wsQgf" version="22.1.2" type="device" pages="2">
+<mxfile host="Electron" modified="2023-12-01T12:45:35.274Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.0 Chrome/114.0.5735.289 Electron/25.8.3 Safari/537.36" etag="Q5HEkm1mYBWT0eVllvGg" version="22.0.0" type="device" pages="2">
   <diagram name="Page-1" id="ylHgLPsrtK1L2cb60V36">
-    <mxGraphModel dx="1418" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -59,7 +59,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="P2Bpmq_uOMs_CDguxbq2" name="Page-2">
-    <mxGraphModel dx="1418" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1038" dy="608" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -301,22 +301,105 @@
         <mxCell id="uxe74oTkdHLyFUuFVSrc-4" value="fidmark:crowns" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=11;" parent="1" vertex="1" connectable="0">
           <mxGeometry x="270.00353541872323" y="494.00018285468786" as="geometry" />
         </mxCell>
-        <mxCell id="0waSsI7NUh45174Zp9q3-1" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:PassiveMarker&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" parent="1">
+        <mxCell id="0waSsI7NUh45174Zp9q3-1" value="&lt;span style=&quot;font-weight: 400;&quot;&gt;fidmark:PassiveMarker&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="1" vertex="1">
           <mxGeometry x="649" y="250" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="0waSsI7NUh45174Zp9q3-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="0waSsI7NUh45174Zp9q3-1" target="ZPjEkWGmV2tCZZptJfDr-29">
+        <mxCell id="0waSsI7NUh45174Zp9q3-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="0waSsI7NUh45174Zp9q3-1" target="ZPjEkWGmV2tCZZptJfDr-29" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="734" y="340" as="sourcePoint" />
             <mxPoint x="734" y="290" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="0waSsI7NUh45174Zp9q3-3" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" vertex="1" connectable="0" parent="0waSsI7NUh45174Zp9q3-2">
+        <mxCell id="0waSsI7NUh45174Zp9q3-3" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;" parent="0waSsI7NUh45174Zp9q3-2" vertex="1" connectable="0">
           <mxGeometry x="-0.0125" y="2" relative="1" as="geometry">
             <mxPoint x="18" y="5" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="0waSsI7NUh45174Zp9q3-4" value="&lt;span style=&quot;font-weight: 400; font-size: 12px;&quot;&gt;fidmark:MarkerPoseEstimation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=12;" vertex="1" parent="1">
+        <mxCell id="0waSsI7NUh45174Zp9q3-4" value="&lt;span style=&quot;font-weight: 400; font-size: 12px;&quot;&gt;fidmark:MarkerPoseEstimation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=12;" parent="1" vertex="1">
           <mxGeometry x="460" y="630" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="VAzYTu5SjYKg5D5ojFly-1" target="pVOy424uFvAdKChK5SMU-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VAzYTu5SjYKg5D5ojFly-1" value="fidmark:PnPPoseComputation&lt;br&gt;&lt;i style=&quot;font-size: 10px; font-weight: 400;&quot;&gt;&quot;&lt;/i&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;&lt;i&gt;Perspective-n-Point (PnP) pose computation&quot;&lt;/i&gt;&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="150" y="960" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VAzYTu5SjYKg5D5ojFly-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" source="VAzYTu5SjYKg5D5ojFly-1" edge="1" target="pVOy424uFvAdKChK5SMU-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="248" y="1090" as="sourcePoint" />
+            <mxPoint x="148" y="870" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="95" y="975" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-1" value="&lt;span style=&quot;font-weight: 400; font-size: 11px;&quot;&gt;poso:PositioningTechnique&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="19" y="920" width="151" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-5" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=11;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="94.5" y="982" as="geometry" />
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-6" value="fidmark:AP3PPoseComputation&lt;br&gt;&lt;i style=&quot;font-size: 10px; font-weight: 400;&quot;&gt;&quot;&lt;/i&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;i&gt;Algebraic Perspective-Three-Point (AP3P) pose computation&lt;/i&gt;&lt;/span&gt;&lt;i style=&quot;font-weight: 400; background-color: initial;&quot;&gt;&quot;&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="329" y="1000" width="301" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="pVOy424uFvAdKChK5SMU-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="243" y="1045" as="sourcePoint" />
+            <mxPoint x="269" y="990" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="269" y="1015" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-10" value="fidmark:IPPEPoseComputation&lt;br&gt;&lt;i style=&quot;font-size: 10px; font-weight: 400;&quot;&gt;&quot;&lt;/i&gt;&lt;i style=&quot;background-color: initial; font-weight: normal;&quot;&gt;Infinitesimal Plane-Based Pose Estimation (IPPE)&quot;&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="329" y="1040" width="301" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-11" value="..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;opacity=70;" vertex="1" parent="1">
+          <mxGeometry x="329" y="1080" width="301" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="pVOy424uFvAdKChK5SMU-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="318.5" y="1095" as="sourcePoint" />
+            <mxPoint x="269" y="990" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="269" y="1095" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="pVOy424uFvAdKChK5SMU-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="309" y="1055" as="sourcePoint" />
+            <mxPoint x="269" y="990" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="269" y="1055" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-16" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=11;rotation=90;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="258" y="1040" as="geometry">
+            <mxPoint x="6" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-17" value="fidmark:PoseOutput" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffff88;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="39.5" y="1080" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-19" value="ssn:hasOutput" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;rotation=90;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="201" y="1043" as="geometry" />
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-20" value="&lt;span style=&quot;font-weight: 400; font-size: 11px;&quot;&gt;ssn:Output&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;shadow=0;fontStyle=1;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="39.5" y="1000" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" target="pVOy424uFvAdKChK5SMU-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="95" y="1080" as="sourcePoint" />
+            <mxPoint x="105" y="1055" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="95" y="1080" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pVOy424uFvAdKChK5SMU-22" value="rdfs:subClassOf" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontFamily=Inconsolata;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DInconsolata;fontSize=11;" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="94.5" y="1058" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

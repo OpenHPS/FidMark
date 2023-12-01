@@ -13,6 +13,8 @@
 - `/website/`: Generated documentation
 - `/docs/`: Documentation and images
 - `/examples/`: Ontology examples and demonstrator(s) 
+    - `/examples/eswc2024`: Work in progress AR application from RDF data
+    - `/examples/eswc2024_generator`: Generator for test data used for the SPARQL queries
 - `/dependencies/`: Dependendency ontology for Protege caching
 
 ## Methodology
