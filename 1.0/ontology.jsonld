@@ -375,6 +375,15 @@
 }, {
   "@id" : "http://purl.org/fidmark/CCTag",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/fidmark/color" : [ {
+    "@value" : "Monochrome"
+  } ],
+  "http://purl.org/fidmark/encoding" : [ {
+    "@value" : "Topological"
+  } ],
+  "http://purl.org/fidmark/shape" : [ {
+    "@value" : "Circular"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
     "@value" : "CCTag markers are a robust, highly accurate fiducial system that can be robustly localized in the image even under challenging conditions. The library can efficiently detect the position of the image of the (common) circle center and identify the marker based on the different ratio of their crown sizes. Each marker can be uniquely identified thanks to the thickness of each crown, which encodes the information of the marker, typically a unique ID."
@@ -1238,9 +1247,27 @@
 }, {
   "@id" : "http://purl.org/fidmark/FourierTag",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/fidmark/color" : [ {
+    "@value" : "Gradient"
+  } ],
+  "http://purl.org/fidmark/encoding" : [ {
+    "@value" : "Amplitude spectrum"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "Circular"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "a synthetic fiducial marker used to visually encode information and provide controllable positioning. The Fourier tag is a synthetic target akin to a bar-code that specifies multi-bit information which can be efficiently and robustly detected in an image. Moreover, the Fourier tag has the beneficial property that the bit string it encodes has variable length as a function of the distance between the camera and the target. This follows from the fact that the effective resolution decreases as an effect of perspective."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "https://ieeexplore.ieee.org/document/4228536"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "FourierTag"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@value" : "https://github.com/anqixu/ftag2"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://purl.org/fidmark/CircularBarcode"
@@ -1549,6 +1576,21 @@
 }, {
   "@id" : "http://purl.org/fidmark/RuneTag",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/fidmark/color" : [ {
+    "@value" : "Monochrome"
+  } ],
+  "http://purl.org/fidmark/encoding" : [ {
+    "@value" : "Topological"
+  } ],
+  "http://purl.org/fidmark/shape" : [ {
+    "@value" : "Circular"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "RUNETag is a fiducial marker system which heavily relies on the robust framework of cyclic codes to offer superior occlusion resilience, accurate detection and robustness against various types of noise.\nOur tags are composed by a set of circular high-contrast features (dots) spatially arranged into concentric layers. The reciprocal dot positions between layers is studied to allow the identification and pose estimation of the marker even with severe occlusions. Additionally, the marker interior is left free for any additional user payload."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@value" : "https://github.com/artursg/RUNEtag"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "RuneTag"
@@ -1601,7 +1643,7 @@
     "@value" : "Monochrome"
   } ],
   "http://purl.org/fidmark/encoding" : [ {
-    "@value" : "Topological and geometrical"
+    "@value" : "Topological"
   } ],
   "http://purl.org/fidmark/shape" : [ {
     "@value" : "Varies"
@@ -1636,6 +1678,14 @@
 }, {
   "@id" : "http://purl.org/fidmark/WhyCode",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/fidmark/color" : [ {
+    "@value" : "Monochrome"
+  }, {
+    "@value" : "Topological"
+  } ],
+  "http://purl.org/fidmark/shape" : [ {
+    "@value" : "Circular"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "https://dl.acm.org/doi/10.1145/3161534.3161537"
   } ],

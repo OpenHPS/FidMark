@@ -590,6 +590,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/CCTag">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/CircularBarcode"/>
+        <color>Monochrome</color>
+        <encoding>Topological</encoding>
+        <shape>Circular</shape>
         <rdfs:comment xml:lang="en">CCTag markers are a robust, highly accurate fiducial system that can be robustly localized in the image even under challenging conditions. The library can efficiently detect the position of the image of the (common) circle center and identify the marker based on the different ratio of their crown sizes. Each marker can be uniquely identified thanks to the thickness of each crown, which encodes the information of the marker, typically a unique ID.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://cctag.readthedocs.io/en/latest/"/>
         <rdfs:label xml:lang="en">CCTag</rdfs:label>
@@ -686,7 +689,13 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/FourierTag">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/CircularBarcode"/>
+        <color>Gradient</color>
+        <encoding>Amplitude spectrum</encoding>
+        <opencvName>Circular</opencvName>
+        <rdfs:comment>a synthetic fiducial marker used to visually encode information and provide controllable positioning. The Fourier tag is a synthetic target akin to a bar-code that specifies multi-bit information which can be efficiently and robustly detected in an image. Moreover, the Fourier tag has the beneficial property that the bit string it encodes has variable length as a function of the distance between the camera and the target. This follows from the fact that the effective resolution decreases as an effect of perspective.</rdfs:comment>
+        <rdfs:isDefinedBy>https://ieeexplore.ieee.org/document/4228536</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">FourierTag</rdfs:label>
+        <rdfs:seeAlso>https://github.com/anqixu/ftag2</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -872,6 +881,12 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/RuneTag">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/CircularBarcode"/>
+        <color>Monochrome</color>
+        <encoding>Topological</encoding>
+        <shape>Circular</shape>
+        <rdfs:comment>RUNETag is a fiducial marker system which heavily relies on the robust framework of cyclic codes to offer superior occlusion resilience, accurate detection and robustness against various types of noise.
+Our tags are composed by a set of circular high-contrast features (dots) spatially arranged into concentric layers. The reciprocal dot positions between layers is studied to allow the identification and pose estimation of the marker even with severe occlusions. Additionally, the marker interior is left free for any additional user payload.</rdfs:comment>
+        <rdfs:isDefinedBy>https://github.com/artursg/RUNEtag</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">RuneTag</rdfs:label>
     </owl:Class>
     
@@ -915,7 +930,7 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
     <owl:Class rdf:about="http://purl.org/fidmark/TopoTag">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/Barcode2D"/>
         <color>Monochrome</color>
-        <encoding>Topological and geometrical</encoding>
+        <encoding>Topological</encoding>
         <shape>Varies</shape>
         <rdfs:comment xml:lang="en">Fiducial markers have been playing an important role in augmented reality (AR), robot navigation, and general applications where the relative pose between a camera and an object is required. Here we introduce TopoTag, a robust and scalable topological fiducial marker system, which supports reliable and accurate pose estimation from a single image. TopoTag uses topological and geometrical information in marker detection to achieve higher robustness. Topological information is extensively used for 2D marker detection, and further corresponding geometrical information for ID decoding. Robust 3D pose estimation is achieved by taking advantage of all TopoTag vertices. Without sacrificing bits for higher recall and precision like previous systems, TopoTag can use full bits for ID encoding. TopoTag supports tens of thousands unique IDs and easily extends to millions of unique tags resulting in massive scalability.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://herohuyongtao.github.io/research/publications/topo-tag/"/>
@@ -940,6 +955,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
 
     <owl:Class rdf:about="http://purl.org/fidmark/WhyCode">
         <rdfs:subClassOf rdf:resource="http://purl.org/fidmark/CircularBarcode"/>
+        <color>Monochrome</color>
+        <color>Topological</color>
+        <shape>Circular</shape>
         <rdfs:isDefinedBy rdf:resource="https://dl.acm.org/doi/10.1145/3161534.3161537"/>
         <rdfs:label xml:lang="en">WhyCode</rdfs:label>
     </owl:Class>
