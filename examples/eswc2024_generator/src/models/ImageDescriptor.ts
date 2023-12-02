@@ -26,7 +26,7 @@ export class ImageDescriptor {
 
     @SerializableMember({
         rdf: {
-            predicate: fidmark.asNFT,
+            predicate: fidmark.asPATT,
             datatype: xsd.anyURI
         }
     })

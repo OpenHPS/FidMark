@@ -96,7 +96,7 @@ export const Barcode2D: OwlClass = 'http://purl.org/fidmark/Barcode2D';
 /**
  * ARToolKit
  * 
- * 
+ * ARToolKit is an open-source computer tracking library for creation of strong augmented reality applications that overlay virtual imagery on the real world. Currently, it is maintained as an open-source project hosted on GitHub. ARToolKit is a very widely used AR tracking library with over 160,000 downloads on its last public release in 2004.
  *
  * http://purl.org/fidmark/ARToolKit
  */
@@ -530,6 +530,15 @@ export const asImage: OwlDatatypeProperty = 'http://purl.org/fidmark/asImage';
 export const asNFT: OwlDatatypeProperty = 'http://purl.org/fidmark/asNFT';
 
 /**
+ * as pattern
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/asPATT
+ */
+export const asPATT: OwlDatatypeProperty = 'http://purl.org/fidmark/asPATT';
+
+/**
  * as ZFT
  * 
  * 
@@ -539,7 +548,7 @@ export const asNFT: OwlDatatypeProperty = 'http://purl.org/fidmark/asNFT';
 export const asZFT: OwlDatatypeProperty = 'http://purl.org/fidmark/asZFT';
 
 /**
- * 
+ * CRC
  * 
  * 
  *
@@ -674,6 +683,150 @@ export const shape: OtherIndividual = 'http://purl.org/fidmark/shape';
 export const supportedMarker: OtherIndividual = 'http://purl.org/fidmark/supportedMarker';
 
 /**
+ * ArUco 4x4 dictionary with 100 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_4X4_100
+ */
+export const DICT_4X4_100: OtherIndividual = 'http://purl.org/fidmark/DICT_4X4_100';
+
+/**
+ * ArUco 4x4 dictionary with 1000 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_4X4_1000
+ */
+export const DICT_4X4_1000: OtherIndividual = 'http://purl.org/fidmark/DICT_4X4_1000';
+
+/**
+ * ArUco 4x4 dictionary with 250 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_4X4_250
+ */
+export const DICT_4X4_250: OtherIndividual = 'http://purl.org/fidmark/DICT_4X4_250';
+
+/**
+ * ArUco 4x4 dictionary with 50 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_4X4_50
+ */
+export const DICT_4X4_50: OtherIndividual = 'http://purl.org/fidmark/DICT_4X4_50';
+
+/**
+ * ArUco 5x5 dictionary with 100 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_5X5_100
+ */
+export const DICT_5X5_100: OtherIndividual = 'http://purl.org/fidmark/DICT_5X5_100';
+
+/**
+ * ArUco 5x5 dictionary with 1000 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_5X5_1000
+ */
+export const DICT_5X5_1000: OtherIndividual = 'http://purl.org/fidmark/DICT_5X5_1000';
+
+/**
+ * ArUco 5x5 dictionary with 250 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_5X5_250
+ */
+export const DICT_5X5_250: OtherIndividual = 'http://purl.org/fidmark/DICT_5X5_250';
+
+/**
+ * ArUco 5x5 dictionary with 50 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_5X5_50
+ */
+export const DICT_5X5_50: OtherIndividual = 'http://purl.org/fidmark/DICT_5X5_50';
+
+/**
+ * ArUco 6x6 dictionary with 100 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_6X6_100
+ */
+export const DICT_6X6_100: OtherIndividual = 'http://purl.org/fidmark/DICT_6X6_100';
+
+/**
+ * ArUco 6x6 dictionary with 1000 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_6X6_1000
+ */
+export const DICT_6X6_1000: OtherIndividual = 'http://purl.org/fidmark/DICT_6X6_1000';
+
+/**
+ * ArUco 6x6 dictionary with 250 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_6X6_250
+ */
+export const DICT_6X6_250: OtherIndividual = 'http://purl.org/fidmark/DICT_6X6_250';
+
+/**
+ * ArUco 6x6 dictionary with 50 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_6X6_50
+ */
+export const DICT_6X6_50: OtherIndividual = 'http://purl.org/fidmark/DICT_6X6_50';
+
+/**
+ * ArUco 7x7 dictionary with 100 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_7X7_100
+ */
+export const DICT_7X7_100: OtherIndividual = 'http://purl.org/fidmark/DICT_7X7_100';
+
+/**
+ * ArUco 7x7 dictionary with 1000 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_7X7_1000
+ */
+export const DICT_7X7_1000: OtherIndividual = 'http://purl.org/fidmark/DICT_7X7_1000';
+
+/**
+ * ArUco 7x7 dictionary with 250 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_7X7_250
+ */
+export const DICT_7X7_250: OtherIndividual = 'http://purl.org/fidmark/DICT_7X7_250';
+
+/**
+ * ArUco 7x7 dictionary with 50 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_7X7_50
+ */
+export const DICT_7X7_50: OtherIndividual = 'http://purl.org/fidmark/DICT_7X7_50';
+
+/**
  * AprilTag 16h5 dictionary
  * 
  * 
@@ -710,159 +863,6 @@ export const DICT_APRILTAG_36h10: OtherIndividual = 'http://purl.org/fidmark/DIC
 export const DICT_APRILTAG_36h11: OtherIndividual = 'http://purl.org/fidmark/DICT_APRILTAG_36h11';
 
 /**
- * ArUco 4x4 dictionary with 100 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_4X4_100
- */
-export const DICT_ARUCO_4X4_100: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_4X4_100';
-
-/**
- * ArUco 4x4 dictionary with 1000 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_4X4_1000
- */
-export const DICT_ARUCO_4X4_1000: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_4X4_1000';
-
-/**
- * ArUco 4x4 dictionary with 250 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_4X4_250
- */
-export const DICT_ARUCO_4X4_250: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_4X4_250';
-
-/**
- * ArUco 4x4 dictionary with 50 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_4X4_50
- */
-export const DICT_ARUCO_4X4_50: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_4X4_50';
-
-/**
- * ArUco 5x5 dictionary with 100 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_5X5_100
- */
-export const DICT_ARUCO_5X5_100: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_5X5_100';
-
-/**
- * ArUco 5x5 dictionary with 1000 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_5X5_1000
- */
-export const DICT_ARUCO_5X5_1000: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_5X5_1000';
-
-/**
- * ArUco 5x5 dictionary with 250 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_5X5_250
- */
-export const DICT_ARUCO_5X5_250: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_5X5_250';
-
-/**
- * ArUco 5x5 dictionary with 50 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_5X5_50
- */
-export const DICT_ARUCO_5X5_50: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_5X5_50';
-
-/**
- * ArUco 6x6 dictionary with 100 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_6X6_100
- */
-export const DICT_ARUCO_6X6_100: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_6X6_100';
-
-/**
- * ArUco 6x6 dictionary with 1000 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_6X6_1000
- */
-export const DICT_ARUCO_6X6_1000: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_6X6_1000';
-
-/**
- * ArUco 6x6 dictionary with 250 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_6X6_250
- */
-export const DICT_ARUCO_6X6_250: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_6X6_250';
-
-/**
- * ArUco 6x6 dictionary with 50 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_6X6_50
- */
-export const DICT_ARUCO_6X6_50: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_6X6_50';
-
-/**
- * ArUco 7x7 dictionary with 100 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_7X7_100
- */
-export const DICT_ARUCO_7X7_100: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_7X7_100';
-
-/**
- * ArUco 7x7 dictionary with 1000 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_7X7_1000
- */
-export const DICT_ARUCO_7X7_1000: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_7X7_1000';
-
-/**
- * ArUco 7x7 dictionary with 250 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_7X7_250
- */
-export const DICT_ARUCO_7X7_250: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_7X7_250';
-
-/**
- * ArUco 7x7 dictionary with 50 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_7X7_50
- */
-export const DICT_ARUCO_7X7_50: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_7X7_50';
-
-/**
- * ArUco MIP 36h12 dictionary
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_ARUCO_MIP_36h12
- */
-export const DICT_ARUCO_MIP_36h12: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_MIP_36h12';
-
-/**
  * ArUco original dictionary
  * 
  * 
@@ -879,6 +879,15 @@ export const DICT_ARUCO_ORIGINAL: OtherIndividual = 'http://purl.org/fidmark/DIC
  * http://purl.org/fidmark/DICT_CHILLITAGS
  */
 export const DICT_CHILLITAGS: OtherIndividual = 'http://purl.org/fidmark/DICT_CHILLITAGS';
+
+/**
+ * ArUco MIP 36h12 dictionary
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_MIP_36h12
+ */
+export const DICT_MIP_36h12: OtherIndividual = 'http://purl.org/fidmark/DICT_MIP_36h12';
 
 /**
  * reacTIVision amoeba symbology

@@ -13,13 +13,13 @@
 @prefix fidmark: <http://purl.org/fidmark/>.
 
 example:marker-1 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:12:03.313Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.585Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:12:03.313Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.585Z"^^xsd:dateTime;
   poso:hasOrientation [
   a poso:Orientation;
-  dcmi:created "2023-12-02T16:12:03.313Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.585Z"^^xsd:dateTime;
   poso:yaw 26.772757919197186;
   poso:pitch 20.097627797692653;
   poso:roll 11.831161447369514;
@@ -61,13 +61,13 @@ example:marker-1 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
 ].
 fidmark:DICT_4X4_250 a fidmark:MarkerDictionary.
 example:marker-2 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:12:03.316Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.587Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:12:03.316Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.587Z"^^xsd:dateTime;
   poso:hasOrientation [
   a poso:Orientation;
-  dcmi:created "2023-12-02T16:12:03.316Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.587Z"^^xsd:dateTime;
   poso:yaw 26.772757919197186;
   poso:pitch 20.097627797692653;
   poso:roll 11.831161447369514;
@@ -108,13 +108,13 @@ example:marker-2 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
   qudt:numericValue "4"^^xsd:double
 ].
 example:marker-3 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:12:03.317Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.588Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:12:03.317Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.588Z"^^xsd:dateTime;
   poso:hasOrientation [
   a poso:Orientation;
-  dcmi:created "2023-12-02T16:12:03.317Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.588Z"^^xsd:dateTime;
   poso:yaw 26.772757919197186;
   poso:pitch 20.097627797692653;
   poso:roll 11.831161447369514;
@@ -155,13 +155,13 @@ example:marker-3 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
   qudt:numericValue "4"^^xsd:double
 ].
 example:marker-4 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
-    dcmi:created "2023-12-02T16:12:03.318Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:12:03.318Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
   poso:hasOrientation [
   a poso:Orientation;
-  dcmi:created "2023-12-02T16:12:03.318Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
   poso:yaw 26.772757919197186;
   poso:pitch 20.097627797692653;
   poso:roll 11.831161447369514;
@@ -201,13 +201,13 @@ example:marker-4 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
   qudt:numericValue "5"^^xsd:double
 ].
 example:marker-5 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
-    dcmi:created "2023-12-02T16:12:03.319Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:12:03.319Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
   poso:hasOrientation [
   a poso:Orientation;
-  dcmi:created "2023-12-02T16:12:03.319Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
   poso:yaw 26.772757919197186;
   poso:pitch 20.097627797692653;
   poso:roll 11.831161447369514;
@@ -247,13 +247,13 @@ example:marker-5 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
   qudt:numericValue "5"^^xsd:double
 ].
 example:marker-6 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
-    dcmi:created "2023-12-02T16:12:03.319Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:12:03.319Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime;
   poso:hasOrientation [
   a poso:Orientation;
-  dcmi:created "2023-12-02T16:12:03.319Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime;
   poso:yaw 26.772757919197186;
   poso:pitch 20.097627797692653;
   poso:roll 11.831161447369514;
@@ -293,7 +293,7 @@ example:marker-6 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
   qudt:numericValue "5"^^xsd:double
 ].
 example:marker-hiro a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:FiducialMarker;
-    dcmi:created "2023-12-02T16:12:03.320Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime;
     fidmark:hasHeight [
   a qudt:QuantityValue;
   qudt:unit unit:CentiM;
@@ -310,14 +310,14 @@ example:marker-hiro a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:Fiducia
   fidmark:asPATT "https://arprojectsdemo.netlify.app/data/hiro.patt"^^xsd:anyURI
 ].
 example:virtualobject-1 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:12:03.320Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.320Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
   poso:isRelativeTo example:marker-1
 ], [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.320Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -336,14 +336,14 @@ example:virtualobject-1 a sosa:FeatureOfInterest, ogc:SpatialObject;
   poso:isRelativeTo example:marker-1
 ].
 example:virtualobject-2 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:12:03.320Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.320Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
   poso:isRelativeTo example:marker-2
 ], [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.320Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -362,14 +362,14 @@ example:virtualobject-2 a sosa:FeatureOfInterest, ogc:SpatialObject;
   poso:isRelativeTo example:marker-2
 ].
 example:virtualobject-3 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:12:03.320Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.320Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
   poso:isRelativeTo example:marker-3
 ], [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.320Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -388,14 +388,14 @@ example:virtualobject-3 a sosa:FeatureOfInterest, ogc:SpatialObject;
   poso:isRelativeTo example:marker-3
 ].
 example:virtualobject-4 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:12:03.321Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.321Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
   poso:isRelativeTo example:marker-4
 ], [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.321Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -414,14 +414,14 @@ example:virtualobject-4 a sosa:FeatureOfInterest, ogc:SpatialObject;
   poso:isRelativeTo example:marker-4
 ].
 example:virtualobject-5 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:12:03.321Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.321Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
   poso:isRelativeTo example:marker-5
 ], [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.321Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
@@ -440,14 +440,14 @@ example:virtualobject-5 a sosa:FeatureOfInterest, ogc:SpatialObject;
   poso:isRelativeTo example:marker-5
 ].
 example:virtualobject-6 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:12:03.321Z"^^xsd:dateTime;
+    dcmi:created "2023-12-02T16:08:39.592Z"^^xsd:dateTime;
     poso:hasPosition [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.321Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.592Z"^^xsd:dateTime;
   poso:isRelativeTo example:marker-6
 ], [
   a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:12:03.321Z"^^xsd:dateTime;
+  dcmi:created "2023-12-02T16:08:39.592Z"^^xsd:dateTime;
   poso:xAxisValue [
   a qudt:QuantityValue;
   qudt:unit unit:M;
