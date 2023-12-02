@@ -9,7 +9,6 @@
 <http://purl.org/fidmark/> rdf:type owl:Ontology ;
                             owl:versionIRI <http://purl.org/fidmark/1.0/> ;
                             owl:imports <http://purl.org/poso/1.0/> ;
-                            <http://purl.org/dc/terms/abstract> "Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information."@en ;
                             <http://purl.org/dc/terms/bibliographicCitation> "Maxim Van de Wynckel, Isaac Valadez and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers"@en ;
                             <http://purl.org/dc/terms/contributor> "Beat Signer"@en ;
                             <http://purl.org/dc/terms/creator> "Isaac Valadez"@en ,
@@ -153,6 +152,11 @@
        rdfs:label "as NFT"@en .
 
 
+###  http://purl.org/fidmark/asPATT
+:asPATT rdf:type owl:DatatypeProperty ;
+        rdfs:label "as pattern"@en .
+
+
 ###  http://purl.org/fidmark/asZFT
 :asZFT rdf:type owl:DatatypeProperty ;
        rdfs:domain :ImageDescriptor ;
@@ -163,7 +167,9 @@
 
 
 ###  http://purl.org/fidmark/crc
-:crc rdf:type owl:DatatypeProperty .
+:crc rdf:type owl:DatatypeProperty ;
+     rdfs:comment ""@en ;
+     rdfs:label "CRC"@en .
 
 
 ###  http://purl.org/fidmark/crowns
@@ -270,6 +276,8 @@
 ###  http://purl.org/fidmark/ARToolKit
 :ARToolKit rdf:type owl:Class ;
            rdfs:subClassOf :Barcode ;
+           rdfs:comment "ARToolKit is an open-source computer tracking library for creation of strong augmented reality applications that overlay virtual imagery on the real world. Currently, it is maintained as an open-source project hosted on GitHub. ARToolKit is a very widely used AR tracking library with over 160,000 downloads on its last public release in 2004."@en ;
+           rdfs:isDefinedBy <https://dbpedia.org/resource/ARToolKit> ;
            rdfs:label "ARToolKit"@en .
 
 
@@ -377,7 +385,6 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
      rdfs:subClassOf :Barcode1D ,
                      :CircularBarcode ;
      :color "Monochrome" ;
-     :encoding "Not supported" ;
      :shape "Circular" ;
      rdfs:comment "A CCC is formed by placing a black ring on a white background. A CCC can also be thought of as a small white circle whose center is coincident with the center of a larger black circle, all on a white background. CCCs can be easily manufactured, it is easily extracted from the image, its extrtion is robust, it is a passive feature, and its centroid is completely invariant to the three translational and one rotational degrees of freedom and nearly invariant to the remaining two rotational degrees of freedom." ;
      rdfs:isDefinedBy <https://doi.org/10.1117/12.56761> ;
@@ -683,6 +690,183 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
 #    Individuals
 #################################################################
 
+###  http://purl.org/fidmark/DICT_4X4_100
+:DICT_4X4_100 rdf:type owl:NamedIndividual ,
+                       :MarkerDictionary ;
+              :hammingDistance 3 ;
+              :markerBits 16 ;
+              :maxIdentifiers 100 ;
+              :opencvName "DICT_4X4_100" ;
+              :supportedMarker :ArUco ;
+              rdfs:label "ArUco 4x4 dictionary with 100 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_4X4_1000
+:DICT_4X4_1000 rdf:type owl:NamedIndividual ,
+                        :MarkerDictionary ;
+               :hammingDistance 2 ;
+               :markerBits 16 ;
+               :maxIdentifiers 1000 ;
+               :opencvName "DICT_4X4_1000" ;
+               :supportedMarker :ArUco ;
+               rdfs:label "ArUco 4x4 dictionary with 1000 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_4X4_250
+:DICT_4X4_250 rdf:type owl:NamedIndividual ,
+                       :MarkerDictionary ;
+              :hammingDistance 3 ;
+              :markerBits 16 ;
+              :maxIdentifiers 250 ;
+              :opencvName "DICT_4X4_250" ;
+              :supportedMarker :ArUco ;
+              rdfs:label "ArUco 4x4 dictionary with 250 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_4X4_50
+:DICT_4X4_50 rdf:type owl:NamedIndividual ,
+                      :MarkerDictionary ;
+             :hammingDistance 4 ;
+             :markerBits 16 ;
+             :maxIdentifiers 50 ;
+             :opencvName "DICT_4X4_50" ;
+             :supportedMarker :ArUco ;
+             rdfs:label "ArUco 4x4 dictionary with 50 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_5X5_100
+:DICT_5X5_100 rdf:type owl:NamedIndividual ,
+                       :MarkerDictionary ;
+              :hammingDistance 7 ;
+              :markerBits 25 ;
+              :maxIdentifiers 100 ;
+              :opencvName "DICT_5X5_100" ;
+              :supportedMarker :ArUco ;
+              rdfs:label "ArUco 5x5 dictionary with 100 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_5X5_1000
+:DICT_5X5_1000 rdf:type owl:NamedIndividual ,
+                        :MarkerDictionary ;
+               :hammingDistance 5 ;
+               :markerBits 25 ;
+               :maxIdentifiers 1000 ;
+               :opencvName "DICT_5X5_1000" ;
+               :supportedMarker :ArUco ;
+               rdfs:label "ArUco 5x5 dictionary with 1000 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_5X5_250
+:DICT_5X5_250 rdf:type owl:NamedIndividual ,
+                       :MarkerDictionary ;
+              :hammingDistance 6 ;
+              :markerBits 25 ;
+              :maxIdentifiers 250 ;
+              :opencvName "DICT_5X5_250" ;
+              :supportedMarker :ARTag ,
+                               :ArUco ;
+              rdfs:label "ArUco 5x5 dictionary with 250 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_5X5_50
+:DICT_5X5_50 rdf:type owl:NamedIndividual ,
+                      :MarkerDictionary ;
+             :hammingDistance 8 ;
+             :markerBits 25 ;
+             :maxIdentifiers 50 ;
+             :opencvName "DICT_5X5_50" ;
+             :supportedMarker :ArUco ;
+             rdfs:label "ArUco 5x5 dictionary with 50 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_6X6_100
+:DICT_6X6_100 rdf:type owl:NamedIndividual ,
+                       :MarkerDictionary ;
+              :hammingDistance 12 ;
+              :markerBits 36 ;
+              :maxIdentifiers 100 ;
+              :opencvName "DICT_6X6_100" ;
+              :supportedMarker :ArUco ;
+              rdfs:label "ArUco 6x6 dictionary with 100 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_6X6_1000
+:DICT_6X6_1000 rdf:type owl:NamedIndividual ,
+                        :MarkerDictionary ;
+               :hammingDistance 9 ;
+               :markerBits 36 ;
+               :maxIdentifiers 1000 ;
+               :opencvName "DICT_6X6_1000" ;
+               :supportedMarker :ArUco ;
+               rdfs:label "ArUco 6x6 dictionary with 1000 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_6X6_250
+:DICT_6X6_250 rdf:type owl:NamedIndividual ,
+                       :MarkerDictionary ;
+              :hammingDistance 11 ;
+              :markerBits 36 ;
+              :maxIdentifiers 250 ;
+              :opencvName "DICT_6X6_250" ;
+              :supportedMarker :ArUco ;
+              rdfs:label "ArUco 6x6 dictionary with 250 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_6X6_50
+:DICT_6X6_50 rdf:type owl:NamedIndividual ,
+                      :MarkerDictionary ;
+             :hammingDistance 13 ;
+             :markerBits 36 ;
+             :maxIdentifiers 50 ;
+             :opencvName "DICT_6X6_50" ;
+             :supportedMarker :ArUco ;
+             rdfs:label "ArUco 6x6 dictionary with 50 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_7X7_100
+:DICT_7X7_100 rdf:type owl:NamedIndividual ,
+                       :MarkerDictionary ;
+              :hammingDistance 18 ;
+              :markerBits 49 ;
+              :maxIdentifiers 100 ;
+              :opencvName "DICT_7X7_100" ;
+              :supportedMarker :ArUco ;
+              rdfs:label "ArUco 7x7 dictionary with 100 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_7X7_1000
+:DICT_7X7_1000 rdf:type owl:NamedIndividual ,
+                        :MarkerDictionary ;
+               :hammingDistance 14 ;
+               :markerBits 49 ;
+               :maxIdentifiers 1000 ;
+               :opencvName "DICT_7X7_1000" ;
+               :supportedMarker :ArUco ;
+               rdfs:label "ArUco 7x7 dictionary with 1000 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_7X7_250
+:DICT_7X7_250 rdf:type owl:NamedIndividual ,
+                       :MarkerDictionary ;
+              :hammingDistance 17 ;
+              :markerBits 49 ;
+              :maxIdentifiers 250 ;
+              :opencvName "DICT_7X7_250" ;
+              :supportedMarker :ArUco ;
+              rdfs:label "ArUco 7x7 dictionary with 250 tags"@en .
+
+
+###  http://purl.org/fidmark/DICT_7X7_50
+:DICT_7X7_50 rdf:type owl:NamedIndividual ,
+                      :MarkerDictionary ;
+             :hammingDistance 19 ;
+             :markerBits 49 ;
+             :maxIdentifiers 50 ;
+             :opencvName "DICT_7X7_50" ;
+             :supportedMarker :ArUco ;
+             rdfs:label "ArUco 7x7 dictionary with 50 tags"@en .
+
+
 ###  http://purl.org/fidmark/DICT_APRILTAG_16h5
 :DICT_APRILTAG_16h5 rdf:type owl:NamedIndividual ,
                              :MarkerDictionary ;
@@ -723,192 +907,6 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
                      rdfs:label "AprilTag 36h11 dictionary"@en .
 
 
-###  http://purl.org/fidmark/DICT_ARUCO_4X4_100
-:DICT_ARUCO_4X4_100 rdf:type owl:NamedIndividual ,
-                             :MarkerDictionary ;
-                    :hammingDistance 3 ;
-                    :markerBits 16 ;
-                    :maxIdentifiers 100 ;
-                    :opencvName "DICT_4X4_100" ;
-                    :supportedMarker :ArUco ;
-                    rdfs:label "ArUco 4x4 dictionary with 100 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_4X4_1000
-:DICT_ARUCO_4X4_1000 rdf:type owl:NamedIndividual ,
-                              :MarkerDictionary ;
-                     :hammingDistance 2 ;
-                     :markerBits 16 ;
-                     :maxIdentifiers 1000 ;
-                     :opencvName "DICT_4X4_1000" ;
-                     :supportedMarker :ArUco ;
-                     rdfs:label "ArUco 4x4 dictionary with 1000 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_4X4_250
-:DICT_ARUCO_4X4_250 rdf:type owl:NamedIndividual ,
-                             :MarkerDictionary ;
-                    :hammingDistance 3 ;
-                    :markerBits 16 ;
-                    :maxIdentifiers 250 ;
-                    :opencvName "DICT_4X4_250" ;
-                    :supportedMarker :ArUco ;
-                    rdfs:label "ArUco 4x4 dictionary with 250 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_4X4_50
-:DICT_ARUCO_4X4_50 rdf:type owl:NamedIndividual ,
-                            :MarkerDictionary ;
-                   :hammingDistance 4 ;
-                   :markerBits 16 ;
-                   :maxIdentifiers 50 ;
-                   :opencvName "DICT_4X4_50" ;
-                   :supportedMarker :ArUco ;
-                   rdfs:label "ArUco 4x4 dictionary with 50 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_5X5_100
-:DICT_ARUCO_5X5_100 rdf:type owl:NamedIndividual ,
-                             :MarkerDictionary ;
-                    :hammingDistance 7 ;
-                    :markerBits 25 ;
-                    :maxIdentifiers 100 ;
-                    :opencvName "DICT_5X5_100" ;
-                    :supportedMarker :ArUco ;
-                    rdfs:label "ArUco 5x5 dictionary with 100 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_5X5_1000
-:DICT_ARUCO_5X5_1000 rdf:type owl:NamedIndividual ,
-                              :MarkerDictionary ;
-                     :hammingDistance 5 ;
-                     :markerBits 25 ;
-                     :maxIdentifiers 1000 ;
-                     :opencvName "DICT_5X5_1000" ;
-                     :supportedMarker :ArUco ;
-                     rdfs:label "ArUco 5x5 dictionary with 1000 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_5X5_250
-:DICT_ARUCO_5X5_250 rdf:type owl:NamedIndividual ,
-                             :MarkerDictionary ;
-                    :hammingDistance 6 ;
-                    :markerBits 25 ;
-                    :maxIdentifiers 250 ;
-                    :opencvName "DICT_5X5_250" ;
-                    :supportedMarker :ArUco ;
-                    rdfs:label "ArUco 5x5 dictionary with 250 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_5X5_50
-:DICT_ARUCO_5X5_50 rdf:type owl:NamedIndividual ,
-                            :MarkerDictionary ;
-                   :hammingDistance 8 ;
-                   :markerBits 25 ;
-                   :maxIdentifiers 50 ;
-                   :opencvName "DICT_5X5_50" ;
-                   :supportedMarker :ArUco ;
-                   rdfs:label "ArUco 5x5 dictionary with 50 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_6X6_100
-:DICT_ARUCO_6X6_100 rdf:type owl:NamedIndividual ,
-                             :MarkerDictionary ;
-                    :hammingDistance 12 ;
-                    :markerBits 36 ;
-                    :maxIdentifiers 100 ;
-                    :opencvName "DICT_6X6_100" ;
-                    :supportedMarker :ArUco ;
-                    rdfs:label "ArUco 6x6 dictionary with 100 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_6X6_1000
-:DICT_ARUCO_6X6_1000 rdf:type owl:NamedIndividual ,
-                              :MarkerDictionary ;
-                     :hammingDistance 9 ;
-                     :markerBits 36 ;
-                     :maxIdentifiers 1000 ;
-                     :opencvName "DICT_6X6_1000" ;
-                     :supportedMarker :ArUco ;
-                     rdfs:label "ArUco 6x6 dictionary with 1000 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_6X6_250
-:DICT_ARUCO_6X6_250 rdf:type owl:NamedIndividual ,
-                             :MarkerDictionary ;
-                    :hammingDistance 11 ;
-                    :markerBits 36 ;
-                    :maxIdentifiers 250 ;
-                    :opencvName "DICT_6X6_250" ;
-                    :supportedMarker :ArUco ;
-                    rdfs:label "ArUco 6x6 dictionary with 250 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_6X6_50
-:DICT_ARUCO_6X6_50 rdf:type owl:NamedIndividual ,
-                            :MarkerDictionary ;
-                   :hammingDistance 13 ;
-                   :markerBits 36 ;
-                   :maxIdentifiers 50 ;
-                   :opencvName "DICT_6X6_50" ;
-                   :supportedMarker :ArUco ;
-                   rdfs:label "ArUco 6x6 dictionary with 50 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_7X7_100
-:DICT_ARUCO_7X7_100 rdf:type owl:NamedIndividual ,
-                             :MarkerDictionary ;
-                    :hammingDistance 18 ;
-                    :markerBits 49 ;
-                    :maxIdentifiers 100 ;
-                    :opencvName "DICT_7X7_100" ;
-                    :supportedMarker :ArUco ;
-                    rdfs:label "ArUco 7x7 dictionary with 100 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_7X7_1000
-:DICT_ARUCO_7X7_1000 rdf:type owl:NamedIndividual ,
-                              :MarkerDictionary ;
-                     :hammingDistance 14 ;
-                     :markerBits 49 ;
-                     :maxIdentifiers 1000 ;
-                     :opencvName "DICT_7X7_1000" ;
-                     :supportedMarker :ArUco ;
-                     rdfs:label "ArUco 7x7 dictionary with 1000 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_7X7_250
-:DICT_ARUCO_7X7_250 rdf:type owl:NamedIndividual ,
-                             :MarkerDictionary ;
-                    :hammingDistance 17 ;
-                    :markerBits 49 ;
-                    :maxIdentifiers 250 ;
-                    :opencvName "DICT_7X7_250" ;
-                    :supportedMarker :ArUco ;
-                    rdfs:label "ArUco 7x7 dictionary with 250 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_7X7_50
-:DICT_ARUCO_7X7_50 rdf:type owl:NamedIndividual ,
-                            :MarkerDictionary ;
-                   :hammingDistance 19 ;
-                   :markerBits 49 ;
-                   :maxIdentifiers 50 ;
-                   :opencvName "DICT_7X7_50" ;
-                   :supportedMarker :ArUco ;
-                   rdfs:label "ArUco 7x7 dictionary with 50 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_ARUCO_MIP_36h12
-:DICT_ARUCO_MIP_36h12 rdf:type owl:NamedIndividual ,
-                               :MarkerDictionary ;
-                      :hammingDistance 12 ;
-                      :markerBits 36 ;
-                      :maxIdentifiers 250 ;
-                      :supportedMarker :ArUco ;
-                      rdfs:label "ArUco MIP 36h12 dictionary"@en .
-
-
 ###  http://purl.org/fidmark/DICT_ARUCO_ORIGINAL
 :DICT_ARUCO_ORIGINAL rdf:type owl:NamedIndividual ,
                               :MarkerDictionary ;
@@ -924,6 +922,16 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
                           :MarkerDictionary ;
                  :supportedMarker :ChilliTags ;
                  rdfs:label "ChilliTags dictionary"@en .
+
+
+###  http://purl.org/fidmark/DICT_MIP_36h12
+:DICT_MIP_36h12 rdf:type owl:NamedIndividual ,
+                         :MarkerDictionary ;
+                :hammingDistance 12 ;
+                :markerBits 36 ;
+                :maxIdentifiers 250 ;
+                :supportedMarker :ArUco ;
+                rdfs:label "ArUco MIP 36h12 dictionary"@en .
 
 
 ###  http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA

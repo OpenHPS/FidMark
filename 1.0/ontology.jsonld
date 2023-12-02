@@ -55,10 +55,6 @@
 }, {
   "@id" : "http://purl.org/fidmark/",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
-  "http://purl.org/dc/terms/abstract" : [ {
-    "@language" : "en",
-    "@value" : "Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation (i.e. a pose). This in turn can be used to determine the scale and position of other objects within the same field of view. These types of markers are used for a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. With a wide range of different marker types, each with their own advantages for specific use-cases there are no fixed standards to decide which marker to use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing the possibility to create interoperability between AR applications. We propose a fiducial marker ontology called FidMark, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our FidMark ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With our ontology we aim to enable future AR solutions to semantically describe markers within an environment, so other applications can utilise this information."
-  } ],
   "http://purl.org/dc/terms/bibliographicCitation" : [ {
     "@language" : "en",
     "@value" : "Maxim Van de Wynckel, Isaac Valadez and Beat Signer, FidMark: A Fiducial Marker Ontology for Semantically Describing Visual Markers"
@@ -161,6 +157,13 @@
 }, {
   "@id" : "http://purl.org/fidmark/ARToolKit",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "ARToolKit is an open-source computer tracking library for creation of strong augmented reality applications that overlay virtual imagery on the real world. Currently, it is maintained as an open-source project hosted on GitHub. ARToolKit is a very widely used AR tracking library with over 160,000 downloads on its last public release in 2004."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "https://dbpedia.org/resource/ARToolKit"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ARToolKit"
@@ -365,9 +368,6 @@
   "http://purl.org/fidmark/color" : [ {
     "@value" : "Monochrome"
   } ],
-  "http://purl.org/fidmark/encoding" : [ {
-    "@value" : "Not supported"
-  } ],
   "http://purl.org/fidmark/shape" : [ {
     "@value" : "Circular"
   } ],
@@ -517,6 +517,456 @@
     "@id" : "http://purl.org/fidmark/Barcode2D"
   } ]
 }, {
+  "@id" : "http://purl.org/fidmark/DICT_4X4_100",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "3"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "16"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "100"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_4X4_100"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 4x4 dictionary with 100 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_4X4_1000",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "2"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "16"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1000"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_4X4_1000"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 4x4 dictionary with 1000 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_4X4_250",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "3"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "16"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "250"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_4X4_250"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 4x4 dictionary with 250 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_4X4_50",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "4"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "16"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "50"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_4X4_50"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 4x4 dictionary with 50 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_5X5_100",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "7"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "25"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "100"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_5X5_100"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 5x5 dictionary with 100 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_5X5_1000",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "5"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "25"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1000"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_5X5_1000"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 5x5 dictionary with 1000 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_5X5_250",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "6"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "25"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "250"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_5X5_250"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ARTag"
+  }, {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 5x5 dictionary with 250 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_5X5_50",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "8"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "25"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "50"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_5X5_50"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 5x5 dictionary with 50 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_6X6_100",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "12"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "36"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "100"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_6X6_100"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 6x6 dictionary with 100 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_6X6_1000",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "9"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "36"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1000"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_6X6_1000"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 6x6 dictionary with 1000 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_6X6_250",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "11"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "36"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "250"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_6X6_250"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 6x6 dictionary with 250 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_6X6_50",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "13"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "36"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "50"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_6X6_50"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 6x6 dictionary with 50 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_7X7_100",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "18"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "49"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "100"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_7X7_100"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 7x7 dictionary with 100 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_7X7_1000",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "14"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "49"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "1000"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_7X7_1000"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 7x7 dictionary with 1000 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_7X7_250",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "17"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "49"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "250"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_7X7_250"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 7x7 dictionary with 250 tags"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_7X7_50",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "19"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "49"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "50"
+  } ],
+  "http://purl.org/fidmark/opencvName" : [ {
+    "@value" : "DICT_7X7_50"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco 7x7 dictionary with 50 tags"
+  } ]
+}, {
   "@id" : "http://purl.org/fidmark/DICT_APRILTAG_16h5",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/fidmark/hammingDistance" : [ {
@@ -617,479 +1067,6 @@
     "@value" : "AprilTag 36h11 dictionary"
   } ]
 }, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_4X4_100",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "3"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "16"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "100"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_4X4_100"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 4x4 dictionary with 100 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_4X4_1000",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "2"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "16"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "1000"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_4X4_1000"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 4x4 dictionary with 1000 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_4X4_250",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "3"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "16"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "250"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_4X4_250"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 4x4 dictionary with 250 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_4X4_50",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "4"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "16"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "50"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_4X4_50"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 4x4 dictionary with 50 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_5X5_100",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "7"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "25"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "100"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_5X5_100"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 5x5 dictionary with 100 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_5X5_1000",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "5"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "25"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "1000"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_5X5_1000"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 5x5 dictionary with 1000 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_5X5_250",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "6"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "25"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "250"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_5X5_250"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 5x5 dictionary with 250 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_5X5_50",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "8"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "25"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "50"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_5X5_50"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 5x5 dictionary with 50 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_6X6_100",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "12"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "36"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "100"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_6X6_100"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 6x6 dictionary with 100 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_6X6_1000",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "9"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "36"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "1000"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_6X6_1000"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 6x6 dictionary with 1000 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_6X6_250",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "11"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "36"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "250"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_6X6_250"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 6x6 dictionary with 250 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_6X6_50",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "13"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "36"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "50"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_6X6_50"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 6x6 dictionary with 50 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_7X7_100",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "18"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "49"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "100"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_7X7_100"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 7x7 dictionary with 100 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_7X7_1000",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "14"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "49"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "1000"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_7X7_1000"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 7x7 dictionary with 1000 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_7X7_250",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "17"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "49"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "250"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_7X7_250"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 7x7 dictionary with 250 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_7X7_50",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "19"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "49"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "50"
-  } ],
-  "http://purl.org/fidmark/opencvName" : [ {
-    "@value" : "DICT_7X7_50"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco 7x7 dictionary with 50 tags"
-  } ]
-}, {
-  "@id" : "http://purl.org/fidmark/DICT_ARUCO_MIP_36h12",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/fidmark/hammingDistance" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "12"
-  } ],
-  "http://purl.org/fidmark/markerBits" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "36"
-  } ],
-  "http://purl.org/fidmark/maxIdentifiers" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
-    "@value" : "250"
-  } ],
-  "http://purl.org/fidmark/supportedMarker" : [ {
-    "@id" : "http://purl.org/fidmark/ArUco"
-  } ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://purl.org/fidmark/MarkerDictionary"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "ArUco MIP 36h12 dictionary"
-  } ]
-}, {
   "@id" : "http://purl.org/fidmark/DICT_ARUCO_ORIGINAL",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/fidmark/hammingDistance" : [ {
@@ -1125,6 +1102,31 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "ChilliTags dictionary"
+  } ]
+}, {
+  "@id" : "http://purl.org/fidmark/DICT_MIP_36h12",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/fidmark/hammingDistance" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "12"
+  } ],
+  "http://purl.org/fidmark/markerBits" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "36"
+  } ],
+  "http://purl.org/fidmark/maxIdentifiers" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#integer",
+    "@value" : "250"
+  } ],
+  "http://purl.org/fidmark/supportedMarker" : [ {
+    "@id" : "http://purl.org/fidmark/ArUco"
+  } ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "http://purl.org/fidmark/MarkerDictionary"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "ArUco MIP 36h12 dictionary"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA",
@@ -1773,6 +1775,13 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#hexBinary"
   } ]
 }, {
+  "@id" : "http://purl.org/fidmark/asPATT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "as pattern"
+  } ]
+}, {
   "@id" : "http://purl.org/fidmark/asZFT",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1807,7 +1816,15 @@
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/crc",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : ""
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "CRC"
+  } ]
 }, {
   "@id" : "http://purl.org/fidmark/crowns",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
