@@ -26,7 +26,7 @@
         <terms:title xml:lang="en">Fiducial Marker Ontology</terms:title>
         <vann:preferredNamespacePrefix>fidmark</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.org/fidmark/</vann:preferredNamespaceUri>
-        <skos:example rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_object.ttl</skos:example>
+        <skos:example rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_objects.ttl</skos:example>
     </owl:Ontology>
     
 

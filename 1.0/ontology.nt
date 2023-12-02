@@ -11,7 +11,7 @@
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/title> "Fiducial Marker Ontology"@en .
 <http://purl.org/fidmark/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "fidmark" .
 <http://purl.org/fidmark/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/fidmark/"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
-<http://purl.org/fidmark/> <http://www.w3.org/2004/02/skos/core#example> "https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_object.ttl"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+<http://purl.org/fidmark/> <http://www.w3.org/2004/02/skos/core#example> "https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_objects.ttl"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 # 
 # 
 # #################################################################

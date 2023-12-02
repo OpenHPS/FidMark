@@ -19,7 +19,7 @@
                             <http://purl.org/dc/terms/title> "Fiducial Marker Ontology"@en ;
                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "fidmark" ;
                             <http://purl.org/vocab/vann/preferredNamespaceUri> "http://purl.org/fidmark/"^^xsd:anyURI ;
-                            <http://www.w3.org/2004/02/skos/core#example> "https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_object.ttl"^^xsd:anyURI .
+                            <http://www.w3.org/2004/02/skos/core#example> "https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_objects.ttl"^^xsd:anyURI .
 
 #################################################################
 #    Annotation properties

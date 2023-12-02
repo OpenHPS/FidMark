@@ -100,7 +100,7 @@
   } ],
   "http://www.w3.org/2004/02/skos/core#example" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#anyURI",
-    "@value" : "https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_object.ttl"
+    "@value" : "https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_objects.ttl"
   } ]
 }, {
   "@id" : "http://purl.org/fidmark/AP3PPoseComputation",
