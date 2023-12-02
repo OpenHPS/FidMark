@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "openhps-rdf -d ./src/ontologies -n fidmark:http://purl.org/fidmark/ -n omg:https://w3id.org/omg# -n fog:https://w3id.org/fog# -m http://purl.org/fidmark/ https://openhps.github.io/FidMark/1.0/ontology.ttl -m https://w3id.org/fog# https://mathib.github.io/fog-ontology/ontology.ttl"
+    "postinstall": "openhps-rdf -d ./src/ontologies -n fidmark:http://purl.org/fidmark/ -n omg:https://w3id.org/omg# -n fog:https://w3id.org/fog# -m http://purl.org/fidmark/ https://openhps.github.io/FidMark/1.0/ontology.ttl -m https://w3id.org/fog# https://mathib.github.io/fog-ontology/ontology.ttl",
+    "generate": "ts-node ./src/generator"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@openhps/core": "^0.6.4",
-    "@openhps/rdf": "^0.4.27",
-    "axios": "^1.6.2"
+    "@openhps/rdf": "^0.4.28",
+    "axios": "^1.6.2",
+    "ts-node": "^10.9.1"
   }
 }

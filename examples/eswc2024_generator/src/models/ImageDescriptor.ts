@@ -1,4 +1,5 @@
-import { fidmark } from '@/ontologies';
+import { IriString, xsd } from '@openhps/rdf';
+import { fidmark } from '../ontologies';
 import { SerializableMember, SerializableObject } from '@openhps/core';
 
 @SerializableObject({
@@ -9,8 +10,25 @@ import { SerializableMember, SerializableObject } from '@openhps/core';
 export class ImageDescriptor {
     @SerializableMember({
         rdf: {
-            predicate: fidmark.asImage
+            predicate: fidmark.asImage,
+            datatype: xsd.anyURI
         }
     })
-    image: string;
+    image?: IriString;
+
+    @SerializableMember({
+        rdf: {
+            predicate: fidmark.asNFT,
+            datatype: xsd.anyURI
+        }
+    })
+    nft?: IriString;
+
+    @SerializableMember({
+        rdf: {
+            predicate: fidmark.asNFT,
+            datatype: xsd.anyURI
+        }
+    })
+    pattern?: IriString;
 }

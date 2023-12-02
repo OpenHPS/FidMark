@@ -1,0 +1,426 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sosa: <http://www.w3.org/ns/sosa/>.
+@prefix ogc: <http://www.opengis.net/ont/geosparql#>.
+@prefix dcmi: <http://purl.org/dc/terms/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix poso: <http://purl.org/poso/>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix ssn: <http://www.w3.org/ns/ssn/>.
+@prefix ssns: <http://www.w3.org/ns/ssn/systems/>.
+@prefix schema: <http://schema.org/>.
+@prefix example: <http://example.org/markers/>.
+@prefix fidmark: <http://purl.org/fidmark/>.
+
+example:marker-1 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
+    dcmi:created "2023-12-02T15:16:39.150Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-12-02T15:16:39.150Z"^^xsd:dateTime;
+  poso:hasOrientation [
+  a poso:Orientation;
+  dcmi:created "2023-12-02T15:16:39.150Z"^^xsd:dateTime;
+  poso:yaw 26.772757919197186;
+  poso:pitch 20.097627797692653;
+  poso:roll 11.831161447369514;
+  qudt:unit unit:DEG;
+  poso:hasAccuracy [
+  a ssns:Accuracy;
+  schema:minValue 0;
+  schema:maxValue 0;
+  schema:unitCode unit:RAD
+]
+];
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "19"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "10"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+]
+];
+    fidmark:markerIdentifier 21;
+    fidmark:hasDictionary fidmark:DICT_ARUCO_4X4_250;
+    fidmark:hasHeight [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "4"^^xsd:double
+];
+    fidmark:hasWidth [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "4"^^xsd:double
+].
+fidmark:DICT_ARUCO_4X4_250 a fidmark:MarkerDictionary.
+example:marker-2 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
+    dcmi:created "2023-12-02T15:16:39.153Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-12-02T15:16:39.153Z"^^xsd:dateTime;
+  poso:hasOrientation [
+  a poso:Orientation;
+  dcmi:created "2023-12-02T15:16:39.153Z"^^xsd:dateTime;
+  poso:yaw 26.772757919197186;
+  poso:pitch 20.097627797692653;
+  poso:roll 11.831161447369514;
+  qudt:unit unit:DEG;
+  poso:hasAccuracy [
+  a ssns:Accuracy;
+  schema:minValue 0;
+  schema:maxValue 0;
+  schema:unitCode unit:RAD
+]
+];
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "38"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "20"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+]
+];
+    fidmark:markerIdentifier 42;
+    fidmark:hasDictionary fidmark:DICT_ARUCO_4X4_250;
+    fidmark:hasHeight [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "4"^^xsd:double
+];
+    fidmark:hasWidth [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "4"^^xsd:double
+].
+example:marker-3 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
+    dcmi:created "2023-12-02T15:16:39.154Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-12-02T15:16:39.154Z"^^xsd:dateTime;
+  poso:hasOrientation [
+  a poso:Orientation;
+  dcmi:created "2023-12-02T15:16:39.154Z"^^xsd:dateTime;
+  poso:yaw 26.772757919197186;
+  poso:pitch 20.097627797692653;
+  poso:roll 11.831161447369514;
+  qudt:unit unit:DEG;
+  poso:hasAccuracy [
+  a ssns:Accuracy;
+  schema:minValue 0;
+  schema:maxValue 0;
+  schema:unitCode unit:RAD
+]
+];
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "57"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "30"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+]
+];
+    fidmark:markerIdentifier 63;
+    fidmark:hasDictionary fidmark:DICT_ARUCO_4X4_250;
+    fidmark:hasHeight [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "4"^^xsd:double
+];
+    fidmark:hasWidth [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "4"^^xsd:double
+].
+example:marker-4 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
+    dcmi:created "2023-12-02T15:16:39.155Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-12-02T15:16:39.155Z"^^xsd:dateTime;
+  poso:hasOrientation [
+  a poso:Orientation;
+  dcmi:created "2023-12-02T15:16:39.155Z"^^xsd:dateTime;
+  poso:yaw 26.772757919197186;
+  poso:pitch 20.097627797692653;
+  poso:roll 11.831161447369514;
+  qudt:unit unit:DEG;
+  poso:hasAccuracy [
+  a ssns:Accuracy;
+  schema:minValue 0;
+  schema:maxValue 0;
+  schema:unitCode unit:RAD
+]
+];
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "76"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "40"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+]
+];
+    fidmark:markerIdentifier 84;
+    fidmark:hasHeight [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "5"^^xsd:double
+];
+    fidmark:hasWidth [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "5"^^xsd:double
+].
+example:marker-5 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
+    dcmi:created "2023-12-02T15:16:39.155Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-12-02T15:16:39.155Z"^^xsd:dateTime;
+  poso:hasOrientation [
+  a poso:Orientation;
+  dcmi:created "2023-12-02T15:16:39.155Z"^^xsd:dateTime;
+  poso:yaw 26.772757919197186;
+  poso:pitch 20.097627797692653;
+  poso:roll 11.831161447369514;
+  qudt:unit unit:DEG;
+  poso:hasAccuracy [
+  a ssns:Accuracy;
+  schema:minValue 0;
+  schema:maxValue 0;
+  schema:unitCode unit:RAD
+]
+];
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "95"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "50"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+]
+];
+    fidmark:markerIdentifier 105;
+    fidmark:hasHeight [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "5"^^xsd:double
+];
+    fidmark:hasWidth [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "5"^^xsd:double
+].
+example:marker-6 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
+    dcmi:created "2023-12-02T15:16:39.156Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:AbsolutePosition;
+  dcmi:created "2023-12-02T15:16:39.156Z"^^xsd:dateTime;
+  poso:hasOrientation [
+  a poso:Orientation;
+  dcmi:created "2023-12-02T15:16:39.156Z"^^xsd:dateTime;
+  poso:yaw 26.772757919197186;
+  poso:pitch 20.097627797692653;
+  poso:roll 11.831161447369514;
+  qudt:unit unit:DEG;
+  poso:hasAccuracy [
+  a ssns:Accuracy;
+  schema:minValue 0;
+  schema:maxValue 0;
+  schema:unitCode unit:RAD
+]
+];
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "114"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "60"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+]
+];
+    fidmark:markerIdentifier 126;
+    fidmark:hasHeight [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "5"^^xsd:double
+];
+    fidmark:hasWidth [
+  a qudt:QuantityValue;
+  qudt:unit unit:CentiM;
+  qudt:numericValue "5"^^xsd:double
+].
+example:virtualobject-1 a sosa:FeatureOfInterest, ogc:SpatialObject;
+    dcmi:created "2023-12-02T15:16:39.156Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:RelativePosition;
+  dcmi:created "2023-12-02T15:16:39.156Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:isRelativeTo example:marker-1
+].
+example:virtualobject-2 a sosa:FeatureOfInterest, ogc:SpatialObject;
+    dcmi:created "2023-12-02T15:16:39.157Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:RelativePosition;
+  dcmi:created "2023-12-02T15:16:39.157Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:isRelativeTo example:marker-2
+].
+example:virtualobject-3 a sosa:FeatureOfInterest, ogc:SpatialObject;
+    dcmi:created "2023-12-02T15:16:39.157Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:RelativePosition;
+  dcmi:created "2023-12-02T15:16:39.157Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:isRelativeTo example:marker-3
+].
+example:virtualobject-4 a sosa:FeatureOfInterest, ogc:SpatialObject;
+    dcmi:created "2023-12-02T15:16:39.157Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:RelativePosition;
+  dcmi:created "2023-12-02T15:16:39.157Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:isRelativeTo example:marker-4
+].
+example:virtualobject-5 a sosa:FeatureOfInterest, ogc:SpatialObject;
+    dcmi:created "2023-12-02T15:16:39.157Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:RelativePosition;
+  dcmi:created "2023-12-02T15:16:39.157Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:isRelativeTo example:marker-5
+].
+example:virtualobject-6 a sosa:FeatureOfInterest, ogc:SpatialObject;
+    dcmi:created "2023-12-02T15:16:39.157Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:RelativePosition;
+  dcmi:created "2023-12-02T15:16:39.157Z"^^xsd:dateTime;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:M;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:isRelativeTo example:marker-6
+].

@@ -341,6 +341,15 @@ export const P3PPoseComputation: OwlClass = 'http://purl.org/fidmark/P3PPoseComp
 export const PiTag: OwlClass = 'http://purl.org/fidmark/PiTag';
 
 /**
+ * Pose output
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/PoseOutput
+ */
+export const PoseOutput: OwlClass = 'http://purl.org/fidmark/PoseOutput';
+
+/**
  * QR code
  * 
  * A QR code (an initialism for quick response code) is a type of matrix barcode (or two-dimensional barcode) invented in 1994 by the Japanese company Denso Wave. A barcode is a machine-readable optical label that can contain information about the item to which it is attached. In practice, QR codes often contain data for a locator, identifier, or tracker that points to a website or application. QR codes use four standardized encoding modes (numeric, alphanumeric, byte/binary, and kanji) to store data efficiently; extensions may also be used.
@@ -411,6 +420,15 @@ export const VisualCode: OwlClass = 'http://purl.org/fidmark/VisualCode';
  * http://purl.org/fidmark/WhyCode
  */
 export const WhyCode: OwlClass = 'http://purl.org/fidmark/WhyCode';
+
+/**
+ * 
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/WhyCon
+ */
+export const WhyCon: OwlClass = 'http://purl.org/fidmark/WhyCon';
 
 /**
  * reacTIVision
@@ -519,6 +537,15 @@ export const asNFT: OwlDatatypeProperty = 'http://purl.org/fidmark/asNFT';
  * http://purl.org/fidmark/asZFT
  */
 export const asZFT: OwlDatatypeProperty = 'http://purl.org/fidmark/asZFT';
+
+/**
+ * 
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/crc
+ */
+export const crc: OwlDatatypeProperty = 'http://purl.org/fidmark/crc';
 
 /**
  * number of crowns

@@ -1,4 +1,5 @@
-import { fidmark } from "@/ontologies";
+import { IriString } from "@openhps/rdf";
+import { fidmark } from "../ontologies";
 import { SerializableMember, SerializableObject } from "@openhps/core";
 
 @SerializableObject({
@@ -20,4 +21,10 @@ export class MarkerDictionary {
         }
     })
     hammingSize: number;
+
+    static fromURI(uri: IriString): MarkerDictionary {
+        const dict = new MarkerDictionary();
+        (dict as any).rdf = { uri };
+        return dict;
+    }
 }
