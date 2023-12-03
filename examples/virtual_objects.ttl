@@ -1,467 +1,613 @@
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix sosa: <http://www.w3.org/ns/sosa/>.
-@prefix ogc: <http://www.opengis.net/ont/geosparql#>.
-@prefix dcmi: <http://purl.org/dc/terms/>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix poso: <http://purl.org/poso/>.
-@prefix qudt: <http://qudt.org/schema/qudt/>.
-@prefix unit: <http://qudt.org/vocab/unit/>.
-@prefix ssn: <http://www.w3.org/ns/ssn/>.
-@prefix ssns: <http://www.w3.org/ns/ssn/systems/>.
-@prefix schema: <http://schema.org/>.
-@prefix example: <http://example.org/markers/>.
-@prefix fidmark: <http://purl.org/fidmark/>.
+@prefix ogc: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcmi: <http://purl.org/dc/terms/> .
+@prefix poso: <http://purl.org/poso/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssns: <http://www.w3.org/ns/ssn/systems/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix schema: <http://schema.org/> .
+@prefix example: <http://example.org/markers/> .
+@prefix fidmark: <http://purl.org/fidmark/> .
+@base <http://www.w3.org/2002/07/owl#> .
 
-example:marker-1 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:08:39.585Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:08:39.585Z"^^xsd:dateTime;
-  poso:hasOrientation [
-  a poso:Orientation;
-  dcmi:created "2023-12-02T16:08:39.585Z"^^xsd:dateTime;
-  poso:yaw 26.772757919197186;
-  poso:pitch 20.097627797692653;
-  poso:roll 11.831161447369514;
-  qudt:unit unit:DEG;
-  poso:hasAccuracy [
-  a ssns:Accuracy;
-  schema:minValue 0;
-  schema:maxValue 0;
-  schema:unitCode unit:RAD
-]
-];
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "19"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "10"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-]
-];
-    fidmark:markerIdentifier 21;
-    fidmark:hasDictionary fidmark:DICT_4X4_250;
-    fidmark:hasHeight [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "4"^^xsd:double
-];
-    fidmark:hasWidth [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "4"^^xsd:double
-].
-fidmark:DICT_4X4_250 a fidmark:MarkerDictionary.
-example:marker-2 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:08:39.587Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:08:39.587Z"^^xsd:dateTime;
-  poso:hasOrientation [
-  a poso:Orientation;
-  dcmi:created "2023-12-02T16:08:39.587Z"^^xsd:dateTime;
-  poso:yaw 26.772757919197186;
-  poso:pitch 20.097627797692653;
-  poso:roll 11.831161447369514;
-  qudt:unit unit:DEG;
-  poso:hasAccuracy [
-  a ssns:Accuracy;
-  schema:minValue 0;
-  schema:maxValue 0;
-  schema:unitCode unit:RAD
-]
-];
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "38"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "20"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-]
-];
-    fidmark:markerIdentifier 42;
-    fidmark:hasDictionary fidmark:DICT_4X4_250;
-    fidmark:hasHeight [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "4"^^xsd:double
-];
-    fidmark:hasWidth [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "4"^^xsd:double
-].
-example:marker-3 a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:08:39.588Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:08:39.588Z"^^xsd:dateTime;
-  poso:hasOrientation [
-  a poso:Orientation;
-  dcmi:created "2023-12-02T16:08:39.588Z"^^xsd:dateTime;
-  poso:yaw 26.772757919197186;
-  poso:pitch 20.097627797692653;
-  poso:roll 11.831161447369514;
-  qudt:unit unit:DEG;
-  poso:hasAccuracy [
-  a ssns:Accuracy;
-  schema:minValue 0;
-  schema:maxValue 0;
-  schema:unitCode unit:RAD
-]
-];
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "57"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "30"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-]
-];
-    fidmark:markerIdentifier 63;
-    fidmark:hasDictionary fidmark:DICT_4X4_250;
-    fidmark:hasHeight [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "4"^^xsd:double
-];
-    fidmark:hasWidth [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "4"^^xsd:double
-].
-example:marker-4 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
-    dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
-  poso:hasOrientation [
-  a poso:Orientation;
-  dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
-  poso:yaw 26.772757919197186;
-  poso:pitch 20.097627797692653;
-  poso:roll 11.831161447369514;
-  qudt:unit unit:DEG;
-  poso:hasAccuracy [
-  a ssns:Accuracy;
-  schema:minValue 0;
-  schema:maxValue 0;
-  schema:unitCode unit:RAD
-]
-];
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "76"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "40"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-]
-];
-    fidmark:markerIdentifier 84;
-    fidmark:hasHeight [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "5"^^xsd:double
-];
-    fidmark:hasWidth [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "5"^^xsd:double
-].
-example:marker-5 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
-    dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
-  poso:hasOrientation [
-  a poso:Orientation;
-  dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime;
-  poso:yaw 26.772757919197186;
-  poso:pitch 20.097627797692653;
-  poso:roll 11.831161447369514;
-  qudt:unit unit:DEG;
-  poso:hasAccuracy [
-  a ssns:Accuracy;
-  schema:minValue 0;
-  schema:maxValue 0;
-  schema:unitCode unit:RAD
-]
-];
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "95"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "50"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-]
-];
-    fidmark:markerIdentifier 105;
-    fidmark:hasHeight [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "5"^^xsd:double
-];
-    fidmark:hasWidth [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "5"^^xsd:double
-].
-example:marker-6 a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:ARTag;
-    dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:AbsolutePosition;
-  dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime;
-  poso:hasOrientation [
-  a poso:Orientation;
-  dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime;
-  poso:yaw 26.772757919197186;
-  poso:pitch 20.097627797692653;
-  poso:roll 11.831161447369514;
-  qudt:unit unit:DEG;
-  poso:hasAccuracy [
-  a ssns:Accuracy;
-  schema:minValue 0;
-  schema:maxValue 0;
-  schema:unitCode unit:RAD
-]
-];
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "114"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "60"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-]
-];
-    fidmark:markerIdentifier 126;
-    fidmark:hasHeight [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "5"^^xsd:double
-];
-    fidmark:hasWidth [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "5"^^xsd:double
-].
-example:marker-hiro a sosa:FeatureOfInterest, ogc:SpatialObject, fidmark:FiducialMarker;
-    dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime;
-    fidmark:hasHeight [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "5"^^xsd:double
-];
-    fidmark:hasWidth [
-  a qudt:QuantityValue;
-  qudt:unit unit:CentiM;
-  qudt:numericValue "5"^^xsd:double
-];
-    fidmark:hasImageDesciptor [
-  a fidmark:ImageDescriptor;
-  fidmark:asImage "https://arprojectsdemo.netlify.app/markers/hiro.png"^^xsd:anyURI;
-  fidmark:asPATT "https://arprojectsdemo.netlify.app/data/hiro.patt"^^xsd:anyURI
-].
-example:virtualobject-1 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-  poso:isRelativeTo example:marker-1
-], [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:isRelativeTo example:marker-1
-].
-example:virtualobject-2 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-  poso:isRelativeTo example:marker-2
-], [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:isRelativeTo example:marker-2
-].
-example:virtualobject-3 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-  poso:isRelativeTo example:marker-3
-], [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:isRelativeTo example:marker-3
-].
-example:virtualobject-4 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-  poso:isRelativeTo example:marker-4
-], [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:isRelativeTo example:marker-4
-].
-example:virtualobject-5 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-  poso:isRelativeTo example:marker-5
-], [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime;
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:isRelativeTo example:marker-5
-].
-example:virtualobject-6 a sosa:FeatureOfInterest, ogc:SpatialObject;
-    dcmi:created "2023-12-02T16:08:39.592Z"^^xsd:dateTime;
-    poso:hasPosition [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.592Z"^^xsd:dateTime;
-  poso:isRelativeTo example:marker-6
-], [
-  a poso:RelativePosition;
-  dcmi:created "2023-12-02T16:08:39.592Z"^^xsd:dateTime;
-  poso:xAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:yAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:zAxisValue [
-  a qudt:QuantityValue;
-  qudt:unit unit:M;
-  qudt:numericValue "0"^^xsd:double
-];
-  poso:isRelativeTo example:marker-6
-].
+[ rdf:type owl:Ontology ;
+   owl:imports <http://purl.org/fidmark/1.0/>
+ ] .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+dcmi:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/fidmark/asImage
+fidmark:asImage rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/fidmark/asPATT
+fidmark:asPATT rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/fidmark/hasHeight
+fidmark:hasHeight rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/fidmark/hasImageDesciptor
+fidmark:hasImageDesciptor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/fidmark/hasWidth
+fidmark:hasWidth rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/fidmark/markerIdentifier
+fidmark:markerIdentifier rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/poso/hasAccuracy
+poso:hasAccuracy rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/poso/hasOrientation
+poso:hasOrientation rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/poso/hasPosition
+poso:hasPosition rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/poso/isRelativeTo
+poso:isRelativeTo rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/poso/pitch
+poso:pitch rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/poso/roll
+poso:roll rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/poso/xAxisValue
+poso:xAxisValue rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/poso/yAxisValue
+poso:yAxisValue rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/poso/yaw
+poso:yaw rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/poso/zAxisValue
+poso:zAxisValue rdf:type owl:AnnotationProperty .
+
+
+###  http://qudt.org/schema/qudt/numericValue
+qudt:numericValue rdf:type owl:AnnotationProperty .
+
+
+###  http://qudt.org/schema/qudt/unit
+qudt:unit rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/maxValue
+schema:maxValue rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/minValue
+schema:minValue rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/unitCode
+schema:unitCode rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/fidmark/ARTag
+fidmark:ARTag rdf:type owl:Class .
+
+
+###  http://purl.org/fidmark/ArUco
+fidmark:ArUco rdf:type owl:Class .
+
+
+###  http://purl.org/fidmark/FiducialMarker
+fidmark:FiducialMarker rdf:type owl:Class .
+
+
+###  http://purl.org/fidmark/ImageDescriptor
+fidmark:ImageDescriptor rdf:type owl:Class .
+
+
+###  http://purl.org/poso/AbsolutePosition
+poso:AbsolutePosition rdf:type owl:Class .
+
+
+###  http://purl.org/poso/Orientation
+poso:Orientation rdf:type owl:Class .
+
+
+###  http://purl.org/poso/RelativePosition
+poso:RelativePosition rdf:type owl:Class .
+
+
+###  http://qudt.org/schema/qudt/QuantityValue
+qudt:QuantityValue rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/geosparql#SpatialObject
+ogc:SpatialObject rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/FeatureOfInterest
+sosa:FeatureOfInterest rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/ssn/systems/Accuracy
+ssns:Accuracy rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/markers/marker-1
+example:marker-1 rdf:type owl:NamedIndividual ,
+                          fidmark:ArUco ,
+                          ogc:SpatialObject ,
+                          sosa:FeatureOfInterest ;
+                 dcmi:created "2023-12-02T16:08:39.585Z"^^xsd:dateTime ;
+                 fidmark:hasHeight [ rdf:type qudt:QuantityValue ;
+                                     qudt:numericValue "4.0"^^xsd:double ;
+                                     qudt:unit unit:CentiM
+                                   ] ;
+                 fidmark:hasWidth [ rdf:type qudt:QuantityValue ;
+                                    qudt:numericValue "4.0"^^xsd:double ;
+                                    qudt:unit unit:CentiM
+                                  ] ;
+                 fidmark:markerIdentifier 21 ;
+                 poso:hasPosition [ rdf:type poso:AbsolutePosition ;
+                                    dcmi:created "2023-12-02T16:08:39.585Z"^^xsd:dateTime ;
+                                    poso:hasOrientation [ rdf:type poso:Orientation ;
+                                                          dcmi:created "2023-12-02T16:08:39.585Z"^^xsd:dateTime ;
+                                                          poso:hasAccuracy [ rdf:type ssns:Accuracy ;
+                                                                             schema:maxValue 0 ;
+                                                                             schema:minValue 0 ;
+                                                                             schema:unitCode unit:RAD
+                                                                           ] ;
+                                                          poso:pitch 20.097627797692653 ;
+                                                          poso:roll 11.831161447369514 ;
+                                                          poso:yaw 26.772757919197186 ;
+                                                          qudt:unit unit:DEG
+                                                        ] ;
+                                    poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "19.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "10.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "0.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ]
+                                  ] .
+
+
+###  http://example.org/markers/marker-2
+example:marker-2 rdf:type owl:NamedIndividual ,
+                          fidmark:ArUco ,
+                          ogc:SpatialObject ,
+                          sosa:FeatureOfInterest ;
+                 dcmi:created "2023-12-02T16:08:39.587Z"^^xsd:dateTime ;
+                 fidmark:hasHeight [ rdf:type qudt:QuantityValue ;
+                                     qudt:numericValue "4.0"^^xsd:double ;
+                                     qudt:unit unit:CentiM
+                                   ] ;
+                 fidmark:hasWidth [ rdf:type qudt:QuantityValue ;
+                                    qudt:numericValue "4.0"^^xsd:double ;
+                                    qudt:unit unit:CentiM
+                                  ] ;
+                 fidmark:markerIdentifier 42 ;
+                 poso:hasPosition [ rdf:type poso:AbsolutePosition ;
+                                    dcmi:created "2023-12-02T16:08:39.587Z"^^xsd:dateTime ;
+                                    poso:hasOrientation [ rdf:type poso:Orientation ;
+                                                          dcmi:created "2023-12-02T16:08:39.587Z"^^xsd:dateTime ;
+                                                          poso:hasAccuracy [ rdf:type ssns:Accuracy ;
+                                                                             schema:maxValue 0 ;
+                                                                             schema:minValue 0 ;
+                                                                             schema:unitCode unit:RAD
+                                                                           ] ;
+                                                          poso:pitch 20.097627797692653 ;
+                                                          poso:roll 11.831161447369514 ;
+                                                          poso:yaw 26.772757919197186 ;
+                                                          qudt:unit unit:DEG
+                                                        ] ;
+                                    poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "38.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "20.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "0.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ]
+                                  ] .
+
+
+###  http://example.org/markers/marker-3
+example:marker-3 rdf:type owl:NamedIndividual ,
+                          fidmark:ArUco ,
+                          ogc:SpatialObject ,
+                          sosa:FeatureOfInterest ;
+                 dcmi:created "2023-12-02T16:08:39.588Z"^^xsd:dateTime ;
+                 fidmark:hasHeight [ rdf:type qudt:QuantityValue ;
+                                     qudt:numericValue "4.0"^^xsd:double ;
+                                     qudt:unit unit:CentiM
+                                   ] ;
+                 fidmark:hasWidth [ rdf:type qudt:QuantityValue ;
+                                    qudt:numericValue "4.0"^^xsd:double ;
+                                    qudt:unit unit:CentiM
+                                  ] ;
+                 fidmark:markerIdentifier 63 ;
+                 poso:hasPosition [ rdf:type poso:AbsolutePosition ;
+                                    dcmi:created "2023-12-02T16:08:39.588Z"^^xsd:dateTime ;
+                                    poso:hasOrientation [ rdf:type poso:Orientation ;
+                                                          dcmi:created "2023-12-02T16:08:39.588Z"^^xsd:dateTime ;
+                                                          poso:hasAccuracy [ rdf:type ssns:Accuracy ;
+                                                                             schema:maxValue 0 ;
+                                                                             schema:minValue 0 ;
+                                                                             schema:unitCode unit:RAD
+                                                                           ] ;
+                                                          poso:pitch 20.097627797692653 ;
+                                                          poso:roll 11.831161447369514 ;
+                                                          poso:yaw 26.772757919197186 ;
+                                                          qudt:unit unit:DEG
+                                                        ] ;
+                                    poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "57.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "30.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "0.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ]
+                                  ] .
+
+
+###  http://example.org/markers/marker-4
+example:marker-4 rdf:type owl:NamedIndividual ,
+                          fidmark:ARTag ,
+                          ogc:SpatialObject ,
+                          sosa:FeatureOfInterest ;
+                 dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime ;
+                 fidmark:hasHeight [ rdf:type qudt:QuantityValue ;
+                                     qudt:numericValue "5.0"^^xsd:double ;
+                                     qudt:unit unit:CentiM
+                                   ] ;
+                 fidmark:hasWidth [ rdf:type qudt:QuantityValue ;
+                                    qudt:numericValue "5.0"^^xsd:double ;
+                                    qudt:unit unit:CentiM
+                                  ] ;
+                 fidmark:markerIdentifier 84 ;
+                 poso:hasPosition [ rdf:type poso:AbsolutePosition ;
+                                    dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime ;
+                                    poso:hasOrientation [ rdf:type poso:Orientation ;
+                                                          dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime ;
+                                                          poso:hasAccuracy [ rdf:type ssns:Accuracy ;
+                                                                             schema:maxValue 0 ;
+                                                                             schema:minValue 0 ;
+                                                                             schema:unitCode unit:RAD
+                                                                           ] ;
+                                                          poso:pitch 20.097627797692653 ;
+                                                          poso:roll 11.831161447369514 ;
+                                                          poso:yaw 26.772757919197186 ;
+                                                          qudt:unit unit:DEG
+                                                        ] ;
+                                    poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "76.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "40.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "0.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ]
+                                  ] .
+
+
+###  http://example.org/markers/marker-5
+example:marker-5 rdf:type owl:NamedIndividual ,
+                          fidmark:ARTag ,
+                          ogc:SpatialObject ,
+                          sosa:FeatureOfInterest ;
+                 dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime ;
+                 fidmark:hasHeight [ rdf:type qudt:QuantityValue ;
+                                     qudt:numericValue "5.0"^^xsd:double ;
+                                     qudt:unit unit:CentiM
+                                   ] ;
+                 fidmark:hasWidth [ rdf:type qudt:QuantityValue ;
+                                    qudt:numericValue "5.0"^^xsd:double ;
+                                    qudt:unit unit:CentiM
+                                  ] ;
+                 fidmark:markerIdentifier 105 ;
+                 poso:hasPosition [ rdf:type poso:AbsolutePosition ;
+                                    dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime ;
+                                    poso:hasOrientation [ rdf:type poso:Orientation ;
+                                                          dcmi:created "2023-12-02T16:08:39.589Z"^^xsd:dateTime ;
+                                                          poso:hasAccuracy [ rdf:type ssns:Accuracy ;
+                                                                             schema:maxValue 0 ;
+                                                                             schema:minValue 0 ;
+                                                                             schema:unitCode unit:RAD
+                                                                           ] ;
+                                                          poso:pitch 20.097627797692653 ;
+                                                          poso:roll 11.831161447369514 ;
+                                                          poso:yaw 26.772757919197186 ;
+                                                          qudt:unit unit:DEG
+                                                        ] ;
+                                    poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "95.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "50.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "0.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ]
+                                  ] .
+
+
+###  http://example.org/markers/marker-6
+example:marker-6 rdf:type owl:NamedIndividual ,
+                          fidmark:ARTag ,
+                          ogc:SpatialObject ,
+                          sosa:FeatureOfInterest ;
+                 dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime ;
+                 fidmark:hasHeight [ rdf:type qudt:QuantityValue ;
+                                     qudt:numericValue "5.0"^^xsd:double ;
+                                     qudt:unit unit:CentiM
+                                   ] ;
+                 fidmark:hasWidth [ rdf:type qudt:QuantityValue ;
+                                    qudt:numericValue "5.0"^^xsd:double ;
+                                    qudt:unit unit:CentiM
+                                  ] ;
+                 fidmark:markerIdentifier 126 ;
+                 poso:hasPosition [ rdf:type poso:AbsolutePosition ;
+                                    dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime ;
+                                    poso:hasOrientation [ rdf:type poso:Orientation ;
+                                                          dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime ;
+                                                          poso:hasAccuracy [ rdf:type ssns:Accuracy ;
+                                                                             schema:maxValue 0 ;
+                                                                             schema:minValue 0 ;
+                                                                             schema:unitCode unit:RAD
+                                                                           ] ;
+                                                          poso:pitch 20.097627797692653 ;
+                                                          poso:roll 11.831161447369514 ;
+                                                          poso:yaw 26.772757919197186 ;
+                                                          qudt:unit unit:DEG
+                                                        ] ;
+                                    poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "114.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "60.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ] ;
+                                    poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                      qudt:numericValue "0.0"^^xsd:double ;
+                                                      qudt:unit unit:M
+                                                    ]
+                                  ] .
+
+
+###  http://example.org/markers/marker-hiro
+example:marker-hiro rdf:type owl:NamedIndividual ,
+                             fidmark:FiducialMarker ,
+                             ogc:SpatialObject ,
+                             sosa:FeatureOfInterest ;
+                    dcmi:created "2023-12-02T16:08:39.590Z"^^xsd:dateTime ;
+                    fidmark:hasHeight [ rdf:type qudt:QuantityValue ;
+                                        qudt:numericValue "5.0"^^xsd:double ;
+                                        qudt:unit unit:CentiM
+                                      ] ;
+                    fidmark:hasImageDesciptor [ rdf:type fidmark:ImageDescriptor ;
+                                                fidmark:asImage "https://arprojectsdemo.netlify.app/markers/hiro.png"^^xsd:anyURI ;
+                                                fidmark:asPATT "https://arprojectsdemo.netlify.app/data/hiro.patt"^^xsd:anyURI
+                                              ] ;
+                    fidmark:hasWidth [ rdf:type qudt:QuantityValue ;
+                                       qudt:numericValue "5.0"^^xsd:double ;
+                                       qudt:unit unit:CentiM
+                                     ] .
+
+
+###  http://example.org/markers/virtualobject-1
+example:virtualobject-1 rdf:type owl:NamedIndividual ,
+                                 ogc:SpatialObject ,
+                                 sosa:FeatureOfInterest ;
+                        dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                        poso:hasPosition [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-1
+                                         ] ,
+                                         [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-1 ;
+                                           poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ]
+                                         ] .
+
+
+###  http://example.org/markers/virtualobject-2
+example:virtualobject-2 rdf:type owl:NamedIndividual ,
+                                 ogc:SpatialObject ,
+                                 sosa:FeatureOfInterest ;
+                        dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                        poso:hasPosition [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-2
+                                         ] ,
+                                         [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-2 ;
+                                           poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ]
+                                         ] .
+
+
+###  http://example.org/markers/virtualobject-3
+example:virtualobject-3 rdf:type owl:NamedIndividual ,
+                                 ogc:SpatialObject ,
+                                 sosa:FeatureOfInterest ;
+                        dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                        poso:hasPosition [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-3
+                                         ] ,
+                                         [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-3 ;
+                                           poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ]
+                                         ] .
+
+
+###  http://example.org/markers/virtualobject-4
+example:virtualobject-4 rdf:type owl:NamedIndividual ,
+                                 ogc:SpatialObject ,
+                                 sosa:FeatureOfInterest ;
+                        dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                        poso:hasPosition [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-4
+                                         ] ,
+                                         [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-4 ;
+                                           poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ]
+                                         ] .
+
+
+###  http://example.org/markers/virtualobject-5
+example:virtualobject-5 rdf:type owl:NamedIndividual ,
+                                 ogc:SpatialObject ,
+                                 sosa:FeatureOfInterest ;
+                        dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                        poso:hasPosition [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-5
+                                         ] ,
+                                         [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.591Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-5 ;
+                                           poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ]
+                                         ] .
+
+
+###  http://example.org/markers/virtualobject-6
+example:virtualobject-6 rdf:type owl:NamedIndividual ,
+                                 ogc:SpatialObject ,
+                                 sosa:FeatureOfInterest ;
+                        dcmi:created "2023-12-02T16:08:39.592Z"^^xsd:dateTime ;
+                        poso:hasPosition [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.592Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-6
+                                         ] ,
+                                         [ rdf:type poso:RelativePosition ;
+                                           dcmi:created "2023-12-02T16:08:39.592Z"^^xsd:dateTime ;
+                                           poso:isRelativeTo example:marker-6 ;
+                                           poso:xAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:yAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ] ;
+                                           poso:zAxisValue [ rdf:type qudt:QuantityValue ;
+                                                             qudt:numericValue "0.0"^^xsd:double ;
+                                                             qudt:unit unit:M
+                                                           ]
+                                         ] .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
