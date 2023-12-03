@@ -697,7 +697,8 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
               :markerBits 16 ;
               :maxIdentifiers 100 ;
               :opencvName "DICT_4X4_100" ;
-              :supportedMarker :ArUco ;
+              :supportedMarker :ARTag ,
+                               :ArUco ;
               rdfs:label "ArUco 4x4 dictionary with 100 tags"@en .
 
 
@@ -708,19 +709,9 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
                :markerBits 16 ;
                :maxIdentifiers 1000 ;
                :opencvName "DICT_4X4_1000" ;
-               :supportedMarker :ArUco ;
+               :supportedMarker :ARTag ,
+                                :ArUco ;
                rdfs:label "ArUco 4x4 dictionary with 1000 tags"@en .
-
-
-###  http://purl.org/fidmark/DICT_4X4_250
-:DICT_4X4_250 rdf:type owl:NamedIndividual ,
-                       :MarkerDictionary ;
-              :hammingDistance 3 ;
-              :markerBits 16 ;
-              :maxIdentifiers 250 ;
-              :opencvName "DICT_4X4_250" ;
-              :supportedMarker :ArUco ;
-              rdfs:label "ArUco 4x4 dictionary with 250 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_4X4_50
@@ -730,7 +721,8 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
              :markerBits 16 ;
              :maxIdentifiers 50 ;
              :opencvName "DICT_4X4_50" ;
-             :supportedMarker :ArUco ;
+             :supportedMarker :ARTag ,
+                              :ArUco ;
              rdfs:label "ArUco 4x4 dictionary with 50 tags"@en .
 
 
@@ -741,7 +733,8 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
               :markerBits 25 ;
               :maxIdentifiers 100 ;
               :opencvName "DICT_5X5_100" ;
-              :supportedMarker :ArUco ;
+              :supportedMarker :ARTag ,
+                               :ArUco ;
               rdfs:label "ArUco 5x5 dictionary with 100 tags"@en .
 
 
@@ -752,7 +745,8 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
                :markerBits 25 ;
                :maxIdentifiers 1000 ;
                :opencvName "DICT_5X5_1000" ;
-               :supportedMarker :ArUco ;
+               :supportedMarker :ARTag ,
+                                :ArUco ;
                rdfs:label "ArUco 5x5 dictionary with 1000 tags"@en .
 
 
@@ -775,7 +769,8 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
              :markerBits 25 ;
              :maxIdentifiers 50 ;
              :opencvName "DICT_5X5_50" ;
-             :supportedMarker :ArUco ;
+             :supportedMarker :ARTag ,
+                              :ArUco ;
              rdfs:label "ArUco 5x5 dictionary with 50 tags"@en .
 
 

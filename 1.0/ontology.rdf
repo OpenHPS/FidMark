@@ -1061,6 +1061,7 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</maxIdentifiers>
         <opencvName>DICT_4X4_100</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ARTag"/>
         <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
         <rdfs:label xml:lang="en">ArUco 4x4 dictionary with 100 tags</rdfs:label>
     </owl:NamedIndividual>
@@ -1076,23 +1077,9 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</maxIdentifiers>
         <opencvName>DICT_4X4_1000</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ARTag"/>
         <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
         <rdfs:label xml:lang="en">ArUco 4x4 dictionary with 1000 tags</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/fidmark/DICT_4X4_250 -->
-
-
-    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_4X4_250">
-        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
-        <hammingDistance rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</hammingDistance>
-        <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</markerBits>
-        <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</maxIdentifiers>
-        <opencvName>DICT_4X4_250</opencvName>
-        <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
-        <rdfs:label xml:lang="en">ArUco 4x4 dictionary with 250 tags</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -1106,6 +1093,7 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxIdentifiers>
         <opencvName>DICT_4X4_50</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ARTag"/>
         <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
         <rdfs:label xml:lang="en">ArUco 4x4 dictionary with 50 tags</rdfs:label>
     </owl:NamedIndividual>
@@ -1121,6 +1109,7 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</maxIdentifiers>
         <opencvName>DICT_5X5_100</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ARTag"/>
         <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
         <rdfs:label xml:lang="en">ArUco 5x5 dictionary with 100 tags</rdfs:label>
     </owl:NamedIndividual>
@@ -1136,6 +1125,7 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</maxIdentifiers>
         <opencvName>DICT_5X5_1000</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ARTag"/>
         <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
         <rdfs:label xml:lang="en">ArUco 5x5 dictionary with 1000 tags</rdfs:label>
     </owl:NamedIndividual>
@@ -1167,6 +1157,7 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
         <markerBits rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</markerBits>
         <maxIdentifiers rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</maxIdentifiers>
         <opencvName>DICT_5X5_50</opencvName>
+        <supportedMarker rdf:resource="http://purl.org/fidmark/ARTag"/>
         <supportedMarker rdf:resource="http://purl.org/fidmark/ArUco"/>
         <rdfs:label xml:lang="en">ArUco 5x5 dictionary with 50 tags</rdfs:label>
     </owl:NamedIndividual>
