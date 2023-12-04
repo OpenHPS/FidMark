@@ -10,10 +10,12 @@
 
 ### Directories and Files
 - `/1.0/`: FidMark 1.0 ontology files and allignment(s)
+    - `/1.0/dicom/`: FidMark DICOM
 - `/website/`: Generated documentation
 - `/docs/`: Documentation and images
+    - `/docs/images/`: Ontology images
 - `/examples/`: Ontology examples and demonstrator(s) 
-    - `/examples/eswc2024`: Work in progress AR application from RDF data
+    - `/examples/eswc2024`: AR application from RDF data
     - `/examples/eswc2024_generator`: Generator for test data used for the SPARQL queries
 - `/dependencies/`: Dependendency ontology for Protege caching
 

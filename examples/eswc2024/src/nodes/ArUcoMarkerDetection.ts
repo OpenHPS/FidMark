@@ -1,6 +1,6 @@
 import { FiducialMarker } from '@/models';
 import { fidmark } from '@/ontologies';
-import { Absolute3DPosition, Orientation, ProcessingNode } from '@openhps/core';
+import { Absolute3DPosition, LengthUnit, Orientation, ProcessingNode } from '@openhps/core';
 import { ImageFrame, ImageProcessingOptions } from '@openhps/video';
 import { AR } from 'js-aruco';
 import { POS } from 'js-aruco/src/posit1.js'
@@ -66,7 +66,7 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends P
                     if (markerObject) {
                         const translation = pose.bestTranslation;
                         const rotation = pose.bestRotation;
-                        markerObject.setPosition(new Absolute3DPosition(translation[0], translation[1], -translation[2]));
+                        markerObject.setPosition(new Absolute3DPosition(translation[0], translation[1], -translation[2], LengthUnit.MILLIMETER));
                         markerObject.position.setOrientation(Orientation.fromEuler({
                            x: -Math.asin(-rotation[1][2]),
                            y: -Math.atan2(rotation[0][2], rotation[2][2]),
