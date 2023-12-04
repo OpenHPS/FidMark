@@ -1,5 +1,5 @@
-import { ArUcoMarker, FiducialMarker } from "@/models";
-import { DataFrame } from "@openhps/core";
+import { FiducialMarker, VirtualObject } from "@/models";
+import { DataFrame, LengthUnit, Relative3DPosition } from "@openhps/core";
 import { ImageProcessingNode, ImageProcessingOptions, PerspectiveCameraObject } from "@openhps/video";
 import * as THREE from 'three';
 
@@ -33,28 +33,40 @@ export class ThreeJSNode extends ImageProcessingNode<any, any> {
             const cameraObject = frame.source as PerspectiveCameraObject;
             this.camera.fov = cameraObject.fov;
             this.camera.aspect = image.width / image.height;
-            this.camera.near = cameraObject.near;
+            this.camera.near = 1;
             this.camera.far = cameraObject.far;
-            this.camera.position.z = 1;
-
+            
             this.scene = new THREE.Scene();
             this.scene.add(this.camera);
+            this.scene.add(new THREE.AmbientLight(0xffffff, 1))
 
-            frame.getObjects(FiducialMarker).forEach(marker => {
-                const markerSize = marker.width;
-                const geometry = new THREE.BoxGeometry(1, 1, 1);
-                const material = new THREE.MeshNormalMaterial();
-                const mesh = new THREE.Mesh(geometry, material);
-                mesh.rotation.setFromRotationMatrix(marker.position.orientation.toRotationMatrix());
-                mesh.position.set(...marker.position.toVector3().toArray());
-                mesh.scale.x = markerSize;
-                mesh.scale.y = markerSize;
-                mesh.scale.z = markerSize;
-                this.scene.add(mesh);
+            frame.getObjects().forEach(marker => {
+                if (marker instanceof FiducialMarker && marker.position !== undefined) {
+                    const virtualObjects = frame.getObjects(VirtualObject).filter(obj => {
+                        return obj.getRelativePosition(marker.uid) !== undefined; 
+                    });
+                    virtualObjects.forEach(object => {
+                        const position = (object.getRelativePosition(marker.uid, Relative3DPosition.name) as Relative3DPosition);
+                        if (position) {
+                            const mesh = object.geometry.gltf.scene;
+                            mesh.rotation.setFromRotationMatrix(marker.position.orientation.toRotationMatrix() as any);
+                            mesh.position.set(...
+                                marker.position.toVector3()
+                                    .add(position.toVector3(LengthUnit.MILLIMETER)
+                                        .applyQuaternion(marker.position.orientation))
+                                    .toArray());
+                            mesh.scale.x = marker.width;
+                            mesh.scale.y = marker.height;
+                            mesh.scale.z = (marker.width + marker.height) / 2.;
+                            this.scene.add(mesh);
+                        }
+                    });
+                }
             });
 
             this.scene.background = new THREE.Texture(image);
             this.scene.background.needsUpdate = true;
+
             this.renderer.render(this.scene, this.camera);
             resolve(image);
         });

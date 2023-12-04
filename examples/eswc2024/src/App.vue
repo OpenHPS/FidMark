@@ -9,6 +9,7 @@ import { IonApp, IonRouterOutlet } from '@ionic/vue';
 import { Options, Vue } from 'vue-property-decorator';
 import { loadWASM } from 'onigasm';
 import { RDFSerializer } from '@openhps/rdf';
+import { useMarkerStore } from './stores/marker';
 
 @Options({
   components: {
@@ -16,6 +17,7 @@ import { RDFSerializer } from '@openhps/rdf';
   }
 })
 export default class App extends Vue {
+  markerStore = useMarkerStore();
   
   async beforeMount() {
     await loadWASM("/js/vendor/onigasm/onigasm.wasm");
@@ -23,6 +25,7 @@ export default class App extends Vue {
 
   mounted(): void {
     RDFSerializer.initialize("video");
+    this.markerStore.initialize();
   }
 }
 </script>

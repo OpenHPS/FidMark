@@ -25,9 +25,7 @@ import loader from "@monaco-editor/loader";
 import { Registry } from 'monaco-textmate';
 import { wireTmGrammars } from 'monaco-editor-textmate';
 import { editor } from 'monaco-editor';
-import { ArUcoMarker, Geometry, VirtualObject } from '@/models';
-import { Absolute3DPosition, Orientation, Relative3DPosition } from '@openhps/core';
-import { RDFSerializer, Store } from '@openhps/rdf';
+import { useMarkerStore } from '../stores/marker';
 
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -38,6 +36,7 @@ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 })
 export default class EditorPage extends Vue {
   editor: editor.IStandaloneCodeEditor;
+  markerStore = useMarkerStore();
 
   mounted(): void {
     loader.init().then((monaco) => {
@@ -60,46 +59,21 @@ export default class EditorPage extends Vue {
           language: "turtle",
           minimap: { enabled: false },
         });
+      this.value = this.markerStore.rdf;
       return wireTmGrammars(monaco, registry, grammars, this.editor);
-    }).then(() => {
-      return this.loadExample();
     }).catch(console.error);
+  }
+
+  ionViewWillLeave(): void {
+    this.markerStore.fromRDF(this.editor.getValue());
   }
 
   get value(): string {
     return this.editor.getValue();
   }
 
-  async loadExample() {
-    const BASE_URI = "http://example.org/";
-    const marker = new ArUcoMarker();
-    marker.uid = "marker";
-    marker.identifier = 10;
-    marker.height = 50;
-    marker.setPosition(new Absolute3DPosition(0, 0, 0));
-    marker.position.orientation = Orientation.fromEuler({
-      pitch: 0,
-      yaw: 0,
-      roll: 0
-    });
-    const object = new VirtualObject("cube");
-    object.addRelativePosition(new Relative3DPosition("marker", 0, 0, 0));
-    object.geometry = new Geometry();
-    object.geometry.asGltf = "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Cube/glTF/Cube.gltf";
-  
-    
-    const store = new Store();
-    store.addQuads(RDFSerializer.serializeToQuads(marker, BASE_URI));
-    store.addQuads(RDFSerializer.serializeToQuads(object, BASE_URI));
-    const turtle = await RDFSerializer.stringify(store, {
-      prettyPrint: true,
-      baseUri: "http://example.org/",
-      prefixes: {
-        fidmark: "http://purl.org/fidmark/",
-        example: "http://example.org/",
-      }
-    });
-    this.editor.setValue(turtle);
+  set value(turtle: string) {
+    this.editor.setValue(turtle ?? "");
   }
 }
 </script>

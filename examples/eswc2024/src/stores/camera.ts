@@ -1,11 +1,13 @@
 /// <reference types="webrtc" />
 
-import { CallbackSinkNode, Model, ModelBuilder } from '@openhps/core';
+import { CallbackNode, CallbackSinkNode, Model, ModelBuilder } from '@openhps/core';
 import { defineStore } from 'pinia';
 import { ArUcoMarkerDetection } from '@/nodes';
 import { ThreeJSNode } from '@/nodes/ThreeJSNode';
 import { ColorOrder, PerspectiveCameraObject } from '@openhps/video';
 import { VideoSource } from '@openhps/webrtc';
+import { useMarkerStore } from './marker';
+import { toRaw } from 'vue';
 
 export interface CameraState {
     model: Model<any, any>,
@@ -29,7 +31,8 @@ export const useCameraStore = defineStore('camera', {
             camera.fov = 40;
             camera.colorOrder = ColorOrder.RGBA;
             const video = document.getElementById("camera") as HTMLVideoElement;
-
+            const markerStore = useMarkerStore();
+            
             ModelBuilder.create()
                 .withLogger((level, message, data) => {
                     if (level === 'error') {
@@ -41,7 +44,17 @@ export const useCameraStore = defineStore('camera', {
                     uid: "video",
                     source: camera,
                     videoSource: video,
-                    autoPlay: true
+                    autoPlay: true,
+                    height: window.innerHeight,
+                    facingMode: { ideal: "environment" } 
+                }))
+                .via(new CallbackNode(frame => {
+                    markerStore.markers.forEach(marker => {
+                        frame.addObject(toRaw(marker));
+                    });
+                    markerStore.objects.forEach(virtualObject => {
+                        frame.addObject(toRaw(virtualObject));
+                    });
                 }))
                 .via(new ArUcoMarkerDetection({
 

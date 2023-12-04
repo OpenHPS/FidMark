@@ -969,3 +969,6 @@ export const OriginTopLeft: OtherIndividual = 'http://purl.org/fidmark/OriginTop
  * http://purl.org/fidmark/OriginTopRight
  */
 export const OriginTopRight: OtherIndividual = 'http://purl.org/fidmark/OriginTopRight';
+
+export const _BASE: IriString = 'http://purl.org/fidmark/';
+export const _PREFIX: string = 'fidmark';

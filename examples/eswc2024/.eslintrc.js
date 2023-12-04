@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: ["**/ontologies/*.ts"],
   root: true,
   env: {
     node: true
