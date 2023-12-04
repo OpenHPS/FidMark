@@ -34,6 +34,7 @@
     "monaco-editor-webpack-plugin": "^7.1.0",
     "monaco-languageclient": "^7.1.0",
     "monaco-textmate": "^3.0.1",
+    "onigasm": "^2.2.5",
     "pinia": "^2.1.7",
     "three": "^0.159.0",
     "vue": "^3.3.10",
