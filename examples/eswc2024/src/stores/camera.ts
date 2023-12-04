@@ -4,19 +4,16 @@ import { CallbackSinkNode, Model, ModelBuilder } from '@openhps/core';
 import { defineStore } from 'pinia';
 import { ArUcoMarkerDetection } from '@/nodes';
 import { ThreeJSNode } from '@/nodes/ThreeJSNode';
-import { ColorOrder, ImageFrame, PerspectiveCameraObject } from '@openhps/video';
-import { WebXRService, XRSource } from '@openhps/webxr';
-import { Uint8ImageToMat } from '@openhps/opencv/web';
+import { ColorOrder, PerspectiveCameraObject } from '@openhps/video';
+import { VideoSource } from '@openhps/webrtc';
 
 export interface CameraState {
     model: Model<any, any>,
-    service: WebXRService
 }
 
 export const useCameraStore = defineStore('camera', {
   state: (): CameraState => ({
     model: undefined,
-    service: undefined
   }),
   getters: {
 
@@ -27,13 +24,11 @@ export const useCameraStore = defineStore('camera', {
             const canvas = document.getElementById("threeCanvas") as HTMLCanvasElement;
             const camera = new PerspectiveCameraObject();
             camera.distortionCoefficients = [0, 0, 0, 0, 0];
-            camera.near = 0.01;
+            camera.near = 1;
             camera.far = 1000;
             camera.fov = 40;
             camera.colorOrder = ColorOrder.RGBA;
-
-            this.service = new WebXRService({
-            });
+            const video = document.getElementById("camera") as HTMLVideoElement;
 
             ModelBuilder.create()
                 .withLogger((level, message, data) => {
@@ -41,14 +36,13 @@ export const useCameraStore = defineStore('camera', {
                         console.error(level, message, data);
                     }
                 })
-                .addService(this.service)
-                .from(new XRSource({
+                .from(new VideoSource({
+                    fps: 30,
                     uid: "video",
                     source: camera,
-                    output: false,
-                    includeImage: true
+                    videoSource: video,
+                    autoPlay: true
                 }))
-                .via(new Uint8ImageToMat(ImageFrame))
                 .via(new ArUcoMarkerDetection({
 
                 }))
@@ -63,15 +57,6 @@ export const useCameraStore = defineStore('camera', {
                     this.model.on('error', console.error);
                     resolve();
                 }).catch(reject);
-        });
-    },
-    start(): Promise<void> {
-        return new Promise((resolve, reject) => {
-            this.service.createSession().then(() => {
-                return this.model.findNodeByUID("video").start();
-            }).then(() => {
-                resolve();
-            }).catch(reject);
         });
     }
   },

@@ -25,9 +25,9 @@ import loader from "@monaco-editor/loader";
 import { Registry } from 'monaco-textmate';
 import { wireTmGrammars } from 'monaco-editor-textmate';
 import { editor } from 'monaco-editor';
-import { ArUcoMarker } from '@/models';
-import { Absolute3DPosition, Orientation } from '@openhps/core';
-import { RDFSerializer } from '@openhps/rdf';
+import { ArUcoMarker, Geometry, VirtualObject } from '@/models';
+import { Absolute3DPosition, Orientation, Relative3DPosition } from '@openhps/core';
+import { RDFSerializer, Store } from '@openhps/rdf';
 
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -71,20 +71,32 @@ export default class EditorPage extends Vue {
   }
 
   async loadExample() {
+    const BASE_URI = "http://example.org/";
     const marker = new ArUcoMarker();
+    marker.uid = "marker";
     marker.identifier = 10;
+    marker.height = 50;
     marker.setPosition(new Absolute3DPosition(0, 0, 0));
     marker.position.orientation = Orientation.fromEuler({
       pitch: 0,
       yaw: 0,
       roll: 0
     });
-    const turtle = await RDFSerializer.stringify(marker, {
+    const object = new VirtualObject("cube");
+    object.addRelativePosition(new Relative3DPosition("marker", 0, 0, 0));
+    object.geometry = new Geometry();
+    object.geometry.asGltf = "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Cube/glTF/Cube.gltf";
+  
+    
+    const store = new Store();
+    store.addQuads(RDFSerializer.serializeToQuads(marker, BASE_URI));
+    store.addQuads(RDFSerializer.serializeToQuads(object, BASE_URI));
+    const turtle = await RDFSerializer.stringify(store, {
       prettyPrint: true,
       baseUri: "http://example.org/",
       prefixes: {
         fidmark: "http://purl.org/fidmark/",
-        example: "http://example.org/"
+        example: "http://example.org/",
       }
     });
     this.editor.setValue(turtle);

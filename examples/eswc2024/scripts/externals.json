@@ -1,14 +1,7 @@
 [
     ".gitkeep",
     "openhps-core.min.js",
-    "openhps-video.min.js",
-    "openhps-opencv.external.min.js",
     "openhps-rdf.all.min.js",
-    "openhps-webxr.min.js",
-    "openhps-core.es.min.js",
-    "openhps-video.es.min.js",
-    "openhps-opencv.external.es.min.js",
-    "openhps-rdf.all.es.min.js",
-    "openhps-webxr.es.min.js",
-    "worker.openhps-core.es.min.js"
+    "openhps-video.min.js",
+    "openhps-webrtc.min.js"
 ]

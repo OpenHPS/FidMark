@@ -15,8 +15,7 @@
         </ion-toolbar>
       </ion-header>
 
-      <ion-button @click="start">Test</ion-button>
-      <canvas class="ar" id="cameraCanvas"></canvas>
+      <video class="ar" id="camera"></video>
       <canvas class="ar" id="threeCanvas"></canvas>
     </ion-content>
   </ion-page>
@@ -41,14 +40,14 @@ export default class CameraPage extends Vue {
       console.log("ok")
     }).catch(console.error);
   }
-
-  start(): void {
-    this.cameraStore.start();
-  }
 }
 </script>
 
 <style scoped>
+video.ar {
+  display: none;
+}
+
 .ar {
   position: absolute;
   top: 0;

@@ -1,48 +1,61 @@
-import { ArUcoMarker } from "@/models";
+import { ArUcoMarker, FiducialMarker } from "@/models";
 import { DataFrame } from "@openhps/core";
-import { cv } from "@openhps/opencv/web";
 import { ImageProcessingNode, ImageProcessingOptions, PerspectiveCameraObject } from "@openhps/video";
 import * as THREE from 'three';
 
 export class ThreeJSNode extends ImageProcessingNode<any, any> {
     declare protected options: ThreeJSNodeOptions;
     protected canvas: HTMLCanvasElement;
+    protected renderer: THREE.WebGLRenderer;
+    protected camera: THREE.PerspectiveCamera;
+    protected scene: THREE.Scene;
 
     constructor(options?: ThreeJSNodeOptions) {
         super(options);
+
+        this.once('build', this._onBuild.bind(this));
     }
 
-    processImage(image: cv.Mat, frame: DataFrame): Promise<cv.Mat> {
+    private _onBuild(): void {
+        this.canvas = this.options.canvas;
+        this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas: this.options.canvas });
+        this.renderer.setClearColor(0xffffff, 1);
+        this.camera = new THREE.PerspectiveCamera();
+        this.scene = new THREE.Scene();
+        this.scene.add(this.camera);
+    }
+
+    rotation = 0;
+
+    processImage(image: ImageData, frame: DataFrame): Promise<ImageData> {
         return new Promise((resolve) => {
-            this.options.canvas.width = image.cols;
-            this.options.canvas.height = image.rows;
-
+            this.renderer.setSize(image.width, image.height);
             const cameraObject = frame.source as PerspectiveCameraObject;
-            const camera = new THREE.PerspectiveCamera(
-                cameraObject.fov, 
-                cameraObject.width / cameraObject.height, 
-                cameraObject.near, 
-                cameraObject.far);
-            //camera.rotation.setFromRotationMatrix(cameraObject.position.orientation.toRotationMatrix());
-            camera.position.set(...cameraObject.position.toVector3().toArray());
+            this.camera.fov = cameraObject.fov;
+            this.camera.aspect = image.width / image.height;
+            this.camera.near = cameraObject.near;
+            this.camera.far = cameraObject.far;
+            this.camera.position.z = 1;
 
-            const scene = new THREE.Scene();
+            this.scene = new THREE.Scene();
+            this.scene.add(this.camera);
 
-            frame.getObjects(ArUcoMarker).forEach(marker => {
-                const markerSize = 0.05;
-                const geometry = new THREE.BoxGeometry(markerSize, markerSize, markerSize);
+            frame.getObjects(FiducialMarker).forEach(marker => {
+                const markerSize = marker.width;
+                const geometry = new THREE.BoxGeometry(1, 1, 1);
                 const material = new THREE.MeshNormalMaterial();
                 const mesh = new THREE.Mesh(geometry, material);
                 mesh.rotation.setFromRotationMatrix(marker.position.orientation.toRotationMatrix());
                 mesh.position.set(...marker.position.toVector3().toArray());
-                scene.add(mesh);
+                mesh.scale.x = markerSize;
+                mesh.scale.y = markerSize;
+                mesh.scale.z = markerSize;
+                this.scene.add(mesh);
             });
 
-            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, canvas: this.options.canvas });
-            renderer.xr.enabled = true;
-            renderer.setSize(this.options.canvas.width, this.options.canvas.height);
-            renderer.render(scene, camera);
-
+            this.scene.background = new THREE.Texture(image);
+            this.scene.background.needsUpdate = true;
+            this.renderer.render(this.scene, this.camera);
             resolve(image);
         });
     }

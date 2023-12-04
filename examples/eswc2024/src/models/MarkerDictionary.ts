@@ -1,22 +1,30 @@
+import { IriString } from "@openhps/rdf";
+import { fidmark } from "../ontologies";
 import { SerializableMember, SerializableObject } from "@openhps/core";
 
 @SerializableObject({
     rdf: {
-        type: "http://purl.org/fidmark/MarkerDictionary"
+        type: fidmark.MarkerDictionary
     }
 })
 export class MarkerDictionary {
     @SerializableMember({
         rdf: {
-            predicate: "http://purl.org/fidmark/dictionarySize"
+            predicate: fidmark.dictionarySize
         }
     })
     size: number;
 
     @SerializableMember({
         rdf: {
-            predicate: "http://purl.org/fidmark/hammingDistance"
+            predicate: fidmark.hammingDistance
         }
     })
     hammingSize: number;
+
+    static fromURI(uri: IriString): MarkerDictionary {
+        const dict = new MarkerDictionary();
+        (dict as any).rdf = { uri };
+        return dict;
+    }
 }
