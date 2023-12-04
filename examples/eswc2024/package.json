@@ -22,11 +22,9 @@
     "@ionic/vue-router": "^7.5.7",
     "@monaco-editor/loader": "^1.4.0",
     "@openhps/core": "^0.6.8",
-    "@openhps/opencv": "^0.3.6",
     "@openhps/rdf": "^0.4.31",
     "@openhps/video": "^0.1.14",
     "@openhps/webrtc": "^0.1.14",
-    "@openhps/webxr": "^0.1.14",
     "@techstark/opencv-js": "^4.8.0-release.10",
     "core-js": "^3.33.3",
     "ionicons": "^7.2.1",
@@ -70,8 +68,5 @@
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.3"
-  },
-  "opencv4nodejs": {
-    "disableAutoBuild": "1"
   }
 }
