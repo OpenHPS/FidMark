@@ -13,9 +13,9 @@
           <ion-label>text/turtle</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="about" href="/tabs/about">
-          <ion-icon aria-hidden="true" :icon="helpOutline" />
-          <ion-label>About</ion-label>
+        <ion-tab-button tab="objects" href="/tabs/objects">
+          <ion-icon aria-hidden="true" :icon="cubeOutline" />
+          <ion-label>Objects</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
@@ -24,5 +24,5 @@
 
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { cameraOutline, code, helpOutline } from 'ionicons/icons';
+import { cameraOutline, code, cubeOutline } from 'ionicons/icons';
 </script>
