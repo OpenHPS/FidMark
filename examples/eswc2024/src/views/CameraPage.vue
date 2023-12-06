@@ -36,9 +36,7 @@ export default class CameraPage extends Vue {
   cameraStore = useCameraStore();
 
   mounted(): void {
-    this.cameraStore.initialize().then(() => {
-      console.log("ok")
-    }).catch(console.error);
+    this.cameraStore.initialize().catch(console.error);
   }
 }
 </script>
