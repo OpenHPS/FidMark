@@ -15,14 +15,20 @@ export default defineConfig({
     externals: {
       'path': [],
       '@openhps/core': ['OpenHPS', 'core'],
-      '@openhps/webxr': ['OpenHPS', 'webxr'],
+      '@openhps/webrtc': ['OpenHPS', 'webrtc'],
       '@openhps/rdf': ['OpenHPS', 'rdf'],
       '@openhps/video': ['OpenHPS', 'video'],
-      '@openhps/opencv': ['OpenHPS', 'opencv'],
-      '@openhps/opencv/web': ['OpenHPS', 'opencv'],
     },
   },
   chainWebpack: (config) => {
+    config.optimization
+      .minimizer('terser')
+      .tap(args => {
+        const { terserOptions } = args[0]
+        terserOptions.keep_classnames = true
+        terserOptions.keep_fnames = true
+        return args
+      });
     config.resolve.alias.set(
       "vscode",
       path.resolve(
