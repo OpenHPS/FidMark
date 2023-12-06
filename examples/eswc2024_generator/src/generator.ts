@@ -15,9 +15,9 @@ function createArUco(): Quad[] {
         const marker = new ArUcoMarker();
         marker.uid = `marker-${i}`;
         marker.identifier = i * 21;
-        marker.height = 4;
-        marker.width = 4;
-        marker.dictionary = MarkerDictionary.fromURI(fidmark.DICT_4X4_250);
+        marker.height = 200;
+        marker.width = 200;
+        marker.dictionary = MarkerDictionary.fromURI(fidmark.DICT_4X4_1000);
         marker.setPosition(new Absolute3DPosition(i * 19, i * 10, 0, LengthUnit.METER));
         marker.position.setOrientation(Orientation.fromEuler({
             yaw: 31,
@@ -37,8 +37,8 @@ function createARTag(): Quad[] {
         const marker = new ARTagMarker();
         marker.uid = `marker-${i}`;
         marker.identifier = i * 21;
-        marker.height = 5;
-        marker.width = 5;
+        marker.height = 150;
+        marker.width = 150;
         marker.setPosition(new Absolute3DPosition(i * 19, i * 10, 0, LengthUnit.METER));
         marker.position.setOrientation(Orientation.fromEuler({
             yaw: 31,
@@ -56,8 +56,8 @@ function createCustomMarker(): Quad[] {
     const store = new Store();
     const marker = new FiducialMarker();
     marker.uid = `marker-hiro`;
-    marker.height = 5;
-    marker.width = 5;
+    marker.height = 120;
+    marker.width = 120;
     marker.imageDescriptor = new ImageDescriptor();
     marker.imageDescriptor.image = "https://arprojectsdemo.netlify.app/markers/hiro.png";
     marker.imageDescriptor.pattern = "https://arprojectsdemo.netlify.app/data/hiro.patt";
@@ -103,6 +103,7 @@ async function generate() {
     store.addQuads(createARTag());
     store.addQuads(createCustomMarker());
     store.addQuads(createVirtualObjects());
+    store.addQuads(createQRCode());
     fs.writeFileSync(path.join("./data", "virtual_objects.ttl"), await RDFSerializer.stringify(store, {
         prettyPrint: true,
         prefixes: {

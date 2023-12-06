@@ -739,6 +739,16 @@ rdf:List rdf:type owl:Class .
              :supportedMarker :ARTag ,
                               :ArUco ;
              rdfs:label "ArUco 4x4 dictionary with 50 tags"@en .
+       
+###  http://purl.org/fidmark/DICT_4X4_250
+:DICT_4X4_250 rdf:type owl:NamedIndividual ,
+                             :MarkerDictionary ;
+                    :hammingDistance 3 ;
+                    :markerBits 16 ;
+                    :maxIdentifiers 250 ;
+                    :opencvName "DICT_4X4_250" ;
+                    :supportedMarker :ArUco, :ARTag ;
+                    rdfs:label "ArUco 4x4 dictionary with 250 tags"@en .
 
 
 ###  http://purl.org/fidmark/DICT_5X5_100

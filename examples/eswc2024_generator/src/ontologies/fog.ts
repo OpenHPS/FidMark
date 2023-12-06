@@ -776,3 +776,6 @@ export const hasRhinoId: OwlDatatypeProperty = 'https://w3id.org/fog#hasRhinoId'
  * https://w3id.org/fog#hasRhinoId-object
  */
 export const hasRhinoId_object: OwlDatatypeProperty = 'https://w3id.org/fog#hasRhinoId-object';
+
+export const _BASE: IriString = 'https://w3id.org/fog#';
+export const _PREFIX: string = 'fog';

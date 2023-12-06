@@ -195,3 +195,6 @@ export const hasReferencedGeometryId: OwlDatatypeProperty = 'https://w3id.org/om
  * https://w3id.org/omg#hasSimpleGeometryDescription
  */
 export const hasSimpleGeometryDescription: OwlDatatypeProperty = 'https://w3id.org/omg#hasSimpleGeometryDescription';
+
+export const _BASE: IriString = 'https://w3id.org/omg#';
+export const _PREFIX: string = 'omg';
