@@ -924,6 +924,7 @@ rdf:List rdf:type owl:Class .
                      :maxIdentifiers 1024 ;
                      :opencvName "DICT_ARUCO_ORIGINAL" ;
                      :supportedMarker :ArUco ;
+                     :codes ( "Arnold" "Bob" "Catherine" ) ;
                      rdfs:label "ArUco original dictionary"@en .
 
 
