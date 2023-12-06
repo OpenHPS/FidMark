@@ -1,6 +1,0 @@
-"use strict";(globalThis["webpackChunkeswc2024"]=globalThis["webpackChunkeswc2024"]||[]).push([[753],{4753:(n,e,i)=>{i.r(e),i.d(e,{mdTransitionAnimation:()=>a});var o=i(5980),t=i(6515);
-/*!
- * (C) Ionic http://ionicframework.com - MIT License
- */
-const a=(n,e)=>{var i,a,r;const l="40px",s="0px",c="back"===e.direction,d=e.enteringEl,u=e.leavingEl,m=(0,t.g)(d),b=m.querySelector("ion-toolbar"),g=(0,o.c)();if(g.addElement(m).fill("both").beforeRemoveClass("ion-page-invisible"),c?g.duration((null!==(i=e.duration)&&void 0!==i?i:0)||200).easing("cubic-bezier(0.47,0,0.745,0.715)"):g.duration((null!==(a=e.duration)&&void 0!==a?a:0)||280).easing("cubic-bezier(0.36,0.66,0.04,1)").fromTo("transform",`translateY(${l})`,`translateY(${s})`).fromTo("opacity",.01,1),b){const n=(0,o.c)();n.addElement(b),g.addAnimation(n)}if(u&&c){g.duration((null!==(r=e.duration)&&void 0!==r?r:0)||200).easing("cubic-bezier(0.47,0,0.745,0.715)");const n=(0,o.c)();n.addElement((0,t.g)(u)).onFinish((e=>{1===e&&n.elements.length>0&&n.elements[0].style.setProperty("display","none")})).fromTo("transform",`translateY(${s})`,`translateY(${l})`).fromTo("opacity",1,0),g.addAnimation(n)}return g}}}]);
-//# sourceMappingURL=753.263bd1c6.js.map
