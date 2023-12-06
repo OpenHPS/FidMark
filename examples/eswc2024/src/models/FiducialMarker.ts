@@ -3,6 +3,7 @@ import { LengthUnit, NumberType, ReferenceSpace, SerializableMember, Serializabl
 import { MarkerDictionary } from './MarkerDictionary';
 import { RDFBuilder, Thing, qudt, rdf, xsd, RDFSerializer } from '@openhps/rdf';
 import { ImageDescriptor } from './ImageDescriptor';
+import { MarkerOrigin } from './MarkerOrigin';
 
 @SerializableObject({
     rdf: {
@@ -34,6 +35,8 @@ export class FiducialMarker extends ReferenceSpace {
     })
     dictionary?: MarkerDictionary;
 
+    origin?: MarkerOrigin;
+    
     @SerializableMember({
         rdf: {
             predicate: [fidmark.hasHeight],

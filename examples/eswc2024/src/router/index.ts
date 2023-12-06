@@ -24,8 +24,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/EditorPage.vue')
       },
       {
-        path: 'about',
-        component: () => import('@/views/AboutPage.vue')
+        path: 'objects',
+        component: () => import('@/views/ObjectsPage.vue')
       }
     ]
   }

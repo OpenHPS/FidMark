@@ -8,6 +8,8 @@
 
 **FidMark Ontology (en)**: [https://openhps.github.io/FidMark/1.0/en/](https://openhps.github.io/FidMark/1.0/en/)
 
+![Main classes](./docs/images/classes.svg)
+
 ### Directories and Files
 - `/1.0/`: FidMark 1.0 ontology files and allignment(s)
     - `/1.0/dicom/`: FidMark DICOM

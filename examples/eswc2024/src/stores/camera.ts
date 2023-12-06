@@ -1,6 +1,6 @@
 /// <reference types="webrtc" />
 
-import { CallbackNode, CallbackSinkNode, Model, ModelBuilder } from '@openhps/core';
+import { CallbackNode, Model, ModelBuilder } from '@openhps/core';
 import { defineStore } from 'pinia';
 import { ArUcoMarkerDetection } from '@/nodes';
 import { ThreeJSNode } from '@/nodes/ThreeJSNode';
@@ -46,7 +46,7 @@ export const useCameraStore = defineStore('camera', {
                     videoSource: video,
                     autoPlay: true,
                     height: window.innerHeight,
-                    facingMode: { ideal: "environment" } 
+                    facingMode: { ideal: "environment" } ,
                 }))
                 .via(new CallbackNode(frame => {
                     markerStore.markers.forEach(marker => {
@@ -56,15 +56,11 @@ export const useCameraStore = defineStore('camera', {
                         frame.addObject(toRaw(virtualObject));
                     });
                 }))
-                .via(new ArUcoMarkerDetection({
-
-                }))
+                .via(new ArUcoMarkerDetection())
                 .via(new ThreeJSNode({
                     canvas
                 }))
-                .to(new CallbackSinkNode(() => {
-
-                }))
+                .to()
                 .build().then((model: Model) => {
                     this.model = model;
                     this.model.on('error', console.error);
