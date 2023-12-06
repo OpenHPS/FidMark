@@ -4,6 +4,7 @@ const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 const path = require("path");
 
 export default defineConfig({
+  publicPath: './',
   configureWebpack: {
     plugins: [
       new MonacoWebpackPlugin({

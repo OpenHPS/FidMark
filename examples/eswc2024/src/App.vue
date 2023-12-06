@@ -20,7 +20,7 @@ export default class App extends Vue {
   markerStore = useMarkerStore();
   
   async beforeMount() {
-    await loadWASM("/js/vendor/onigasm/onigasm.wasm");
+    await loadWASM("./js/vendor/onigasm/onigasm.wasm");
   }
 
   mounted(): void {
