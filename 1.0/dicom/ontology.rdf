@@ -3,18 +3,16 @@
      xml:base="http://purl.org/fidmark/dicom/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:ssn="http://www.w3.org/ns/ssn/"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:qudt="http://qudt.org/schema/qudt/"
-     xmlns:rdfp="https://w3id.org/rdfp/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:vann="http://purl.org/vocab/vann/"
-     xmlns:shacl="http://www.w3.org/ns/shacl#"
      xmlns:terms="http://purl.org/dc/terms/"
-     xmlns:schema="http://schema.org/">
+     xmlns:schema="http://schema.org/"
+     xmlns:fidmark="http://purl.org/fidmark/">
     <owl:Ontology rdf:about="http://purl.org/fidmark/dicom/">
         <owl:versionIRI rdf:resource="http://purl.org/fidmark/1.0/dicom#"/>
         <owl:imports rdf:resource="http://purl.org/fidmark/1.0/"/>
@@ -38,9 +36,9 @@
     <!-- http://purl.org/fidmark/FiducialMarker -->
 
 
-    <owl:Class rdf:about="http://purl.org/fidmark/FiducialMarker">
+    <rdf:Description rdf:about="http://purl.org/fidmark/FiducialMarker">
         <owl:equivalentClass rdf:resource="http://purl.org/healthcarevocab/v1#IE.SpatialFiducials"/>
-    </owl:Class>
+    </rdf:Description>
     
 
 

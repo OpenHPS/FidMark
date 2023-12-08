@@ -1,6 +1,5 @@
 [ {
   "@id" : "http://purl.org/fidmark/FiducialMarker",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "http://purl.org/healthcarevocab/v1#IE.SpatialFiducials"
   } ]

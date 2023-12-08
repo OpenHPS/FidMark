@@ -16,8 +16,7 @@
 #################################################################
 
 ###  http://purl.org/fidmark/FiducialMarker
-<http://purl.org/fidmark/FiducialMarker> rdf:type owl:Class ;
-                                         owl:equivalentClass <http://purl.org/healthcarevocab/v1#IE.SpatialFiducials> .
+<http://purl.org/fidmark/FiducialMarker> owl:equivalentClass <http://purl.org/healthcarevocab/v1#IE.SpatialFiducials> .
 
 
 ###  http://purl.org/healthcarevocab/v1#IE.GeneralPurposePerformedProcedureStep
