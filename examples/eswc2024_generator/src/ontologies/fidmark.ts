@@ -701,15 +701,6 @@ export const DICT_4X4_100: OtherIndividual = 'http://purl.org/fidmark/DICT_4X4_1
 export const DICT_4X4_1000: OtherIndividual = 'http://purl.org/fidmark/DICT_4X4_1000';
 
 /**
- * ArUco 4x4 dictionary with 250 tags
- * 
- * 
- *
- * http://purl.org/fidmark/DICT_4X4_250
- */
-export const DICT_4X4_250: OtherIndividual = 'http://purl.org/fidmark/DICT_4X4_250';
-
-/**
  * ArUco 4x4 dictionary with 50 tags
  * 
  * 
@@ -978,3 +969,6 @@ export const OriginTopLeft: OtherIndividual = 'http://purl.org/fidmark/OriginTop
  * http://purl.org/fidmark/OriginTopRight
  */
 export const OriginTopRight: OtherIndividual = 'http://purl.org/fidmark/OriginTopRight';
+
+export const _BASE: IriString = 'http://purl.org/fidmark/';
+export const _PREFIX: string = 'fidmark';

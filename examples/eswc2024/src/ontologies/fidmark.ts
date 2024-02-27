@@ -440,6 +440,15 @@ export const WhyCon: OwlClass = 'http://purl.org/fidmark/WhyCon';
 export const reacTIVision: OwlClass = 'http://purl.org/fidmark/reacTIVision';
 
 /**
+ * codes
+ * 
+ * A list of codes associated to a dictionary.
+ *
+ * http://purl.org/fidmark/codes
+ */
+export const codes: OwlObjectProperty = 'http://purl.org/fidmark/codes';
+
+/**
  * has marker dictionary
  * 
  * A marker dictionary defines the different variants that can be achieved using the available encoded bits and error correction.
@@ -701,6 +710,15 @@ export const DICT_4X4_100: OtherIndividual = 'http://purl.org/fidmark/DICT_4X4_1
 export const DICT_4X4_1000: OtherIndividual = 'http://purl.org/fidmark/DICT_4X4_1000';
 
 /**
+ * ArUco 4x4 dictionary with 250 tags
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_4X4_250
+ */
+export const DICT_4X4_250: OtherIndividual = 'http://purl.org/fidmark/DICT_4X4_250';
+
+/**
  * ArUco 4x4 dictionary with 50 tags
  * 
  * 
@@ -852,6 +870,15 @@ export const DICT_APRILTAG_36h10: OtherIndividual = 'http://purl.org/fidmark/DIC
  * http://purl.org/fidmark/DICT_APRILTAG_36h11
  */
 export const DICT_APRILTAG_36h11: OtherIndividual = 'http://purl.org/fidmark/DICT_APRILTAG_36h11';
+
+/**
+ * ARTag dictionary
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_ARTAG
+ */
+export const DICT_ARTAG: OtherIndividual = 'http://purl.org/fidmark/DICT_ARTAG';
 
 /**
  * ArUco original dictionary

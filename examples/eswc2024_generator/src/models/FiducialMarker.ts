@@ -1,8 +1,9 @@
 import { fidmark } from '../ontologies';
 import { LengthUnit, NumberType, ReferenceSpace, SerializableMember, SerializableObject } from '@openhps/core';
 import { MarkerDictionary } from './MarkerDictionary';
-import { RDFBuilder, Thing, qudt, rdf, xsd } from '@openhps/rdf';
+import { RDFBuilder, Thing, qudt, rdf, xsd, RDFSerializer } from '@openhps/rdf';
 import { ImageDescriptor } from './ImageDescriptor';
+import { MarkerOrigin } from './MarkerOrigin';
 
 @SerializableObject({
     rdf: {
@@ -34,18 +35,21 @@ export class FiducialMarker extends ReferenceSpace {
     })
     dictionary?: MarkerDictionary;
 
+    origin?: MarkerOrigin;
+    
     @SerializableMember({
         rdf: {
             predicate: [fidmark.hasHeight],
             serializer: (value: number) => {
                 return RDFBuilder.blankNode()
                     .add(rdf.type, qudt.QuantityValue)
-                    .add(qudt.unit, LengthUnit.CENTIMETER)
+                    .add(qudt.unit, LengthUnit.MILLIMETER)
                     .add(qudt.numericValue, value, xsd.double)
                     .build();
             },
             deserializer: (thing: Thing) => {
-                return parseFloat(thing.predicates[qudt.numericValue][0].value);
+                const unit = RDFSerializer.deserialize(thing.predicates[qudt.unit][0] as Thing, LengthUnit);
+                return unit.convert(parseFloat(thing.predicates[qudt.numericValue][0].value), LengthUnit.MILLIMETER);
             },
         },
     })
@@ -57,12 +61,13 @@ export class FiducialMarker extends ReferenceSpace {
             serializer: (value: number) => {
                 return RDFBuilder.blankNode()
                     .add(rdf.type, qudt.QuantityValue)
-                    .add(qudt.unit, LengthUnit.CENTIMETER)
+                    .add(qudt.unit, LengthUnit.MILLIMETER)
                     .add(qudt.numericValue, value, xsd.double)
                     .build();
             },
             deserializer: (thing: Thing) => {
-                return parseFloat(thing.predicates[qudt.numericValue][0].value);
+                const unit = RDFSerializer.deserialize(thing.predicates[qudt.unit][0] as Thing, LengthUnit);
+                return unit.convert(parseFloat(thing.predicates[qudt.numericValue][0].value), LengthUnit.MILLIMETER);
             },
         },
     })

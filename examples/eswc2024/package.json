@@ -7,6 +7,7 @@
     "postinstall": "shx cp -rf node_modules/@openhps/*/dist/web/*.* ./public/js/vendor/openhps/ && node ./scripts/process.js",
     "ontologies": "openhps-rdf -d ./src/ontologies -n fidmark:http://purl.org/fidmark/ -n omg:https://w3id.org/omg# -n fog:https://w3id.org/fog# -m http://purl.org/fidmark/ https://openhps.github.io/FidMark/1.0/ontology.ttl -m https://w3id.org/fog# https://mathib.github.io/fog-ontology/ontology.ttl",
     "serve": "vue-cli-service serve",
+    "serve:production": "vue-cli-service serve --mode production",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
