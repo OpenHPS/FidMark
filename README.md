@@ -7,7 +7,7 @@
 ## Documentation
 
 **FidMark Ontology (en)**: [https://openhps.github.io/FidMark/1.0/en/](https://openhps.github.io/FidMark/1.0/en/)
-
+**FidMark Demonstrator**: [https://openhps.github.io/FidMark/application/](https://openhps.github.io/FidMark/application/)
 ![Main classes](./docs/images/classes.svg)
 
 ### Directories and Files
@@ -19,7 +19,11 @@
 - `/examples/`: Ontology examples and demonstrator(s) 
     - `/examples/eswc2024`: AR application from RDF data
     - `/examples/eswc2024_generator`: Generator for test data used for the SPARQL queries
+    - `/examples/virtual_objects.ttl`: Generated test data for SPARQL queries
 - `/dependencies/`: Dependendency ontology for Protege caching (not important)
+
+### Changelog
+*Changelog is not kept before ESWC 2024 conference*
 
 ## Methodology
 Our design approach for the requirements in our ontology is based on the Linked Open Terms (LOT) methodology. Due to the already existing ontologies for describing fiducial markers in medical sciences, we decided to focus on fiducial markers used within the domain of augmented reality, primarily for position and orientation estimation (commonly defined as a pose). We started by doing an analysis of the different types of markers that exist for different applications within the domain of computer vision. Next, using this set of different markers with their own use-cases for different scenarios and environmental conditions, we have listed a set of use cases, design goals and required data for each type of marker.

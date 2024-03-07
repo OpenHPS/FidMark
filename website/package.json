@@ -1,14 +1,15 @@
 {
   "name": "fidmark-website",
   "version": "0.1.0",
-  "description": "FIDMARK",
+  "description": "FidMark",
   "main": "index.js",
-  "repository": "https://github.com/OpenHPS/FIDMARK.git",
+  "repository": "https://github.com/OpenHPS/FidMark.git",
   "author": {
     "name": "Maxim Van de Wynckel",
     "email": "maxim.van.de.wynckel@vub.be"
   },
   "contributors": [
+    "Isaac Valadez",
     "Beat Signer"
   ],
   "license": "Apache-2.0",

@@ -37,7 +37,7 @@ async function buildOntology(version = '1.0') {
     await rmdir(path.join(__dirname, `../_site/${version}/dicom/doc`));
 }
 
-async function downloadWidoco(version = "1.4.17") {
+async function downloadWidoco(version = "1.4.21") {
     return new Promise((resolve, reject) => {
         const file = path.join(__dirname, `widoco-${version}.jar`);
         if (fs.existsSync(file)) {
@@ -45,7 +45,7 @@ async function downloadWidoco(version = "1.4.17") {
         }
         console.log(chalk.yellow(`Downloading ${file} ...`));
         axios({
-            url: `https://github.com/dgarijo/Widoco/releases/download/v${version}/java-17-widoco-${version}-jar-with-dependencies.jar`,
+            url: `https://github.com/dgarijo/Widoco/releases/download/v${version}/widoco-${version}-jar-with-dependencies_JDK-17.jar`,
             method: 'GET',
             responseType: "stream"
         }).then(async (response) => {
@@ -57,7 +57,9 @@ async function downloadWidoco(version = "1.4.17") {
 async function executeWidoco(file, ontologyFile, outputFolder) {
     return new Promise((resolve, reject) => {
         console.log(chalk.yellow(`Creating WIDOCO documentation for ${ontologyFile} ...`));
+        const configFile = path.join(__dirname, "widoco.properties");
         const cmd = `java -jar ${file} \
+            -confFile ${configFile} \
             -ontFile ${ontologyFile} \
             -outFolder ${outputFolder} \
             -rewriteAll \
