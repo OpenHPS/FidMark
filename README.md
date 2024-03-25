@@ -6,8 +6,8 @@
 
 ## Documentation
 
-**FidMark Ontology (en)**: [https://openhps.github.io/FidMark/1.0/en/](https://openhps.github.io/FidMark/1.0/en/)
-**FidMark Demonstrator**: [https://openhps.github.io/FidMark/application/](https://openhps.github.io/FidMark/application/)
+**FidMark Ontology (en)**: [https://fidmark.openhps.org/1.0/en/](https://fidmark.openhps.org/1.0/en/)
+**FidMark Demonstrator**: [https://fidmark.openhps.org/application/](https://fidmark.openhps.org/application/)
 ![Main classes](./docs/images/classes.svg)
 
 ### Directories and Files

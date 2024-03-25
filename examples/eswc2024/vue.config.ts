@@ -4,7 +4,7 @@ const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 const path = require("path");
 
 export default defineConfig({
-  publicPath: '/FidMark/application/',
+  publicPath: '/application/',
   configureWebpack: {
     plugins: [
       new MonacoWebpackPlugin({
