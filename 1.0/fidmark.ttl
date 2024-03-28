@@ -27,7 +27,7 @@
 <p>Our ontology uses the OWL 2 DL grammar. In total our ontology adds more than 55 classes, 30 data and object properties and
 more than 30 individuals for existing fiducial markers and dictionaries.</p>"""@en ;
                             dcterms:license <http://purl.org/NET/rdflicense/cc-by-sa4.0> ;
-                            dcterms:modified "2024-03-07T00:00:00"^^xsd:dateTime ;
+                            dcterms:modified "2024-03-27T00:00:00"^^xsd:dateTime ;
                             dcterms:title "Fiducial Marker Ontology"@en ;
                             vann:example "https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_objects.ttl"^^xsd:anyURI ;
                             vann:preferredNamespacePrefix "fidmark" ;

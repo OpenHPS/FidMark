@@ -35,6 +35,11 @@ export class FiducialMarker extends ReferenceSpace {
     })
     dictionary?: MarkerDictionary;
 
+    @SerializableMember({
+        rdf: {
+            predicate: fidmark.hasOrigin
+        }
+    })
     origin?: MarkerOrigin;
     
     @SerializableMember({

@@ -17,6 +17,12 @@
                     <ion-label>Markers</ion-label>
                 </ion-item-divider>
 
+                <ion-item>
+                  <ion-label>
+                    <a href="https://chev.me/arucogen/" target="_blank">ArUco Generator</a>
+                  </ion-label>
+                </ion-item>
+
                 <ion-item v-for="object in markerStore.markers" :key="object.rdf.uri">
                     <ion-label>
                         <h3>{{ object.rdf.uri }}</h3>
