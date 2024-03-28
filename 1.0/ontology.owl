@@ -30,7 +30,7 @@
 &lt;p&gt;Our ontology uses the OWL 2 DL grammar. In total our ontology adds more than 55 classes, 30 data and object properties and
 more than 30 individuals for existing fiducial markers and dictionaries.&lt;/p&gt;</terms:description>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by-sa4.0"/>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-03-07T00:00:00</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-03-27T00:00:00</terms:modified>
         <terms:title xml:lang="en">Fiducial Marker Ontology</terms:title>
         <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_objects.ttl</vann:example>
         <vann:preferredNamespacePrefix>fidmark</vann:preferredNamespacePrefix>
