@@ -21,6 +21,7 @@
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "@types/node": "^18.7.23",
     "axios": "^0.27.2",
+    "bootstrap": "^5.3.3",
     "chalk": "^4.X",
     "dotenv": "^16.0.3",
     "eleventy-favicon": "^1.1.3",
@@ -44,6 +45,5 @@
     "clean": "rimraf ./_site",
     "start": "eleventy --serve",
     "build": "eleventy"
-  },
-  "devDependencies": {}
+  }
 }
