@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include "head.njk" %}
+
+  <body>
+    <main>
+      <section class="py-5 container">
+        <h1 class="mb-5">{{ title }}</h1>
+
+        {{ content | safe }}
+      </section>
+    </main>
+  </body>
+</html>

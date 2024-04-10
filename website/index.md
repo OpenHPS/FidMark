@@ -1,7 +1,6 @@
 ---
 layout: default.njk
-title: 'Home'
+title: 'FidMark Ontology'
 ---
-FidMark Ontology
-
-<a href="/1.0/">Version 1.0</a>
+## Documentation
+[Version 1.0](/1.0/)
