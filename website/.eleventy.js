@@ -69,7 +69,7 @@ module.exports = function (el) {
   el.setLibrary("njk", njkEnv);
 
   el.on('beforeBuild', async () => {
-   //await buildOntology();
+    await buildOntology();
   });
 
   return {
