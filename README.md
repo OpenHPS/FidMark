@@ -16,6 +16,7 @@
 - `/website/`: Generated documentation and WIDOCO settings
 - `/docs/`: Documentation and images
     - `/docs/images/`: Ontology images
+- `/openhps/`: [OpenHPS](https://openhps.org) library for FidMark
 - `/examples/`: Ontology examples and demonstrator(s) 
     - `/examples/eswc2024`: AR application from RDF data
     - `/examples/eswc2024_generator`: Generator for test data used for the SPARQL queries
