@@ -59,6 +59,7 @@
   "peerDependencies": {
     "@openhps/core": ">=0.6.9",
     "@openhps/rdf": ">=0.4.60",
+    "@openhps/video": "^0.1.14",
     "reflect-metadata": ">=0.2.1"
   },
   "devDependencies": {

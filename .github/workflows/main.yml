@@ -173,6 +173,7 @@ jobs:
       - name: Publish to NPM (dev)
         uses: JS-DevTools/npm-publish@v1
         with:
+          package: openhps/package.json
           token: ${{ secrets.NPM_TOKEN }}
           tag: dev
       - name: Publish to GitHub
@@ -200,8 +201,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            **/dist
-          key: ${{ runner.os }}-build-v1-${{ hashFiles('package.json') }}-${{ hashFiles('yarn.lock') }}-${{ github.run_number }}
+            openhps/dist
+          key: ${{ runner.os }}-build-v1-${{ hashFiles('openhps/package.json') }}-${{ hashFiles('openhps/yarn.lock') }}-${{ github.run_number }}
       - name: Configure Publish
         run: |
           git config --global user.name 'CI'
@@ -213,6 +214,7 @@ jobs:
       - name: Publish to NPM (main)
         uses: JS-DevTools/npm-publish@v1
         with:
+          package: openhps/package.json
           token: ${{ secrets.NPM_TOKEN }}
           tag: latest
       - name: Publish to GitHub
@@ -252,7 +254,7 @@ jobs:
           npm run build
       - name: Copy OpenHPS documentation
         run: |
-          cp -r ./openhps/docs ./website/_site/openhps
+          cp -r ./openhps/docs/out ./website/_site/openhps
       - name: Build example application
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

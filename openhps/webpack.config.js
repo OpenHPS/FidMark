@@ -76,12 +76,6 @@ const bundle = (env, module) => ({
       amd: 'rdf',
       root: ['OpenHPS', 'rdf']
     },
-    '@openhps/rf': module ? "./openhps-rf.es" + (env.prod ? ".min" : "") + ".js" : {
-      commonjs: '@openhps/rf',
-      commonjs2: '@openhps/rf',
-      amd: 'rf',
-      root: ['OpenHPS', 'rf']
-    }
   },
   devtool: 'source-map',
   plugins: [],
