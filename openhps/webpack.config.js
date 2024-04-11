@@ -53,7 +53,7 @@ const bundle = (env, module) => ({
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: `web/${PROJECT_NAME}${module ? ".es" : ""}${env.prod ? ".min" : ""}.js`,
-    library: module ? undefined : ['SemBeacon', LIBRARY_NAME.substring(LIBRARY_NAME.indexOf("/") + 1)],
+    library: module ? undefined : ['FidMark', LIBRARY_NAME.substring(LIBRARY_NAME.indexOf("/") + 1)],
     libraryTarget: module ? "module" : "umd",
     umdNamedDefine: !module,
     globalObject: module ? undefined : `(typeof self !== 'undefined' ? self : this)`,
