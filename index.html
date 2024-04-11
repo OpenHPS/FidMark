@@ -21,51 +21,157 @@
 
   <body>
     <header>
-    <div class="collapse bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4 class="text-white"></h4>
-                    <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-                </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Contact</h4>
-                    <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                    <li><a href="#" class="text-white">Like on Facebook</a></li>
-                    <li><a href="#" class="text-white">Email me</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="navbar navbar-dark bg-dark shadow-sm">
         <div class="container">
             <a href="#" class="navbar-brand d-flex align-items-center">
                 <strong>FidMark Ontology</strong>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
     </div>
 </header>
 
     <main>
       <section class="py-5 container">
-        <h2>Documentation</h2>
-<p><a href="/1.0/">Version 1.0</a></p>
+        <h2>Abstract</h2>
+<p class="abstract">
+Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation, and subsequently the scale and position of other objects within the same field of view. They are used in a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. Despite the wide range of different marker types with their advantages for specific use cases, there exists no standard to decide which marker to best use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing interoperability between AR applications. We propose the FidMark fiducial marker ontology, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our proposed ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With FidMark we aim to enable future AR solutions to semantically describe markers within an environment so that third-party applications can utilise this information.
+</p>
 
+<div class="btn-header">
+  <a href="https://solid.maximvdw.be/publications/fidmark-a-fiducial-marker-ontology-for-semantically-describing-visual-markers.pdf" class="btn btn-outline-primary btn-icon"><i class="fa fa-regular fa-file-pdf"></i>Paper PDF</a>
+  <a href="https://github.com/OpenHPS/FidMark/" class="btn btn-outline-dark btn-icon"><i class="fa fa-brands fa-github"></i>GitHub</a>
+  <a href="https://fidmark.openhps.org/application/" class="btn btn-outline-success btn-icon"><i class="fa fa-solid fa-vr-cardboard"></i>Demo Web App</a>
+</div>
+
+<h2>Methodology</h2>
+<p>
+Our design approach for the requirements in our ontology is based on the Linked Open Terms (LOT) methodology. Due to the already existing ontologies for describing fiducial markers in medical sciences, we decided to focus on fiducial markers used within the domain of augmented reality, primarily for position and orientation estimation (commonly defined as a pose). We started by doing an analysis of the different types of markers that exist for different applications within the domain of computer vision. Next, using this set of different markers with their own use-cases for different scenarios and environmental conditions, we have listed a set of use cases, design goals and required data for each type of marker.
+</p>
+
+<p>
+Based on the marker analysis and their data, we determined the common attributes and properties of each marker. Two of the main common properties of each marker is the inclusion of an identifier and its ability to be used to determine a pose. Depending on the type of encoding and error correction, these markers use a dictionary that contains a set of possible identifiers that can be encoded within the marker. Image sensors that scan for these markers should know which dictionary is used.
+</p>
+
+<p>
+For the terminologies used for these properties we relied on common terms used within academic research as well as standardisation's of fiducials and their intrinsic properties for various domains. We also investigated frameworks and libraries that scan for markers and the variable names that were used for expressing the data.
+</p>
+
+<h2>Ontology</h2>
+<h3>Version 1.0</h3>
+<a class="btn btn-outline-dark btn-sm btn-icon" href="/1.0/"><i class="fa fa-book"></i> Documentation version 1.0</a>
+<a class="btn btn-outline-dark btn-sm btn-icon" href="https://purl.org/fidmark/1.0/"><i class="fa fa-file"></i> text/turtle</a>
+
+<h2>Contact</h2>
+<div class="row row-cols-1 row-cols-md-3 mb-3">
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-bg-primary border-primary">
+          <h4 class="my-0 fw-normal">Maxim Van de Wynckel</h4>
+          <img class="profile" src="https://wise.vub.ac.be/sites/default/files/styles/member_thumbnail/public/members/2021-05/maximVanDeWynckel.png" alt="Maxim Van de Wynckel">
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <span>E-mail</span>
+            </div>
+            <div class="col-md-9">
+              <a href="mailto:mvdewync@vub.be">mvdewync@vub.be</a>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-3">
+              <span>Website</span>
+            </div>
+            <div class="col-md-9">
+              <a href="https://maximvdw.be">https://maximvdw.be</a>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-3">
+              <span>WebID</span>
+            </div>
+            <div class="col-md-9">
+              <a href="https://maximvdw.be/profile/card#me">https://maximvdw.be/profile/card#me</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Isaac Valadez</h4>
+          <img class="profile" src="https://wise.vub.ac.be/sites/default/files/styles/member_thumbnail/public/members/2020-12/isaacValadez_1.png?itok=366zlunn" alt="Isaac Valadez">
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <span>E-mail</span>
+            </div>
+            <div class="col-md-9">
+              <a href="mailto:jvaladez@vub.be">jvaladez@vub.be</a>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-3">
+              <span>Website</span>
+            </div>
+            <div class="col-md-9">
+              <a href="https://wise.vub.ac.be/member/isaac-valadez">https://wise.vub.ac.be/member/isaac-valadez</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-3">
+          <h4 class="my-0 fw-normal">Beat Signer</h4>
+          <img class="profile" src="https://wise.vub.ac.be/sites/default/files/styles/member_thumbnail/public/members/2017-09/beatSigner_1.png" alt="Beat Signer">
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <span>E-mail</span>
+            </div>
+            <div class="col-md-9">
+              <a href="mailto:bsigner@vub.be">bsigner@vub.be</a>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-3">
+              <span>Website</span>
+            </div>
+            <div class="col-md-9">
+              <a href="https://beatsigner.com">https://beatsigner.com</a>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-3">
+              <span>WebID</span>
+            </div>
+            <div class="col-md-9">
+              <a href="https://beatsigner.com/foaf.rdf#me">https://beatsigner.com/foaf.rdf#me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<h2>License</h2>
+<p>
+FidMark is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a> license and maintained by the Web &amp; Information Systems Engineering Lab at the Vrije Universiteit Brussel. Contributions under the CC BY-SA 4.0 license are welcome. Please open an issue or pull request to request features or changes to the ontology, examples or other related resources.
+</p>
       </section>
     </main>
 
-    <script src="../node_modules/boostrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<footer class="py-5 container d-flex flex-wrap justify-content-between align-items-center my-4 border-top">
+    <footer class="py-5 container d-flex flex-wrap justify-content-between align-items-center my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
       <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
       </a>
-      <span class="mb-3 mb-md-0 text-body-secondary"><a href="https://github.com/OpenHPS/POSO/blob/master/website/./index.md">Edit this page on GitHub</a></span>
+      <span class="mb-3 mb-md-0 text-body-secondary">&copy; 2024 - Vrije Universiteit Brussel</span>
     </div>
 </footer>
 
