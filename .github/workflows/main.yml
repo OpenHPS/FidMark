@@ -255,6 +255,7 @@ jobs:
       - name: Copy OpenHPS documentation
         run: |
           cp -r ./openhps/docs/out ./website/_site/openhps
+          cp -r ./docs/images ./website/_site/images
       - name: Build example application
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

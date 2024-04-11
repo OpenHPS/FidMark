@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="SemBeacon" src="../docs/images/logo.svg" width="30%" /><br />
+  <img alt="FidMark" src="https://fidmark.openhps.org/images/logo.svg" width="30%" /><br />
   <img alt="OpenHPS" src="https://openhps.org/images/logo_text-512.png" width="20%" /><br />
   @fidmark/openhps
 </h1>
