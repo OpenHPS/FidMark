@@ -1,11 +1,10 @@
-import { FiducialMarker } from "../FiducialMarker";
+import { FiducialMarker } from '../FiducialMarker';
 import { SerializableObject } from '@openhps/core';
-import { fidmark } from "../../terms";
+import { fidmark } from '../../terms';
 
 @SerializableObject({
     rdf: {
-        type: fidmark.QRCode
-    }
+        type: fidmark.QRCode,
+    },
 })
-export class QRCodeMarker extends FiducialMarker {
-}
+export class QRCodeMarker extends FiducialMarker {}

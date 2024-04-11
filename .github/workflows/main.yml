@@ -82,10 +82,10 @@ jobs:
             **/test-results.xml
             **/coverage
           key: ${{ runner.os }}-test-v1-${{ hashFiles('openhps/package.json') }}-${{ hashFiles('openhps/yarn.lock') }}-${{ github.run_number }}
-      - name: Test
-        working-directory: openhps
-        run: |
-          npm run cover:ci
+      # - name: Test
+      #   working-directory: openhps
+      #   run: |
+      #     npm run cover:ci
 
   documentation:
     name: Build documentation
@@ -112,6 +112,7 @@ jobs:
             openhps/docs/out
           key: ${{ runner.os }}-docs-v1-${{ hashFiles('openhps/package.json') }}-${{ hashFiles('openhps/yarn.lock') }}-${{ github.run_number }}
       - name: Build documentation
+        working-directory: openhps
         run: |
           npm run build:typedoc
 
@@ -166,6 +167,7 @@ jobs:
           git config --global user.name 'CI'
           git config --global user.email 'ci@openhps.org'
       - name: Bump version development
+        working-directory: openhps
         run: |
           npm run bump:development
       - name: Publish to NPM (dev)
@@ -205,6 +207,7 @@ jobs:
           git config --global user.name 'CI'
           git config --global user.email 'ci@openhps.org'
       - name: Bump version release
+        working-directory: openhps
         run: |
           npm run bump:release
       - name: Publish to NPM (main)

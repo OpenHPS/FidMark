@@ -1,5 +1,5 @@
 import { RDFSerializer } from '@openhps/rdf';
-RDFSerializer.initialize("video");
+RDFSerializer.initialize('video');
 
 export * from './terms';
 export * from './data';

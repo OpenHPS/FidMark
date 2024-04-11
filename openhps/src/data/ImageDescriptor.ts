@@ -4,31 +4,31 @@ import { SerializableMember, SerializableObject } from '@openhps/core';
 
 @SerializableObject({
     rdf: {
-        type: fidmark.ImageDescriptor
-    }
+        type: fidmark.ImageDescriptor,
+    },
 })
 export class ImageDescriptor {
     @SerializableMember({
         rdf: {
             predicate: fidmark.asImage,
-            datatype: xsd.anyURI
-        }
+            datatype: xsd.anyURI,
+        },
     })
     image?: IriString;
 
     @SerializableMember({
         rdf: {
             predicate: fidmark.asNFT,
-            datatype: xsd.anyURI
-        }
+            datatype: xsd.anyURI,
+        },
     })
     nft?: IriString;
 
     @SerializableMember({
         rdf: {
             predicate: fidmark.asPATT,
-            datatype: xsd.anyURI
-        }
+            datatype: xsd.anyURI,
+        },
     })
     pattern?: IriString;
 }

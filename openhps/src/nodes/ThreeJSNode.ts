@@ -1,10 +1,10 @@
-import { FiducialMarker, VirtualObject } from "../data";
-import { DataFrame, LengthUnit, Relative3DPosition } from "@openhps/core";
-import { ImageProcessingNode, ImageProcessingOptions, PerspectiveCameraObject } from "@openhps/video";
+import { FiducialMarker, VirtualObject } from '../data';
+import { DataFrame, LengthUnit, Relative3DPosition } from '@openhps/core';
+import { ImageProcessingNode, ImageProcessingOptions, PerspectiveCameraObject } from '@openhps/video';
 import * as THREE from 'three';
 
 export class ThreeJSNode extends ImageProcessingNode<any, any> {
-    declare protected options: ThreeJSNodeOptions;
+    protected declare options: ThreeJSNodeOptions;
     protected canvas: HTMLCanvasElement;
     protected renderer: THREE.WebGLRenderer;
     protected camera: THREE.PerspectiveCamera;
@@ -35,29 +35,37 @@ export class ThreeJSNode extends ImageProcessingNode<any, any> {
             this.camera.aspect = image.width / image.height;
             this.camera.near = 1;
             this.camera.far = cameraObject.far;
-            
+
             this.scene = new THREE.Scene();
             this.scene.add(this.camera);
-            this.scene.add(new THREE.AmbientLight(0xffffff, 1))
+            this.scene.add(new THREE.AmbientLight(0xffffff, 1));
 
-            frame.getObjects().forEach(marker => {
+            frame.getObjects().forEach((marker) => {
                 if (marker instanceof FiducialMarker && marker.position !== undefined) {
-                    const virtualObjects = frame.getObjects(VirtualObject).filter(obj => {
-                        return obj.getRelativePosition(marker.uid) !== undefined; 
+                    const virtualObjects = frame.getObjects(VirtualObject).filter((obj) => {
+                        return obj.getRelativePosition(marker.uid) !== undefined;
                     });
-                    virtualObjects.forEach(object => {
-                        const position = (object.getRelativePosition(marker.uid, Relative3DPosition.name) as Relative3DPosition);
+                    virtualObjects.forEach((object) => {
+                        const position = object.getRelativePosition(
+                            marker.uid,
+                            Relative3DPosition.name,
+                        ) as Relative3DPosition;
                         if (position) {
                             const mesh = object.geometry.gltf.scene;
                             mesh.rotation.setFromRotationMatrix(marker.position.orientation.toRotationMatrix() as any);
-                            mesh.position.set(...
-                                marker.position.toVector3()
-                                    .add(position.toVector3(LengthUnit.MILLIMETER)
-                                        .applyQuaternion(marker.position.orientation))
-                                    .toArray());
+                            mesh.position.set(
+                                ...marker.position
+                                    .toVector3()
+                                    .add(
+                                        position
+                                            .toVector3(LengthUnit.MILLIMETER)
+                                            .applyQuaternion(marker.position.orientation),
+                                    )
+                                    .toArray(),
+                            );
                             mesh.scale.x = marker.width;
                             mesh.scale.y = marker.height;
-                            mesh.scale.z = (marker.width + marker.height) / 2.;
+                            mesh.scale.z = (marker.width + marker.height) / 2;
                             this.scene.add(mesh);
                         }
                     });
@@ -71,7 +79,6 @@ export class ThreeJSNode extends ImageProcessingNode<any, any> {
             resolve(image);
         });
     }
-
 }
 
 export interface ThreeJSNodeOptions extends ImageProcessingOptions {

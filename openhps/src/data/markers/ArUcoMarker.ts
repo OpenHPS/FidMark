@@ -1,11 +1,10 @@
-import { FiducialMarker } from "../FiducialMarker";
+import { FiducialMarker } from '../FiducialMarker';
 import { SerializableObject } from '@openhps/core';
-import { fidmark } from "../../terms";
+import { fidmark } from '../../terms';
 
 @SerializableObject({
     rdf: {
-        type: fidmark.ArUco
-    }
+        type: fidmark.ArUco,
+    },
 })
-export class ArUcoMarker extends FiducialMarker {
-}
+export class ArUcoMarker extends FiducialMarker {}

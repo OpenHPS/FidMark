@@ -7,14 +7,14 @@ import { MarkerOrigin } from './MarkerOrigin';
 
 @SerializableObject({
     rdf: {
-        type: fidmark.FiducialMarker
-    }
+        type: fidmark.FiducialMarker,
+    },
 })
 export class FiducialMarker extends ReferenceSpace {
     @SerializableMember({
         rdf: {
             predicate: fidmark.markerData,
-            datatype: xsd.string
+            datatype: xsd.string,
         },
     })
     data?: string;
@@ -22,26 +22,26 @@ export class FiducialMarker extends ReferenceSpace {
     @SerializableMember({
         rdf: {
             predicate: fidmark.markerIdentifier,
-            datatype: xsd.integer
+            datatype: xsd.integer,
         },
-        numberType: NumberType.INTEGER
+        numberType: NumberType.INTEGER,
     })
     identifier?: number;
 
     @SerializableMember({
         rdf: {
-            predicate: fidmark.hasDictionary
-        }
+            predicate: fidmark.hasDictionary,
+        },
     })
     dictionary?: MarkerDictionary;
 
     @SerializableMember({
         rdf: {
-            predicate: fidmark.hasOrigin
-        }
+            predicate: fidmark.hasOrigin,
+        },
     })
     origin?: MarkerOrigin;
-    
+
     @SerializableMember({
         rdf: {
             predicate: [fidmark.hasHeight],
@@ -80,8 +80,8 @@ export class FiducialMarker extends ReferenceSpace {
 
     @SerializableMember({
         rdf: {
-            predicate: fidmark.hasImageDesciptor
-        }
+            predicate: fidmark.hasImageDesciptor,
+        },
     })
     imageDescriptor?: ImageDescriptor;
 }
