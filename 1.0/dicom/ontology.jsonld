@@ -1,6 +1,5 @@
 [ {
   "@id" : "http://purl.org/fidmark/FiducialMarker",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "http://purl.org/healthcarevocab/v1#IE.SpatialFiducials"
   } ]
@@ -35,7 +34,4 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/Procedure"
   } ]
-}, {
-  "@id" : "http://www.w3.org/ns/sosa/Procedure",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 } ]
