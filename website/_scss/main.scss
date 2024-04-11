@@ -1,5 +1,9 @@
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
+h2:not(:first-child) {
+    margin-top: 1em;
+}
+
 p.abstract {
     font-weight: bold;
 }
