@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.6 (2024-04-26)
+
+
+### Bug Fixes
+
+* presentation ([6dd4c9e](https://github.com/FidMark/openhps/commit/6dd4c9e46b3f6abb524243a09f46f1878563f132))
+
 ### 1.0.5 (2024-04-11)
 
 ### 1.0.4 (2024-04-11)
