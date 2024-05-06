@@ -23,7 +23,7 @@
     "@ionic/vue-router": "^7.5.7",
     "@monaco-editor/loader": "^1.4.0",
     "@openhps/core": "^0.7.1",
-    "@openhps/rdf": "^0.4.62",
+    "@openhps/rdf": "^0.4.63",
     "@openhps/video": "^0.1.14",
     "@openhps/webrtc": "^0.1.16",
     "core-js": "^3.33.3",
