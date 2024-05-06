@@ -36,11 +36,15 @@ For the terminologies used for these properties we relied on common terms used w
 
 ## Usage and Examples
 
+### Demonstrator
 <div>
     <img alt="screenshot fidmark ontology example" src="./docs/images/eswc2024/Screenshot_20231205_142048_Chrome.jpg" width="250px">
     <img alt="screenshot fidmark ontology example" src="./docs/images/eswc2024/Screenshot_20231205_142102_Chrome.jpg" width="250px">
     <img alt="screenshot fidmark ontology example" src="./docs/images/eswc2024/Screenshot_20231205_142122_Chrome.jpg" width="250px">
 </div>
+
+### FidMark to aid in collaboration
+FidMark was used as an ontology in the poster [*Discoverable and Interoperable Augmented Reality Environments Through Solid Pods*](https://maximvdw.github.io/sosy2024/) at the [2nd Solid Symposium](https://events.vito.be/sosy2024).
 
 ## License and Contributions
 FidMark is licensed under the [CC BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/) and maintained by the Web & Information Systems Engineering Lab at the Vrije Universiteit Brussel. Contributions under the CC BY-SA 4.0 license are welcome. Please open an issue or pull request to request features or changes to the ontology, examples or other related resources.
