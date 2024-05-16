@@ -1,11 +1,11 @@
-import { IriString } from "@openhps/rdf";
-import { fidmark } from "../terms";
-import { SerializableObject } from "@openhps/core";
+import { IriString } from '@openhps/rdf';
+import { fidmark } from '../terms';
+import { SerializableObject } from '@openhps/core';
 
 @SerializableObject({
     rdf: {
-        type: fidmark.MarkerOrigin
-    }
+        type: fidmark.MarkerOrigin,
+    },
 })
 export class MarkerOrigin {
     static fromURI(uri: IriString): MarkerOrigin {

@@ -20,7 +20,13 @@ import 'js-aruco/src/dictionaries/aruco_mip_16h3.js';
 import 'js-aruco/src/dictionaries/aruco_mip_25h7.js';
 import 'js-aruco/src/dictionaries/aruco_mip_36h12.js';
 import 'js-aruco/src/dictionaries/chilitags.js';
-import { ORIGIN_BOTTOM_LEFT, ORIGIN_BOTTOM_RIGHT, ORIGIN_CENTER, ORIGIN_TOP_LEFT, ORIGIN_TOP_RIGHT } from '../data/MarkerOrigin';
+import {
+    ORIGIN_BOTTOM_LEFT,
+    ORIGIN_BOTTOM_RIGHT,
+    ORIGIN_CENTER,
+    ORIGIN_TOP_LEFT,
+    ORIGIN_TOP_RIGHT,
+} from '../data/MarkerOrigin';
 
 export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends ProcessingNode<InOut, InOut> {
     mapping: any = {
@@ -39,22 +45,27 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends P
 
     protected detectors: Map<string, AR.Detector> = new Map();
     protected poseEstimators: Map<number, POS.Posit> = new Map();
-    
+
     process(frame: InOut): Promise<InOut> {
         return new Promise((resolve) => {
-            frame.getObjects().forEach(markerObject => {
+            frame.getObjects().forEach((markerObject) => {
                 if (markerObject instanceof FiducialMarker) {
                     markerObject.position = undefined;
                     const dictionaryName = this.mapping[(markerObject.dictionary as any).rdf.uri];
-                    const detector = this.detectors.get(dictionaryName) ?? new AR.Detector({
-                        dictionaryName: dictionaryName
-                    });
+                    const detector =
+                        this.detectors.get(dictionaryName) ??
+                        new AR.Detector({
+                            dictionaryName: dictionaryName,
+                        });
                     if (!this.detectors.has(dictionaryName)) {
                         this.detectors.set(dictionaryName, detector);
                     }
 
                     if (!this.poseEstimators.has(markerObject.width)) {
-                        this.poseEstimators.set(markerObject.width, new POS.Posit(markerObject.width, frame.image.width));
+                        this.poseEstimators.set(
+                            markerObject.width,
+                            new POS.Posit(markerObject.width, frame.image.width),
+                        );
                     }
                 }
             });
@@ -64,18 +75,21 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends P
                 if (markers.length > 0) {
                     markers.forEach((marker: AR.Marker) => {
                         // Get the detected marker object
-                        const markerObject = frame.getObjects().find(o => {
-                            return o instanceof FiducialMarker && o.identifier === marker.id &&
-                                this.mapping[(o.dictionary as any).rdf.uri] === dictionaryName;
+                        const markerObject = frame.getObjects().find((o) => {
+                            return (
+                                o instanceof FiducialMarker &&
+                                o.identifier === marker.id &&
+                                this.mapping[(o.dictionary as any).rdf.uri] === dictionaryName
+                            );
                         }) as FiducialMarker;
 
                         if (markerObject && markerObject.identifier === marker.id) {
                             const posit = this.poseEstimators.get(markerObject.width);
                             const corners = marker.corners;
-                            for (let i = 0; i < corners.length; ++ i){
+                            for (let i = 0; i < corners.length; ++i) {
                                 const corner = corners[i];
-                                corner.x = corner.x - (frame.image.width / 2);
-                                corner.y = (frame.image.height / 2) - corner.y;
+                                corner.x = corner.x - frame.image.width / 2;
+                                corner.y = frame.image.height / 2 - corner.y;
                             }
                             const pose = posit.pose(corners);
 
@@ -86,35 +100,40 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends P
                             const expectedOrigin = markerObject.origin;
                             switch (expectedOrigin) {
                                 case ORIGIN_TOP_LEFT:
-                                    translation[0] = translation[0] - (markerObject.width / 2);
-                                    translation[1] = translation[1] + (markerObject.height / 2);
+                                    translation[0] = translation[0] - markerObject.width / 2;
+                                    translation[1] = translation[1] + markerObject.height / 2;
                                     break;
                                 case ORIGIN_TOP_RIGHT:
-                                    translation[0] = translation[0] + (markerObject.width / 2);
-                                    translation[1] = translation[1] + (markerObject.height / 2);
+                                    translation[0] = translation[0] + markerObject.width / 2;
+                                    translation[1] = translation[1] + markerObject.height / 2;
                                     break;
                                 case ORIGIN_BOTTOM_LEFT:
-                                    translation[0] = translation[0] - (markerObject.width / 2);
-                                    translation[1] = translation[1] - (markerObject.height / 2);
+                                    translation[0] = translation[0] - markerObject.width / 2;
+                                    translation[1] = translation[1] - markerObject.height / 2;
                                     break;
                                 case ORIGIN_BOTTOM_RIGHT:
-                                    translation[0] = translation[0] + (markerObject.width / 2);
-                                    translation[1] = translation[1] - (markerObject.height / 2);
+                                    translation[0] = translation[0] + markerObject.width / 2;
+                                    translation[1] = translation[1] - markerObject.height / 2;
                                     break;
                                 default:
                                 case ORIGIN_CENTER:
                                     break;
                             }
-                            markerObject.setPosition(new Absolute3DPosition(
-                                translation[0], 
-                                translation[1], 
-                                -translation[2], 
-                                LengthUnit.MILLIMETER));
-                            markerObject.position.setOrientation(Orientation.fromEuler({
-                               x: -Math.asin(-rotation[1][2]),
-                               y: -Math.atan2(rotation[0][2], rotation[2][2]),
-                               z:  Math.atan2(rotation[1][0], rotation[1][1])
-                            }));
+                            markerObject.setPosition(
+                                new Absolute3DPosition(
+                                    translation[0],
+                                    translation[1],
+                                    -translation[2],
+                                    LengthUnit.MILLIMETER,
+                                ),
+                            );
+                            markerObject.position.setOrientation(
+                                Orientation.fromEuler({
+                                    x: -Math.asin(-rotation[1][2]),
+                                    y: -Math.atan2(rotation[0][2], rotation[2][2]),
+                                    z: Math.atan2(rotation[1][0], rotation[1][1]),
+                                }),
+                            );
                         }
                     });
                 }
@@ -122,5 +141,4 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends P
             resolve(frame);
         });
     }
-
 }
