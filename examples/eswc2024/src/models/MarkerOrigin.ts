@@ -13,10 +13,12 @@ export class MarkerOrigin {
         (dict as any).rdf = { uri };
         return dict;
     }
-
-    static CENTER: MarkerOrigin = MarkerOrigin.fromURI(fidmark.OriginCenter);
-    static BOTTOM_LEFT: MarkerOrigin = MarkerOrigin.fromURI(fidmark.OriginBottomLeft);
-    static BOTTOM_RIGHT: MarkerOrigin = MarkerOrigin.fromURI(fidmark.OriginBottomRight);
-    static TOP_LEFT: MarkerOrigin = MarkerOrigin.fromURI(fidmark.OriginTopLeft);
-    static TOP_RIGHT: MarkerOrigin = MarkerOrigin.fromURI(fidmark.OriginTopRight);
 }
+
+const ORIGIN_CENTER: MarkerOrigin = MarkerOrigin.fromURI(fidmark.OriginCenter);
+const ORIGIN_BOTTOM_LEFT: MarkerOrigin = MarkerOrigin.fromURI(fidmark.OriginBottomLeft);
+const ORIGIN_BOTTOM_RIGHT: MarkerOrigin = MarkerOrigin.fromURI(fidmark.OriginBottomRight);
+const ORIGIN_TOP_LEFT: MarkerOrigin = MarkerOrigin.fromURI(fidmark.OriginTopLeft);
+const ORIGIN_TOP_RIGHT: MarkerOrigin = MarkerOrigin.fromURI(fidmark.OriginTopRight);
+
+export { ORIGIN_BOTTOM_LEFT, ORIGIN_BOTTOM_RIGHT, ORIGIN_CENTER, ORIGIN_TOP_LEFT, ORIGIN_TOP_RIGHT };

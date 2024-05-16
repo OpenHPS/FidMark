@@ -20,7 +20,7 @@ import 'js-aruco/src/dictionaries/aruco_mip_16h3.js';
 import 'js-aruco/src/dictionaries/aruco_mip_25h7.js';
 import 'js-aruco/src/dictionaries/aruco_mip_36h12.js';
 import 'js-aruco/src/dictionaries/chilitags.js';
-import { MarkerOrigin } from '@/models/MarkerOrigin';
+import { MarkerOrigin, ORIGIN_BOTTOM_LEFT, ORIGIN_BOTTOM_RIGHT, ORIGIN_CENTER, ORIGIN_TOP_LEFT, ORIGIN_TOP_RIGHT } from '@/models/MarkerOrigin';
 
 export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends ProcessingNode<InOut, InOut> {
     mapping: any = {
@@ -85,24 +85,24 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends P
                             // Convert translation to what is expected
                             const expectedOrigin = markerObject.origin;
                             switch (expectedOrigin) {
-                                case MarkerOrigin.TOP_LEFT:
+                                case ORIGIN_TOP_LEFT:
                                     translation[0] = translation[0] - (markerObject.width / 2);
                                     translation[1] = translation[1] + (markerObject.height / 2);
                                     break;
-                                case MarkerOrigin.TOP_RIGHT:
+                                case ORIGIN_TOP_RIGHT:
                                     translation[0] = translation[0] + (markerObject.width / 2);
                                     translation[1] = translation[1] + (markerObject.height / 2);
                                     break;
-                                case MarkerOrigin.BOTTOM_LEFT:
+                                case ORIGIN_BOTTOM_LEFT:
                                     translation[0] = translation[0] - (markerObject.width / 2);
                                     translation[1] = translation[1] - (markerObject.height / 2);
                                     break;
-                                case MarkerOrigin.BOTTOM_RIGHT:
+                                case ORIGIN_BOTTOM_RIGHT:
                                     translation[0] = translation[0] + (markerObject.width / 2);
                                     translation[1] = translation[1] - (markerObject.height / 2);
                                     break;
                                 default:
-                                case MarkerOrigin.CENTER:
+                                case ORIGIN_CENTER:
                                     break;
                             }
                             markerObject.setPosition(new Absolute3DPosition(
