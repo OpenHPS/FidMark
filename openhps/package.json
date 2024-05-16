@@ -1,6 +1,6 @@
 {
   "name": "@fidmark/openhps",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "FidMark module for OpenHPS",
   "author": "Maxim Van de Wynckel",
   "license": "Apache-2.0",
