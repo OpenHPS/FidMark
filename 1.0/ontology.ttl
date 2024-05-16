@@ -23,7 +23,7 @@
 <p>Our ontology uses the OWL 2 DL grammar. In total our ontology adds more than 55 classes, 30 data and object properties and
 more than 30 individuals for existing fiducial markers and dictionaries.</p>"""@en ;
                             <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by-sa4.0> ;
-                            <http://purl.org/dc/terms/modified> "2024-03-27T00:00:00"^^xsd:dateTime ;
+                            <http://purl.org/dc/terms/modified> "2024-03-27T16:00:00"^^xsd:dateTime ;
                             <http://purl.org/dc/terms/title> "Fiducial Marker Ontology"@en ;
                             <http://purl.org/vocab/vann/example> "https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_objects.ttl"^^xsd:anyURI ;
                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "fidmark" ;
@@ -9364,6 +9364,24 @@ rdfs:label "ArUco original dictionary"@en .
                           :MarkerDictionary ;
                  :supportedMarker :ChilliTags ;
                  rdfs:label "ChilliTags dictionary"@en .
+
+
+###  http://purl.org/fidmark/DICT_MIP_16h3
+:DICT_MIP_16h3 rdf:type owl:NamedIndividual ,
+                        :MarkerDictionary ;
+               rdfs:seeAlso :DICT_ARUCO_MIP_16h3 .
+
+
+###  http://purl.org/fidmark/DICT_MIP_25h7
+:DICT_MIP_25h7 rdf:type owl:NamedIndividual ,
+                        :MarkerDictionary ;
+               rdfs:seeAlso :DICT_ARUCO_MIP_25h7 .
+
+
+###  http://purl.org/fidmark/DICT_MIP_36h12
+:DICT_MIP_36h12 rdf:type owl:NamedIndividual ,
+                         :MarkerDictionary ;
+                rdfs:seeAlso :DICT_ARUCO_MIP_36h12 .
 
 
 ###  http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA

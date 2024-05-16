@@ -30,7 +30,7 @@
 &lt;p&gt;Our ontology uses the OWL 2 DL grammar. In total our ontology adds more than 55 classes, 30 data and object properties and
 more than 30 individuals for existing fiducial markers and dictionaries.&lt;/p&gt;</terms:description>
         <terms:license rdf:resource="http://purl.org/NET/rdflicense/cc-by-sa4.0"/>
-        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-03-27T00:00:00</terms:modified>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2024-03-27T16:00:00</terms:modified>
         <terms:title xml:lang="en">Fiducial Marker Ontology</terms:title>
         <vann:example rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_objects.ttl</vann:example>
         <vann:preferredNamespacePrefix>fidmark</vann:preferredNamespacePrefix>
@@ -11304,6 +11304,36 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
         <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
         <supportedMarker rdf:resource="http://purl.org/fidmark/ChilliTags"/>
         <rdfs:label xml:lang="en">ChilliTags dictionary</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_MIP_16h3 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_MIP_16h3">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <rdfs:seeAlso rdf:resource="http://purl.org/fidmark/DICT_ARUCO_MIP_16h3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_MIP_25h7 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_MIP_25h7">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <rdfs:seeAlso rdf:resource="http://purl.org/fidmark/DICT_ARUCO_MIP_25h7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/fidmark/DICT_MIP_36h12 -->
+
+
+    <owl:NamedIndividual rdf:about="http://purl.org/fidmark/DICT_MIP_36h12">
+        <rdf:type rdf:resource="http://purl.org/fidmark/MarkerDictionary"/>
+        <rdfs:seeAlso rdf:resource="http://purl.org/fidmark/DICT_ARUCO_MIP_36h12"/>
     </owl:NamedIndividual>
     
 

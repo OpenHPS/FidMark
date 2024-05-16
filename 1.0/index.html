@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/fidmark/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/fidmark/","name":"Fiducial Marker Ontology", "headline":"Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation, and subsequently the scale and position of other objects within the same field of view. They are used in a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. Despite the wide range of different marker types with their advantages for specific use cases, there exists no standard to decide which marker to best use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing interoperability between AR applications. We propose the FidMark fiducial marker ontology, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our proposed ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With FidMark we aim to enable future AR solutions to semantically describe markers within an environment so that third-party applications can utilise this information.", "dateReleased":"Thu May 16 13:37:03 UTC 2024", "dateModified":"2024-03-27T00:00:00", "license":"http://purl.org/NET/rdflicense/cc-by-sa4.0", "author":[{"@type":"Person","name":"Isaac Valadez"},{"@type":"Person","name":"Maxim Van de Wynckel"}], "contributor":[{"@type":"Person","name":"Beat Signer"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/fidmark/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/fidmark/","name":"Fiducial Marker Ontology", "headline":"Fiducial markers are visual objects that can be placed in the field of view of an imaging sensor to determine its position and orientation, and subsequently the scale and position of other objects within the same field of view. They are used in a wide variety of applications ranging from medical applications to augmented reality (AR) solutions where they are applied to determine the location of an AR headset. Despite the wide range of different marker types with their advantages for specific use cases, there exists no standard to decide which marker to best use in which situation. This leads to proprietary AR solutions that rely on a predefined set of marker and pose detection algorithms, preventing interoperability between AR applications. We propose the FidMark fiducial marker ontology, classifying and describing the different markers available for computer vision and augmented reality along with their spatial position and orientation. Our proposed ontology also describes the procedures required to perform pose estimation, and marker detection to allow the description of algorithms used to perform these procedures. With FidMark we aim to enable future AR solutions to semantically describe markers within an environment so that third-party applications can utilise this information.", "dateReleased":"Thu May 16 15:23:28 UTC 2024", "dateModified":"2024-03-27T16:00:00", "license":"http://purl.org/NET/rdflicense/cc-by-sa4.0", "author":[{"@type":"Person","name":"Isaac Valadez"},{"@type":"Person","name":"Maxim Van de Wynckel"}], "contributor":[{"@type":"Person","name":"Beat Signer"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -58,7 +58,7 @@ $(function(){
 
 
 <dl>
-<dt>Modified on: 2024-03-27T00:00:00</dt>
+<dt>Modified on: 2024-03-27T16:00:00</dt>
 <dt>This version:</dt>
 <dd><a href="http://purl.org/fidmark/1.0/">http://purl.org/fidmark/1.0/</a></dd>
 <dt>Issued on:</dt>
@@ -411,6 +411,21 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#DICT_CHILLITAGS" title="http://purl.org/fidmark/DICT_CHILLITAGS">ChilliTags dictionary</a>
+   </li>
+   <li>
+      <a href="#DICT_MIP_16h3" title="http://purl.org/fidmark/DICT_MIP_16h3">
+         <span>d i c t m i p 16h3</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_MIP_25h7" title="http://purl.org/fidmark/DICT_MIP_25h7">
+         <span>d i c t m i p 25h7</span>
+      </a>
+   </li>
+   <li>
+      <a href="#DICT_MIP_36h12" title="http://purl.org/fidmark/DICT_MIP_36h12">
+         <span>d i c t m i p 36h12</span>
+      </a>
    </li>
    <li>
       <a href="#DICT_REACTIVISION_AMOEBA"
@@ -1392,6 +1407,9 @@ Whereas ARTag has highly robust error detection and correction, it suffers from 
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#DICT_TOPOTAG_3X3" title="http://purl.org/fidmark/DICT_TOPOTAG_3X3">TopoTag 3x3 dictionary</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#DICT_TOPOTAG_4X4" title="http://purl.org/fidmark/DICT_TOPOTAG_4X4">TopoTag 4x4 dictionary</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#DICT_TOPOTAG_5X5" title="http://purl.org/fidmark/DICT_TOPOTAG_5X5">TopoTag 5x5 dictionary</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#DICT_MIP_16h3" title="http://purl.org/fidmark/DICT_MIP_16h3">d i c t m i p 16h3</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#DICT_MIP_25h7" title="http://purl.org/fidmark/DICT_MIP_25h7">d i c t m i p 25h7</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#DICT_MIP_36h12" title="http://purl.org/fidmark/DICT_MIP_36h12">d i c t m i p 36h12</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#DICT_REACTIVISION_AMOEBA"
                title="http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA">reacTIVision amoeba symbology</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#DICT_REACTIVISION_YAMAARASHI"
@@ -2630,6 +2648,21 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
       </li>
       <li>
          <a href="#DICT_CHILLITAGS" title="http://purl.org/fidmark/DICT_CHILLITAGS">ChilliTags dictionary</a>
+      </li>
+      <li>
+         <a href="#DICT_MIP_16h3" title="http://purl.org/fidmark/DICT_MIP_16h3">
+            <span>d i c t m i p 16h3</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_MIP_25h7" title="http://purl.org/fidmark/DICT_MIP_25h7">
+            <span>d i c t m i p 25h7</span>
+         </a>
+      </li>
+      <li>
+         <a href="#DICT_MIP_36h12" title="http://purl.org/fidmark/DICT_MIP_36h12">
+            <span>d i c t m i p 36h12</span>
+         </a>
       </li>
       <li>
          <a href="#DICT_REACTIVISION_AMOEBA"
@@ -5064,6 +5097,51 @@ Our tags are composed by a set of circular high-contrast features (dots) spatial
       </h3>
       <p>
          <strong>IRI:</strong> http://purl.org/fidmark/DICT_CHILLITAGS</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_MIP_16h3">
+      <h3>d i c t m i p 16h3<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_MIP_16h3</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_MIP_25h7">
+      <h3>d i c t m i p 25h7<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_MIP_25h7</p>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#MarkerDictionary" title="http://purl.org/fidmark/MarkerDictionary">Marker dictionary</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="DICT_MIP_36h12">
+      <h3>d i c t m i p 36h12<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://purl.org/fidmark/DICT_MIP_36h12</p>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>

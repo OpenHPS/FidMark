@@ -8,7 +8,7 @@
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/creator> "Maxim Van de Wynckel"@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/description> "<h3>Methodology</h3>\n<p>Our design approach for the requirements in our ontology is based on the Linked Open Terms (LOT) methodology. Due to the already existing ontologies for describing fiducial markers in medical sciences, we decided to focus on fiducial markers used within the domain of augmented reality, primarily for position and orientation estimation (commonly defined as a pose). We started by doing an analysis of the different types of markers that exist for different applications within the domain of computer vision. Next, using this set of different markers with their own use-cases for different scenarios and environmental conditions, we have listed a set of use cases, design goals and required data for each type of marker.</p>\n<p>Based on the marker analysis and their data, we determined the common attributes and properties of each marker. Two of the main common properties of each marker is the inclusion of an identifier and its ability to be used to determine a pose. Depending on the type of encoding and error correction, these markers use a dictionary that contains a set of possible identifiers that can be encoded within the marker. Image sensors that scan for these markers should know which dictionary is used.</p>\n<p>For the terminologies used for these properties we relied on common terms used within academic research as well as standardisation's of fiducials and their intrinsic properties for various domains. We also investigated frameworks and libraries that scan for markers and the variable names that were used for expressing the data.</p>\n\n<h3>Ontology Statistics and Profile</h3>\n<p>Our ontology uses the OWL 2 DL grammar. In total our ontology adds more than 55 classes, 30 data and object properties and\nmore than 30 individuals for existing fiducial markers and dictionaries.</p>"@en .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by-sa4.0> .
-<http://purl.org/fidmark/> <http://purl.org/dc/terms/modified> "2024-03-27T00:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://purl.org/fidmark/> <http://purl.org/dc/terms/modified> "2024-03-27T16:00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
 <http://purl.org/fidmark/> <http://purl.org/dc/terms/title> "Fiducial Marker Ontology"@en .
 <http://purl.org/fidmark/> <http://purl.org/vocab/vann/example> "https://raw.githubusercontent.com/OpenHPS/FidMark/main/examples/virtual_objects.ttl"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
 <http://purl.org/fidmark/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "fidmark" .
@@ -7862,6 +7862,21 @@ _:genid1381 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/f
 <http://purl.org/fidmark/DICT_CHILLITAGS> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
 <http://purl.org/fidmark/DICT_CHILLITAGS> <http://purl.org/fidmark/supportedMarker> <http://purl.org/fidmark/ChilliTags> .
 <http://purl.org/fidmark/DICT_CHILLITAGS> <http://www.w3.org/2000/01/rdf-schema#label> "ChilliTags dictionary"@en .
+# 
+# http://purl.org/fidmark/DICT_MIP_16h3
+<http://purl.org/fidmark/DICT_MIP_16h3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/fidmark/DICT_MIP_16h3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
+<http://purl.org/fidmark/DICT_MIP_16h3> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/fidmark/DICT_ARUCO_MIP_16h3> .
+# 
+# http://purl.org/fidmark/DICT_MIP_25h7
+<http://purl.org/fidmark/DICT_MIP_25h7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/fidmark/DICT_MIP_25h7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
+<http://purl.org/fidmark/DICT_MIP_25h7> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/fidmark/DICT_ARUCO_MIP_25h7> .
+# 
+# http://purl.org/fidmark/DICT_MIP_36h12
+<http://purl.org/fidmark/DICT_MIP_36h12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/fidmark/DICT_MIP_36h12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/fidmark/MarkerDictionary> .
+<http://purl.org/fidmark/DICT_MIP_36h12> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/fidmark/DICT_ARUCO_MIP_36h12> .
 # 
 # http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA
 <http://purl.org/fidmark/DICT_REACTIVISION_AMOEBA> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
