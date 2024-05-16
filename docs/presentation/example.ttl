@@ -1,0 +1,76 @@
+@prefix : <http://example.org/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sosa: <http://www.w3.org/ns/sosa/>.
+@prefix ogc: <http://www.opengis.net/ont/geosparql#>.
+@prefix dcmi: <http://purl.org/dc/terms/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix poso: <http://purl.org/poso/>.
+@prefix fidmark: <http://purl.org/fidmark/>.
+@prefix example: <http://example.org/>.
+@prefix omg: <https://w3id.org/omg#>.
+@prefix fog: <https://w3id.org/fog#>.
+
+example:robot a fidmark:ArUco, sosa:FeatureOfInterest, ogc:SpatialObject;
+    dcmi:created "2024-05-16T19:03:35.760Z"^^xsd:dateTime;
+    fidmark:markerIdentifier 13;
+    fidmark:hasDictionary fidmark:DICT_ARUCO_ORIGINAL;
+    fidmark:hasOrigin fidmark:OriginCenter;
+    fidmark:hasHeight [
+  a qudt:QuantityValue;
+  qudt:unit unit:MilliM;
+  qudt:numericValue "100"^^xsd:double
+];
+    fidmark:hasWidth [
+  a qudt:QuantityValue;
+  qudt:unit unit:MilliM;
+  qudt:numericValue "100"^^xsd:double
+].
+example:object a sosa:FeatureOfInterest, ogc:SpatialObject;
+    dcmi:created "2024-05-16T19:03:35.760Z"^^xsd:dateTime;
+    poso:hasPosition [
+  a poso:RelativePosition;
+  dcmi:created "2024-05-16T19:03:35.760Z"^^xsd:dateTime;
+  poso:isRelativeTo example:robot;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:MilliM;
+  qudt:numericValue "100"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:MilliM;
+  qudt:numericValue "100"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:MilliM;
+  qudt:numericValue "10"^^xsd:double
+]
+];
+   poso:hasPosition [
+  a poso:RelativeAngle;
+  poso:isRelativeTo :robot ;
+  dcmi:created "2024-05-16T19:03:35.760Z"^^xsd:dateTime;
+  poso:isRelativeTo example:robot;
+  poso:xAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:Degree;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:yAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:Degree;
+  qudt:numericValue "0"^^xsd:double
+];
+  poso:zAxisValue [
+  a qudt:QuantityValue;
+  qudt:unit unit:Degree;
+  qudt:numericValue "90"^^xsd:double
+]
+];
+    omg:hasGeometry [
+  a omg:Geometry;
+  fog:asGltf "https://raw.githubusercontent.com/microsoft/mixed-reality-extension-sdk-samples/master/samples/solar-system/public/assets/earth.gltf"^^xsd:anyURI
+].

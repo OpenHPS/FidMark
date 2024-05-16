@@ -51,7 +51,8 @@ export class ThreeJSNode extends ImageProcessingNode<any, any> {
                             Relative3DPosition.name,
                         ) as Relative3DPosition;
                         if (position) {
-                            const mesh = object.geometry.gltf.scene;
+                            // Copy the scene of the gltf object
+                            const mesh = object.geometry.gltf.scene.clone();
                             mesh.rotation.setFromRotationMatrix(marker.position.orientation.toRotationMatrix() as any);
                             mesh.position.set(
                                 ...marker.position
@@ -63,9 +64,10 @@ export class ThreeJSNode extends ImageProcessingNode<any, any> {
                                     )
                                     .toArray(),
                             );
-                            mesh.scale.x = marker.width;
-                            mesh.scale.y = marker.height;
-                            mesh.scale.z = (marker.width + marker.height) / 2;
+                            const scale = (marker.width + marker.height) / 2;
+                            mesh.scale.x = mesh.scale.x * scale;
+                            mesh.scale.y = mesh.scale.y * scale;
+                            mesh.scale.z = mesh.scale.z * scale;
                             this.scene.add(mesh);
                         }
                     });

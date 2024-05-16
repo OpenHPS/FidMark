@@ -2636,13 +2636,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@openhps/core@>=0.6.9":
-  version "0.6.9"
-  resolved "https://registry.yarnpkg.com/@openhps/core/-/core-0.6.9.tgz#04efc5af188de325cea22b950cf77068b47a4b11"
-  integrity sha512-yF7Br6YXepDGogBNTFUD78H/HfK55gYlHhJAe3XPlpmp50t4sVJtbOvUNZy563OoYTM44kg5aqhQ/qE+Pp1kJQ==
+"@openhps/core@>=0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@openhps/core/-/core-0.7.2.tgz#1c073322218dca5f2071a95019cd33a93b0597a0"
+  integrity sha512-goDGnRvO5LpxnGnK5I6c939UCTB3xUMarFL3scoIghM7zWnoMpsy2GUozF1mqE5uQ5ezcAMNpprnQLSVkGCkoQ==
   dependencies:
     lodash.clonedeep "^4.5.0"
-    reflect-metadata ">=0.2.1"
+    reflect-metadata ">=0.2.2"
     threads "^1.7.0"
     typedjson "^1.8.0"
     uuid "^9.0.1"
@@ -7138,7 +7138,7 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
-reflect-metadata@>=0.2.1, reflect-metadata@>=0.2.2:
+reflect-metadata@>=0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.2.2.tgz#400c845b6cba87a21f2c65c4aeb158f4fa4d9c5b"
   integrity sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==

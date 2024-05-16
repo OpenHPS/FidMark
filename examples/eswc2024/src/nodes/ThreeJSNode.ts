@@ -1,5 +1,5 @@
 import { FiducialMarker, VirtualObject } from "@/models";
-import { DataFrame, LengthUnit, Relative3DPosition } from "@openhps/core";
+import { DataFrame, LengthUnit, Relative3DPosition, RelativeAngle } from "@openhps/core";
 import { ImageProcessingNode, ImageProcessingOptions, PerspectiveCameraObject } from "@openhps/video";
 import * as THREE from 'three';
 
@@ -47,17 +47,23 @@ export class ThreeJSNode extends ImageProcessingNode<any, any> {
                     });
                     virtualObjects.forEach(object => {
                         const position = (object.getRelativePosition(marker.uid, Relative3DPosition.name) as Relative3DPosition);
-                        if (position) {
-                            const mesh = object.geometry.gltf.scene;
+                        const rotation = (object.getRelativePosition(marker.uid, RelativeAngle.name) as RelativeAngle);
+                        if (position && object.geometry.gltf) {
+                            // Copy the scene of the gltf object
+                            const mesh = object.geometry.gltf.scene.clone();
                             mesh.rotation.setFromRotationMatrix(marker.position.orientation.toRotationMatrix() as any);
+                            if (rotation) {
+                                // TODO
+                            }
                             mesh.position.set(...
                                 marker.position.toVector3()
                                     .add(position.toVector3(LengthUnit.MILLIMETER)
                                         .applyQuaternion(marker.position.orientation))
                                     .toArray());
-                            mesh.scale.x = marker.width;
-                            mesh.scale.y = marker.height;
-                            mesh.scale.z = (marker.width + marker.height) / 2.;
+                            const scale = ((marker.width + marker.height) / 2);
+                            mesh.scale.x = mesh.scale.x * scale;
+                            mesh.scale.y = mesh.scale.y * scale;
+                            mesh.scale.z = mesh.scale.z * scale;
                             this.scene.add(mesh);
                         }
                     });
