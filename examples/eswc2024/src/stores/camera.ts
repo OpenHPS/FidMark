@@ -40,7 +40,7 @@ export const useCameraStore = defineStore('camera', {
                     }
                 })
                 .from(new VideoSource({
-                    fps: 30,
+                    fps: 25,
                     uid: "video",
                     source: camera,
                     videoSource: video,

@@ -1,4 +1,4 @@
-import { IriString } from "@openhps/rdf";
+import { IriString, SerializableThing } from "@openhps/rdf";
 import { fidmark } from "../ontologies";
 import { SerializableObject } from "@openhps/core";
 
@@ -7,7 +7,7 @@ import { SerializableObject } from "@openhps/core";
         type: fidmark.MarkerOrigin
     }
 })
-export class MarkerOrigin {
+export class MarkerOrigin extends SerializableThing {
     static fromURI(uri: IriString): MarkerOrigin {
         const dict = new MarkerOrigin();
         (dict as any).rdf = { uri };

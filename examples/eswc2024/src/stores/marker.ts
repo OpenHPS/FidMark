@@ -111,6 +111,7 @@ export const useMarkerStore = defineStore('marker', {
               if (object instanceof FiducialMarker) {
                 this.markers.push(object);
               } else if (object instanceof VirtualObject) {
+                console.log(object);
                 (object as VirtualObject).geometry.load();
                 this.objects.push(object);
               }

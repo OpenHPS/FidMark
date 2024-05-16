@@ -26,6 +26,13 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+(window as any).Ionic = {
+  config: {
+    rippleEffect: false,
+    mode: 'md',
+  },
+};
+
 const app = createApp(App)
   .use(IonicVue)
   .use(router)

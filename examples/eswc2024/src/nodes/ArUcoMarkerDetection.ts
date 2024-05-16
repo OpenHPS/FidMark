@@ -98,28 +98,29 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends P
                             const translation = pose.bestTranslation;
                             const rotation = pose.bestRotation;
                             // Convert translation to what is expected
-                            const expectedOrigin = markerObject.origin;
+                            const expectedOrigin = markerObject.origin.id;
                             switch (expectedOrigin) {
-                                case ORIGIN_TOP_LEFT:
+                                case ORIGIN_TOP_LEFT.id:
                                     translation[0] = translation[0] - (markerObject.width / 2);
                                     translation[1] = translation[1] + (markerObject.height / 2);
                                     break;
-                                case ORIGIN_TOP_RIGHT:
+                                case ORIGIN_TOP_RIGHT.id:
                                     translation[0] = translation[0] + (markerObject.width / 2);
                                     translation[1] = translation[1] + (markerObject.height / 2);
                                     break;
-                                case ORIGIN_BOTTOM_LEFT:
+                                case ORIGIN_BOTTOM_LEFT.id:
                                     translation[0] = translation[0] - (markerObject.width / 2);
                                     translation[1] = translation[1] - (markerObject.height / 2);
                                     break;
-                                case ORIGIN_BOTTOM_RIGHT:
+                                case ORIGIN_BOTTOM_RIGHT.id:
                                     translation[0] = translation[0] + (markerObject.width / 2);
                                     translation[1] = translation[1] - (markerObject.height / 2);
                                     break;
                                 default:
-                                case ORIGIN_CENTER:
+                                case ORIGIN_CENTER.id:
                                     break;
                             }
+                            
                             markerObject.setPosition(new Absolute3DPosition(
                                 translation[0], 
                                 translation[1], 
