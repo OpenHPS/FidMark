@@ -20,16 +20,21 @@ import 'js-aruco/src/dictionaries/aruco_mip_16h3.js';
 import 'js-aruco/src/dictionaries/aruco_mip_25h7.js';
 import 'js-aruco/src/dictionaries/aruco_mip_36h12.js';
 import 'js-aruco/src/dictionaries/chilitags.js';
+import { MarkerOrigin } from '@/models/MarkerOrigin';
 
 export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends ProcessingNode<InOut, InOut> {
     mapping: any = {
         [fidmark.DICT_CHILLITAGS]: 'CHILITAGS',
-        [fidmark.DICT_MIP_36h12]: 'ARUCO_MIP_36h12',
-        // [fidmark.DICT_MIP_25h7]: 'ARUCO_MIP_25h7',
-        // [fidmark.DICT_MIP_16h3]: 'ARUCO_MIP_16h3',
-        // [fidmark.DICT_ARTAG]: 'ARTAG',
+        [fidmark.DICT_ARUCO_MIP_36h12]: 'ARUCO_MIP_36h12',
+        [fidmark.DICT_ARUCO_MIP_25h7]: 'ARUCO_MIP_25h7',
+        [fidmark.DICT_ARUCO_MIP_16h3]: 'ARUCO_MIP_16h3',
+        [fidmark.DICT_ARTAG]: 'ARTAG',
         [fidmark.DICT_ARUCO_ORIGINAL]: 'ARUCO_DEFAULT_OPENCV',
         [fidmark.DICT_4X4_1000]: 'ARUCO_4X4_1000',
+        [fidmark.DICT_APRILTAG_16h5]: 'APRILTAG_16h5',
+        [fidmark.DICT_APRILTAG_25h9]: 'APRILTAG_25h9',
+        [fidmark.DICT_APRILTAG_36h10]: 'APRILTAG_36h10',
+        [fidmark.DICT_APRILTAG_36h11]: 'APRILTAG_36h11',
     };
 
     protected detectors: Map<string, AR.Detector> = new Map();
@@ -58,6 +63,7 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends P
                 const markers = detector.detect(frame.image);
                 if (markers.length > 0) {
                     markers.forEach((marker: AR.Marker) => {
+                        // Get the detected marker object
                         const markerObject = frame.getObjects().find(o => {
                             return o instanceof FiducialMarker && o.identifier === marker.id &&
                                 this.mapping[(o.dictionary as any).rdf.uri] === dictionaryName;
@@ -73,9 +79,37 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends P
                             }
                             const pose = posit.pose(corners);
 
+                            // Center origin
                             const translation = pose.bestTranslation;
                             const rotation = pose.bestRotation;
-                            markerObject.setPosition(new Absolute3DPosition(translation[0], translation[1], -translation[2], LengthUnit.MILLIMETER));
+                            // Convert translation to what is expected
+                            const expectedOrigin = markerObject.origin;
+                            switch (expectedOrigin) {
+                                case MarkerOrigin.TOP_LEFT:
+                                    translation[0] = translation[0] - (markerObject.width / 2);
+                                    translation[1] = translation[1] + (markerObject.height / 2);
+                                    break;
+                                case MarkerOrigin.TOP_RIGHT:
+                                    translation[0] = translation[0] + (markerObject.width / 2);
+                                    translation[1] = translation[1] + (markerObject.height / 2);
+                                    break;
+                                case MarkerOrigin.BOTTOM_LEFT:
+                                    translation[0] = translation[0] - (markerObject.width / 2);
+                                    translation[1] = translation[1] - (markerObject.height / 2);
+                                    break;
+                                case MarkerOrigin.BOTTOM_RIGHT:
+                                    translation[0] = translation[0] + (markerObject.width / 2);
+                                    translation[1] = translation[1] - (markerObject.height / 2);
+                                    break;
+                                default:
+                                case MarkerOrigin.CENTER:
+                                    break;
+                            }
+                            markerObject.setPosition(new Absolute3DPosition(
+                                translation[0], 
+                                translation[1], 
+                                -translation[2], 
+                                LengthUnit.MILLIMETER));
                             markerObject.position.setOrientation(Orientation.fromEuler({
                                x: -Math.asin(-rotation[1][2]),
                                y: -Math.atan2(rotation[0][2], rotation[2][2]),

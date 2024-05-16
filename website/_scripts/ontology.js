@@ -35,6 +35,18 @@ async function buildOntology(version = '1.0') {
     fse.copySync(path.join(__dirname, `../_site/${version}/dicom/doc`), path.join(__dirname, `../_site/${version}/dicom`));
     await rewriteLanguagePaths(path.join(__dirname, `../_site/${version}/dicom`));
     await rmdir(path.join(__dirname, `../_site/${version}/dicom/doc`));
+    // Fix dictionaries and replace
+    const content = fs.readFileSync(path.join(__dirname, `../_site/${version}/index.html`), { encoding: 'utf-8' });
+    // Select all elements with the <dd> tag that have a child <a> with #code as href
+    // and a span class="literal" with an empty string as content ("")
+    // Example: <dd>
+    //     <a href="#code" title="http://purl.org/fidmark/code">code</a>
+    //     <sup class="type-op" title="object property">op</sup> 
+    //     <span class="literal">""</span>
+    //  </dd>
+    const replaceStr = /<dd>\s*<a href="#code" title="http:\/\/purl.org\/fidmark\/code">code<\/a>\s*<sup class="type-op" title="object property">op<\/sup>\s*<span class="literal">""<\/span>\s*<\/dd>/g;
+    const newContent = content.replace(replaceStr, ``);
+    fs.writeFileSync(path.join(__dirname, `../_site/${version}/index.html`), newContent);
 }
 
 async function downloadWidoco(version = "1.4.21") {

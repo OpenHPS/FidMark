@@ -1,16 +1,16 @@
 type IriString = `${'http' | 'https'}://${string}`;
-type Property = IriString;
-type Class = IriString;
-type Datatype = IriString;
-type OwlClass = IriString;
-type OwlObjectProperty = IriString;
-type OwlDatatypeProperty = IriString;
-type HydraResource = IriString;
-type HydraClass = IriString;
-type HydraLink = IriString;
-type HydraTemplatedLink = IriString;
-type HydraVariableRepresentation = IriString;
-type OtherIndividual = IriString;
+type Property = IriString; // eslint-disable-line
+type Class = IriString; // eslint-disable-line
+type Datatype = IriString; // eslint-disable-line
+type OwlClass = IriString; // eslint-disable-line
+type OwlObjectProperty = IriString; // eslint-disable-line
+type OwlDatatypeProperty = IriString; // eslint-disable-line
+type HydraResource = IriString; // eslint-disable-line
+type HydraClass = IriString; // eslint-disable-line
+type HydraLink = IriString; // eslint-disable-line
+type HydraTemplatedLink = IriString; // eslint-disable-line
+type HydraVariableRepresentation = IriString; // eslint-disable-line
+type OtherIndividual = IriString; // eslint-disable-line
 
 /**
  * Fiducial marker
@@ -903,9 +903,27 @@ export const DICT_CHILLITAGS: OtherIndividual = 'http://purl.org/fidmark/DICT_CH
  * 
  * 
  *
- * http://purl.org/fidmark/DICT_MIP_36h12
+ * http://purl.org/fidmark/DICT_ARUCO_MIP_36h12
  */
-export const DICT_MIP_36h12: OtherIndividual = 'http://purl.org/fidmark/DICT_MIP_36h12';
+export const DICT_ARUCO_MIP_36h12: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_MIP_36h12';
+
+/**
+ * ArUco MIP 25h7 dictionary
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_ARUCO_MIP_25h7
+ */
+export const DICT_ARUCO_MIP_25h7: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_MIP_25h7';
+
+/**
+ * ArUco MIP 16h3 dictionary
+ * 
+ * 
+ *
+ * http://purl.org/fidmark/DICT_ARUCO_MIP_16h3
+ */
+export const DICT_ARUCO_MIP_16h3: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_MIP_16h3';
 
 /**
  * reacTIVision amoeba symbology

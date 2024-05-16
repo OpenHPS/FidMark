@@ -28,7 +28,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "ontologies": "openhps-rdf -d ./src/terms -n fidmark:http://purl.org/fidmark/ -n omg:https://w3id.org/omg# -n fog:https://w3id.org/fog# -m http://purl.org/fidmark/ https://openhps.github.io/FidMark/1.0/ontology.ttl -m https://w3id.org/fog# https://mathib.github.io/fog-ontology/ontology.ttl",
+    "ontologies": "openhps-rdf -d ./src/terms -n fidmark:http://purl.org/fidmark/ -n omg:https://w3id.org/omg# -n fog:https://w3id.org/fog# -m http://purl.org/fidmark/ file://../1.0/fidmark.ttl -m https://w3id.org/fog# https://mathib.github.io/fog-ontology/ontology.ttl",
     "test": "mocha --config test/.mocharc.json",
     "cover": "nyc mocha --config test/.mocharc.json && nyc report --reporter=cobertura",
     "cover:ci": "nyc mocha --config test/.mocharc.json --reporter mocha-junit-reporter && nyc report --reporter=cobertura",
@@ -58,7 +58,7 @@
   ],
   "peerDependencies": {
     "@openhps/core": ">=0.6.9",
-    "@openhps/rdf": ">=0.4.60",
+    "@openhps/rdf": ">=0.4.63",
     "@openhps/video": "^0.1.14",
     "reflect-metadata": ">=0.2.1"
   },

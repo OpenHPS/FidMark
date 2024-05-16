@@ -298,7 +298,7 @@ export const MarkerPoseEstimation: OwlClass = 'http://purl.org/fidmark/MarkerPos
 /**
  * Markerless pose estimation
  *
- *
+ * Markerless pose estimation is any pose estimation algorithm that does not make use of markers to determine a pose.
  *
  * http://purl.org/fidmark/MarkerlessPoseEstimation
  */
@@ -438,6 +438,15 @@ export const WhyCon: OwlClass = 'http://purl.org/fidmark/WhyCon';
  * http://purl.org/fidmark/reacTIVision
  */
 export const reacTIVision: OwlClass = 'http://purl.org/fidmark/reacTIVision';
+
+/**
+ * A single code for a dictionary
+ *
+ *
+ *
+ * http://purl.org/fidmark/code
+ */
+export const code: OwlObjectProperty = 'http://purl.org/fidmark/code';
 
 /**
  * codes
@@ -881,6 +890,33 @@ export const DICT_APRILTAG_36h11: OtherIndividual = 'http://purl.org/fidmark/DIC
 export const DICT_ARTAG: OtherIndividual = 'http://purl.org/fidmark/DICT_ARTAG';
 
 /**
+ * ArUco MIP 16h3 dictionary
+ *
+ *
+ *
+ * http://purl.org/fidmark/DICT_ARUCO_MIP_16h3
+ */
+export const DICT_ARUCO_MIP_16h3: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_MIP_16h3';
+
+/**
+ * ArUco MIP 25h7 dictionary
+ *
+ *
+ *
+ * http://purl.org/fidmark/DICT_ARUCO_MIP_25h7
+ */
+export const DICT_ARUCO_MIP_25h7: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_MIP_25h7';
+
+/**
+ * ArUco MIP 36h12 dictionary
+ *
+ *
+ *
+ * http://purl.org/fidmark/DICT_ARUCO_MIP_36h12
+ */
+export const DICT_ARUCO_MIP_36h12: OtherIndividual = 'http://purl.org/fidmark/DICT_ARUCO_MIP_36h12';
+
+/**
  * ArUco original dictionary
  *
  *
@@ -897,15 +933,6 @@ export const DICT_ARUCO_ORIGINAL: OtherIndividual = 'http://purl.org/fidmark/DIC
  * http://purl.org/fidmark/DICT_CHILLITAGS
  */
 export const DICT_CHILLITAGS: OtherIndividual = 'http://purl.org/fidmark/DICT_CHILLITAGS';
-
-/**
- * ArUco MIP 36h12 dictionary
- *
- *
- *
- * http://purl.org/fidmark/DICT_MIP_36h12
- */
-export const DICT_MIP_36h12: OtherIndividual = 'http://purl.org/fidmark/DICT_MIP_36h12';
 
 /**
  * reacTIVision amoeba symbology
