@@ -20,7 +20,7 @@ import 'js-aruco/src/dictionaries/aruco_mip_16h3.js';
 import 'js-aruco/src/dictionaries/aruco_mip_25h7.js';
 import 'js-aruco/src/dictionaries/aruco_mip_36h12.js';
 import 'js-aruco/src/dictionaries/chilitags.js';
-import { MarkerOrigin, ORIGIN_BOTTOM_LEFT, ORIGIN_BOTTOM_RIGHT, ORIGIN_CENTER, ORIGIN_TOP_LEFT, ORIGIN_TOP_RIGHT } from '@/models/MarkerOrigin';
+import { ORIGIN_BOTTOM_LEFT, ORIGIN_BOTTOM_RIGHT, ORIGIN_CENTER, ORIGIN_TOP_LEFT, ORIGIN_TOP_RIGHT } from '@/models/MarkerOrigin';
 
 export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends ProcessingNode<InOut, InOut> {
     mapping: any = {
@@ -30,7 +30,22 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends P
         [fidmark.DICT_ARUCO_MIP_16h3]: 'ARUCO_MIP_16h3',
         [fidmark.DICT_ARTAG]: 'ARTAG',
         [fidmark.DICT_ARUCO_ORIGINAL]: 'ARUCO_DEFAULT_OPENCV',
+        [fidmark.DICT_4X4_50]: 'ARUCO_4X4_1000',
+        [fidmark.DICT_4X4_100]: 'ARUCO_4X4_1000',
+        [fidmark.DICT_4X4_250]: 'ARUCO_4X4_1000',
         [fidmark.DICT_4X4_1000]: 'ARUCO_4X4_1000',
+        [fidmark.DICT_5X5_50]: 'ARUCO_5X5_1000',
+        [fidmark.DICT_5X5_100]: 'ARUCO_5X5_1000',
+        [fidmark.DICT_5X5_250]: 'ARUCO_5X5_1000',
+        [fidmark.DICT_5X5_1000]: 'ARUCO_5X5_1000',
+        [fidmark.DICT_6X6_50]: 'ARUCO_6X6_1000',
+        [fidmark.DICT_6X6_100]: 'ARUCO_6X6_1000',
+        [fidmark.DICT_6X6_250]: 'ARUCO_6X6_1000',
+        [fidmark.DICT_6X6_1000]: 'ARUCO_6X6_1000',
+        [fidmark.DICT_7X7_50]: 'ARUCO_7X7_1000',
+        [fidmark.DICT_7X7_100]: 'ARUCO_7X7_1000',
+        [fidmark.DICT_7X7_250]: 'ARUCO_7X7_1000',
+        [fidmark.DICT_7X7_1000]: 'ARUCO_7X7_1000',
         [fidmark.DICT_APRILTAG_16h5]: 'APRILTAG_16h5',
         [fidmark.DICT_APRILTAG_25h9]: 'APRILTAG_25h9',
         [fidmark.DICT_APRILTAG_36h10]: 'APRILTAG_36h10',
