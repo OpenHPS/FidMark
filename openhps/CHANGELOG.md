@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.0.18 (2024-05-16)
+
+
+### Bug Fixes
+
+* aruco marker ([551ba07](https://github.com/FidMark/openhps/commit/551ba070ce531ab35cbb56ddd00246acb2e2477f))
+
 ### 1.0.17 (2024-05-16)
 
 ### 1.0.16 (2024-05-16)
