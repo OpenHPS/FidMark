@@ -25,7 +25,7 @@
     "@openhps/core": "^0.7.1",
     "@openhps/rdf": "^0.4.63",
     "@openhps/video": "^0.1.14",
-    "@openhps/webrtc": "^0.1.17",
+    "@openhps/webrtc": "^0.1.20",
     "core-js": "^3.33.3",
     "ionicons": "^7.2.1",
     "js-aruco": "github:damianofalcioni/js-aruco2#master",
