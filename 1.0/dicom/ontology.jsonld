@@ -1,9 +1,4 @@
 [ {
-  "@id" : "http://purl.org/fidmark/FiducialMarker",
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "http://purl.org/healthcarevocab/v1#IE.SpatialFiducials"
-  } ]
-}, {
   "@id" : "http://purl.org/fidmark/dicom/",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
   "http://www.w3.org/2002/07/owl#imports" : [ {
@@ -16,22 +11,29 @@
   } ]
 }, {
   "@id" : "http://purl.org/healthcarevocab/v1#IE.GeneralPurposePerformedProcedureStep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/Procedure"
   } ]
 }, {
   "@id" : "http://purl.org/healthcarevocab/v1#IE.GeneralPurposeScheduledProcedureStep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/Procedure"
   } ]
 }, {
   "@id" : "http://purl.org/healthcarevocab/v1#IE.HangingProtocol",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/Procedure"
   } ]
 }, {
   "@id" : "http://purl.org/healthcarevocab/v1#IE.UnifiedProcedureStep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/Procedure"
   } ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/Procedure",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 } ]
