@@ -48,3 +48,5 @@ FidMark was used as an ontology in the poster [*Discoverable and Interoperable A
 
 ## License and Contributions
 FidMark is licensed under the [CC BY-SA 4.0 license](https://creativecommons.org/licenses/by-sa/4.0/) and maintained by the Web & Information Systems Engineering Lab at the Vrije Universiteit Brussel. Contributions under the CC BY-SA 4.0 license are welcome. Please open an issue or pull request to request features or changes to the ontology, examples or other related resources.
+
+Maintained by [MVdW-Software](https://mvdw-software.com).
