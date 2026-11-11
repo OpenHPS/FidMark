@@ -4,7 +4,7 @@ import { ImageProcessingNode, ImageProcessingOptions, PerspectiveCameraObject } 
 import * as THREE from 'three';
 
 export class ThreeJSNode extends ImageProcessingNode<any, any> {
-    protected declare options: ThreeJSNodeOptions;
+    declare protected options: ThreeJSNodeOptions;
     protected canvas: HTMLCanvasElement;
     protected renderer: THREE.WebGLRenderer;
     protected camera: THREE.PerspectiveCamera;

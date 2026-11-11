@@ -29,6 +29,8 @@ npm install @fidmark/openhps --save
 ## Contributors
 The framework is open source and is mainly developed by PhD Student Maxim Van de Wynckel as part of his research towards *Interoperable and Discoverable Indoor Positioning Systems* under the supervision of Prof. Dr. Beat Signer.
 
+Maintained by [MVdW-Software](https://mvdw-software.com).
+
 ## Contributing
 Use of OpenHPS, FidMark, contributions and feedback is highly appreciated. Please read our [contributing guidelines](CONTRIBUTING.md) for more information.
 
