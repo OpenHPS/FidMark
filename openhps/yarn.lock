@@ -1665,6 +1665,21 @@
     rdf-terms "^1.11.0"
     sparqlalgebrajs "^5.0.2"
 
+"@comunica/actor-query-operation-distinct-hash@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-distinct-hash/-/actor-query-operation-distinct-hash-4.5.0.tgz#24fcf885036cfb1f573fc4e1499c72ed27d169a8"
+  integrity sha512-MKv+Pjk09Ql/OG3Tox5kOhl55UbmDl8KIJFc4USeY+9VpczIhPFJqHhYoXnSgCU8EkzSs2usaSXYVFTIhVOiMA==
+  dependencies:
+    "@comunica/bus-hash-bindings" "^4.5.0"
+    "@comunica/bus-hash-quads" "^4.5.0"
+    "@comunica/bus-query-operation" "^4.5.0"
+    "@comunica/core" "^4.5.0"
+    "@comunica/types" "^4.5.0"
+    "@comunica/utils-query-operation" "^4.5.0"
+    "@rdfjs/types" "*"
+    asynciterator "^3.9.0"
+    sparqlalgebrajs "^5.0.2"
+
 "@comunica/actor-query-operation-distinct-identity@^4.5.0":
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/@comunica/actor-query-operation-distinct-identity/-/actor-query-operation-distinct-identity-4.5.0.tgz#2646d5fe02b09d1e0e694dca9beab5da8965902a"

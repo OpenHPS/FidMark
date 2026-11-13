@@ -82,10 +82,10 @@ jobs:
             **/test-results.xml
             **/coverage
           key: ${{ runner.os }}-test-v1-${{ hashFiles('openhps/package.json') }}-${{ hashFiles('openhps/yarn.lock') }}-${{ github.run_number }}
-      # - name: Test
-      #   working-directory: openhps
-      #   run: |
-      #     npm run cover:ci
+      - name: Test
+        working-directory: openhps
+        run: |
+          npm run cover:ci
 
   documentation:
     name: Build documentation
@@ -148,6 +148,8 @@ jobs:
       - test_coverage
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/dev'
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
       - name: Load dependency cache
@@ -189,6 +191,8 @@ jobs:
       - test_coverage
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v3
       - name: Load dependency cache

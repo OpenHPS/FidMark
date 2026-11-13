@@ -9,9 +9,9 @@ import { SerializableObject } from "@openhps/core";
 })
 export class MarkerOrigin extends SerializableThing {
     static fromURI(uri: IriString): MarkerOrigin {
-        const dict = new MarkerOrigin();
-        (dict as any).rdf = { uri };
-        return dict;
+        const markerOrigin = new MarkerOrigin(uri);
+        (markerOrigin as any).rdf = { uri };
+        return markerOrigin;
     }
 }
 

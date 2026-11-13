@@ -98,7 +98,8 @@ export class ArUcoMarkerDetection<InOut extends ImageFrame<ImageData>> extends P
                             const translation = pose.bestTranslation;
                             const rotation = pose.bestRotation;
                             // Convert translation to what is expected
-                            const expectedOrigin = markerObject.origin.id;
+                            // (markers without an explicit origin are centred)
+                            const expectedOrigin = markerObject.origin?.id ?? ORIGIN_CENTER.id;
                             switch (expectedOrigin) {
                                 case ORIGIN_TOP_LEFT.id:
                                     translation[0] = translation[0] - (markerObject.width / 2);
